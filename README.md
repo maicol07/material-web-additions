@@ -1,7 +1,6 @@
-# `<mwc-layout-grid>` [![Published on npm](https://img.shields.io/npm/v/@material/mwc-icon-button.svg)](https://www.npmjs.com/package/@material/mwc-layout-grid)
+# `<mwc-layout-grid>` [![Published on npm](https://img.shields.io/npm/v/@material/mwc-icon-button.svg)](https://www.npmjs.com/package/material-web-components-layout-grid)
 
-> IMPORTANT: The Material Web Components are a work in progress and subject to
-> major changes until 1.0 release.
+> IMPORTANT: This is just a humble implementation of the MDC Layout Grid for Material Compenents Web Components AKA MWC.
 
 Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
 
@@ -11,7 +10,7 @@ Layout Grid Web Component encapsulates [Layout Grid](https://material.io/develop
 ## Installation
 
 ```sh
-npm install @material/mwc-layout-grid
+npm install material-web-components-layout-grid
 ```
 
 > NOTE: The Material Web Components are distributed as ES2017 JavaScript
