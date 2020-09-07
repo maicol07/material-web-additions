@@ -1,5 +1,5 @@
 {
-  "name": "material-web-components-layout-grid",
+  "name": "mwc-layout-grid",
   "version": "0.12.0",
   "description": "material compoments web components implementation of MDC Layout Grid",
   "main": "mwc-layout-grid.js",
