@@ -1,21 +1,29 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "composite": true,
     "rootDir": "src",
-    "outDir": ".",
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "target": "es2017",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": ["es2017", "dom", "dom.iterable"],
+    "declaration": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "baseUrl": "./packages",
+    "composite": true,
+    "importHelpers": true
   },
   "include": [
     "src/*.ts"
-  ],
-  "references": [
-    {
-      "path": "../base"
-    },
-    {
-      "path": "../icon"
-    }
   ],
   "exclude": [
     "src/test/*.ts"
