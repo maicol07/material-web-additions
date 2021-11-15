@@ -23,24 +23,24 @@ const packagesDir = path.resolve(__dirname, '..', '..', 'packages');
 
 interface PackageJson {
   name: string;
-  dependencies?: { [mdcwPkg: string]: string };
-  devDependencies?: { [mdcwPkg: string]: string };
+  dependencies?: {[mdcwPkg: string]: string};
+  devDependencies?: {[mdcwPkg: string]: string};
 }
 
 function isMdcWebPackage(mdcwPkg: string): boolean {
   return mdcwPkg.startsWith('@material/') &&
-    !mdcwPkg.startsWith('@material/mwc-');
+      !mdcwPkg.startsWith('@material/mwc-');
 }
 
 function main() {
   const newVersion =
-    '=' + execFileSync('npm', ['info', '@material/base@canary', 'version'], {
-      encoding: 'utf8'
-    }).trim();
+      '=' + execFileSync('npm', ['info', '@material/base@canary', 'version'], {
+              encoding: 'utf8'
+            }).trim();
   console.log(`Found latest MDC Web canary version: ${newVersion}\n`);
 
   const packageJsonPaths =
-    glob.sync(path.join('*', 'package.json'), {cwd: packagesDir})
+      glob.sync(path.join('*', 'package.json'), {cwd: packagesDir})
   let anyChanged = false;
   for (const relPath of packageJsonPaths) {
     const absPath = path.join(packagesDir, relPath);
@@ -57,7 +57,7 @@ function main() {
           if (oldVersion !== newVersion) {
             dependencies[pkg] = newVersion;
             console.log(
-              `\tUpdating ${pkg} from ${oldVersion} to ${newVersion}`);
+                `\tUpdating ${pkg} from ${oldVersion} to ${newVersion}`);
             changed = true;
             anyChanged = true;
           }
@@ -80,7 +80,7 @@ function main() {
     // Set an output value for consumption by a GitHub Action.
     // https://help.github.com/en/articles/development-tools-for-github-actions#set-an-output-parameter-set-output
     console.log(
-      `::set-output name=new-mdc-version::${newVersion.substring(1)}`);
+        `::set-output name=new-mdc-version::${newVersion.substring(1)}`);
     console.log(`\nRemember to run npm install!`);
   }
 }

@@ -16,7 +16,9 @@
  */
 import '@material/mwc-formfield';
 import '@material/mwc-radio';
+
 import {html} from 'lit-html';
+
 import {measureFixtureCreation} from '../../util/helpers';
 
 measureFixtureCreation(html`

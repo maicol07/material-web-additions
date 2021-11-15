@@ -15,7 +15,9 @@
  limitations under the License.
  */
 import '@material/mwc-button';
+
 import {html} from 'lit-html';
+
 import {measureFixtureCreation} from '../../util/helpers';
 
 measureFixtureCreation(html`

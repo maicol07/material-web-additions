@@ -28,7 +28,7 @@ import {URL} from 'url';
 const mwcRepoRoot = path.resolve(__dirname, '..', '..');
 
 const githubRaw =
-  `https://raw.githubusercontent.com/material-components/material-components-web-components`;
+    `https://raw.githubusercontent.com/material-components/material-components-web-components`;
 
 // Matches markdown image syntax like `![description](url "tooltip")`
 const markdownImageRegexp = /(\!\[.*?\]\()([^) ]+)(.*?\))/g;
@@ -56,30 +56,30 @@ function main() {
   // if we used the "master" branch name in the URL, they would become invalid
   // when we change or move the images.
   const sha = execFileSync('git', ['rev-parse', '--verify', 'master'], {
-    encoding: 'utf8'
-  }).trim();
+                encoding: 'utf8'
+              }).trim();
 
   for (const fileName of fileNames) {
     const markdown = fs.readFileSync(fileName, 'utf8');
     const replacer =
-      (_: string, prefix: string, oldUrl: string, suffix: string) => {
-        if (isUrl(oldUrl)) {
-          // Only transform relative image paths, not fully qualified URLs.
-          return prefix + oldUrl + suffix;
-        }
-        // Absolute path on disk of the image file.
-        const absFilePath = path.resolve(path.dirname(fileName), oldUrl);
-        if (!fs.existsSync(absFilePath)) {
-          throw new Error(`Image file does not exist: ${absFilePath}`);
-        }
-        // Relative URL path from the MWC repo root to the image file.
-        const relUrlPath = path.relative(mwcRepoRoot, absFilePath)
-          .replace(path.win32.sep, '/');
-        const newUrl = `${githubRaw}/${sha}/${relUrlPath}`;
-        return prefix + newUrl + suffix;
-      };
+        (_: string, prefix: string, oldUrl: string, suffix: string) => {
+          if (isUrl(oldUrl)) {
+            // Only transform relative image paths, not fully qualified URLs.
+            return prefix + oldUrl + suffix;
+          }
+          // Absolute path on disk of the image file.
+          const absFilePath = path.resolve(path.dirname(fileName), oldUrl);
+          if (!fs.existsSync(absFilePath)) {
+            throw new Error(`Image file does not exist: ${absFilePath}`);
+          }
+          // Relative URL path from the MWC repo root to the image file.
+          const relUrlPath = path.relative(mwcRepoRoot, absFilePath)
+                                 .replace(path.win32.sep, '/');
+          const newUrl = `${githubRaw}/${sha}/${relUrlPath}`;
+          return prefix + newUrl + suffix;
+        };
     const updated = markdown.replace(markdownImageRegexp, replacer)
-      .replace(htmlImageRegexp, replacer);
+                        .replace(htmlImageRegexp, replacer);
     fs.writeFileSync(fileName, updated, 'utf8');
   }
 }

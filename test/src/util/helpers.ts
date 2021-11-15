@@ -16,7 +16,7 @@ interface HasKeyCode {
 
 declare global {
   interface Window {
-    tachometerResult: undefined | number;
+    tachometerResult: undefined|number;
   }
 
   interface FormDataEvent extends Event {
@@ -88,28 +88,28 @@ const defaultOpts = {
 interface FixtureOptions {
   shouldAttachContents: boolean;
   document: Document;
-  afterRender: ((root: ShadowRoot) => Promise<void>) | null;
+  afterRender: ((root: ShadowRoot) => Promise<void>)|null;
 }
 
 export const fixture =
-  async (template: TemplateResult, options?: Partial<FixtureOptions>) => {
-    const opts: FixtureOptions = {...defaultOpts, ...options};
-    const tf = opts.document.createElement('test-fixture') as TestFixture;
-    tf.shouldAttachContents = opts.shouldAttachContents;
-    tf.template = template;
+    async (template: TemplateResult, options?: Partial<FixtureOptions>) => {
+  const opts: FixtureOptions = {...defaultOpts, ...options};
+  const tf = opts.document.createElement('test-fixture') as TestFixture;
+  tf.shouldAttachContents = opts.shouldAttachContents;
+  tf.template = template;
 
 
-    opts.document.body.appendChild(tf);
-    if (opts.shouldAttachContents) {
-      await tf.updateComplete;
-    }
+  opts.document.body.appendChild(tf);
+  if (opts.shouldAttachContents) {
+    await tf.updateComplete;
+  }
 
-    if (opts.afterRender) {
-      await opts.afterRender(tf.root);
-    }
+  if (opts.afterRender) {
+    await opts.afterRender(tf.root);
+  }
 
-    return tf;
-  };
+  return tf;
+};
 
 interface MeasureFixtureCreationOpts {
   afterRender?: (root: ShadowRoot) => Promise<unknown>;
@@ -122,8 +122,8 @@ const defaultMeasureOpts = {
 };
 
 export const measureFixtureCreation = async (
-  template: TemplateResult,
-  options?: Partial<MeasureFixtureCreationOpts>) => {
+    template: TemplateResult,
+    options?: Partial<MeasureFixtureCreationOpts>) => {
   const opts: MeasureFixtureCreationOpts = {...defaultMeasureOpts, ...options};
   const templates = new Array<TemplateResult>(opts.numRenders).fill(template);
   const renderContainer = document.createElement('div');
@@ -159,13 +159,13 @@ export const measureFixtureCreation = async (
     // include 'void' in your type argument to 'Promise'?
     (res as any)();
   })
-    .then(
-      // this adds an extra microtask and awaits any trailing async updates
-      async () => undefined);
+      .then(
+          // this adds an extra microtask and awaits any trailing async updates
+          async () => undefined);
 
   performance.mark('measureFixture-end');
   performance.measure(
-    'fixture-creation', 'measureFixture-start', 'measureFixture-end');
+      'fixture-creation', 'measureFixture-start', 'measureFixture-end');
 
   const duration = performance.getEntriesByName('fixture-creation')[0].duration;
   window.tachometerResult = duration;
@@ -186,16 +186,16 @@ export const waitForEvent = (el: Element, ev: string) => new Promise((res) => {
 });
 
 export const ieSafeKeyboardEvent =
-  (type: string, keycode: number) => {
-    // IE es5 fix
-    const init = {detail: 0, bubbles: true, cancelable: true, composed: true};
-    const ev = new CustomEvent(type, init);
+    (type: string, keycode: number) => {
+      // IE es5 fix
+      const init = {detail: 0, bubbles: true, cancelable: true, composed: true};
+      const ev = new CustomEvent(type, init);
 
-    // esc key
-    (ev as unknown as HasKeyCode).keyCode = keycode;
+      // esc key
+      (ev as unknown as HasKeyCode).keyCode = keycode;
 
-    return ev;
-  }
+      return ev;
+    }
 
 export const simulateFormDataEvent = (form: HTMLFormElement): FormData => {
   const event = new Event('formdata');

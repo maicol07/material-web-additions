@@ -1,6 +1,7 @@
 import {html, LitElement} from 'lit';
 import {property} from 'lit/decorators.js'
 import {ClassInfo, classMap} from 'lit/directives/class-map.js';
+
 import {LayoutGridCellBase} from './mwc-layout-grid-cell.js';
 
 export class LayoutGridBase extends LitElement {
@@ -18,7 +19,7 @@ export class LayoutGridBase extends LitElement {
     const observer = new MutationObserver((mutationsList) => {
       for (const mutation of mutationsList) {
         if (mutation.type === 'childList' && mutation.addedNodes &&
-          mutation.addedNodes.length > 0) {
+            mutation.addedNodes.length > 0) {
           // At least one cell was added - re-render grid to make sure all
           // children elements are in right order and have own slots
           this.requestUpdate();
@@ -75,23 +76,23 @@ export class LayoutGridBase extends LitElement {
 
   getRenderClasses(): ClassInfo {
     return {
-      'mdc-layout-grid': !this.inner,
-      'mdc-layout-grid__inner': this.inner,
-      'mdc-layout-grid--fixed-column-width': this.fixedColumnWidth,
-      'mdc-layout-grid--align-top': this.position === 'top',
-      'mdc-layout-grid--align-middle': this.position === 'middle',
-      'mdc-layout-grid--align-bottom': this.position === 'bottom',
+      'mdc-layout-grid': !this.inner, 'mdc-layout-grid__inner': this.inner,
+          'mdc-layout-grid--fixed-column-width': this.fixedColumnWidth,
+          'mdc-layout-grid--align-top': this.position === 'top',
+          'mdc-layout-grid--align-middle': this.position === 'middle',
+          'mdc-layout-grid--align-bottom': this.position === 'bottom',
     }
   }
 
   getChildren() {
-      return Array.from(this.children).map((element, i) => {
-          element.setAttribute('slot', 'slot' + i);
-          return html`
+    return Array.from(this.children).map((element, i) => {
+      element.setAttribute('slot', 'slot' + i);
+      return html`
               <div class="${this.generateCellClasses(element)}">
-                  <slot name="slot${i}" @slotchange=${(e) => this.removeCell(e)}></slot>
+                  <slot name="slot${i}" @slotchange=${
+          (e) => this.removeCell(e)}></slot>
               </div>`;
-      })
+    })
   }
 
   render() {

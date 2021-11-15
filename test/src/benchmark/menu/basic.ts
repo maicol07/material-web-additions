@@ -39,7 +39,7 @@ const afterRender = async (root: ShadowRoot) => {
 };
 
 measureFixtureCreation(
-  html`
+    html`
   <mwc-menu>
     <mwc-list-item selected value="a">Apple</mwc-list-item>
     <mwc-list-item value="b">Banana</mwc-list-item>
@@ -47,4 +47,4 @@ measureFixtureCreation(
   </mwc-menu>
   <div id="anchor"></div>
 `,
-  {renderCheck, afterRender});
+    {renderCheck, afterRender});

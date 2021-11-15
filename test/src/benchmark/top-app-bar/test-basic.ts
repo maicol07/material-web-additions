@@ -16,7 +16,9 @@
  */
 import '@material/mwc-top-app-bar';
 import '@material/mwc-icon-button';
+
 import {html} from 'lit-html';
+
 import {measureFixtureCreation} from '../../util/helpers';
 
 measureFixtureCreation(html`

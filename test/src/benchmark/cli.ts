@@ -32,7 +32,7 @@ const optionDefinitions: commandLineUsage.OptionDefinition[] = [
   {
     name: 'package',
     description: 'Select which individual packages to benchmark.\ne.g.' +
-      ' "-p button radio icon-button".\n(default runs all)',
+        ' "-p button radio icon-button".\n(default runs all)',
     alias: 'p',
     type: String,
     multiple: true,
@@ -41,8 +41,8 @@ const optionDefinitions: commandLineUsage.OptionDefinition[] = [
   {
     name: 'remote',
     description: 'Remote location to point tachometer.\ne.g. if running' +
-      ' a remote SSH Selenium tunnel on port 4444:\n' +
-      '-r http://localhost:4444/wd/hub.\n(default runs locally)',
+        ' a remote SSH Selenium tunnel on port 4444:\n' +
+        '-r http://localhost:4444/wd/hub.\n(default runs locally)',
     alias: 'r',
     type: String,
     defaultValue: ''
@@ -57,7 +57,7 @@ const optionDefinitions: commandLineUsage.OptionDefinition[] = [
   {
     name: 'browser',
     description: 'Which browsers to launch in automatic mode.' +
-      '\n(default chrome)',
+        '\n(default chrome)',
     alias: 'b',
     type: String,
     defaultValue: 'chrome',
@@ -111,8 +111,8 @@ $ node test/lib/benchmark/cli -n 20
     packages = opts.package;
   } else {
     packages = readdirSync(pathjoin('test', 'benchmark'), {withFileTypes: true})
-      .filter((dirEntry) => dirEntry.isDirectory())
-      .map((dirEntry) => dirEntry.name);
+                   .filter((dirEntry) => dirEntry.isDirectory())
+                   .map((dirEntry) => dirEntry.name);
   }
 
 
@@ -121,20 +121,20 @@ $ node test/lib/benchmark/cli -n 20
     const runCommands: string[] = [];
 
     const benchmarks =
-      readdirSync(
-        pathjoin('test', 'lib', 'test', 'src', 'benchmark', packageName),
-        {withFileTypes: true})
-        .filter(
-          (dirEntry) =>
-            dirEntry.isFile() && dirEntry.name.endsWith('.js'))
-        .map((dirEntry) => dirEntry.name.replace(/\.js$/, ''));
+        readdirSync(
+            pathjoin('test', 'lib', 'test', 'src', 'benchmark', packageName),
+            {withFileTypes: true})
+            .filter(
+                (dirEntry) =>
+                    dirEntry.isFile() && dirEntry.name.endsWith('.js'))
+            .map((dirEntry) => dirEntry.name.replace(/\.js$/, ''));
 
 
     for (const benchmark of benchmarks) {
       runCommands.push(
-        `${packageName}:${benchmark}=test/bench-runner.html` +
-        `?bench=${benchmark}` +
-        `&package=${packageName}`);
+          `${packageName}:${benchmark}=test/bench-runner.html` +
+          `?bench=${benchmark}` +
+          `&package=${packageName}`);
     }
 
     const statResults = await main([

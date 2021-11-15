@@ -32,11 +32,11 @@ const renderCheck = async (root: ShadowRoot) => {
 };
 
 measureFixtureCreation(
-  html`
+    html`
   <mwc-list activatable multi>
     <mwc-list-item></mwc-list-item>
     <mwc-list-item selected activated>Apple</mwc-list-item>
     <mwc-list-item>Banana</mwc-list-item>
     <mwc-list-item selected activated>Cucumber</mwc-list-item>
   </mwc-list>`,
-  {renderCheck});
+    {renderCheck});

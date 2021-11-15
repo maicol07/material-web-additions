@@ -21,6 +21,6 @@ import {html} from 'lit-html';
 import {measureFixtureCreation} from '../../util/helpers';
 
 measureFixtureCreation(
-  html`<mwc-list-item selected activated>Apple</mwc-list-item>`, {
-    numRenders: 100,
-  });
+    html`<mwc-list-item selected activated>Apple</mwc-list-item>`, {
+      numRenders: 100,
+    });

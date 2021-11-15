@@ -16,7 +16,9 @@
  */
 import '@material/mwc-slider';
 import '@material/mwc-checkbox';
+
 import {html} from 'lit-html';
+
 import {measureFixtureCreation} from '../../util/helpers';
 
 measureFixtureCreation(html`
