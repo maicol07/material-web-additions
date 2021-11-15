@@ -2,7 +2,7 @@ import {customElement} from 'lit/decorators.js';
 
 import {LayoutGridBase} from './mwc-layout-grid-base.js';
 import {LayoutGridCellBase} from './mwc-layout-grid-cell.js';
-import {styles} from './mwc-layout-grid-css.js';
+import {styles} from './mwc-layout-grid.css';
 
 declare global {
   interface HTMLElementTagNameMap {
