@@ -1,7 +1,7 @@
 {
-  "name": "@maicol07/custom-material-web-components",
+  "name": "@maicol07/material-web-additions",
   "private": true,
-  "description": "Material Components Web Components",
+  "description": "Additional Material Web Components",
   "license": "Apache-2.0",
   "scripts": {
     "clean": "del-cli packages/*/node_modules packages/*/package-lock.json && pnpm clean:typescript && pnpm clean:styles && pnpm clean:scripts",
