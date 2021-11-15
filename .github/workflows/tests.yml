@@ -30,26 +30,26 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v2.0.1
-      with:
-        version: 6.20.3
-          - uses: actions/setup-node@v2
-            with:
-              node-version: 14
-              cache: 'pnpm'
-          - name: PNPM install
-            run: pnpm install --ignore-scripts
+        with:
+          version: 6.20.3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: 'pnpm'
+      - name: PNPM install
+        run: pnpm install --ignore-scripts
 
-        - name: Lerna bootstrap
-          run: pnpm bootstrap
+      - name: Lerna bootstrap
+        run: pnpm bootstrap
 
-        - name: Build component Sass
-          run: pnpm build:styling
+      - name: Build component Sass
+        run: pnpm build:styling
 
-        - name: Compile component TypeScript
-          run: pnpm build:typescript
+      - name: Compile component TypeScript
+        run: pnpm build:typescript
 
-        - name: Compile test TypeScript
-          run: pnpm build:tests
+      - name: Compile test TypeScript
+        run: pnpm build:tests
 
       - name: Unit tests
         env:
