@@ -7,49 +7,49 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.20.3
+      - uses: actions/setup-node@v2
         with:
           node-version: 14
-
-      - name: NPM install
-        # ignore-scripts so that we skip postinstall, because postinstall runs
-        # bootstrap, and it's a little nicer to see that here as its own step
-        # when debugging.
-        run: npm ci --ignore-scripts
+          cache: 'pnpm'
+      - name: PNPM install
+        run: pnpm install --ignore-scripts
 
       - name: Lerna bootstrap
-        run: npm run bootstrap
+        run: pnpm bootstrap
 
       - name: Check format
-        run: npm run format:check
+        run: pnpm format:check
 
   tests:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 6.20.3
+          - uses: actions/setup-node@v2
+            with:
+              node-version: 14
+              cache: 'pnpm'
+          - name: PNPM install
+            run: pnpm install --ignore-scripts
 
-      - name: NPM install
-        # ignore-scripts so that we skip postinstall, because postinstall runs
-        # bootstrap, and it's a little nicer to see that here as its own step
-        # when debugging.
-        run: npm ci --ignore-scripts
+        - name: Lerna bootstrap
+          run: pnpm bootstrap
 
-      - name: Lerna bootstrap
-        run: npm run bootstrap
+        - name: Build component Sass
+          run: pnpm build:styling
 
-      - name: Build component Sass
-        run: npm run build:styling
+        - name: Compile component TypeScript
+          run: pnpm build:typescript
 
-      - name: Compile component TypeScript
-        run: npm run build:typescript
-
-      - name: Compile test TypeScript
-        run: npm run build:tests
+        - name: Compile test TypeScript
+          run: pnpm build:tests
 
       - name: Unit tests
         env:
@@ -64,4 +64,4 @@ jobs:
             export SAUCE_BUILD_ID=mwc-tests-${GITHUB_EVENT_NAME}-${GITHUB_ACTION}-${GITHUB_SHA}
             export SAUCE_TUNNEL_ID=${SAUCE_BUILD_ID}-tunnel
           fi
-          npm test
+          pnpm test

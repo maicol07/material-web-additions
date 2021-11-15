@@ -10,16 +10,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v2.0.1
         with:
-          node-version: 14
-
-      - name: NPM install
-        # Don't run postinstall because we don't need to install sub-packages.
-        run: npm ci --ignore-scripts
+          version: 6.20.3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: PNPM install
+        run: pnpm install --ignore-scripts
 
       - name: Format
-        run: npm run format
+        run: pnpm format
 
       - name: Check if format produces git diff
         id: ifChange

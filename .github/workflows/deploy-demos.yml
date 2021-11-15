@@ -6,16 +6,19 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.20.3
+      - uses: actions/setup-node@v2
         with:
           node-version: 14
-
+          cache: 'pnpm'
       - name: Install and Build
         run: |
-          npm install
-          npm run build
-          npm run build:demos
+          pnpm install
+          pnpm build
+          pnpm build:demos
 
       - name: Deploy Demos
         uses: JamesIves/github-pages-deploy-action@3.4.9
