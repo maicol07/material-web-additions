@@ -1,31 +1,16 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "tsBuildInfoFile": ".tsbuildinfo",
-    "target": "es2017",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "lib": ["es2017", "dom", "dom.iterable"],
-    "declaration": true,
-    "sourceMap": true,
-    "inlineSources": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "outDir": "../../dist",
-    "baseUrl": "../mwc-layout-grid",
     "composite": true,
-    "importHelpers": true
+    "rootDir": ".",
+    "outDir": ".",
+    "tsBuildInfoFile": ".tsbuildinfo"
   },
   "include": [
-    "src/*.ts"
+    "../../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.d.ts",
+    "*.ts"
   ],
   "exclude": [
-    "src/test/*.ts"
+    "test/*.ts"
   ]
 }

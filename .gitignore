@@ -1,35 +1,19 @@
-### Node ###
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.pnpm-debug.log*
-
-# Dependency directories
-node_modules/
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Optional npm cache directory
-.npm
-
-# Output of 'npm pack'
-*.tgz
-
-
-# Yarn Integrity file
-.yarn-integrity
-
-# yarn v2
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
-
-# Dist files
-dist
+node_modules
+/build
+/coverage
+.DS_Store
+/lerna-debug.log
+/gh-pages
+/packages/**/*.js
+/packages/**/*.js.map
+/packages/**/*.d.ts
+/packages/*/*.tgz
+/packages/**/*-css.ts
+/packages/**/*.css.ts
+/packages/*/package-lock.json
+**/*.tsbuildinfo*
+!packages/**/custom_types/**
+/test/lib/
+/scripts/tsc-out/
+.vscode
+/dist
