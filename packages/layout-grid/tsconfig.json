@@ -18,7 +18,7 @@
     "strict": true,
     "noImplicitAny": false,
     "outDir": "../../dist",
-    "baseUrl": "./.",
+    "baseUrl": "../mwc-layout-grid",
     "composite": true,
     "importHelpers": true
   },
