@@ -65,6 +65,7 @@ However, the Material Design guidelines do not recommend having a deeply nested 
 
 ### Slots
 
+
 | Name      | Description                                                          |
 | ----------- | ---------------------------------------------------------------------- |
 | _default_ | Component will place its children into appropriate slots at runtime. |
@@ -73,11 +74,12 @@ However, the Material Design guidelines do not recommend having a deeply nested 
 
 `mwc-layout-grid`
 
+
 | Name               | Type      | Default | Description                                                                                                                                                                                                                                                                       |
 | -------------------- | ----------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `inner`            | `boolean` | `false` | Indicates whether`this` component is inner or outer one.                                                                                                                                                                                                                          |
 | `fixedColumnWidth` | `boolean` | `false` | You can designate each column to have a certain width. The column width can be specified through SASS variable`$mdc-layout-grid-column-width` or CSS custom properties `--mdc-layout-grid-column-width-{screen_size}`. The column width is set to 72px on all devices by default. |
-| `position`         | `string`  |         | The grid is by default center aligned. You can set this attribute to `left` or `right` to change this behavior. Note, these modifiers will have no effect when the grid already fills its container.                                                                             |
+| `position`         | `string`  |         | The grid is by default center aligned. You can set this attribute to`left` or `right` to change this behavior. Note, these modifiers will have no effect when the grid already fills its container.                                                                               |
 
 `mwc-layout-grid-cell`
 
@@ -88,7 +90,7 @@ However, the Material Design guidelines do not recommend having a deeply nested 
 | `span-tablet` | `number` |         | <br />*This value is applied only to tablets                                                                                                                                                                                                                                                         |
 | `span-phone`  | `number` |         | <br />*This value is applied only to phones                                                                                                                                                                                                                                                          |
 | `order`       | `number` |         | By default, items are positioned in the source order. However, you can reorder them by using the`order` attributes, where value is an integer between 1 and 12. Please bear in mind that this may have an impact on accessibility, since screen readers and other tools tend to follow source order. |
-| `align`       | `string` |         | Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of `top`, `middle` or `bottom`.                                                                                                                      |
+| `align`       | `string` |         | Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of`top`, `middle` or `bottom`.                                                                                                                        |
 
 *You can set the cells span by applying `span` attribute, where value is an integer between `1` and `12`. If the chosen
 span size is larger than the available number of columns at the current screen size, the cell behaves as if its chosen
