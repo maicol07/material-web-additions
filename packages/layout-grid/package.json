@@ -8,7 +8,7 @@
     "url": "https://github.com/maicol07/mwc-layout-grid"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:style": "node ../../scripts/sass-to-lit-css/index.js mwc-layout-grid.scss"
   },
   "author": "",
   "license": "Apache-2.0",
