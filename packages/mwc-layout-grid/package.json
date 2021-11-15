@@ -2,7 +2,7 @@
   "name": "@maicol07/mwc-layout-grid",
   "version": "0.25.0",
   "description": "material compoments web components implementation of MDC Layout Grid",
-  "main": "dist/mwc-layout-grid.js",
+  "main": "../../dist/mwc-layout-grid.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/maicol07/mwc-layout-grid"

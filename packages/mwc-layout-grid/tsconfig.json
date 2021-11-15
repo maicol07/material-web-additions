@@ -17,8 +17,8 @@
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": false,
-    "outDir": "dist",
-    "baseUrl": "./packages",
+    "outDir": "../../dist",
+    "baseUrl": "./.",
     "composite": true,
     "importHelpers": true
   },
