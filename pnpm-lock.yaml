@@ -94,14 +94,34 @@ importers:
 
   packages/card:
     specifiers:
+      '@material/animation': '>=13.0.0'
+      '@material/base': '>=13.0.0'
       '@material/card': '>=13.0.0'
+      '@material/dom': '>=13.0.0'
+      '@material/elevation': '>=13.0.0'
+      '@material/feature-targeting': '>=13.0.0'
       '@material/mwc-base': ^0.25.3
+      '@material/mwc-ripple': ^0.25.3
+      '@material/ripple': '>=13.0.0'
+      '@material/rtl': '>=13.0.0'
+      '@material/shape': '>=13.0.0'
+      '@material/theme': '>=13.0.0'
       lit: ^2.0.2
       tslib: ^2.3.1
       typescript: ^4.4.4
     dependencies:
+      '@material/animation': 13.0.0
+      '@material/base': 13.0.0
       '@material/card': 13.0.0
+      '@material/dom': 13.0.0
+      '@material/elevation': 13.0.0
+      '@material/feature-targeting': 13.0.0
       '@material/mwc-base': 0.25.3
+      '@material/mwc-ripple': 0.25.3
+      '@material/ripple': 13.0.0
+      '@material/rtl': 13.0.0
+      '@material/shape': 13.0.0
+      '@material/theme': 13.0.0
       lit: 2.0.2
       tslib: 2.3.1
     devDependencies:
@@ -2071,6 +2091,12 @@ packages:
       tslib: 2.3.1
     dev: false
 
+  /@material/animation/14.0.0-canary.261f2db59.0:
+    resolution: {integrity: sha512-OjxWJYSRNs4vnPe8NclaNn+TsNc8TR/wHusGtezF5F+wl+5mh+K69BMXAmURtq3idoRg4XaOSC/Ohk1ovD1fMQ==}
+    dependencies:
+      tslib: 2.3.1
+    dev: false
+
   /@material/base/13.0.0:
     resolution: {integrity: sha512-vFx0JryRfcvUNX3cZ2u32wUMvxzd+c/YW0LFOXNgqCDWlubHcMm0Y6Wz371LhfQo80/NE69u+/4Joo99yKnVeg==}
     dependencies:
@@ -2149,6 +2175,16 @@ packages:
       tslib: 2.3.1
     dev: false
 
+  /@material/mwc-ripple/0.25.3:
+    resolution: {integrity: sha512-G/gt/csxgME6/sAku3GiuB0O2LLvoPWsRTLq/9iABpaGLJjqaKHvNg/IVzNDdF3YZT7EORgR9cBWWl7umA4i4Q==}
+    dependencies:
+      '@material/dom': 14.0.0-canary.261f2db59.0
+      '@material/mwc-base': 0.25.3
+      '@material/ripple': 14.0.0-canary.261f2db59.0
+      lit: 2.0.2
+      tslib: 2.3.1
+    dev: false
+
   /@material/ripple/13.0.0:
     resolution: {integrity: sha512-hx4B40hB2rRfsGwf1jwo2GGlYDq0yUQjcMcMmXfQipPJNpQhy8ylmXKc1DBjmWf7EQ/MgbfCSYwPrYXrbGP31w==}
     dependencies:
@@ -2161,10 +2197,29 @@ packages:
       tslib: 2.3.1
     dev: false
 
+  /@material/ripple/14.0.0-canary.261f2db59.0:
+    resolution: {integrity: sha512-3FLCLj8X7KrFfuYBHJg1b7Odb3V/AW7fxk3m1i1zhDnygKmlQ/abVucH1s2qbX3Y+JIiq+5/C5407h9BFtOf+A==}
+    dependencies:
+      '@material/animation': 14.0.0-canary.261f2db59.0
+      '@material/base': 14.0.0-canary.261f2db59.0
+      '@material/dom': 14.0.0-canary.261f2db59.0
+      '@material/feature-targeting': 14.0.0-canary.261f2db59.0
+      '@material/rtl': 14.0.0-canary.261f2db59.0
+      '@material/theme': 14.0.0-canary.261f2db59.0
+      tslib: 2.3.1
+    dev: false
+
   /@material/rtl/13.0.0:
     resolution: {integrity: sha512-nFGy3iQg7k+xLs67eb86mRFVLwa0yi7MusqRK4OM8DXcLO5yoVfUTPKpdSykcbRryp9imVHsxutox2tZawR4og==}
     dependencies:
       '@material/theme': 13.0.0
+      tslib: 2.3.1
+    dev: false
+
+  /@material/rtl/14.0.0-canary.261f2db59.0:
+    resolution: {integrity: sha512-bVnXBbUsHs57+EXdeFbcwaKy3lT/itI/qTLmJ88ar0qaGEujO1GmESHm3ioqkeo4kQpTfDhBwQGeEi1aDaTdFg==}
+    dependencies:
+      '@material/theme': 14.0.0-canary.261f2db59.0
       tslib: 2.3.1
     dev: false
 
@@ -2181,6 +2236,13 @@ packages:
     resolution: {integrity: sha512-KAe1s0MvvfCGAwJliDVTvgAKuD3ESwhl7F7br4Iam4IPdqME2rWl8NPhKHFfaWqTG7PyCgMMngYEYuA8cLNTsA==}
     dependencies:
       '@material/feature-targeting': 13.0.0
+      tslib: 2.3.1
+    dev: false
+
+  /@material/theme/14.0.0-canary.261f2db59.0:
+    resolution: {integrity: sha512-bUqyFT0QF8Nxx02fekt3CXIfC9DEPOPdo2hjgdtvhrNP+vftbkI2tKZ5/uRUnVA+zqQAOyIl5z6FOMg4fyemCA==}
+    dependencies:
+      '@material/feature-targeting': 14.0.0-canary.261f2db59.0
       tslib: 2.3.1
     dev: false
 
