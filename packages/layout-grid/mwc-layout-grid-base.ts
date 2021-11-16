@@ -4,9 +4,9 @@ import {ClassInfo, classMap} from 'lit/directives/class-map.js';
 import {LayoutGridCellBase} from './mwc-layout-grid-cell.js';
 
 export class LayoutGridBase extends LitElement {
-  @property({type: Boolean, reflect: true}) inner = false;
+  @property({type: Boolean}) inner = false;
 
-  @property({type: Boolean, reflect: true}) fixedColumnWidth = false;
+  @property({type: Boolean}) fixedColumnWidth = false;
 
   @property({type: String}) position;
 
