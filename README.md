@@ -32,19 +32,15 @@ A few notable changes you should expect:
 The components in this repo have been originally developed by other authors, then abandoned. I've decided to adopt them
 and rework them as a unique package
 
-| Component              | Status                                                                                                                                     | Original author                                                                                         |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `<mwc-bottom-app-bar>` | [*
-TBD*](https://github.com/material-components/material-components-web-components/issues/298)                                              |                                                                                                         |
-| `<mwc-card>`           | [*
-TBD*](https://github.com/material-components/material-components-web-components/issues/231)                                              |                                                                                                         |
-| `<mwc-chip>`           | [*
-TBD*](https://github.com/material-components/material-components-web-components/issues/418)                                              |                                                                                                         |
-| `<mwc-data-table>`     | [*
-TBD*](https://github.com/material-components/material-components-web-components/issues/386)                                              |                                                                                                         |
-| `<mwc-layout-grid>`    | [![Published on npm](https://img.shields.io/npm/v/@maicol07/mwc-layout-grid.svg)](https://www.npmjs.com/package/@maicol07/mwc-layout-grid) | [Chromakey](https://github.com/chromakey-io) ([Repo](https://github.com/chromakey-io/mwc-layout-grid)) |
-| `<mwc-tooltip>`        | [*
-TBD*](https://github.com/material-components/material-components-web-components/issues/1499)                                             |                                                                                                         |
+
+| Component              | Status                                                                                                                                     | Original author                                                                                                                     |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `<mwc-bottom-app-bar>` | [*TBD*](https://github.com/material-components/material-components-web-components/issues/298) (Not planned at the moment)                 |                                                                                                                                     |
+| `<mwc-card>`           | [![Published on npm](https://img.shields.io/npm/v/@maicol07/mwc-card.svg)](https://www.npmjs.com/package/@maicol07/mwc-card)               | [AuthX](https://github.com/AuthX) ([Repo](https://github.com/AuthX/material-components-web-components/blob/develop/packages/card)) |
+| `<mwc-chip>`           | [*TBD*](https://github.com/material-components/material-components-web-components/issues/418)                                              |                                                                                                                                     |
+| `<mwc-data-table>`     | [*TBD*](https://github.com/material-components/material-components-web-components/issues/386)                                              |                                                                                                                                     |
+| `<mwc-layout-grid>`    | [![Published on npm](https://img.shields.io/npm/v/@maicol07/mwc-layout-grid.svg)](https://www.npmjs.com/package/@maicol07/mwc-layout-grid) | [Chromakey](https://github.com/chromakey-io) ([Repo](https://github.com/chromakey-io/mwc-layout-grid))                             |
+| `<mwc-tooltip>`        | [*TBD*](https://github.com/material-components/material-components-web-components/issues/1499)                                             |                                                                                                                                     |
 
 ## Quick start
 
