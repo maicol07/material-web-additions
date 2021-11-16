@@ -1,6 +1,6 @@
 {
   "name": "@maicol07/mwc-layout-grid",
-  "version": "0.25.1",
+  "version": "0.25.2",
   "description": "material compoments web components implementation of MDC Layout Grid",
   "main": "mwc-layout-grid.js",
   "repository": {
