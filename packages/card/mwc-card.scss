@@ -19,18 +19,13 @@ limitations under the License.
 @include card.core-styles;
 
 .mdc-card {
-    width: 350px;
     width: max-content;
-    width: inherit;
-
-    height: 350px;
     height: max-content;
-    height: inherit;
-
     padding: 16px;
-    padding: inherit;
+}
 
-    margin: inherit;
+.inherit {
+    all: inherit;
 }
 
 .mdc-card__primary-action {

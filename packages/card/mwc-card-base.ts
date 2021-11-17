@@ -73,7 +73,7 @@ export class MWCCardBase extends LitElement {
    */
   render() {
     return html`
-      <div class="mdc-card ${classMap(this.getRenderClasses())}" ${this.background ? `style="background-image: ${this.background}"` : ''}>
+      <div class="mdc-card inherit ${classMap(this.getRenderClasses())}" ${this.background ? `style="background-image: ${this.background}"` : ''}>
         <div class="mdc-card__primary-action" tabindex="0">
           <slot name="header"></slot>
           
