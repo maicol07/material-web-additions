@@ -1,5 +1,5 @@
 import {html, LitElement} from 'lit';
-import {property} from 'lit/decorators.js'
+import {property} from 'lit/decorators.js';
 import {ClassInfo, classMap} from 'lit/directives/class-map.js';
 import {LayoutGridCellBase} from './mwc-layout-grid-cell.js';
 
@@ -37,7 +37,7 @@ export class LayoutGridBase extends LitElement {
       'mdc-layout-grid--align-top': this.position === 'top',
       'mdc-layout-grid--align-middle': this.position === 'middle',
       'mdc-layout-grid--align-bottom': this.position === 'bottom',
-    }
+    };
   }
 
   getChildren() {
@@ -47,7 +47,7 @@ export class LayoutGridBase extends LitElement {
               <div class="${this.generateCellClasses(element)}">
                   <slot name="slot${i}" @slotchange=${(e) => this.removeCell(e)}></slot>
               </div>`;
-      })
+      });
   }
 
   render() {
@@ -91,7 +91,7 @@ export class LayoutGridBase extends LitElement {
         desktop: child.spanDesktop,
         tablet: child.spanTablet,
         phone: child.spanPhone
-      }
+      };
 
       for (const [device, value] of Object.entries(spans)) {
         if (value) {

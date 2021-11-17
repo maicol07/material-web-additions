@@ -1,27 +1,27 @@
-import {html, LitElement, PropertyValues, TemplateResult} from "lit";
-import {ClassInfo, classMap} from "lit/directives/class-map.js";
-import {eventOptions, property, query, queryAssignedNodes, queryAsync, state} from "lit/decorators.js";
+import {html, LitElement, PropertyValues, TemplateResult} from 'lit';
+import {ClassInfo, classMap} from 'lit/directives/class-map.js';
+import {eventOptions, property, query, queryAssignedNodes, queryAsync, state} from 'lit/decorators.js';
 import {Ripple} from '@material/mwc-ripple/mwc-ripple';
 import {RippleHandlers} from '@material/mwc-ripple/ripple-handlers';
 
 
-import "@material/mwc-icon";
+import '@material/mwc-icon';
 
 export class MWCCardBase extends LitElement {
   /**
    * Optional. Default value is false. Removes the shadow and displays a hairline outline instead.
    */
-  @property({ type: Boolean }) outlined = false;
-  @property({ type: Boolean }) disabled = false;
-  @property({ type: Boolean, attribute: 'full-bleed-actions' }) fullBleedActions = false;
+  @property({type: Boolean}) outlined = false;
+  @property({type: Boolean}) disabled = false;
+  @property({type: Boolean, attribute: 'full-bleed-actions'}) fullBleedActions = false;
   /**
    * Optional. Define the aspect ratio for the main image, it can be 'square' or '16-9'
    */
-  @property({ type: String, attribute: "aspect-ratio" }) aspectRatio =  '16-9';
-  @property({type: String }) title = '';
-  @property({type: String }) subtitle = '';
+  @property({type: String, attribute: 'aspect-ratio'}) aspectRatio = '16-9';
+  @property({type: String}) title = '';
+  @property({type: String}) subtitle = '';
   /** URL of the background image*/
-  @property({type: String }) background = '';
+  @property({type: String}) background = '';
   @queryAsync('mwc-ripple') ripple!: Promise<Ripple|null>;
   /**
    * Optional. The main tappable area of the card.
@@ -116,7 +116,7 @@ export class MWCCardBase extends LitElement {
     const _hasActionIcons = this.actionIconsElements.length > 0;
     const _hasActions = _hasActionButtons || _hasActionIcons;
 
-    this.primaryActionEl!.classList.toggle('mdc-card__primary-action--empty', !_hasPrimaryAction)
+    this.primaryActionEl!.classList.toggle('mdc-card__primary-action--empty', !_hasPrimaryAction);
     this.actionButtonsEl!.classList.toggle('mdc-card__action-buttons--empty', !_hasActionButtons);
     this.actionIconsEl!.classList.toggle('mdc-card__action-icons--empty', !_hasActionIcons);
     this.actionsEl!.classList.toggle('mdc-card__actions--empty', !_hasActions);
@@ -149,7 +149,7 @@ export class MWCCardBase extends LitElement {
   /** @soyTemplate */
   protected getActionsRenderClasses(): ClassInfo {
     return {
-      [`mdc-card__actions--full-bleed`]: this.fullBleedActions
+      ['mdc-card__actions--full-bleed']: this.fullBleedActions
     };
   }
 
