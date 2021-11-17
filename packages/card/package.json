@@ -1,6 +1,6 @@
 {
   "name": "@maicol07/mwc-card",
-  "version": "0.25.1",
+  "version": "0.25.2",
   "description": "Material compoments web components implementation of MDC Card",
   "main": "mwc-card.js",
   "repository": {
