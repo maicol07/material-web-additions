@@ -1,11 +1,9 @@
-import {html, LitElement, PropertyValues, TemplateResult} from 'lit';
-import {ClassInfo, classMap} from 'lit/directives/class-map.js';
-import {eventOptions, property, query, queryAssignedNodes, queryAsync, state} from 'lit/decorators.js';
+import '@material/mwc-icon';
 import {Ripple} from '@material/mwc-ripple/mwc-ripple';
 import {RippleHandlers} from '@material/mwc-ripple/ripple-handlers';
-
-
-import '@material/mwc-icon';
+import {html, LitElement, PropertyValues, TemplateResult} from 'lit';
+import {eventOptions, property, query, queryAssignedNodes, queryAsync, state} from 'lit/decorators.js';
+import {ClassInfo, classMap} from 'lit/directives/class-map.js';
 
 export class MWCCardBase extends LitElement {
   /**
@@ -73,7 +71,7 @@ export class MWCCardBase extends LitElement {
    */
   render() {
     return html`
-      <div class="mdc-card inherit ${classMap(this.getRenderClasses())}" ${this.background ? `style="background-image: ${this.background}"` : ''}>
+      <div class="inherit mdc-card ${classMap(this.getRenderClasses())}" ${this.background ? `style="background-image: ${this.background}"` : ''}>
         <div class="mdc-card__primary-action" tabindex="0">
           <slot name="header"></slot>
           
