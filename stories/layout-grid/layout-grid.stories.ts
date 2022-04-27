@@ -1,5 +1,5 @@
 // @ts-ignore
-import '../../packages/layout-grid';
+import '../../packages/layout-grid/mwc-layout-grid';
 import {Meta, Story} from '@storybook/web-components';
 import {LayoutGrid} from '../../packages/layout-grid';
 import {html} from 'lit';
@@ -172,4 +172,4 @@ GridCellsOrder.parameters = {
             story: 'Order the cells in the grid'
         }
     }
-}
+};
