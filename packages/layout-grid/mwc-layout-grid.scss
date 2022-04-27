@@ -1,15 +1,61 @@
-@use "@material/layout-grid/mdc-layout-grid";
+@use 'sass:map';
+@use 'sass:list';
+@use "@material/layout-grid";
+@import "@material/layout-grid/mdc-layout-grid";
 
 div.mdc-layout-grid {
-    all: inherit;
-    background: var(--mwc-layout-grid-background, inherit);
-    border: var(--mwc-layout-grid-border, inherit);
-    max-width: var(--mwc-layout-grid-max-width, inherit);
+  background: inherit;
+  border: inherit;
 }
 
-//noinspection CssInvalidFunction
-div.mdc-layout-grid__inner {
-    min-height: var(--mwc-layout-grid-min-height, none);
-    height: var(--mwc-layout-grid-height, none);
-    max-height: var(--mwc-layout-grid-max-height, none);
+div.mdc-layout-grid, div.mdc-layout-grid__inner {
+  max-width: inherit;
+  width: inherit;
+  min-width: inherit;
+  height: inherit;
+  max-height: inherit;
+  min-height: inherit;
+}
+
+@function cell($selector: '') {
+  @return "::slotted(*#{$selector})"
+}
+
+@function cell_attribute($attribute, $value) {
+  @return cell('[#{$attribute}="#{$value}"]')
+}
+
+#{cell()} {
+  @extend .mdc-layout-grid__cell;
+
+  $upper-breakpoint: list.nth(map.keys(layout-grid.$columns), 1);
+
+  @each $size in map.keys(layout-grid.$columns) {
+    @include layout-grid.media-query_($size) {
+      $gutter: map.get(layout-grid.$default-gutter, $size);
+
+      @for $span from 1 through map.get(layout-grid.$columns, $upper-breakpoint) {
+        // Span classes.
+        @at-root #{cell_attribute('grid-span', $span)}, #{cell_attribute('grid-span-#{$size}', $span)} {
+          @include layout-grid.cell-span_($size, $span, $gutter);
+        }
+      }
+    }
+  }
+
+  // Order override classes.
+  @for $i from 1 through map.get(layout-grid.$columns, $upper-breakpoint) {
+    @at-root #{cell_attribute('grid-order', $i)} {
+      @include layout-grid.cell-order($i);
+    }
+  }
+
+
+}
+
+// Alignment classes.
+@each $position in ('top', 'middle', 'bottom') {
+  #{cell_attribute('grid-align', $position)} {
+    @include layout-grid.cell-align(#{$position});
+  }
 }
