@@ -1,6 +1,6 @@
 import {customElement} from 'lit/decorators.js';
 
-import {LayoutGridBase} from './mwc-layout-grid-base.js';
+import {LayoutGridBase} from './mwc-layout-grid-base';
 import {styles} from './mwc-layout-grid.css';
 import {DOMAttributes} from 'react';
 
