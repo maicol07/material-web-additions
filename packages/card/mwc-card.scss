@@ -15,68 +15,109 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 @use "@material/card";
+@use "@material/feature-targeting/feature-targeting";
+@use "@material/rtl";
+@use "@material/theme";
+@use "@material/theme/custom-properties";
 
 @include card.core-styles;
 
+$query: feature-targeting.all();
+$feat-color: feature-targeting.create-target($query, color);
+$feat-structure: feature-targeting.create-target($query, structure);
+
+// TODO(sorvell): flex for sizing, border inherit
+
+
+:host {
+    display: inline-flex;
+    @include theme.property(border-radius, custom-properties.create(--mdc-card-border-radius, 4px 4px 4px 4px));
+}
+
 .mdc-card {
-    width: max-content;
-    height: max-content;
-    padding: 16px;
+    border-radius: inherit;
+    flex: 1;
+    @include theme.property(width, custom-properties.create(--mdc-card-width, max-content));
+    @include theme.property(height, custom-properties.create(--mdc-card-height, max-content));
+    @include theme.property(padding, custom-properties.create(--mdc-card-padding, inherit));
+    @include theme.property(margin, custom-properties.create(--mdc-card-margin, inherit));
 }
 
-.inherit {
-    all: inherit;
+slot {
+    border-radius: inherit;
 }
 
-.mdc-card__primary-action {
-    flex-grow: 1;
+.mdc-card__primary-action--disabled {
+    cursor: initial;
+}
 
-    &--empty {
-        display: none;
+/* Set styles for .mdc-card__action based on slot. Styles will not be available from Light DOM. */
+slot::slotted(.mdc-card__action) {
+    @include feature-targeting.targets($feat-structure) {
+        @include card.actions-layout_(inline-flex);
+
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
     }
 }
 
-.mdc-card__actions {
-    &--empty {
-        display: none;
+/* Set styles for .mdc-card__action:focus based on slot. Styles will not be available from Light DOM. */
+slot::slotted(.mdc-card__action:focus) {
+    @include feature-targeting.targets($feat-structure) {
+        outline: none;
     }
 }
 
-.mdc-card__title {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: var(--mdc-typography-headline1-font-family, Roboto, sans-serif);
-    font-size: 1.25rem;
-    font-weight: 500;
-    letter-spacing: 0.0125em;
-    line-height: 2rem;
+/* Set styles for .mdc-card__action--button based on slot. Styles will not be available from Light DOM. */
+slot[name="button"]::slotted(.mdc-card__action--button) {
+    @include feature-targeting.targets($feat-structure) {
+        @include rtl.reflexive-box(margin, right, 8px);
+    }
 }
 
-.mdc-card__subtitle {
-    display: block;
-    font-family: var(--mdc-typography-subtitle1-font-family, Roboto, sans-serif);
+/* Set styles for .mdc-card__action--button:last-child based on slot. Styles will not be available from Light DOM. */
+slot[name="button"]::slotted(.mdc-card__action--button:last-child) {
+    @include feature-targeting.targets($feat-structure) {
+        @include rtl.reflexive-box(margin, right, 0);
+    }
 }
 
-.mdc-card__supporting-text {
-    display: block;
-    padding-top: 16px;
-    font-family: var(--mdc-typography-font-family, Roboto, sans-serif);
+/* Set styles for .mdc-card__actions-full-bleed .mdc-card__action--button based on slot. Styles will not be available from Light DOM. */
+.mdc-card__actions--full-bleed slot[name="button"]::slotted(.mdc-card__action--button) {
+    @include feature-targeting.targets($feat-structure) {
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        margin: 0;
+        // padding: 8px 16px;
+        /* @noflip */
+        text-align: left;
+    }
+
+    @include rtl.rtl {
+        @include feature-targeting.targets($feat-structure) {
+            /* @noflip */
+            text-align: right;
+        }
+    }
 }
 
-.mdc-card__title,
-.mdc-card__subtitle,
-.mdc-card__supporting-text {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-decoration: inherit;
-    text-transform: inherit;
+/* Set styles for .mdc-card__action--icon based on slot. Styles will not be available from Light DOM. */
+slot[name="icon"]::slotted(.mdc-card__action--icon) {
+    @include feature-targeting.targets($feat-structure) {
+        // Icon buttons are taller than buttons, so we need to adjust their margins to prevent the action row from expanding.
+        margin: -6px 0;
+
+        // Same padding as mdc-icon-button.
+        // padding: 12px;
+    }
 }
 
-.mdc-card__subtitle,
-.mdc-card__supporting-text {
-    font-size: 0.875rem;
-    font-weight: 400;
-    letter-spacing: 0.0178571429em;
-    line-height: 1.25rem;
-    opacity: 0.6;
+/* Set styles for .mdc-card__action--icon:not(:disabled) based on slot. Styles will not be available from Light DOM. */
+slot[name="icon"]::slotted(.mdc-card__action--icon:not(:disabled)) {
+    @include feature-targeting.targets($feat-color) {
+        @include theme.property(color, text-icon-on-background);
+    }
 }

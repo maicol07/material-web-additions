@@ -1,7 +1,7 @@
 import {customElement} from 'lit/decorators.js';
 
-import {MWCCardBase} from './mwc-card-base.js';
-import {styles} from './mwc-card.css.js';
+import {CardBase} from './mwc-card-base';
+import {styles} from './mwc-card.css';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -10,6 +10,6 @@ declare global {
 }
 
 @customElement('mwc-card')
-export class MWCCard extends MWCCardBase {
+export class MWCCard extends CardBase {
   static override styles = [styles];
 }

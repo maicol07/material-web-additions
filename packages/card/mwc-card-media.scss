@@ -1,0 +1,17 @@
+@use "@material/card";
+@use "@material/theme";
+@use "@material/theme/custom-properties";
+
+@include card.core-styles();
+
+:host {
+  display: flex;
+  @include theme.property(border-radius, custom-properties.create(--mdc-card-media-border-radius, var(--mdc-card-border-radius, 0)));
+}
+
+.mdc-card__media {
+  flex: 1;
+  background-color: inherit;
+  border-radius: inherit;
+  @include theme.property(background-image, custom-properties.create(--mdc-card-media-background-image, none));
+}
