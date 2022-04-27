@@ -9,10 +9,22 @@ jobs:
   test:
     # Operating System
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16]
     # Job steps
     steps:
       - uses: actions/checkout@v1
-      - run: yarn
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.20.3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
         #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@v1
         # Options required for Chromatic's GitHub Action
