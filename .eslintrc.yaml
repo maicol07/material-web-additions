@@ -12,7 +12,6 @@ env:
 parser: "@typescript-eslint/parser"
 plugins:
   - "@typescript-eslint"
-  - jasmine
   - wc
 parserOptions:
   ecmaVersion: 2017
@@ -49,17 +48,6 @@ rules:
 
   prefer-const: error
   comma-dangle: off
-
-  jasmine/no-promise-without-done-fail: error
-  jasmine/no-focused-tests: error
-  jasmine/no-spec-dupes:
-    - error
-    - branch
-  jasmine/no-suite-dupes:
-    - error
-    - branch
-  jasmine/no-disabled-tests: error
-  jasmine/no-pending-tests: error
 overrides:
   - files: [ "packages/**/*.ts" ]
     rules:

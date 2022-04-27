@@ -17,3 +17,4 @@ node_modules
 /scripts/tsc-out/
 .vscode
 /dist
+custom-elements.json
