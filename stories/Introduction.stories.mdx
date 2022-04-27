@@ -1,0 +1,263 @@
+import {Meta} from '@storybook/addon-docs';
+import LayoutGridImage from '../packages/layout-grid/images/layout.png';
+
+import './introduction.scss';
+
+import '../packages/layout-grid/mwc-layout-grid';
+import '../packages/card/mwc-card';
+import '../packages/card/mwc-card-primary-action';
+import '../packages/card/mwc-card-media';
+import '@material/mwc-icon-button';
+
+<Meta title="Introduction" parameters={{previewTabs: {canvas: {hidden: true}}}} />
+
+
+# Material Web Additions
+[![GitHub issues by-label](https://img.shields.io/github/issues-raw/maicol07/material-web-additions/Type:%20Bug)](https://github.com/maicol07/material-web-additions/issues?q=is%3Aissue+is%3Aopen+label%3A%22Type%3A+Bug%22)
+
+> IMPORTANT: Material Web & Material Web Additions are a work in progress and subject to major changes until 1.0 release.
+
+Material Web Additions is a collection of additional components to [Material Web](https://github.com/material-components/material-web)
+components: Google’s UI toolkit for building beautiful, accessible web applications. Material Web & Material Web
+Additions are implemented as a collection
+of [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
+
+The Material team is currently working on [Material You](https://material.io/blog/announcing-material-you) (Material
+Design 3) support for Material Web components.
+
+Developers using this library should expect some big changes after Material Web v1 has been released (when the Material
+team finished their work on Material You).
+
+A few notable changes you should expect:
+
+- UX changes as we adopt the new designs (production users will definitely want to pin to an appropriate release, not
+mainline)
+- A single npm package (`@maicol07/md-web-additions`)
+- Simplification of tag name prefixes to `md-` (CSS custom properties will be `--md-`)
+- Components with variant attributes will be split into several variant components:
+
+Example: `mwc-card` will be split into `md-card`, `md-outlined-card`, etc
+
+[Contributing Guide](#Contributing)
+
+## Components
+
+The components in this repo have been originally developed by other authors, then abandoned. I've decided to adopt them
+and rework them as a unique package
+
+<mwc-layout-grid>
+    <mwc-card outlined>
+        <mwc-card-primary-action disabled>
+            <mwc-card-media style={{'--mdc-card-media-background-image': 'url("https://lh3.googleusercontent.com/_wVZOGd-J2P8egccQlY_MI6w01npq0bfNY1zVlvWjYqPFFjLP8G0ZNcCEkB572LMGT-GkptT_rVZRgj4jSn7ibRN02pMhCIG4Qjy4A=w1064-v0")'}} />
+            <div className="component-card__header">
+                <div className="components-card-header">
+                    <div className="demo-card__title components-card-header-title">
+                        <span className="components-card-header-title-text">Bottom App Bar <code>mwc-bottom-app-bar</code></span>
+                    </div>
+                    <div className="demo-card__subtitle">
+                        <span>Bottom app bars provide access to a bottom navigation drawer and up to four actions, including the floating action button.</span>
+                        <br/><br/>
+                        <small>Status: <a target="_blank" href="https://github.com/material-components/material-components-web-components/issues/298">TBD</a> (Not planned at the moment)</small>
+                    </div>
+                </div>
+            </div>
+        </mwc-card-primary-action>
+    </mwc-card>
+    <mwc-card outlined>
+        <mwc-card-primary-action>
+            <mwc-card-media style={{'--mdc-card-media-background-image': 'url("https://github.com/material-components/material-components-web/raw/master/packages/mdc-card/images/card-elevated.png")'}} />
+            <div className="component-card__header">
+                <div className="components-card-header">
+                    <div className="demo-card__title components-card-header-title">
+                        <span className="components-card-header-title-text">Card <code>mwc-card</code></span>
+                        <a target="_blank" href="https://www.npmjs.com/package/@maicol07/mwc-card">
+                            <img src="https://img.shields.io/npm/v/@maicol07/mwc-card.svg" alt="Published on NPM"/>
+                        </a>
+                    </div>
+                    <div className="demo-card__subtitle">
+                        <span>Cards contain content and actions about a single subject.</span>
+                    </div>
+                </div>
+            </div>
+        </mwc-card-primary-action>
+        <a href="https://github.com/maicol07/material-web-additions/packages/card" title="Go to source code" target="_blank" slot="icon">
+            <mwc-icon-button icon="code" aria-label="Go to source code"/>
+        </a>
+        <a href="https://github.com/material-components/material-web/blob/mwc-card/packages/card" title="Go to original repo (Material web repo - mwc-card branch)" target="_blank" slot="icon">
+            <mwc-icon-button icon="source" aria-label="Go to original repo"/>
+        </a>
+    </mwc-card>
+    <mwc-card outlined>
+        <mwc-card-primary-action disabled>
+            <mwc-card-media style={{'--mdc-card-media-background-image': 'url("https://lh3.googleusercontent.com/nIlSfsCutvqK4ZGO91rq9ktUX90a6t7zQhf7KFH-3RXL7gMcUDrLVFafgDr82PgnbiBuwLn8t1vvVcL66wHp9p5VYocPI-7fYb9w=w1064-v0")'}} />
+            <div className="component-card__header">
+                <div className="components-card-header">
+                    <div className="demo-card__title components-card-header-title">
+                        <span className="components-card-header-title-text">Chip <code>mwc-chip</code></span>
+                    </div>
+                    <div className="demo-card__subtitle">
+                        <span>Chips allow users to enter information, make selections, filter content, or trigger actions. While buttons are expected to appear consistently and with familiar calls to action, chips should appear dynamically as a group of multiple interactive elements.</span>
+                        <br/><br/>
+                        <small>Status: <a target="_blank" href="https://github.com/material-components/material-components-web-components/issues/418">TBD</a></small>
+                    </div>
+                </div>
+            </div>
+        </mwc-card-primary-action>
+    </mwc-card>
+    <mwc-card outlined>
+        <mwc-card-primary-action disabled>
+            <mwc-card-media style={{'--mdc-card-media-background-image': 'url("https://github.com/material-components/material-components-web/raw/master/packages/mdc-data-table/images/data-table-hero.png")'}} />
+            <div className="component-card__header">
+                <div className="components-card-header">
+                    <div className="demo-card__title components-card-header-title">
+                        <span className="components-card-header-title-text">Data Table <code>mwc-data-table</code></span>
+                    </div>
+                    <div className="demo-card__subtitle">
+                        <span>Data tables display sets of data across rows and columns.</span>
+                        <br/><br/>
+                        <small>Status: <a target="_blank" href="https://github.com/material-components/material-components-web-components/issues/386">TBD</a></small>
+                    </div>
+                </div>
+            </div>
+        </mwc-card-primary-action>
+    </mwc-card>
+    <mwc-card outlined>
+        <mwc-card-primary-action>
+            <mwc-card-media style={{'--mdc-card-media-background-image': `url("${LayoutGridImage}")`}} />
+            <div className="component-card__header">
+                <div className="components-card-header">
+                    <div className="demo-card__title components-card-header-title">
+                        <span className="components-card-header-title-text">Layout Grid <code>mwc-layout-grid</code></span>
+                        <a target="_blank" href="https://www.npmjs.com/package/@maicol07/mwc-layout-grid">
+                            <img src="https://img.shields.io/npm/v/@maicol07/mwc-layout-grid.svg" alt="Published on NPM"/>
+                        </a>
+                    </div>
+                    <div className="demo-card__subtitle">
+                        <span>
+                            Layout grid is a supporting component that organizes elements on a column-variate grid layout.
+                            It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </mwc-card-primary-action>
+        <a href="https://github.com/maicol07/material-web-additions/packages/layout-grid" title="Go to source code" target="_blank" slot="icon">
+            <mwc-icon-button icon="code" aria-label="Go to source code"/>
+        </a>
+        <a href="https://github.com/chromakey-io/mwc-layout-grid" title="Go to original repo (Chromakey mwc-layout-grid)" target="_blank" slot="icon">
+            <mwc-icon-button icon="source" aria-label="Go to original repo"/>
+        </a>
+    </mwc-card>
+    <mwc-card outlined>
+        <mwc-card-primary-action disabled>
+            <mwc-card-media style={{'--mdc-card-media-background-image': 'url("https://lh3.googleusercontent.com/duoMsnozKjVDWvdKT25cpk9hO612I8nws7A3Bv-9NPBV8Kt8XP4ystWxdODf5uP4bDChjbT5M7Jqtbc6PoadSXF4aFmwUd7HU3bWSg=w1064-v0")'}} />
+            <div className="component-card__header">
+                <div className="components-card-header">
+                    <div className="demo-card__title components-card-header-title">
+                        <span className="components-card-header-title-text">Tooltip <code>mwc-tooltip</code></span>
+                    </div>
+                    <div className="demo-card__subtitle">
+                        <span>Tooltips display informative text when users hover over, focus on, or tap an element.</span>
+                        <br/><br/>
+                        <small>Status: <a target="_blank" href="https://github.com/material-components/material-components-web-components/issues/1499">TBD</a></small>
+                    </div>
+                </div>
+            </div>
+        </mwc-card-primary-action>
+    </mwc-card>
+</mwc-layout-grid>
+<br/>
+
+## Quick start
+
+#### 1) Install
+Install a component from NPM:
+
+```sh
+npm install @maicol07/mwc-layout-grid
+```
+
+#### 2) Write HTML and JavaScript
+Import the component's JavaScript module, use the component in your HTML, and control it with JavaScript, just like you
+would with a built-in element such as `<button>`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Example App</title>
+
+    <!-- Your application may load the Roboto and Material Icons fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Use Web Components in your HTML like regular built-in elements. -->
+    <mwc-layout-grid id="myGrid">
+        <p>I'm on the first column</p>
+        <button> I'm in the middle</button>
+        <input value="I'm in the last column"/>
+    </mwc-layout-grid>
+
+    <!-- Material Web uses standard JavaScript modules. -->
+    <script type="module">
+      // Importing this module registers <mwc-button> as an element that you
+      // can use in this page.
+      //
+      // Note this import is a bare module specifier, so it must be converted
+      // to a path using a server such as Web Dev Server.
+      import '@maicol07/mwc-layout-grid';
+
+      // Standard DOM APIs work with Web Components just like they do for
+      // built-in elements.
+      const grid = document.querySelector('#myGrid');
+      button.addEventListener('onmouseenter', () => {
+        alert('You entered the layout grid!');
+      });
+    </script>
+  </body>
+</html>
+```
+
+#### 3) Serve
+Serve your HTML with any server or build process that supports *bare module specifier resolution* (see next section):
+
+```sh
+npm install --save-dev @web/dev-server
+npx web-dev-server --node-resolve
+```
+
+## Bare module specifiers
+Material Web & Material Web Additions are published as
+standard [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) that use *bare
+module specifiers*. Bare module specifiers are not yet supported by browsers, so it is necessary to use a tool that
+transforms them to a *path* (for example from `@maicol07/mwc-layout-grid`
+to `./node_modules/@maicol07/mwc-layout-grid/mwc-layout-grid.js`).
+
+Two great choices for tools that do this are:
+
+- During local development, use Modern Web's [`Web Dev Server`](https://modern-web.dev/docs/dev-server/overview/) with
+the `--node-resolve` flag.
+- For your production deployment, build your application with [Rollup](https://rollupjs.org/guide/en/) using
+the [`rollup-plugin-node-resolve`](https://github.com/rollup/rollup-plugin-node-resolve) plugin or similar.
+
+## Fonts
+Most applications should include the following tags in their main HTML file to ensure that text and icons render
+correctly:
+
+```html
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+```
+
+Material Web & Material Web Additions default to using the [Roboto](https://fonts.google.com/specimen/Roboto) font for
+text, and the [Material Icons](https://google.github.io/material-design-icons/) font for icons. These fonts are *not*
+automatically loaded, so it is the application's responsiblity to ensure that they are loaded.
+
+Note that if you load the Material Icons font in a different way to the recommendation shown above, be sure to
+include [`font-display: block`](https://google.github.io/material-design-icons/) in your `@font-face` CSS rule. This
+prevents icons from initially displaying their raw *ligature* text before the font has loaded. The `<link>` tag
+recommended above automaticaly handles this setting.

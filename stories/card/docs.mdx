@@ -1,0 +1,174 @@
+import {ArgsTable, Canvas, PRIMARY_STORY, Stories, Story, Subtitle, Title} from '@storybook/addon-docs';
+import dedent from 'ts-dedent';
+import README from '../../packages/card/README.md';
+import {Description} from '@storybook/components';
+import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';
+
+<Title />
+<Subtitle />
+
+<Description markdown={README}/>
+
+## Example Usage
+### Standard
+<Canvas
+    withToolbar
+    mdxSource={dedent`
+        <mwc-card>
+          Content
+        </mwc-card>
+    `}>
+    <mwc-card style={{'--mdc-card-padding': '16px'}}>
+        Content
+    </mwc-card>
+</Canvas>
+
+> You may want to apply padding to card contents (recommended to `16px` by the Material Design guidelines).
+> In the previous live example and the following one the padding is already applied.
+> ```css
+> mwc-card {
+>     --mdc-card-padding: 16px;
+> }
+> ```
+
+### Outlined card
+Just add the `outlined` attribute to your card.
+
+<Canvas
+    withToolbar
+    mdxSource={dedent`
+        <mwc-card outlined>
+          Content
+        </mwc-card>
+    `}>
+    <mwc-card outlined style={{'--mdc-card-padding': '16px'}}>
+        Content
+    </mwc-card>
+</Canvas>
+
+### Primary action
+If a majority of the card should be actionable, you can wrap the actionable content inside the `<mwc-card-primary-action>` element.
+
+<Canvas
+    withToolbar
+    mdxSource={dedent`
+        <mwc-card class="demo-card">
+            <mwc-card-primary-action>
+                <div class="demo-card__header">
+                    <div class="demo-card__header-text">
+                        <div class="demo-card__title">Our Changing Planet</div>
+                        <div class="demo-card__subtitle">by Kurt Wagner</div>
+                    </div>
+                </div>
+            </mwc-card-primary-action>
+        </mwc-card>
+    `}>
+    <mwc-card class="demo-card">
+        <mwc-card-primary-action>
+            <div className="demo-card__header">
+                <div className="demo-card__header-text">
+                    <div className="demo-card__title">Our Changing Planet</div>
+                    <div className="demo-card__subtitle">by Kurt Wagner</div>
+                </div>
+            </div>
+        </mwc-card-primary-action>
+    </mwc-card>
+</Canvas>
+
+### Media
+If you want to display an image in the card, you can add the `<mwc-card-media>` component to your card/primary action.
+
+<Canvas
+    withToolbar
+    mdxSource={dedent`
+        <mwc-card class="demo-card">
+            <mwc-card-primary-action>
+                <mwc-card-media aspectRatio="16-9" class="demo-card__media demo-crop-image"></mwc-card-media>
+                <div class="demo-card__header">
+                    <div class="demo-card__header-text">
+                        <div class="demo-card__title">Our Changing Planet</div>
+                        <div class="demo-card__subtitle">by Kurt Wagner</div>
+                    </div>
+                </div>
+                <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+                    Visit ten places on our planet that are undergoing the biggest changes today.
+                </div>
+            </mwc-card-primary-action>
+        </mwc-card>
+    `}>
+    <mwc-card class="demo-card">
+        <mwc-card-primary-action>
+            <mwc-card-media aspectRatio="16-9" class="demo-card__media demo-crop-image"></mwc-card-media>
+            <div className="demo-card__header">
+                <div className="demo-card__header-text">
+                    <div className="demo-card__title">Our Changing Planet</div>
+                    <div className="demo-card__subtitle">by Kurt Wagner</div>
+                </div>
+            </div>
+            <div className="demo-card__secondary mdc-typography mdc-typography--body2">
+                Visit ten places on our planet that are undergoing the biggest changes today.
+            </div>
+        </mwc-card-primary-action>
+    </mwc-card>
+</Canvas>
+
+
+### Actions
+This area is used to show different actions the user can take, typically at the bottom of a card.
+
+#### Buttons
+You can add buttons in your card via the `actionButtons` slot:
+<Canvas withToolbar>
+    <Story id="card--basic-with-only-buttons"/>
+</Canvas>
+
+#### Icon Buttons
+You can add icon buttons in your card via the `actionIcons` slot:
+
+<Canvas withToolbar>
+    <Story id="card--basic-with-only-icons"/>
+</Canvas>
+
+#### Other examples
+Other examples are available in the sidebar or below these docs.
+
+## API
+### Slots
+| Name     | Description                                                        |
+|----------|--------------------------------------------------------------------|
+| default  | Default slot that contains the card contents and actions           |
+| `button` | Optional `<button>` to display an action button in the action row. |
+| `icon`   | Optional `<button>` to display an action button in the action row. |
+
+### Properties/Attributes
+<ArgsTable story={PRIMARY_STORY} />
+
+### Methods
+*None*
+
+### Events
+*None*
+
+### CSS Custom Properties
+#### MWC Card
+<CssPropsBlock customProperties={undefined}/>
+
+#### MWC Card Media
+<CssPropsBlock customProperties={{
+    'mdc-card-media-border-radius': {
+        description: 'The border radius of the card media.',
+        value: '0',
+        control: 'text'
+    },
+    'mdc-card-media-background-image': {
+        description: 'The background image of the card media.',
+        value: 'none',
+        control: 'text'
+    }}}
+/>
+
+## Additional references
+- [MDC Web: Card](https://material.io/develop/web/components/card/)
+
+## Other examples
+<Stories />
