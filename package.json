@@ -47,6 +47,7 @@
     "@typescript-eslint/parser": "^5.21.0",
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "babel-loader": "^8.2.5",
+    "command-line-args": "^5.2.1",
     "css-loader": "^6.7.1",
     "del-cli": "^4.0.1",
     "eslint": "^8.14.0",
