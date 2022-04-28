@@ -25,10 +25,11 @@ jobs:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
       - name: Install dependencies
         run: pnpm install
-        #👇 Adds Chromatic as a step in the workflow
+      - name: Build styling
+        run: pnpm run build:styling
+      - name: Create custom elements manifest
+        run: pnpm custom-elements-manifest
       - uses: chromaui/action@v1
-        # Options required for Chromatic's GitHub Action
         with:
-          #👇 Chromatic projectToken,
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}

@@ -20,7 +20,7 @@
     "powerwash": "pnpm powerwash:ts & pnpm powerwash:styling && rm -rf node_modules",
     "watch": "pnpm build && node scripts/watcher.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "pnpm custom-elements-manifest && pnpm build:styling && build-storybook",
+    "build-storybook": "build-storybook",
     "custom-elements-manifest": "cem analyze --litelement --globs \"packages/*/*.ts\""
   },
   "devDependencies": {
