@@ -15,7 +15,7 @@
  limitations under the License.
  */
 import {customElement} from 'lit/decorators.js';
-import {CardPrimaryActionBase} from './mwc-card-primary-action-base.js';
+import {CardPrimaryActionBase} from './mwc-card-primary-action-base';
 import {styles} from './mwc-card-primary-action.css';
 
 declare global {
