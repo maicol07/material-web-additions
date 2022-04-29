@@ -1,11 +1,11 @@
 import {Meta, Story} from '@storybook/web-components';
 // @ts-ignore
 import {MWCCard} from '../../packages/card';
-import '../../packages/card/mwc-card';
+import '../../packages/card/mwc-card.js';
 // @ts-ignore
-import '../../packages/card/mwc-card-media';
+import '../../packages/card/mwc-card-media.js';
 // @ts-ignore
-import '../../packages/card/mwc-card-primary-action';
+import '../../packages/card/mwc-card-primary-action.js';
 import {html} from 'lit';
 import '@material/mwc-icon-button';
 import '@material/mwc-button';
