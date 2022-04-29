@@ -8,6 +8,7 @@ import '../packages/card/mwc-card';
 import '../packages/card/mwc-card-primary-action';
 import '../packages/card/mwc-card-media';
 import '@material/mwc-icon-button';
+import {linkTo} from '@storybook/addon-links';
 
 <Meta title="Introduction" parameters={{previewTabs: {canvas: {hidden: true}}}} />
 
@@ -64,7 +65,7 @@ and rework them as a unique package
         </mwc-card-primary-action>
     </mwc-card>
     <mwc-card outlined>
-        <mwc-card-primary-action>
+        <mwc-card-primary-action onClick={linkTo('Card')}>
             <mwc-card-media style={{'--mdc-card-media-background-image': 'url("https://github.com/material-components/material-components-web/raw/master/packages/mdc-card/images/card-elevated.png")'}} />
             <div className="component-card__header">
                 <div className="components-card-header">
@@ -122,7 +123,7 @@ and rework them as a unique package
         </mwc-card-primary-action>
     </mwc-card>
     <mwc-card outlined>
-        <mwc-card-primary-action>
+        <mwc-card-primary-action onClick={linkTo('Layout Grid')}>
             <mwc-card-media style={{'--mdc-card-media-background-image': `url("${LayoutGridImage}")`}} />
             <div className="component-card__header">
                 <div className="components-card-header">
@@ -144,7 +145,7 @@ and rework them as a unique package
         <a href="https://github.com/maicol07/material-web-additions/packages/layout-grid" title="Go to source code" target="_blank" slot="icon">
             <mwc-icon-button icon="code" aria-label="Go to source code"/>
         </a>
-        <a href="https://github.com/chromakey-io/mwc-layout-grid" title="Go to original repo (Chromakey mwc-layout-grid)" target="_blank" slot="icon">
+        <a href="https://github.com/chromakey-io/mwc-layout-grid" title="Go to original repo (Chromakey - mwc-layout-grid)" target="_blank" slot="icon">
             <mwc-icon-button icon="source" aria-label="Go to original repo"/>
         </a>
     </mwc-card>

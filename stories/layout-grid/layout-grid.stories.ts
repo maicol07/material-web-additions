@@ -8,7 +8,7 @@ import DocsPage from './docs.mdx';
 import dedent from 'ts-dedent';
 
 export default {
-    title: 'LayoutGrid',
+    title: 'Layout Grid',
     component: 'mwc-layout-grid',
     expanded: true,
     // More on argTypes: https://storybook.js.org/docs/web-components/api/argtypes
