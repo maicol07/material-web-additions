@@ -9,7 +9,7 @@
     "url": "https://github.com/maicol07/mwc-layout-grid"
   },
   "scripts": {
-    "build:style": "node ../../scripts/sass-to-lit-css/index.js mwc-data-table.scss mwc-data-table-column.scss mwc-data-table-row.scss mwc-data-table-cell.scss"
+    "build:style": "node ../../scripts/sass-to-lit-css/index.js mwc-data-table.scss mwc-data-table-column.scss mwc-data-table-row.scss mwc-data-table-cell.scss mwc-data-table-footer.scss"
   },
   "author": "",
   "license": "Apache-2.0",
