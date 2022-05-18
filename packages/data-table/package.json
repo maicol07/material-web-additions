@@ -15,6 +15,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@material/animation": "^14.0.0",
+    "@material/checkbox": "^14.0.0",
     "@material/data-table": "^14.0.0",
     "@material/density": ">=13.0.0",
     "@material/feature-targeting": "^14.0.0",
