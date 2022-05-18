@@ -153,6 +153,7 @@ importers:
       '@material/checkbox': ^14.0.0
       '@material/data-table': ^14.0.0
       '@material/density': '>=13.0.0'
+      '@material/dom': ^14.0.0
       '@material/feature-targeting': ^14.0.0
       '@material/mwc-base': ^0.26.1
       '@material/mwc-checkbox': ^0.26.1
@@ -171,6 +172,7 @@ importers:
       '@material/checkbox': 14.0.0
       '@material/data-table': 14.0.0
       '@material/density': 14.0.0
+      '@material/dom': 14.0.0
       '@material/feature-targeting': 14.0.0
       '@material/mwc-base': 0.26.1
       '@material/mwc-checkbox': 0.26.1
