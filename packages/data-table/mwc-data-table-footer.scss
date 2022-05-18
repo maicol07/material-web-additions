@@ -1,6 +1,6 @@
-@use "@material/data-table";
+@import "mwc-data-table";
 
 :host {
-  @extend .mdc-data-table--pagination;
+  @extend .mdc-data-table__pagination;
   display: table-footer-group;
 }
