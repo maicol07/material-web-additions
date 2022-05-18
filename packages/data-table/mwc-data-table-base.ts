@@ -54,6 +54,12 @@ export class DataTableBase extends BaseElement {
    * Index of the first row to be shown on the current page.
    */
   @property({type: Number, reflect: true}) firstRowOfPage = 1;
+  /** @internal */
+  protected pageSizesArray: number[] = JSON.parse(this.pageSizes);
+  /**
+   * Size of the current page.
+   */
+  @property({type: Number, reflect: true}) currentPageSize = this.pageSizesArray[0];
   /**
    * Index of the last row to be shown on the current page.
    */
@@ -93,12 +99,6 @@ export class DataTableBase extends BaseElement {
   @queryAssignedElements({slot: 'header-cell', selector: 'mwc-data-table-column'}) columns!: DataTableColumn[];
   /** @internal */
   @queryAssignedElements({slot: 'row', selector: 'mwc-data-table-row'}) rows!: DataTableRow[];
-  /** @internal */
-  protected pageSizesArray: number[] = JSON.parse(this.pageSizes);
-  /**
-   * Size of the current page.
-   */
-  @property({type: Number, reflect: true}) currentPageSize = this.pageSizesArray[0];
   /** @internal */
   @query('.mdc-data-table') protected tableElement!: HTMLTableElement;
   /** @internal */
