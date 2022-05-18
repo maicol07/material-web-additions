@@ -1,0 +1,35 @@
+@use "@material/data-table/data-table";
+@use "density";
+
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+
+@include density.density-row();
+
+:host {
+  @extend .mdc-data-table__row;
+
+  display: table-row;
+  vertical-align: inherit;
+}
+
+:host(:not([selected]):hover) {
+    background-color:rgba(0, 0, 0, 0.04)
+}
+
+:host(.without-bottom-border) ::slotted(mwc-data-table-cell),
+:host(:not([hidden]):last-child) ::slotted(mwc-data-table-cell) {
+  border-bottom: none;
+}
+
+:host([selected]) {
+  @extend .mdc-data-table__row--selected;
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+slot {
+  vertical-align: inherit;
+}

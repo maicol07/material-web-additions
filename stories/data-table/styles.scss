@@ -1,0 +1,7 @@
+@use "@material/typography";
+
+.demo-data-table-header {
+  @include typography.typography(subtitle1);
+
+  margin-top: 32px;
+}

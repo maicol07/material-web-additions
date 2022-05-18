@@ -1,0 +1,40 @@
+@use "@material/data-table";
+@use "@material/data-table/data-table" as dataTable;
+@use "@material/feature-targeting";
+@use "@material/theme";
+@use "density";
+
+@include dataTable.core-styles;
+@include dataTable.theme-baseline;
+
+@include density.density-header-row();
+@include density.density-pagination();
+
+.mdc-data-table__table {
+  display: table;
+
+  width: var(--mdc-data-table-width);
+  height: var(--mdc-data-table-height);
+}
+
+.mdc-data-table__head {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.mdc-data-table__header-row {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.mdc-data-table__content {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+slot {
+  vertical-align: inherit;
+}

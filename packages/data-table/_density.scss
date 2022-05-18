@@ -1,0 +1,64 @@
+@use "@material/data-table/mixins" as data-table;
+@use "@material/density";
+@use "@material/feature-targeting";
+
+$sizes: ("tight": -1, "comfortable": -2, "dense": -3, "compact": -4);
+
+$minimum-row-height: 36px !default;
+$row-height: 52px !default;
+
+$density-config: (
+    height: (
+        maximum: $row-height,
+        default: $row-height,
+        minimum: $minimum-row-height,
+    ),
+);
+
+@function get-header-row-height($height) {
+  @return $height + 4px;
+}
+
+@function get-height($density-scale) {
+  @return density.prop-value(
+        $density-config: $density-config,
+        $density-scale: $density-scale,
+        $property-name: height,
+  );
+}
+
+@mixin density-header-row($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
+
+  @each $density, $value in $sizes {
+    :host([density="#{$density}"]) .mdc-data-table__header-row {
+      @include feature-targeting.targets($feat-structure) {
+        height: get-header-row-height(get-height($value));
+      }
+    }
+  }
+}
+
+@mixin density-row($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
+
+  @each $density, $value in $sizes {
+    :host([density="#{$density}"]) {
+      @include feature-targeting.targets($feat-structure) {
+        height: get-height($value);
+      }
+    }
+  }
+}
+
+@mixin density-pagination($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
+
+  @each $density, $value in $sizes {
+    .mdc-data-table__pagination {
+      @include feature-targeting.targets($feat-structure) {
+        min-height: get-height($value);
+      }
+    }
+  }
+}

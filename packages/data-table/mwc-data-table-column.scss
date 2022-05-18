@@ -1,0 +1,52 @@
+@use "@material/data-table/data-table";
+@use "density";
+
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+
+:host {
+  @extend .mdc-data-table__header-cell;
+
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+:host([type="numeric"]) {
+  @extend .mdc-data-table__header-cell--numeric;
+}
+
+:host([type="checkbox"]) {
+  @extend .mdc-data-table__header-cell--checkbox;
+}
+
+:host([sortable]) {
+  @extend .mdc-data-table__header-cell--with-sort;
+}
+
+:host([sorted]) {
+  @extend .mdc-data-table__header-cell--sorted;
+}
+
+:host([sortedDescending]) {
+  @extend .mdc-data-table__header-cell--sorted-descending;
+}
+
+:host([filterable]) {
+  &:not([type="checkbox"]) {
+    padding: 8px 16px;
+  }
+
+  .mdc-data-table__header-cell-filter-wrapper {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+
+  .mdc-data-table__header-cell-label {
+    white-space: nowrap;
+  }
+
+  .mdc-data-table__header-cell-filter-textfield {
+    width: fit-content;
+  }
+}

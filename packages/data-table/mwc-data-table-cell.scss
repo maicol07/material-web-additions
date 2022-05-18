@@ -1,0 +1,19 @@
+@use "@material/data-table/data-table";
+
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+
+:host {
+  @extend .mdc-data-table__cell;
+
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+:host([type="numeric"]) {
+  @extend .mdc-data-table__cell--numeric;
+}
+
+:host([type="checkbox"]) {
+  @extend .mdc-data-table__cell--checkbox;
+}

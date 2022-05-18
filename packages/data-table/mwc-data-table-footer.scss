@@ -1,0 +1,6 @@
+@use "@material/data-table";
+
+:host {
+  @extend .mdc-data-table--pagination;
+  display: table-footer-group;
+}

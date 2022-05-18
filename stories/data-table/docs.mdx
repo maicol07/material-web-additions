@@ -1,0 +1,53 @@
+import {ArgsTable, Stories, Title} from '@storybook/addon-docs';
+import README from '../../packages/data-table/README.md';
+import {Description} from '@storybook/components';
+import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';
+import {Standard} from './data-table.stories';
+
+<Title />
+
+<Description markdown={README}/>
+
+## Example Usage
+<Stories title={""} includePrimary/>
+
+## API
+### Slots
+#### DataTable
+| Name     | Description                                       |
+|----------|---------------------------------------------------|
+| default  | Default slot that contains all the table elements |
+| `row`    | Slot that contains all the table rows             |
+| `column` | Slot that contains all the table columns          |
+| `footer` | Slot that contains the table footer               |
+
+#### DataTableRow
+| Name    | Description                                      |
+|---------|--------------------------------------------------|
+| default | Default slot that contains all the rows elements |
+
+#### DataTableCell
+| Name    | Description                                        |
+|---------|----------------------------------------------------|
+| default | Default slot that can contain a checkbox or a text |
+
+#### DataTableColumn
+| Name               | Description                                                                                                                  |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------|
+| default            | Default slot that contains the column label                                                                                  |
+| `sort-icon-on`     | Slot that contains the ascending sort icon of the sort button. If not supplied, an mwc-icon element will be created for you  |
+| `sort-icon-off`    | Slot that contains the descending sort icon of the sort button. If not supplied, an mwc-icon element will be created for you |
+| `checkbox`         | Slot that can contain a checkbox. If not supplied, an mwc-checkbox element will be created for you                           |
+| `filter-textfield` | Slot that can contain a textfield. If not supplied, an mwc-textfield element will be created for you                         |
+
+### Properties/Attributes & Events
+<ArgsTable story={Standard.id}/>
+
+### Methods
+*None*
+
+### CSS Custom Properties
+<CssPropsBlock customProperties={undefined}/>
+
+## Additional references
+- [MDC Web: Data Table](https://material.io/develop/web/components/data-table/)
