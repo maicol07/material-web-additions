@@ -149,6 +149,7 @@ importers:
 
   packages/data-table:
     specifiers:
+      '@material/animation': ^14.0.0
       '@material/data-table': ^14.0.0
       '@material/density': '>=13.0.0'
       '@material/feature-targeting': ^14.0.0
@@ -165,6 +166,7 @@ importers:
       tslib: ^2.4.0
       typescript: ^4.6.4
     dependencies:
+      '@material/animation': 14.0.0
       '@material/data-table': 14.0.0
       '@material/density': 14.0.0
       '@material/feature-targeting': 14.0.0
