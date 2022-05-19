@@ -15,8 +15,8 @@ MWC Data table encapsulates [MDC Data Table](https://material.io/components/data
 ![DataTable](https://github.com/material-components/material-components-web/raw/master/packages/mdc-data-table/images/data-table-hero.png)
 
 ## Installation
-[![See it on NPM!](https://img.shields.io/npm/v/@maicol07/mwc-data-table?style=for-the-badge)](https://www.npmjs.com/package/@maicol07/mwc-layout-grid)
-[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@maicol07/mwc-data-table?style=for-the-badge)](https://bundlephobia.com/result?p=@maicol07/mwc-layout-grid)
+[![See it on NPM!](https://img.shields.io/npm/v/@maicol07/mwc-data-table?style=for-the-badge)](https://www.npmjs.com/package/@maicol07/mwc-data-table)
+[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@maicol07/mwc-data-table?style=for-the-badge)](https://bundlephobia.com/result?p=@maicol07/mwc-data-table)
 
 | Package Manager | Command                                |
 |-----------------|----------------------------------------|
