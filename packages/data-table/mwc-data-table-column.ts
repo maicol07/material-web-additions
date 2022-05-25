@@ -8,7 +8,7 @@ import '@material/mwc-textfield';
 import '@material/mwc-icon-button-toggle';
 import '@material/mwc-checkbox';
 import '@material/mwc-icon';
-import {CellCheckedEventDetail} from '@material/mwc-data-table/mwc-data-table-cell';
+import {CellCheckedEventDetail} from './mwc-data-table-cell';
 
 export interface FilterTextFieldInputEventDetail {
   field: TextField,
@@ -109,6 +109,7 @@ export class DataTableColumnBase extends LitElement {
 
   renderSlot() {
     if (this.sortable) {
+      // noinspection AssignmentResultUsedJS
       return html`
           <div class="mdc-data-table__header-cell-wrapper" @click=${() => this.withSortButton = !this.withSortButton}>
               <mwc-icon-button-toggle class="mdc-data-table__sort-icon-button" ?on=${this.sortedDescending} @click=${() => undefined/* this.sortDesc = !this.sortDesc*/} ?hidden=${!this.withSortButton} style="--mdc-icon-button-size: 28px;">

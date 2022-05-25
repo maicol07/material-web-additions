@@ -22,7 +22,7 @@ import '@material/mwc-icon-button';
 import '@material/mwc-linear-progress';
 import '@material/mwc-select';
 import {LinearProgress} from '@material/mwc-linear-progress';
-import {FilterTextFieldInputEventDetail} from '@material/mwc-data-table/mwc-data-table-column';
+import {FilterTextFieldInputEventDetail} from './mwc-data-table-column';
 
 export interface RowSelectionChangedDetail {
   row: DataTableRow,
