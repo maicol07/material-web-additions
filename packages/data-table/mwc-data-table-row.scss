@@ -18,7 +18,7 @@
 }
 
 :host(.without-bottom-border) ::slotted(mwc-data-table-cell),
-:host(:not([hidden]):last-child) ::slotted(mwc-data-table-cell) {
+:host(:not([hidden]):last-of-type) ::slotted(mwc-data-table-cell) {
   border-bottom: none;
 }
 

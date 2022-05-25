@@ -39,14 +39,14 @@ slot {
   cursor: initial;
 }
 
-:host(:first-child),
-:host(:first-child) ::slotted(mwc-card-media:first-child) {
+:host(:first-of-type),
+:host(:first-of-type) ::slotted(mwc-card-media:first-of-type) {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
 }
 
-:host(:last-child),
-:host(:last-child) ::slotted(mwc-card-media:last-child) {
+:host(:last-of-type),
+:host(:last-of-type) ::slotted(mwc-card-media:last-of-type) {
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
 }
