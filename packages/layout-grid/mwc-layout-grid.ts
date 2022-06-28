@@ -1,12 +1,12 @@
 import {customElement} from 'lit/decorators.js';
 
-import {LayoutGridBase} from './mwc-layout-grid-base';
-import {styles} from './mwc-layout-grid.css';
+import {LayoutGridBase} from './mwa-layout-grid-base';
+import {styles} from './mwa-layout-grid.css';
 import {DOMAttributes} from 'react';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-layout-grid': LayoutGrid;
+    'mwa-layout-grid': LayoutGrid;
   }
 
   interface HTMLAttributes<T> extends DOMAttributes<T> {
@@ -19,7 +19,7 @@ declare global {
   }
 }
 
-@customElement('mwc-layout-grid')
+@customElement('mwa-layout-grid')
 export class LayoutGrid extends LayoutGridBase {
   static override styles = [styles];
 }

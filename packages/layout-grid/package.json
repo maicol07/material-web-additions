@@ -1,14 +1,14 @@
 {
-  "name": "@maicol07/mwc-layout-grid",
+  "name": "@mwa/layout-grid",
   "version": "0.25.3-1",
   "description": "material compoments web components implementation of MDC Layout Grid",
-  "main": "mwc-layout-grid.js",
+  "main": "mwa-layout-grid.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maicol07/mwc-layout-grid"
+    "url": "https://github.com/maicol07/mwa-layout-grid"
   },
   "scripts": {
-    "build:style": "node ../../scripts/sass-to-lit-css/index.js mwc-layout-grid.scss"
+    "build:style": "node ../../scripts/sass-to-lit-css/index.js mwa-layout-grid.scss"
   },
   "author": "",
   "license": "Apache-2.0",

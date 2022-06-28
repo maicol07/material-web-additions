@@ -23,7 +23,7 @@
     "outDir": "./",
     "baseUrl": "./packages",
     "paths": {
-      "@material/mwc-*": [
+      "@mwa/*": [
         "./*"
       ]
     },
@@ -65,13 +65,16 @@
   "exclude": [],
   "references": [
     {
-      "path": "packages/layout-grid"
-    },
-    {
       "path": "packages/card"
     },
     {
       "path": "packages/data-table"
+    },
+    {
+      "path": "packages/icon-button"
+    },
+    {
+      "path": "packages/layout-grid"
     }
   ]
 }

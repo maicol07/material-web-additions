@@ -1,17 +1,17 @@
 {
-  "name": "@maicol07/mwc-card",
+  "name": "@mwa/card",
   "version": "0.25.3",
   "description": "Material compoments web components implementation of MDC Card",
-  "main": "mwc-card.js",
+  "main": "mwa-card.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maicol07/mwc-layout-grid"
+    "url": "https://github.com/maicol07/mwa-layout-grid"
   },
   "scripts": {
     "build:style": "pnpm build:card-style && pnpm build:card-media-style && pnpm build:card-primary-action-style",
-    "build:card-style": "node ../../scripts/sass-to-lit-css/index.js mwc-card.scss",
-    "build:card-media-style": "node ../../scripts/sass-to-lit-css/index.js mwc-card-media.scss",
-    "build:card-primary-action-style": "node ../../scripts/sass-to-lit-css/index.js mwc-card-primary-action.scss"
+    "build:card-style": "node ../../scripts/sass-to-lit-css/index.js mwa-card.scss",
+    "build:card-media-style": "node ../../scripts/sass-to-lit-css/index.js mwa-card-media.scss",
+    "build:card-primary-action-style": "node ../../scripts/sass-to-lit-css/index.js mwa-card-primary-action.scss"
   },
   "author": "",
   "license": "Apache-2.0",

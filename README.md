@@ -23,7 +23,7 @@ A few notable changes you should expect:
 - Simplification of tag name prefixes to `md-` (CSS custom properties will be `--md-`)
 - Components with variant attributes will be split into several variant components:
 
-  Example: `mwc-card` will be split into `md-card`, `md-outlined-card`, `md-tonal-button`, `md-outlined-button`, etc
+  Example: `mwa-card` will be split into `md-card`, `md-outlined-card`, `md-tonal-button`, `md-outlined-button`, etc
 
 [Contributing Guide](#Contributing)
 
@@ -36,10 +36,10 @@ and rework them as a unique package
 | Component              | Status                                                                                                                                     | Original author                                                                                                                     |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `<mwc-bottom-app-bar>` | [*TBD*](https://github.com/material-components/material-components-web-components/issues/298) (Not planned at the moment)                 |                                                                                                                                     |
-| `<mwc-card>`           | [![Published on npm](https://img.shields.io/npm/v/@maicol07/mwc-card.svg)](https://www.npmjs.com/package/@maicol07/mwc-card)               | [AuthX](https://github.com/AuthX) ([Repo](https://github.com/AuthX/material-components-web-components/blob/develop/packages/card)) |
+| `<mwa-card>`           | [![Published on npm](https://img.shields.io/npm/v/@mwa/-card.svg)](https://www.npmjs.com/package/@mwa/-card)               | [AuthX](https://github.com/AuthX) ([Repo](https://github.com/AuthX/material-components-web-components/blob/develop/packages/card)) |
 | `<mwc-chip>`           | [*TBD*](https://github.com/material-components/material-components-web-components/issues/418)                                              |                                                                                                                                     |
-| `<mwc-data-table>`     | [*TBD*](https://github.com/material-components/material-components-web-components/issues/386)                                              |                                                                                                                                     |
-| `<mwc-layout-grid>`    | [![Published on npm](https://img.shields.io/npm/v/@maicol07/mwc-layout-grid.svg)](https://www.npmjs.com/package/@maicol07/mwc-layout-grid) | [Chromakey](https://github.com/chromakey-io) ([Repo](https://github.com/chromakey-io/mwc-layout-grid))                             |
+| `<mwa-data-table>`     | [*TBD*](https://github.com/material-components/material-components-web-components/issues/386)                                              |                                                                                                                                     |
+| `<mwa-layout-grid>`    | [![Published on npm](https://img.shields.io/npm/v/@mwa/-layout-grid.svg)](https://www.npmjs.com/package/@mwa/-layout-grid) | [Chromakey](https://github.com/chromakey-io) ([Repo](https://github.com/chromakey-io/mwa-layout-grid))                             |
 | `<mwc-tooltip>`        | [*TBD*](https://github.com/material-components/material-components-web-components/issues/1499)                                             |                                                                                                                                     |
 
 ## Quick start
@@ -49,7 +49,7 @@ and rework them as a unique package
 Install a component from NPM:
 
 ```sh
-npm install @maicol07/mwc-layout-grid
+npm install @mwa/-layout-grid
 ```
 
 #### 2) Write HTML and JavaScript
@@ -72,11 +72,11 @@ would with a built-in element such as `<button>`:
   </head>
   <body>
     <!-- Use Web Components in your HTML like regular built-in elements. -->
-    <mwc-layout-grid id="myGrid">
+    <mwa-layout-grid id="myGrid">
         <p>I'm on the first column</p>
         <button> I'm in the middle</button>
         <input value="I'm in the last column"/>
-    </mwc-layout-grid>
+    </mwa-layout-grid>
 
     <!-- Material Web uses standard JavaScript modules. -->
     <script type="module">
@@ -86,7 +86,7 @@ would with a built-in element such as `<button>`:
       //
       // Note this import is a bare module specifier, so it must be converted
       // to a path using a server such as Web Dev Server.
-      import '@maicol07/mwc-layout-grid';
+      import '@mwa/-layout-grid';
 
       // Standard DOM APIs work with Web Components just like they do for
       // built-in elements.
@@ -113,8 +113,8 @@ npx web-dev-server --node-resolve
 Material Web & Material Web Additions are published as
 standard [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) that use *bare
 module specifiers*. Bare module specifiers are not yet supported by browsers, so it is necessary to use a tool that
-transforms them to a *path* (for example from `@maicol07/mwc-layout-grid`
-to `./node_modules/@maicol07/mwc-layout-grid/mwc-layout-grid.js`).
+transforms them to a *path* (for example from `@mwa/-layout-grid`
+to `./node_modules/@mwa/-layout-grid/mwa-layout-grid.js`).
 
 Two great choices for tools that do this are:
 
@@ -219,7 +219,7 @@ transpilation into a Rollup configuration using [rollup-plugin-babel](https://gi
 Clone and setup the repo:
 
 ```sh
-git clone git@github.com:@maicol07/mwc-layout-grid.git mwc-additions
+git clone git@github.com:@mwa/-layout-grid.git mwc-additions
 cd mwc-additions
 npm install
 npm run build
@@ -266,5 +266,5 @@ npm run dev -- --watch -p <optional port>
 npm run watch:tests
 
 # another terminal (persistent) - debug tests
-npm run test:debug -- --autoWatch --packages <comma sepaarated package names> # e.g. mwc-card,mwc-layout*
+npm run test:debug -- --autoWatch --packages <comma sepaarated package names> # e.g. mwa-card,mwc-layout*
 ```

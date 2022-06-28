@@ -17,8 +17,8 @@
     background-color:rgba(0, 0, 0, 0.04)
 }
 
-:host(.without-bottom-border) ::slotted(mwc-data-table-cell),
-:host(:not([hidden]):last-of-type) ::slotted(mwc-data-table-cell) {
+:host(.without-bottom-border) ::slotted(mwa-data-table-cell),
+:host(:not([hidden]):last-of-type) ::slotted(mwa-data-table-cell) {
   border-bottom: none;
 }
 

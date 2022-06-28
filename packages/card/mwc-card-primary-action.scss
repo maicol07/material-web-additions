@@ -40,13 +40,13 @@ slot {
 }
 
 :host(:first-of-type),
-:host(:first-of-type) ::slotted(mwc-card-media:first-of-type) {
+:host(:first-of-type) ::slotted(mwa-card-media:first-of-type) {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
 }
 
 :host(:last-of-type),
-:host(:last-of-type) ::slotted(mwc-card-media:last-of-type) {
+:host(:last-of-type) ::slotted(mwa-card-media:last-of-type) {
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
 }

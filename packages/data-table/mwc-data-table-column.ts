@@ -8,7 +8,7 @@ import '@material/mwc-textfield';
 import '@material/mwc-icon-button-toggle';
 import '@material/mwc-checkbox';
 import '@material/mwc-icon';
-import {CellCheckedEventDetail} from './mwc-data-table-cell';
+import {CellCheckedEventDetail} from './mwa-data-table-cell';
 
 export interface FilterTextFieldInputEventDetail {
   field: TextField,

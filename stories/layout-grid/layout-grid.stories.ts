@@ -1,5 +1,5 @@
 // @ts-ignore
-import '../../packages/layout-grid/mwc-layout-grid.js';
+import '../../packages/layout-grid/mwa-layout-grid.js';
 import {Meta, Story} from '@storybook/web-components';
 import {LayoutGrid} from '../../packages/layout-grid';
 import {html} from 'lit';
@@ -9,7 +9,7 @@ import dedent from 'ts-dedent';
 
 export default {
     title: 'Layout Grid',
-    component: 'mwc-layout-grid',
+    component: 'mwa-layout-grid',
     expanded: true,
     // More on argTypes: https://storybook.js.org/docs/web-components/api/argtypes
     argTypes: {
@@ -78,15 +78,15 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/web-components/writing-stories/introduction#using-args
 export const Basic: Story<Partial<LayoutGrid>> = ({fixedColumnWidth, align}) => html`
-    <mwc-layout-grid class="demo-grid" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
+    <mwa-layout-grid class="demo-grid" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
         <div class="demo-cell"></div>
         <div class="demo-cell"></div>
         <div class="demo-cell"></div>
-    </mwc-layout-grid>
+    </mwa-layout-grid>
 `;
 
 export const CustomSpanSize: Story<Partial<LayoutGrid>> = ({fixedColumnWidth, align}) => html`
-    <mwc-layout-grid class="demo-grid" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
+    <mwa-layout-grid class="demo-grid" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
         <div class="demo-cell" grid-span="6"></div>
         <div class="demo-cell" grid-span="3"></div>
         <div class="demo-cell" grid-span="2"></div>
@@ -94,7 +94,7 @@ export const CustomSpanSize: Story<Partial<LayoutGrid>> = ({fixedColumnWidth, al
         <div class="demo-cell" grid-span="3"></div>
         <div class="demo-cell" grid-span="1"></div>
         <div class="demo-cell" grid-span="8"></div>
-    </mwc-layout-grid>
+    </mwa-layout-grid>
 `;
 CustomSpanSize.parameters = {
     docs: {
@@ -105,20 +105,20 @@ CustomSpanSize.parameters = {
 };
 
 export const Nested: Story<Partial<LayoutGrid>> = ({fixedColumnWidth, align}) => html`
-    <mwc-layout-grid class="demo-grid" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
-        <mwc-layout-grid class="demo-cell demo-grid" inner style="min-width: 0">
+    <mwa-layout-grid class="demo-grid" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
+        <mwa-layout-grid class="demo-cell demo-grid" inner style="min-width: 0">
             <div class="demo-cell"></div>
             <div class="demo-cell"></div>
-        </mwc-layout-grid>
+        </mwa-layout-grid>
         <div class="demo-cell"></div>
         <div class="demo-cell"></div>
-    </mwc-layout-grid>
+    </mwa-layout-grid>
 `;
 Nested.parameters = {
     docs: {
         description: {
             story: dedent`
-                When your contents need extra structure that cannot be supported by single layout grid, you can nest layout grid within each other. To nest layout grid, add a new \`mwc-layout-grid\` with attribute \`inner\` to wrap around nested content.
+                When your contents need extra structure that cannot be supported by single layout grid, you can nest layout grid within each other. To nest layout grid, add a new \`mwa-layout-grid\` with attribute \`inner\` to wrap around nested content.
                 The nested layout grid behaves exactly like when they are not nested, e.g, they have 12 columns on desktop, 8 columns on tablet and 4 columns on phone. They also use the **same gutter size** as their parents, but margins are not re-introduced since they are living within another cell.
                 However, the Material Design guidelines do not recommend having a deeply nested grid as it might mean an over complicated UX.
             `
@@ -127,11 +127,11 @@ Nested.parameters = {
 };
 
 export const GridAlignment: Story<Partial<LayoutGrid>> = ({fixedColumnWidth, align}) => html`
-    <mwc-layout-grid class="demo-grid demo-grid--alignment" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
+    <mwa-layout-grid class="demo-grid demo-grid--alignment" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
         <div class="demo-cell"></div>
         <div class="demo-cell"></div>
         <div class="demo-cell"></div>
-    </mwc-layout-grid>
+    </mwa-layout-grid>
 `;
 GridAlignment.args = {
     align: 'left'
@@ -145,11 +145,11 @@ GridAlignment.parameters = {
 };
 
 export const GridCellsAlignment: Story<Partial<LayoutGrid>> = ({fixedColumnWidth, align}) => html`
-    <mwc-layout-grid class="demo-grid demo-grid--cell-alignment" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
+    <mwa-layout-grid class="demo-grid demo-grid--cell-alignment" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
         <div class="demo-cell demo-cell--alignment" grid-align="top"></div>
         <div class="demo-cell demo-cell--alignment" grid-align="middle"></div>
         <div class="demo-cell demo-cell--alignment" grid-align="bottom"></div>
-    </mwc-layout-grid>
+    </mwa-layout-grid>
 `;
 GridCellsAlignment.parameters = {
     docs: {
@@ -160,11 +160,11 @@ GridCellsAlignment.parameters = {
 };
 
 export const GridCellsOrder: Story<Partial<LayoutGrid>> = ({fixedColumnWidth, align}) => html`
-    <mwc-layout-grid class="demo-grid" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
+    <mwa-layout-grid class="demo-grid" ?fixedColumnWidth="${fixedColumnWidth}" align="${align}">
         <div class="demo-cell" grid-order="3">first</div>
         <div class="demo-cell" grid-order="1">second</div>
         <div class="demo-cell" grid-order="2">third</div>
-    </mwc-layout-grid>
+    </mwa-layout-grid>
 `;
 GridCellsOrder.parameters = {
     docs: {

@@ -1,5 +1,5 @@
 // @ts-ignore
-import '../../packages/data-table/mwc-data-table';
+import '../../packages/data-table/mwa-data-table';
 import {Meta, Story} from '@storybook/web-components';
 import {DataTable} from '../../packages/data-table';
 import {html} from 'lit';
@@ -8,12 +8,12 @@ import DocsPage from './docs.mdx';
 
 export default {
     title: 'Data Table',
-    component: 'mwc-data-table',
+    component: 'mwa-data-table',
     subcomponents: {
-        'DataTableColumn': 'mwc-data-table-column',
-        'DataTableRow': 'mwc-data-table-row',
-        'DataTableCell': 'mwc-data-table-cell',
-        'DataTableFooter': 'mwc-data-table-footer'
+        'DataTableColumn': 'mwa-data-table-column',
+        'DataTableRow': 'mwa-data-table-row',
+        'DataTableCell': 'mwa-data-table-cell',
+        'DataTableFooter': 'mwa-data-table-footer'
     },
     expanded: true,
     // More on argTypes: https://storybook.js.org/docs/web-components/api/argtypes
@@ -52,7 +52,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/web-components/writing-stories/introduction#using-args
 export const Standard: Story<Partial<DataTable>> = (args) => html`
-    <mwc-data-table aria-label="Desserts"
+    <mwa-data-table aria-label="Desserts"
                     ?paginated="${args.paginated}"
                     ?inProgress="${args.inProgress}"
                     density="${args.density}"
@@ -64,37 +64,37 @@ export const Standard: Story<Partial<DataTable>> = (args) => html`
                     paginationTotalLabel="${args.paginationTotalLabel}"
                     currentPageSize="${args.currentPageSize}"
                     lastRowOfPage="${args.lastRowOfPage}">
-        <mwc-data-table-column>Dessert</mwc-data-table-column>
-        <mwc-data-table-column>Calories</mwc-data-table-column>
-        <mwc-data-table-column>Fat</mwc-data-table-column>
-        <mwc-data-table-column>Carbs</mwc-data-table-column>
-        <mwc-data-table-column>Protein (g)</mwc-data-table-column>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Frozen yogurt</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">159</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">6.0</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">24</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">4.0</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Ice cream sandwich</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">237</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">9.0</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">37</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">4.3</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Eclair</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">262</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">16.0</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">24</mwc-data-table-cell>
-            <mwc-data-table-cell type="number">6.0</mwc-data-table-cell>
-        </mwc-data-table-row>
-    </mwc-data-table>
+        <mwa-data-table-column>Dessert</mwa-data-table-column>
+        <mwa-data-table-column>Calories</mwa-data-table-column>
+        <mwa-data-table-column>Fat</mwa-data-table-column>
+        <mwa-data-table-column>Carbs</mwa-data-table-column>
+        <mwa-data-table-column>Protein (g)</mwa-data-table-column>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Frozen yogurt</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">159</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">6.0</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">24</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">4.0</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Ice cream sandwich</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">237</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">9.0</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">37</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">4.3</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Eclair</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">262</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">16.0</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">24</mwa-data-table-cell>
+            <mwa-data-table-cell type="number">6.0</mwa-data-table-cell>
+        </mwa-data-table-row>
+    </mwa-data-table>
 `;
 
 export const RowSelection: Story<Partial<DataTable>> = (args) => html`
-    <mwc-data-table aria-label="Dessert calories"
+    <mwa-data-table aria-label="Dessert calories"
                     ?paginated="${args.paginated}"
                     ?inProgress="${args.inProgress}"
                     density="${args.density}"
@@ -106,60 +106,60 @@ export const RowSelection: Story<Partial<DataTable>> = (args) => html`
                     paginationTotalLabel="${args.paginationTotalLabel}"
                     currentPageSize="${args.currentPageSize}"
                     lastRowOfPage="${args.lastRowOfPage}">
-        <mwc-data-table-column type="checkbox"></mwc-data-table-column>
-        <mwc-data-table-column>Signal name</mwc-data-table-column>
-        <mwc-data-table-column>Status</mwc-data-table-column>
-        <mwc-data-table-column>Severity</mwc-data-table-column>
-        <mwc-data-table-column>Stage</mwc-data-table-column>
-        <mwc-data-table-column>Time</mwc-data-table-column>
-        <mwc-data-table-column>Roles</mwc-data-table-column>
+        <mwa-data-table-column type="checkbox"></mwa-data-table-column>
+        <mwa-data-table-column>Signal name</mwa-data-table-column>
+        <mwa-data-table-column>Status</mwa-data-table-column>
+        <mwa-data-table-column>Severity</mwa-data-table-column>
+        <mwa-data-table-column>Stage</mwa-data-table-column>
+        <mwa-data-table-column>Time</mwa-data-table-column>
+        <mwa-data-table-column>Roles</mwa-data-table-column>
         
-        <mwc-data-table-row>
-            <mwc-data-table-cell type="checkbox"></mwc-data-table-cell>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Medium</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Allison Brie</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell type="checkbox"></mwc-data-table-cell>
-            <mwc-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwc-data-table-cell>
-            <mwc-data-table-cell>Offline</mwc-data-table-cell>
-            <mwc-data-table-cell>Huge</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Allison Brie</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell type="checkbox"></mwc-data-table-cell>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Medium</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Brie Larson</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell type="checkbox"></mwc-data-table-cell>
-            <mwc-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Minor</mwc-data-table-cell>
-            <mwc-data-table-cell>Not triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Jeremy Lake</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell type="checkbox"></mwc-data-table-cell>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Negligible</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Angelina Cheng</mwc-data-table-cell>
-        </mwc-data-table-row>
-    </mwc-data-table>
+        <mwa-data-table-row>
+            <mwa-data-table-cell type="checkbox"></mwa-data-table-cell>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Medium</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Allison Brie</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell type="checkbox"></mwa-data-table-cell>
+            <mwa-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwa-data-table-cell>
+            <mwa-data-table-cell>Offline</mwa-data-table-cell>
+            <mwa-data-table-cell>Huge</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Allison Brie</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell type="checkbox"></mwa-data-table-cell>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Medium</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Brie Larson</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell type="checkbox"></mwa-data-table-cell>
+            <mwa-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Minor</mwa-data-table-cell>
+            <mwa-data-table-cell>Not triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Jeremy Lake</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell type="checkbox"></mwa-data-table-cell>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Negligible</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Angelina Cheng</mwa-data-table-cell>
+        </mwa-data-table-row>
+    </mwa-data-table>
 `;
 RowSelection.parameters = {
     docs: {
@@ -170,7 +170,7 @@ RowSelection.parameters = {
 };
 
 export const Paginated: Story<Partial<DataTable>> = (args) => html`
-    <mwc-data-table aria-label="Dessert calories"
+    <mwa-data-table aria-label="Dessert calories"
                     ?paginated="${args.paginated}"
                     ?inProgress="${args.inProgress}"
                     density="${args.density}"
@@ -182,54 +182,54 @@ export const Paginated: Story<Partial<DataTable>> = (args) => html`
                     paginationTotalLabel="${args.paginationTotalLabel}"
                     currentPageSize="${args.currentPageSize}"
                     lastRowOfPage="${args.lastRowOfPage}">
-        <mwc-data-table-column>Signal name</mwc-data-table-column>
-        <mwc-data-table-column>Status</mwc-data-table-column>
-        <mwc-data-table-column>Severity</mwc-data-table-column>
-        <mwc-data-table-column>Stage</mwc-data-table-column>
-        <mwc-data-table-column>Time</mwc-data-table-column>
-        <mwc-data-table-column>Roles</mwc-data-table-column>
+        <mwa-data-table-column>Signal name</mwa-data-table-column>
+        <mwa-data-table-column>Status</mwa-data-table-column>
+        <mwa-data-table-column>Severity</mwa-data-table-column>
+        <mwa-data-table-column>Stage</mwa-data-table-column>
+        <mwa-data-table-column>Time</mwa-data-table-column>
+        <mwa-data-table-column>Roles</mwa-data-table-column>
         
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Medium</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Allison Brie</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwc-data-table-cell>
-            <mwc-data-table-cell>Offline</mwc-data-table-cell>
-            <mwc-data-table-cell>Huge</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Allison Brie</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Medium</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Brie Larson</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Minor</mwc-data-table-cell>
-            <mwc-data-table-cell>Not triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Jeremy Lake</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Negligible</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Angelina Cheng</mwc-data-table-cell>
-        </mwc-data-table-row>
-    </mwc-data-table>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Medium</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Allison Brie</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwa-data-table-cell>
+            <mwa-data-table-cell>Offline</mwa-data-table-cell>
+            <mwa-data-table-cell>Huge</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Allison Brie</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Medium</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Brie Larson</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Minor</mwa-data-table-cell>
+            <mwa-data-table-cell>Not triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Jeremy Lake</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Negligible</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Angelina Cheng</mwa-data-table-cell>
+        </mwa-data-table-row>
+    </mwa-data-table>
 `;
 Paginated.args = {
     paginated: true,
@@ -249,7 +249,7 @@ Paginated.parameters = {
 };
 
 export const InProgress: Story<Partial<DataTable>> = (args) => html`
-    <mwc-data-table aria-label="Dessert calories"
+    <mwa-data-table aria-label="Dessert calories"
                     ?paginated="${args.paginated}"
                     ?inProgress="${args.inProgress}"
                     density="${args.density}"
@@ -261,54 +261,54 @@ export const InProgress: Story<Partial<DataTable>> = (args) => html`
                     paginationTotalLabel="${args.paginationTotalLabel}"
                     currentPageSize="${args.currentPageSize}"
                     lastRowOfPage="${args.lastRowOfPage}">
-        <mwc-data-table-column>Signal name</mwc-data-table-column>
-        <mwc-data-table-column>Status</mwc-data-table-column>
-        <mwc-data-table-column>Severity</mwc-data-table-column>
-        <mwc-data-table-column>Stage</mwc-data-table-column>
-        <mwc-data-table-column>Time</mwc-data-table-column>
-        <mwc-data-table-column>Roles</mwc-data-table-column>
+        <mwa-data-table-column>Signal name</mwa-data-table-column>
+        <mwa-data-table-column>Status</mwa-data-table-column>
+        <mwa-data-table-column>Severity</mwa-data-table-column>
+        <mwa-data-table-column>Stage</mwa-data-table-column>
+        <mwa-data-table-column>Time</mwa-data-table-column>
+        <mwa-data-table-column>Roles</mwa-data-table-column>
         
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Medium</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Allison Brie</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwc-data-table-cell>
-            <mwc-data-table-cell>Offline</mwc-data-table-cell>
-            <mwc-data-table-cell>Huge</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Allison Brie</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Medium</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Brie Larson</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Minor</mwc-data-table-cell>
-            <mwc-data-table-cell>Not triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Jeremy Lake</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Negligible</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Angelina Cheng</mwc-data-table-cell>
-        </mwc-data-table-row>
-    </mwc-data-table>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Medium</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Allison Brie</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwa-data-table-cell>
+            <mwa-data-table-cell>Offline</mwa-data-table-cell>
+            <mwa-data-table-cell>Huge</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Allison Brie</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Medium</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Brie Larson</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Minor</mwa-data-table-cell>
+            <mwa-data-table-cell>Not triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Jeremy Lake</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Negligible</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Angelina Cheng</mwa-data-table-cell>
+        </mwa-data-table-row>
+    </mwa-data-table>
 `;
 InProgress.args = {
     inProgress: true
@@ -322,7 +322,7 @@ InProgress.parameters = {
 };
 
 export const WithFilterTextField: Story<Partial<DataTable>> = (args) => html`
-    <mwc-data-table aria-label="Dessert calories"
+    <mwa-data-table aria-label="Dessert calories"
                     ?paginated="${args.paginated}"
                     ?inProgress="${args.inProgress}"
                     density="${args.density}"
@@ -334,54 +334,54 @@ export const WithFilterTextField: Story<Partial<DataTable>> = (args) => html`
                     paginationTotalLabel="${args.paginationTotalLabel}"
                     currentPageSize="${args.currentPageSize}"
                     lastRowOfPage="${args.lastRowOfPage}">
-        <mwc-data-table-column filterable>Signal name</mwc-data-table-column>
-        <mwc-data-table-column>Status</mwc-data-table-column>
-        <mwc-data-table-column>Severity</mwc-data-table-column>
-        <mwc-data-table-column filterable filterCaseSensitive>Stage</mwc-data-table-column>
-        <mwc-data-table-column>Time</mwc-data-table-column>
-        <mwc-data-table-column>Roles</mwc-data-table-column>
+        <mwa-data-table-column filterable>Signal name</mwa-data-table-column>
+        <mwa-data-table-column>Status</mwa-data-table-column>
+        <mwa-data-table-column>Severity</mwa-data-table-column>
+        <mwa-data-table-column filterable filterCaseSensitive>Stage</mwa-data-table-column>
+        <mwa-data-table-column>Time</mwa-data-table-column>
+        <mwa-data-table-column>Roles</mwa-data-table-column>
         
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Medium</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Allison Brie</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwc-data-table-cell>
-            <mwc-data-table-cell>Offline</mwc-data-table-cell>
-            <mwc-data-table-cell>Huge</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Allison Brie</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Medium</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Brie Larson</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Minor</mwc-data-table-cell>
-            <mwc-data-table-cell>Not triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Jeremy Lake</mwc-data-table-cell>
-        </mwc-data-table-row>
-        <mwc-data-table-row>
-            <mwc-data-table-cell>Arcus watch slowdown</mwc-data-table-cell>
-            <mwc-data-table-cell>Online</mwc-data-table-cell>
-            <mwc-data-table-cell>Negligible</mwc-data-table-cell>
-            <mwc-data-table-cell>Triaged</mwc-data-table-cell>
-            <mwc-data-table-cell type="numeric">0:33</mwc-data-table-cell>
-            <mwc-data-table-cell>Angelina Cheng</mwc-data-table-cell>
-        </mwc-data-table-row>
-    </mwc-data-table>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Medium</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Allison Brie</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwa-data-table-cell>
+            <mwa-data-table-cell>Offline</mwa-data-table-cell>
+            <mwa-data-table-cell>Huge</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Allison Brie</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Medium</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Brie Larson</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>monarch: prod shared ares-managed-features-provider-heavy</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Minor</mwa-data-table-cell>
+            <mwa-data-table-cell>Not triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Jeremy Lake</mwa-data-table-cell>
+        </mwa-data-table-row>
+        <mwa-data-table-row>
+            <mwa-data-table-cell>Arcus watch slowdown</mwa-data-table-cell>
+            <mwa-data-table-cell>Online</mwa-data-table-cell>
+            <mwa-data-table-cell>Negligible</mwa-data-table-cell>
+            <mwa-data-table-cell>Triaged</mwa-data-table-cell>
+            <mwa-data-table-cell type="numeric">0:33</mwa-data-table-cell>
+            <mwa-data-table-cell>Angelina Cheng</mwa-data-table-cell>
+        </mwa-data-table-row>
+    </mwa-data-table>
 `;
 WithFilterTextField.parameters = {
     docs: {

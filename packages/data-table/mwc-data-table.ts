@@ -1,47 +1,47 @@
 import {customElement} from 'lit/decorators.js';
 
-import {DataTableBase} from './mwc-data-table-base';
-import {styles as tableStyles} from './mwc-data-table.css';
-import {styles as rowStyles} from './mwc-data-table-row.css';
-import {styles as cellStyles} from './mwc-data-table-cell.css';
-import {styles as columnStyles} from './mwc-data-table-column.css';
-import {styles as footerStyles} from './mwc-data-table-footer.css';
-import {DataTableColumnBase} from './mwc-data-table-column';
-import {DataTableRowBase} from './mwc-data-table-row';
-import {DataTableCellBase} from './mwc-data-table-cell';
-import {DataTableFooterBase} from './mwc-data-table-footer';
+import {DataTableBase} from './mwa-data-table-base';
+import {styles as tableStyles} from './mwa-data-table.css';
+import {styles as rowStyles} from './mwa-data-table-row.css';
+import {styles as cellStyles} from './mwa-data-table-cell.css';
+import {styles as columnStyles} from './mwa-data-table-column.css';
+import {styles as footerStyles} from './mwa-data-table-footer.css';
+import {DataTableColumnBase} from './mwa-data-table-column';
+import {DataTableRowBase} from './mwa-data-table-row';
+import {DataTableCellBase} from './mwa-data-table-cell';
+import {DataTableFooterBase} from './mwa-data-table-footer';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-data-table': DataTable;
-    'mwc-data-table-column': DataTableColumn;
-    'mwc-data-table-row': DataTableRow;
-    'mwc-data-table-cell': DataTableCell;
-    'mwc-data-table-footer': DataTableFooter;
+    'mwa-data-table': DataTable;
+    'mwa-data-table-column': DataTableColumn;
+    'mwa-data-table-row': DataTableRow;
+    'mwa-data-table-cell': DataTableCell;
+    'mwa-data-table-footer': DataTableFooter;
   }
 }
 
-@customElement('mwc-data-table')
+@customElement('mwa-data-table')
 export class DataTable extends DataTableBase {
   static override styles = [tableStyles];
 }
 
-@customElement('mwc-data-table-column')
+@customElement('mwa-data-table-column')
 export class DataTableColumn extends DataTableColumnBase {
   static override styles = [columnStyles];
 }
 
-@customElement('mwc-data-table-row')
+@customElement('mwa-data-table-row')
 export class DataTableRow extends DataTableRowBase {
   static override styles = [rowStyles];
 }
 
-@customElement('mwc-data-table-cell')
+@customElement('mwa-data-table-cell')
 export class DataTableCell extends DataTableCellBase {
   static override styles = [cellStyles];
 }
 
-@customElement('mwc-data-table-footer')
+@customElement('mwa-data-table-footer')
 export class DataTableFooter extends DataTableFooterBase {
   static override styles = [footerStyles];
 }

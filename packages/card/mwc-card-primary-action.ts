@@ -15,17 +15,17 @@
  limitations under the License.
  */
 import {customElement} from 'lit/decorators.js';
-import {CardPrimaryActionBase} from './mwc-card-primary-action-base';
-import {styles} from './mwc-card-primary-action.css';
+import {CardPrimaryActionBase} from './mwa-card-primary-action-base';
+import {styles} from './mwa-card-primary-action.css';
 
 declare global {
     interface HTMLElementTagNameMap {
         // @ts-ignore
-        'mwc-card-primary-action': CardPrimaryAction;
+        'mwa-card-primary-action': CardPrimaryAction;
     }
 }
 
-@customElement('mwc-card-primary-action')
+@customElement('mwa-card-primary-action')
 export class CardPrimaryAction extends CardPrimaryActionBase {
     static override styles = [styles];
 }

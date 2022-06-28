@@ -14,19 +14,19 @@ import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';
 <Canvas
     withToolbar
     mdxSource={dedent`
-        <mwc-card>
+        <mwa-card>
           Content
-        </mwc-card>
+        </mwa-card>
     `}>
-    <mwc-card style={{'--mdc-card-padding': '16px'}}>
+    <mwa-card style={{'--mdc-card-padding': '16px'}}>
         Content
-    </mwc-card>
+    </mwa-card>
 </Canvas>
 
 > You may want to apply padding to card contents (recommended to `16px` by the Material Design guidelines).
 > In the previous live example and the following one the padding is already applied.
 > ```css
-> mwc-card {
+> mwa-card {
 >     --mdc-card-padding: 16px;
 > }
 > ```
@@ -37,53 +37,53 @@ Just add the `outlined` attribute to your card.
 <Canvas
     withToolbar
     mdxSource={dedent`
-        <mwc-card outlined>
+        <mwa-card outlined>
           Content
-        </mwc-card>
+        </mwa-card>
     `}>
-    <mwc-card outlined style={{'--mdc-card-padding': '16px'}}>
+    <mwa-card outlined style={{'--mdc-card-padding': '16px'}}>
         Content
-    </mwc-card>
+    </mwa-card>
 </Canvas>
 
 ### Primary action
-If a majority of the card should be actionable, you can wrap the actionable content inside the `<mwc-card-primary-action>` element.
+If a majority of the card should be actionable, you can wrap the actionable content inside the `<mwa-card-primary-action>` element.
 
 <Canvas
     withToolbar
     mdxSource={dedent`
-        <mwc-card class="demo-card">
-            <mwc-card-primary-action>
+        <mwa-card class="demo-card">
+            <mwa-card-primary-action>
                 <div class="demo-card__header">
                     <div class="demo-card__header-text">
                         <div class="demo-card__title">Our Changing Planet</div>
                         <div class="demo-card__subtitle">by Kurt Wagner</div>
                     </div>
                 </div>
-            </mwc-card-primary-action>
-        </mwc-card>
+            </mwa-card-primary-action>
+        </mwa-card>
     `}>
-    <mwc-card class="demo-card">
-        <mwc-card-primary-action>
+    <mwa-card class="demo-card">
+        <mwa-card-primary-action>
             <div className="demo-card__header">
                 <div className="demo-card__header-text">
                     <div className="demo-card__title">Our Changing Planet</div>
                     <div className="demo-card__subtitle">by Kurt Wagner</div>
                 </div>
             </div>
-        </mwc-card-primary-action>
-    </mwc-card>
+        </mwa-card-primary-action>
+    </mwa-card>
 </Canvas>
 
 ### Media
-If you want to display an image in the card, you can add the `<mwc-card-media>` component to your card/primary action.
+If you want to display an image in the card, you can add the `<mwa-card-media>` component to your card/primary action.
 
 <Canvas
     withToolbar
     mdxSource={dedent`
-        <mwc-card class="demo-card">
-            <mwc-card-primary-action>
-                <mwc-card-media aspectRatio="16-9" class="demo-card__media demo-crop-image"></mwc-card-media>
+        <mwa-card class="demo-card">
+            <mwa-card-primary-action>
+                <mwa-card-media aspectRatio="16-9" class="demo-card__media demo-crop-image"></mwa-card-media>
                 <div class="demo-card__header">
                     <div class="demo-card__header-text">
                         <div class="demo-card__title">Our Changing Planet</div>
@@ -93,12 +93,12 @@ If you want to display an image in the card, you can add the `<mwc-card-media>` 
                 <div class="demo-card__secondary mdc-typography mdc-typography--body2">
                     Visit ten places on our planet that are undergoing the biggest changes today.
                 </div>
-            </mwc-card-primary-action>
-        </mwc-card>
+            </mwa-card-primary-action>
+        </mwa-card>
     `}>
-    <mwc-card class="demo-card">
-        <mwc-card-primary-action>
-            <mwc-card-media aspectRatio="16-9" class="demo-card__media demo-crop-image"></mwc-card-media>
+    <mwa-card class="demo-card">
+        <mwa-card-primary-action>
+            <mwa-card-media aspectRatio="16-9" class="demo-card__media demo-crop-image"></mwa-card-media>
             <div className="demo-card__header">
                 <div className="demo-card__header-text">
                     <div className="demo-card__title">Our Changing Planet</div>
@@ -108,8 +108,8 @@ If you want to display an image in the card, you can add the `<mwc-card-media>` 
             <div className="demo-card__secondary mdc-typography mdc-typography--body2">
                 Visit ten places on our planet that are undergoing the biggest changes today.
             </div>
-        </mwc-card-primary-action>
-    </mwc-card>
+        </mwa-card-primary-action>
+    </mwa-card>
 </Canvas>
 
 

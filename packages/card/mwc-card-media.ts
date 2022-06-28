@@ -1,14 +1,14 @@
 import {customElement} from 'lit/decorators.js';
-import {CardMediaBase} from './mwc-card-media-base';
-import {styles} from './mwc-card-media.css';
+import {CardMediaBase} from './mwa-card-media-base';
+import {styles} from './mwa-card-media.css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-card-media': CardMedia;
+    'mwa-card-media': CardMedia;
   }
 }
 
-@customElement('mwc-card-media')
+@customElement('mwa-card-media')
 export class CardMedia extends CardMediaBase {
     static override styles = [styles];
 }

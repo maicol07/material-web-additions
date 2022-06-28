@@ -1,6 +1,6 @@
 import {html} from 'lit';
 import {property, query, queryAssignedElements} from 'lit/decorators.js';
-import {DataTableColumn, DataTableRow} from './mwc-data-table';
+import {DataTableColumn, DataTableRow} from './mwa-data-table';
 import {
   MDCDataTable,
   MDCDataTableAdapter,
@@ -22,7 +22,7 @@ import '@material/mwc-icon-button';
 import '@material/mwc-linear-progress';
 import '@material/mwc-select';
 import {LinearProgress} from '@material/mwc-linear-progress';
-import {FilterTextFieldInputEventDetail} from './mwc-data-table-column';
+import {FilterTextFieldInputEventDetail} from './mwa-data-table-column';
 
 export interface RowSelectionChangedDetail {
   row: DataTableRow,
@@ -96,9 +96,9 @@ export class DataTableBase extends BaseElement {
   })
   density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
   /** @internal */
-  @queryAssignedElements({slot: 'header-cell', selector: 'mwc-data-table-column'}) columns!: DataTableColumn[];
+  @queryAssignedElements({slot: 'header-cell', selector: 'mwa-data-table-column'}) columns!: DataTableColumn[];
   /** @internal */
-  @queryAssignedElements({slot: 'row', selector: 'mwc-data-table-row'}) rows!: DataTableRow[];
+  @queryAssignedElements({slot: 'row', selector: 'mwa-data-table-row'}) rows!: DataTableRow[];
   /** @internal */
   @query('.mdc-data-table') protected tableElement!: HTMLTableElement;
   /** @internal */
