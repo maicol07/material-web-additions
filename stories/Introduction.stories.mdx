@@ -71,8 +71,8 @@ and rework them as a unique package
                 <div className="components-card-header">
                     <div className="demo-card__title components-card-header-title">
                         <span className="components-card-header-title-text">Card <code>mwa-card</code></span>
-                        <a target="_blank" href="https://www.npmjs.com/package/@mwa/-card">
-                            <img src="https://img.shields.io/npm/v/@mwa/-card.svg" alt="Published on NPM"/>
+                        <a target="_blank" href="https://www.npmjs.com/package/@mwa/card">
+                            <img src="https://img.shields.io/npm/v/@mwa/card.svg" alt="Published on NPM"/>
                         </a>
                     </div>
                     <div className="demo-card__subtitle">
@@ -129,8 +129,8 @@ and rework them as a unique package
                 <div className="components-card-header">
                     <div className="demo-card__title components-card-header-title">
                         <span className="components-card-header-title-text">Layout Grid <code>mwa-layout-grid</code></span>
-                        <a target="_blank" href="https://www.npmjs.com/package/@mwa/-layout-grid">
-                            <img src="https://img.shields.io/npm/v/@mwa/-layout-grid.svg" alt="Published on NPM"/>
+                        <a target="_blank" href="https://www.npmjs.com/package/@mwa/layout-grid">
+                            <img src="https://img.shields.io/npm/v/@mwa/layout-grid.svg" alt="Published on NPM"/>
                         </a>
                     </div>
                     <div className="demo-card__subtitle">
@@ -175,7 +175,7 @@ and rework them as a unique package
 Install a component from NPM:
 
 ```sh
-npm install @mwa/-layout-grid
+npm install @mwa/layout-grid
 ```
 
 #### 2) Write HTML and JavaScript
@@ -210,7 +210,7 @@ would with a built-in element such as `<button>`:
       //
       // Note this import is a bare module specifier, so it must be converted
       // to a path using a server such as Web Dev Server.
-      import '@mwa/-layout-grid';
+      import '@mwa/layout-grid';
 
       // Standard DOM APIs work with Web Components just like they do for
       // built-in elements.
@@ -235,8 +235,8 @@ npx web-dev-server --node-resolve
 Material Web & Material Web Additions are published as
 standard [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) that use *bare
 module specifiers*. Bare module specifiers are not yet supported by browsers, so it is necessary to use a tool that
-transforms them to a *path* (for example from `@mwa/-layout-grid`
-to `./node_modules/@mwa/-layout-grid/mwa-layout-grid.js`).
+transforms them to a *path* (for example from `@mwa/layout-grid`
+to `./node_modules/@mwa/layout-grid/mwa-layout-grid.js`).
 
 Two great choices for tools that do this are:
 

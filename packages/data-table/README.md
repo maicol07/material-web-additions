@@ -1,4 +1,4 @@
-# `<mwa-data-table>` [![Published on npm](https://img.shields.io/npm/v/@mwa/-data-table.svg)](https://www.npmjs.com/package/@mwa/-data-table)
+# `<mwa-data-table>` [![Published on npm](https://img.shields.io/npm/v/@mwa/data-table.svg)](https://www.npmjs.com/package/@mwa/data-table)
 [Data tables](https://material.io/components/data-tables/) display sets of data across rows and columns.
 
 They organize information in a way that’s easy to scan, so that users can look for patterns and insights.
@@ -15,14 +15,14 @@ MWC Data table encapsulates [MDC Data Table](https://material.io/components/data
 ![DataTable](https://github.com/material-components/material-components-web/raw/master/packages/mdc-data-table/images/data-table-hero.png)
 
 ## Installation
-[![See it on NPM!](https://img.shields.io/npm/v/@mwa/-data-table?style=for-the-badge)](https://www.npmjs.com/package/@mwa/-data-table)
-[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@mwa/-data-table?style=for-the-badge)](https://bundlephobia.com/result?p=@mwa/-data-table)
+[![See it on NPM!](https://img.shields.io/npm/v/@mwa/data-table?style=for-the-badge)](https://www.npmjs.com/package/@mwa/data-table)
+[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@mwa/data-table?style=for-the-badge)](https://bundlephobia.com/result?p=@mwa/data-table)
 
 | Package Manager | Command                                |
 |-----------------|----------------------------------------|
-| npm             | `npm install @mwa/-data-table` |
-| yarn            | `yarn add @mwa/-data-table`    |
-| pnpm            | `pnpm add @mwa/-data-table`    |
+| npm             | `npm install @mwa/data-table` |
+| yarn            | `yarn add @mwa/data-table`    |
+| pnpm            | `pnpm add @mwa/data-table`    |
 
 > NOTE: The Material Web Components are distributed as ES2017 JavaScript Modules, and use the Custom Elements API. They are compatible with all modern browsers including Chrome, Firefox, Safari, Edge, and IE11, but an additional tooling step is required to resolve *bare module specifiers*, as well as transpilation and polyfills for Edge and IE11. See [here](https://github.com/material-components/material-components-web-components#quick-start) for detailed instructions.
 
