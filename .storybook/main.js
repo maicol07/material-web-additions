@@ -1,4 +1,7 @@
 module.exports = {
+  features: {
+    previewMdx2: true,
+  },
   stories: [
     '../stories/**/*.stories.@(ts|mdx)'
   ],

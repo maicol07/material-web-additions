@@ -23,7 +23,18 @@ mwa-layout-grid mwa-card {
 }
 
 .components-card-header-title-text {
+  font-family: Roboto, sans-serif !important;
   flex: 1;
   display: inline-flex;
   align-items: center;
+  font-size: 1.25rem !important;
+}
+
+.components-card-subtitle {
+  font-family: Roboto, sans-serif !important;
+  font-size: 0.875rem !important;
+}
+
+.components-card-status {
+  font-family: Roboto, sans-serif !important;
 }

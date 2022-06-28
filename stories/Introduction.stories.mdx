@@ -1,7 +1,7 @@
 import {Meta} from '@storybook/addon-docs';
-import LayoutGridImage from '../packages/layout-grid/images/layout.png';
 
 import './introduction.scss';
+import components, {Component} from './components.ts';
 
 import '../packages/layout-grid/mwa-layout-grid';
 import '../packages/card/mwa-card';
@@ -11,7 +11,6 @@ import '@material/mwc-icon-button';
 import {linkTo} from '@storybook/addon-links';
 
 <Meta title="Introduction" parameters={{previewTabs: {canvas: {hidden: true}}}} />
-
 
 # Material Web Additions
 [![GitHub issues by-label](https://img.shields.io/github/issues-raw/maicol07/material-web-additions/Type:%20Bug)](https://github.com/maicol07/material-web-additions/issues?q=is%3Aissue+is%3Aopen+label%3A%22Type%3A+Bug%22)
@@ -42,130 +41,54 @@ Example: `mwa-card` will be split into `md-card`, `md-outlined-card`, etc
 [Contributing Guide](#Contributing)
 
 ## Components
-
-The components in this repo have been originally developed by other authors, then abandoned. I've decided to adopt them
-and rework them as a unique package
+The components in this repo have been originally developed by other authors, then abandoned. I've decided to adopt and
+rework them under a unique, bigger package.
 
 <mwa-layout-grid>
-    <mwa-card outlined>
-        <mwa-card-primary-action disabled>
-            <mwa-card-media style={{'--mdc-card-media-background-image': 'url("https://lh3.googleusercontent.com/_wVZOGd-J2P8egccQlY_MI6w01npq0bfNY1zVlvWjYqPFFjLP8G0ZNcCEkB572LMGT-GkptT_rVZRgj4jSn7ibRN02pMhCIG4Qjy4A=w1064-v0")'}} />
-            <div className="component-card__header">
-                <div className="components-card-header">
-                    <div className="demo-card__title components-card-header-title">
-                        <span className="components-card-header-title-text">Bottom App Bar <code>mwc-bottom-app-bar</code></span>
-                    </div>
-                    <div className="demo-card__subtitle">
-                        <span>Bottom app bars provide access to a bottom navigation drawer and up to four actions, including the floating action button.</span>
-                        <br/><br/>
-                        <small>Status: <a target="_blank" href="https://github.com/material-components/material-components-web-components/issues/298">TBD</a> (Not planned at the moment)</small>
-                    </div>
-                </div>
-            </div>
-        </mwa-card-primary-action>
-    </mwa-card>
-    <mwa-card outlined>
-        <mwa-card-primary-action onClick={linkTo('Card')}>
-            <mwa-card-media style={{'--mdc-card-media-background-image': 'url("https://github.com/material-components/material-components-web/raw/master/packages/mdc-card/images/card-elevated.png")'}} />
-            <div className="component-card__header">
-                <div className="components-card-header">
-                    <div className="demo-card__title components-card-header-title">
-                        <span className="components-card-header-title-text">Card <code>mwa-card</code></span>
-                        <a target="_blank" href="https://www.npmjs.com/package/@mwa/card">
-                            <img src="https://img.shields.io/npm/v/@mwa/card.svg" alt="Published on NPM"/>
+    {
+        Object.entries(components).map(([slug, details]) => {
+            /** @type {Component} */
+            const component = details;
+            return (
+                <mwa-card key={slug} outlined>
+                    <mwa-card-primary-action onClick={component.released ? linkTo(component.docsLink ?? component.name) : undefined} disabled={!component.released}>
+                        <mwa-card-media
+                            style={{'--mdc-card-media-background-image': `url("${component.backgroundImage}")`}}></mwa-card-media>
+                        <div className="component-card__header">
+                            <div className="components-card-header">
+                                <div className="demo-card__title components-card-header-title">
+                                    <span className="components-card-header-title-text">
+                                        {component.name}
+                                        <code>mwa-{slug}</code></span>
+                                    {component.released && (
+                                        <a target="_blank" href={`https://www.npmjs.com/package/@mwa/${slug}`}>
+                                            <img src={`https://img.shields.io/npm/v/@mwa/${slug}.svg`}
+                                                 alt="Published on NPM"/>
+                                        </a>
+                                    )}
+                                </div>
+                                <div className="demo-card__subtitle">
+                                    <span className="components-card-subtitle">{component.description}</span>
+                                    {!component.released && (
+                                        <>
+                                            <br/><br/>
+                                            <small className="components-card-status">Status: <a target="_blank" href={component.status.link}>{component.status.text}</a> {component.status.afterText}</small>
+                                        </>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </mwa-card-primary-action>
+                    {component.actions && Object.entries(component.actions).map(([id, action]) => (
+                        <a key={id} href={action.link} target="_blank" className="mwa-card-action" title={action.title}
+                           target="_blank" slot="icon">
+                            <mwc-icon-button icon={action.icon} aria-label={action.title}/>
                         </a>
-                    </div>
-                    <div className="demo-card__subtitle">
-                        <span>Cards contain content and actions about a single subject.</span>
-                    </div>
-                </div>
-            </div>
-        </mwa-card-primary-action>
-        <a href="https://github.com/maicol07/material-web-additions/packages/card" title="Go to source code" target="_blank" slot="icon">
-            <mwc-icon-button icon="code" aria-label="Go to source code"/>
-        </a>
-        <a href="https://github.com/material-components/material-web/blob/mwa-card/packages/card" title="Go to original repo (Material web repo - mwa-card branch)" target="_blank" slot="icon">
-            <mwc-icon-button icon="source" aria-label="Go to original repo"/>
-        </a>
-    </mwa-card>
-    <mwa-card outlined>
-        <mwa-card-primary-action disabled>
-            <mwa-card-media style={{'--mdc-card-media-background-image': 'url("https://lh3.googleusercontent.com/nIlSfsCutvqK4ZGO91rq9ktUX90a6t7zQhf7KFH-3RXL7gMcUDrLVFafgDr82PgnbiBuwLn8t1vvVcL66wHp9p5VYocPI-7fYb9w=w1064-v0")'}} />
-            <div className="component-card__header">
-                <div className="components-card-header">
-                    <div className="demo-card__title components-card-header-title">
-                        <span className="components-card-header-title-text">Chip <code>mwc-chip</code></span>
-                    </div>
-                    <div className="demo-card__subtitle">
-                        <span>Chips allow users to enter information, make selections, filter content, or trigger actions. While buttons are expected to appear consistently and with familiar calls to action, chips should appear dynamically as a group of multiple interactive elements.</span>
-                        <br/><br/>
-                        <small>Status: <a target="_blank" href="https://github.com/material-components/material-components-web-components/issues/418">TBD</a></small>
-                    </div>
-                </div>
-            </div>
-        </mwa-card-primary-action>
-    </mwa-card>
-    <mwa-card outlined>
-        <mwa-card-primary-action disabled>
-            <mwa-card-media style={{'--mdc-card-media-background-image': 'url("https://github.com/material-components/material-components-web/raw/master/packages/mdc-data-table/images/data-table-hero.png")'}} />
-            <div className="component-card__header">
-                <div className="components-card-header">
-                    <div className="demo-card__title components-card-header-title">
-                        <span className="components-card-header-title-text">Data Table <code>mwa-data-table</code></span>
-                    </div>
-                    <div className="demo-card__subtitle">
-                        <span>Data tables display sets of data across rows and columns.</span>
-                        <br/><br/>
-                        <small>Status: <a target="_blank" href="https://github.com/material-components/material-components-web-components/issues/386">TBD</a></small>
-                    </div>
-                </div>
-            </div>
-        </mwa-card-primary-action>
-    </mwa-card>
-    <mwa-card outlined>
-        <mwa-card-primary-action onClick={linkTo('Layout Grid')}>
-            <mwa-card-media style={{'--mdc-card-media-background-image': `url("${LayoutGridImage}")`}} />
-            <div className="component-card__header">
-                <div className="components-card-header">
-                    <div className="demo-card__title components-card-header-title">
-                        <span className="components-card-header-title-text">Layout Grid <code>mwa-layout-grid</code></span>
-                        <a target="_blank" href="https://www.npmjs.com/package/@mwa/layout-grid">
-                            <img src="https://img.shields.io/npm/v/@mwa/layout-grid.svg" alt="Published on NPM"/>
-                        </a>
-                    </div>
-                    <div className="demo-card__subtitle">
-                        <span>
-                            Layout grid is a supporting component that organizes elements on a column-variate grid layout.
-                            It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone.
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </mwa-card-primary-action>
-        <a href="https://github.com/maicol07/material-web-additions/packages/layout-grid" title="Go to source code" target="_blank" slot="icon">
-            <mwc-icon-button icon="code" aria-label="Go to source code"/>
-        </a>
-        <a href="https://github.com/chromakey-io/mwa-layout-grid" title="Go to original repo (Chromakey - mwa-layout-grid)" target="_blank" slot="icon">
-            <mwc-icon-button icon="source" aria-label="Go to original repo"/>
-        </a>
-    </mwa-card>
-    <mwa-card outlined>
-        <mwa-card-primary-action disabled>
-            <mwa-card-media style={{'--mdc-card-media-background-image': 'url("https://lh3.googleusercontent.com/duoMsnozKjVDWvdKT25cpk9hO612I8nws7A3Bv-9NPBV8Kt8XP4ystWxdODf5uP4bDChjbT5M7Jqtbc6PoadSXF4aFmwUd7HU3bWSg=w1064-v0")'}} />
-            <div className="component-card__header">
-                <div className="components-card-header">
-                    <div className="demo-card__title components-card-header-title">
-                        <span className="components-card-header-title-text">Tooltip <code>mwc-tooltip</code></span>
-                    </div>
-                    <div className="demo-card__subtitle">
-                        <span>Tooltips display informative text when users hover over, focus on, or tap an element.</span>
-                        <br/><br/>
-                        <small>Status: <a target="_blank" href="https://github.com/material-components/material-components-web-components/issues/1499">TBD</a></small>
-                    </div>
-                </div>
-            </div>
-        </mwa-card-primary-action>
-    </mwa-card>
+                    ))}
+                </mwa-card>
+            );
+        })
+    }
 </mwa-layout-grid>
 <br/>
 
