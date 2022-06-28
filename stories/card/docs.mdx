@@ -1,7 +1,7 @@
 import {ArgsTable, Canvas, PRIMARY_STORY, Stories, Story, Subtitle, Title} from '@storybook/addon-docs';
 import dedent from 'ts-dedent';
 import README from '../../packages/card/README.md';
-import {Description} from '@storybook/components';
+import {Description, Table} from '@storybook/components';
 import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';
 
 <Title />
@@ -134,11 +134,34 @@ Other examples are available in the sidebar or below these docs.
 
 ## API
 ### Slots
-| Name     | Description                                                        |
-|----------|--------------------------------------------------------------------|
-| default  | Default slot that contains the card contents and actions           |
-| `button` | Optional `<button>` to display an action button in the action row. |
-| `icon`   | Optional `<button>` to display an action button in the action row. |
+<Table>
+    <tr>
+        <td>Name</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td>default</td>
+        <td>Default slot that contains the card contents and actions</td>
+    </tr>
+    <tr>
+        <td>`button`</td>
+        <td>Optional `&lt;button&gt;` to display an action button in the action row.</td>
+    </tr>
+    <tr>
+        <td>`icon`</td>
+        <td>Optional `&lt;button&gt;` to display an action button in the action row.</td>
+    </tr>
+</Table>
+
+[//]: # (| Name     | Description                                                        |)
+
+[//]: # (|----------|--------------------------------------------------------------------|)
+
+[//]: # (| default  | Default slot that contains the card contents and actions           |)
+
+[//]: # (| `button` | Optional `<button>` to display an action button in the action row. |)
+
+[//]: # (| `icon`   | Optional `<button>` to display an action button in the action row. |)
 
 ### Properties/Attributes
 <ArgsTable story={PRIMARY_STORY} />
