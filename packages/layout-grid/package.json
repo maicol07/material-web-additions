@@ -1,6 +1,6 @@
 {
-  "name": "@mwa/layout-grid",
-  "version": "0.25.3-1",
+  "name": "@maicol07/mwa-layout-grid",
+  "version": "0.26.0",
   "description": "material compoments web components implementation of MDC Layout Grid",
   "main": "mwa-layout-grid.js",
   "repository": {

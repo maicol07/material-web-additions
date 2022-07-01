@@ -1,6 +1,6 @@
 {
-  "name": "@mwa/icon-button",
-  "version": "0.25.3-1",
+  "name": "@maicol07/mwa-icon-button",
+  "version": "0.26.0",
   "description": "An extension of MWC Icon Button",
   "main": "mwa-icon-button.js",
   "repository": {

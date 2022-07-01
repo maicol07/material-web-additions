@@ -1,7 +1,7 @@
 {
-  "name": "@mwa/data-table",
+  "name": "@maicol07/mwa-data-table",
   "private": true,
-  "version": "0.25.1",
+  "version": "0.26.0",
   "description": "Material compoments web components implementation of MDC Data Table",
   "main": "mwa-data-table.js",
   "repository": {

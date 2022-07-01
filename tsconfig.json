@@ -23,7 +23,7 @@
     "outDir": "./",
     "baseUrl": "./packages",
     "paths": {
-      "@mwa/*": [
+      "@maicol07/mwa-*": [
         "./*"
       ]
     },

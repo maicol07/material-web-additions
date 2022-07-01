@@ -1,5 +1,5 @@
 {
-  "name": "@mwa/card",
+  "name": "@maicol07/mwa-card",
   "version": "0.25.3",
   "description": "Material compoments web components implementation of MDC Card",
   "main": "mwa-card.js",
