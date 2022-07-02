@@ -1,7 +1,24 @@
 # Changelog
 
-<a name="unreleased"></a>
-## Unreleased
+
+<a name="0.26.1"></a>
+## [0.26.1](https://github.com/maicol07/material-web-additions/compare/0.26.0...0.26.1)
+
+> Released on July 02, 2022
+
+### 🐛 Bug Fixes
+- [`f8fcf8a`](https://github.com/maicol07/material-web-additions/commit/f8fcf8a07bb4c4edc062c1babb5054638315c6b4) Fix repo URL
+
+### Other changes
+- [`2848112`](https://github.com/maicol07/material-web-additions/commit/2848112b9fcdb7b8bbf23b6be14231c992b37470) Test new changelog action
+- [`44e06cf`](https://github.com/maicol07/material-web-additions/commit/44e06cf699f652b7c37d43bd7e7673f1bf4e4534) Test new changelog action
+- [`25906d0`](https://github.com/maicol07/material-web-additions/commit/25906d0f918b8ea8dfa16f94caf73750259ca918) Updated changelog generation workflow
+
+
+<a name="0.26.0"></a>
+## [0.26.0](https://github.com/maicol07/material-web-additions/compare/0.25.3...0.26.0)
+
+> Released on July 01, 2022
 
 ### ✨ Features
 - [`3ef0c09`](https://github.com/maicol07/material-web-additions/commit/3ef0c09506bccc731efa8220426e4834de956249) ✨ Reworked layout grid
@@ -10,7 +27,6 @@
 - [`ad43097`](https://github.com/maicol07/material-web-additions/commit/ad430973e0a8f5f63f7b08ae521b5f0601c94404) **icon-button:** ✨ Added icon button component
 
 ### 🐛 Bug Fixes
-- [`f8fcf8a`](https://github.com/maicol07/material-web-additions/commit/f8fcf8a07bb4c4edc062c1babb5054638315c6b4) Fix repo URL
 - [`307fa38`](https://github.com/maicol07/material-web-additions/commit/307fa381db75658031af4532356f6903b414347d) Fix `[@mwa](:/mwa)/-` links
 - [`d2bee0d`](https://github.com/maicol07/material-web-additions/commit/d2bee0d0d425f08c9e3db6c5080cabc00415b5d5) pnpm fix for WSL
 - [`d0245ba`](https://github.com/maicol07/material-web-additions/commit/d0245ba2c0a2f8fbc6c0c6a6ab06c41c0e21bbf6) Fix import for CI
@@ -57,15 +73,27 @@
 - [`6b62aa0`](https://github.com/maicol07/material-web-additions/commit/6b62aa0d835df0b4634e147e27dc9e2a406951fb) 💚 Build custom elements manifest and use PNPM
 
 ### Other changes
-- [`2848112`](https://github.com/maicol07/material-web-additions/commit/2848112b9fcdb7b8bbf23b6be14231c992b37470) Test new changelog action
-- [`44e06cf`](https://github.com/maicol07/material-web-additions/commit/44e06cf699f652b7c37d43bd7e7673f1bf4e4534) Test new changelog action
-- [`25906d0`](https://github.com/maicol07/material-web-additions/commit/25906d0f918b8ea8dfa16f94caf73750259ca918) Updated changelog generation workflow
 - [`4f18238`](https://github.com/maicol07/material-web-additions/commit/4f18238ac82c5e9b7c9313bd77c9530e2e61d55b) 🔖 Renamed to `[@maicol07](:/maicol07)/mwa-` and bumped version
 - [`32176b7`](https://github.com/maicol07/material-web-additions/commit/32176b79e77a6d821fd51584f3f3db896558044c) IDE files
 - [`4ceab3e`](https://github.com/maicol07/material-web-additions/commit/4ceab3e9fcd6d43208d7ba9021cb843056289f93) 🚚 Renamed all to MWA
 - [`9694d51`](https://github.com/maicol07/material-web-additions/commit/9694d51a73e8227cd6021da3d44283cc6c2d2ebe) Reorganized scripts and dependencies
 - [`7c96f95`](https://github.com/maicol07/material-web-additions/commit/7c96f95c59945f03c821a771a4aa6a5e40667d0c) **deps:** ⬆️ Upgraded dependencies
 - [`4109482`](https://github.com/maicol07/material-web-additions/commit/41094820aa0544e2aa9d98e47940976dba077a23) **deps:** Updated dependencies
+
+### ⏪ Reverts
+
+- [`8edc1cc`](https://github.com/maicol07/material-web-additions/commit/8edc1cc00f9011944cf62fc5f7bd073618def37d) fix(data-table): Added missing dependency
+
+      This reverts commit cdf208b936e1ae7f30a442a825b3d2824175ed4b.
+- [`9c96c17`](https://github.com/maicol07/material-web-additions/commit/9c96c17987f413ecf095dd9700f74397200e05c4) fix(card): Added missing dependency
+
+      This reverts commit 5e975b1766ba92f47a0c37076452104d4158eb1d.
+- [`fcc77bf`](https://github.com/maicol07/material-web-additions/commit/fcc77bf82b8df54c7d83b3df1bc1e484f0f14948) fix(data-table): Added missing dependency
+
+      This reverts commit 21ef6c8a8f815f2b1b93687766e6addd8ce8f344.
+- [`baa1df5`](https://github.com/maicol07/material-web-additions/commit/baa1df5471169b44333a601967d87ed63928fd1e) fix(data-table): Added missing dependency
+
+      This reverts commit 72832062de5467d55e173a705b55c5f0371bb73d.
 
 
 <a name="0.25.3"></a>
