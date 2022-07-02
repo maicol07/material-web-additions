@@ -1,12 +1,12 @@
 {
   "name": "@maicol07/mwa-data-table",
   "private": true,
-  "version": "0.26.0",
+  "version": "0.26.1",
   "description": "Material compoments web components implementation of MDC Data Table",
   "main": "mwa-data-table.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maicol07/mwa-layout-grid"
+    "url": "https://github.com/maicol07/material-web-additions"
   },
   "scripts": {
     "build:style": "node ../../scripts/sass-to-lit-css/index.js mwa-data-table.scss mwa-data-table-column.scss mwa-data-table-row.scss mwa-data-table-cell.scss mwa-data-table-footer.scss"
