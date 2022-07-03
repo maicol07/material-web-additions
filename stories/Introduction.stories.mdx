@@ -51,7 +51,7 @@ rework them under a unique, bigger package.
             const component = details;
             return (
                 <mwa-card key={slug} outlined>
-                    <mwa-card-primary-action onClick={component.released ? linkTo(component.docsLink ?? component.name) : undefined} disabled={!component.released}>
+                    <mwa-card-primary-action onClick={component.released ? linkTo(component.docsLink ?? component.name) : undefined} disabled={component.released ? undefined : 'true'}>
                         <mwa-card-media
                             style={{'--mdc-card-media-background-image': `url("${component.backgroundImage}")`}}></mwa-card-media>
                         <div className="component-card__header">
