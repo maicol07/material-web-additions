@@ -11,7 +11,7 @@ of [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 Read the full docs on Storybook:
 
 <div align="center">
-    <a href="https://master--625eadb22bf40d003a32215a.chromatic.com">
+    <a href="https://main--625eadb22bf40d003a32215a.chromatic.com">
 <img src="https://user-images.githubusercontent.com/263385/44539334-ef6bdf80-a6d1-11e8-9423-2912fd8197e9.png" alt="Storybook"/>
     </a>
 </div>
