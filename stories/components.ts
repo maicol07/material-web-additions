@@ -72,6 +72,19 @@ export default {
       }
     }
   },
+  'icon-button': {
+    name: 'Icon Button',
+    description: 'An extension of the official MWC Icon Button that supports densities.',
+    backgroundImage: 'https://camo.githubusercontent.com/dbbd88d83d07f00daf73eb7498a6b8cc781d0ac1/68747470733a2f2f70702e766b2e6d652f633632323431382f763632323431383337302f35363763332f4959682d627942456a75632e6a7067',
+    released: true,
+    actions: {
+      'View on GitHub': {
+        link: 'https://github.com/maicol07/material-web-additions/packages/icon-button',
+        title: 'View on GitHub',
+        icon: 'code'
+      }
+    }
+  },
   'layout-grid': {
     name: 'Layout Grid',
     description: 'Layout grids are a flexible way to lay out content in a grid.',
