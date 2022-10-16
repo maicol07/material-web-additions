@@ -1,0 +1,55 @@
+@use "@material/select";
+
+$min-width: var(--mdc-select-min-width, 100%);
+$height: 56px;//var(--mdc-select-height, 56px);
+
+.mdc-select {
+  min-width: $min-width;
+  @include select.min-width($min-width);
+  width: var(--mdc-select-width, 200px);
+}
+
+:host(:not([outlined])) .mdc-select {
+  &:not(.mdc-select--with-leading-icon) {
+    @include select.filled-height($height);
+  }
+
+  &.mdc-select--with-leading-icon {
+    @include select.filled-with-leading-icon-height($height);
+  }
+}
+
+:host([outlined]) .mdc-select {
+  &:not(.mdc-select--with-leading-icon) {
+    @include select.outlined-height($height);
+  }
+
+  &.mdc-select--with-leading-icon {
+    @include select.outlined-with-leading-icon-height($height);
+  }
+}
+
+$sizes: ("tight": -1, "comfortable": -2, "dense": -3, "compact": -4);
+
+@each $density, $value in $sizes {
+  :host([density="#{$density}"]:not([outlined])) {
+    &:not(.mdc-select--with-leading-icon) {
+      @include select.filled-density($value);
+    }
+
+    .mdc-select.mdc-select--with-leading-icon {
+      @include select.filled-with-leading-icon-density($value);
+    }
+  }
+
+  :host([density="#{$density}"][outlined]) .mdc-icon-button {
+    &:not(.mdc-select--with-leading-icon) {
+      @include select.outlined-density($value);
+    }
+
+    .mdc-select.mdc-select--with-leading-icon {
+      @include select.outlined-with-leading-icon-density($value);
+    }
+  }
+}
+

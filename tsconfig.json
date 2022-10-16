@@ -71,10 +71,25 @@
       "path": "packages/data-table"
     },
     {
+      "path": "packages/drawer"
+    },
+    {
       "path": "packages/icon-button"
     },
     {
       "path": "packages/layout-grid"
+    },
+    {
+      "path": "packages/select"
+    },
+    {
+      "path": "packages/textarea"
+    },
+    {
+      "path": "packages/textfield"
+    },
+    {
+      "path": "packages/top-app-bar"
     }
   ]
 }

@@ -1,0 +1,14 @@
+.mdc-drawer {
+  height: var(--mdc-drawer-height, inherit);
+}
+
+:host([md2drawer]) {
+  :first-child {
+    border-right: none;
+  }
+
+  .mdc-drawer-app-content {
+    color: var(--mdc-theme-text-primary-on-background);
+    background-color: var(--mdc-theme-background);
+  }
+}
