@@ -22,20 +22,18 @@
     "@material/dom": "^14.0.0",
     "@material/elevation": "^14.0.0",
     "@material/feature-targeting": "^14.0.0",
-    "@material/mwc-base": "^0.26.1",
-    "@material/mwc-icon": "^0.26.1",
-    "@material/mwc-ripple": "^0.26.1",
+    "@material/mwc-base": "^0.27.0",
+    "@material/mwc-icon": "^0.27.0",
+    "@material/mwc-ripple": "^0.27.0",
     "@material/ripple": "^14.0.0",
     "@material/rtl": "^14.0.0",
     "@material/shape": "^14.0.0",
     "@material/theme": "^14.0.0",
-    "lit": "^2.2.7",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@material/mwc-button": "^0.26.1",
-    "@material/mwc-icon-button": "^0.26.1",
-    "typescript": "^4.7.4"
+    "@material/mwc-button": "^0.27.0",
+    "@material/mwc-icon-button": "^0.27.0"
   },
   "publishConfig": {
     "access": "public"
