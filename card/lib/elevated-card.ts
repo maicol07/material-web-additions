@@ -1,4 +1,4 @@
-import {Card} from './card';
+import {Card} from './card.js';
 import {ClassInfo} from 'lit/directives/class-map.js';
 
 export class ElevatedCard extends Card {

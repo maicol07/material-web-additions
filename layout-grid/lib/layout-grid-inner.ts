@@ -1,4 +1,4 @@
-import {LayoutGrid} from './layout-grid';
+import {LayoutGrid} from './layout-grid.js';
 import {html} from 'lit';
 
 export class LayoutGridInner extends LayoutGrid {

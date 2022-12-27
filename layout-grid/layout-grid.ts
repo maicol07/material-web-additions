@@ -1,7 +1,7 @@
 import {customElement} from 'lit/decorators.js';
 
 import {styles} from './lib/layout-grid.css.js';
-import {LayoutGrid} from './lib/layout-grid';
+import {LayoutGrid} from './lib/layout-grid.js';
 import './layout-grid-inner.js';
 
 declare global {

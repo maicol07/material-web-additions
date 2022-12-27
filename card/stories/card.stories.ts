@@ -1,8 +1,8 @@
 import {Meta, Story} from '@storybook/web-components';
-import {Card} from '../lib/card';
-import '../filled-card';
-import '../elevated-card';
-import '../outlined-card';
+import {Card} from '../lib/card.js';
+import '../filled-card.js';
+import '../elevated-card.js';
+import '../outlined-card.js';
 import {html} from 'lit';
 import '@material/web/iconbutton/standard-icon-button.js';
 import '@material/web/button/outlined-button.js';

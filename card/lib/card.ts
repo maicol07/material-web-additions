@@ -4,9 +4,9 @@ import '@material/web/focus/focus-ring.js';
 import {html, PropertyValues, TemplateResult} from 'lit';
 import {query, queryAssignedElements, state} from 'lit/decorators.js';
 import {ClassInfo, classMap} from 'lit/directives/class-map.js';
-import {ActionElement, BeginPressConfig, EndPressConfig} from '@material/web/actionelement/action-element';
-import {MdRipple} from '@material/web/ripple/ripple';
-import {pointerPress, shouldShowStrongFocus} from '@material/web/focus/strong-focus';
+import {ActionElement, BeginPressConfig, EndPressConfig} from '@material/web/actionelement/action-element.js';
+import {MdRipple} from '@material/web/ripple/ripple.js';
+import {pointerPress, shouldShowStrongFocus} from '@material/web/focus/strong-focus.js';
 import {property} from 'lit/decorators/property.js';
 
 export abstract class Card extends ActionElement {
@@ -70,12 +70,8 @@ export abstract class Card extends ActionElement {
             });
         }
 
-        action.addEventListener('focus', (e) => {
-            this.blur();
-        });
-        action.addEventListener('blur', (e) => {
-            this.focus();
-        });
+        action.addEventListener('focus', () => this.blur());
+        action.addEventListener('blur', () => this.focus());
     }
 
     getRenderActionsClasses() {

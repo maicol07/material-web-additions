@@ -2,7 +2,7 @@ import {customElement} from 'lit/decorators.js';
 
 import {styles as shared} from './lib/shared.css.js';
 import {styles} from './lib/elevated-card.css.js';
-import {ElevatedCard} from './lib/elevated-card';
+import {ElevatedCard} from './lib/elevated-card.js';
 
 declare global {
     interface HTMLElementTagNameMap {

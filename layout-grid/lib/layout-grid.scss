@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:list';
 @use "@material/layout-grid";
-@import "@material/layout-grid/mdc-layout-grid";
+@use "@material/layout-grid/mdc-layout-grid";
 
 div.mdc-layout-grid {
   background: inherit;
