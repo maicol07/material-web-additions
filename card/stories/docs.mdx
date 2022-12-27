@@ -1,0 +1,176 @@
+import {ArgsTable, Canvas, PRIMARY_STORY, Stories, Story, Subtitle, Title} from '@storybook/addon-docs';
+import dedent from 'ts-dedent';
+import README from '../README.md';
+import {Description, Table} from '@storybook/components';
+import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';
+
+<Title />
+<Subtitle />
+
+<Description markdown={README}/>
+
+## Example Usage
+### Standard
+<Canvas
+    withToolbar
+    mdxSource={dedent`
+        <md-elevated-card style={{'--md-card-padding': '16px'}}>
+          Content
+        </md-elevated-card>
+    `}>
+    <md-elevated-card style={{'--md-card-padding': '16px'}}>
+        Content
+    </md-elevated-card>
+</Canvas>
+
+> You may want to apply padding to card contents (recommended to `16px` by the Material Design guidelines).
+> In the previous live example and the following one the padding is already applied.```cssmd-elevated-card {
+--md-card-padding: 16px;}
+> ```
+
+### Outlined card
+To use an outlined card, use the `md-outlined-card` element.
+
+<Canvas
+    withToolbar
+    mdxSource={dedent`
+        <md-outlined-card>
+          Content
+        </md-outlined-card>
+    `}>
+    <md-outlined-card outlined style={{'--md-card-padding': '16px'}}>
+        Content
+    </md-outlined-card>
+</Canvas>
+
+### Primary action
+If a majority of the card should be actionable, you can add the `clickable` attribute to your card element.
+
+<Canvas
+    withToolbar
+    mdxSource={dedent`
+        <md-elevated-card clickable class="demo-card">
+            <div class="demo-card__header">
+                <div class="demo-card__header-text">
+                    <div class="demo-card__title">Our Changing Planet</div>
+                    <div class="demo-card__subtitle">by Kurt Wagner</div>
+                </div>
+            </div>
+        </md-elevated-card>
+    `}>
+    <md-elevated-card clickable class="demo-card">
+        <div class="demo-card__header">
+            <div class="demo-card__header-text">
+                <div class="demo-card__title">Our Changing Planet</div>
+                <div class="demo-card__subtitle">by Kurt Wagner</div>
+            </div>
+        </div>
+    </md-elevated-card>
+</Canvas>
+
+### Media
+If you want to display an image in the card, you can add an image with a standard `<img>` element.
+
+<Canvas
+    withToolbar
+    mdxSource={dedent`
+        <md-elevated-card class="demo-card">
+            <img src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png" alt="Background photo" class="demo-card__media" />
+            <div class="demo-card__header">
+                <div class="demo-card__header-text">
+                    <div class="demo-card__title">Our Changing Planet</div>
+                    <div class="demo-card__subtitle">by Kurt Wagner</div>
+                </div>
+            </div>
+            <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+                Visit ten places on our planet that are undergoing the biggest changes today.
+            </div>
+        </md-elevated-card>
+    `}>
+    <md-elevated-card class="demo-card">
+        <img src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
+             alt="Background photo" class="demo-card__media"/>
+        <div class="demo-card__header">
+            <div class="demo-card__header-text">
+                <div class="demo-card__title">Our Changing Planet</div>
+                <div class="demo-card__subtitle">by Kurt Wagner</div>
+            </div>
+        </div>
+        <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+            Visit ten places on our planet that are undergoing the biggest changes today.
+        </div>
+    </md-elevated-card>
+</Canvas>
+
+### Actions
+This area is used to show different actions the user can take, typically at the bottom of a card.
+
+#### Buttons
+You can add buttons in your card via the `button` slot:
+<Canvas withToolbar>
+    <Story id="card--basic-with-only-buttons"/>
+</Canvas>
+
+#### Icon Buttons
+You can add icon buttons in your card via the `icon` slot:
+
+<Canvas withToolbar>
+    <Story id="card--basic-with-only-icons"/>
+</Canvas>
+
+#### Other examples
+Other examples are available in the sidebar or below these docs.
+
+## API
+### Slots
+<Table>
+    <tr>
+        <td>Name</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td>default</td>
+        <td>Default slot that contains the card contents</td>
+    </tr>
+    <tr>
+        <td>`button`</td>
+        <td>Optional button(s) to display an action button in the action row.</td>
+    </tr>
+    <tr>
+        <td>`icon`</td>
+        <td>Optional icon button(s) to display an action button in the action row.</td>
+    </tr>
+</Table>
+
+[//]  # (| Name     | Description                                                        |)
+
+[//]  # ()
+[//]  # (|----------|--------------------------------------------------------------------|)
+
+[//]  # ()
+[//]  # (| default  | Default slot that contains the card contents and actions           |)
+
+[//]  # ()
+[//]  # (| `button` | Optional `<button>` to display an action button in the action row. |)
+
+[//]  # ()
+[//]  # (| `icon`   | Optional `<button>` to display an action button in the action row. |)
+
+### Properties/Attributes
+<ArgsTable story={PRIMARY_STORY} />
+
+### Methods
+*None*
+
+### Events
+*None*
+
+### CSS Custom Properties
+#### Card
+<CssPropsBlock customProperties={undefined}/>
+
+## Additional references
+- [MDC Web: Card](https://material.io/develop/web/components/card/)
+
+## Other examples
+<Stories />

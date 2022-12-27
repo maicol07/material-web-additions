@@ -1,0 +1,42 @@
+@use 'sass:map';
+
+@use '@material/web/elevation/lib/elevation-theme';
+@use '@material/web/sass/resolvers';
+@use '@material/web/sass/theme';
+@use '@material/web/tokens';
+@use "@material/elevation" as oldelevation;
+
+$_custom-property-prefix: 'card';
+
+@function _resolve-elevation-theme($theme, $resolvers) {
+  $theme: elevation-theme.resolve-theme(
+                  $theme,
+                  map.get($resolvers, 'elevation'),
+          $shadow-color-token: 'container-shadow-color',
+          $elevation-tokens: (container-elevation)
+  );
+  @return $theme;
+}
+
+@mixin theme-styles($theme, $resolvers: resolvers.$material) {
+  $elevation_theme: _resolve-elevation-theme($theme, $resolvers);
+
+  $theme: theme.validate-theme-styles($theme, $theme);
+  $theme: theme.create-theme-vars($theme, $_custom-property-prefix);
+
+  @include oldelevation.elevation(0);
+  @include elevation-theme.theme-styles(
+                  (
+                          shadow: map.get($elevation-theme, 'container-elevation-shadow')
+                  )
+  );
+
+  @include theme.emit-theme-vars($theme);
+
+  border-radius: map.get($theme, 'container-shape');
+  background-color: map.get($theme, 'container-color');
+
+  @if (map.get($theme, 'outline-width')) {
+    border: map.get($theme, 'outline-width') solid map.get($theme, 'outline-color');
+  }
+}

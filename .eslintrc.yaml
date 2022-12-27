@@ -2,6 +2,7 @@ extends:
   - eslint:recommended
   - google
   - plugin:wc/recommended
+  - plugin:n/recommended
 globals:
   goog: false
   assert: false
@@ -14,7 +15,7 @@ plugins:
   - "@typescript-eslint"
   - wc
 parserOptions:
-  ecmaVersion: 2017
+  ecmaVersion: 2020
   sourceType: module
 settings:
   wc:
@@ -49,11 +50,11 @@ rules:
   prefer-const: error
   comma-dangle: off
 overrides:
-  - files: [ "packages/**/*.ts" ]
+  - files: [ "**/*.ts" ]
     rules:
       no-unused-vars: off
       no-invalid-this: off
       new-cap: off
-  - files: [ "packages/**/test/*.ts" ]
+  - files: [ "**/test/*.ts" ]
     rules:
       "@typescript-eslint/no-non-null-assertion": off

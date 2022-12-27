@@ -1,62 +1,83 @@
 {
   "name": "@maicol07/material-web-additions",
-  "private": true,
-  "description": "Additional Material Web Components",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@7.31.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "description": "Material Web Components Additions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maicol07/material-web-additions.git"
+  },
   "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/maicol07/material-web-additions/issues"
+  },
+  "homepage": "https://main--625eadb22bf40d003a32215a.chromatic.com/",
   "scripts": {
-    "clean": "del-cli packages/*/node_modules packages/*/package-lock.json && pnpm clean:typescript && pnpm clean:styles && pnpm clean:scripts",
-    "clean:typescript": "pnpm build:typescript -- --clean",
-    "clean:styles": "del-cli packages/*/*.css.ts",
-    "lint": "pnpm lint:lit",
-    "lint:fix": "pnpm lint:typescript -- --fix && pnpm lint:lit -- --fix",
-    "lint:typescript": "eslint \"packages/**/*.ts\"",
-    "lint:lit": "lit-analyzer \"packages/**/*.ts\" --strict",
-    "build": "pnpm build:styling && pnpm build:typescript --verbose",
-    "build:styling": "pnpm -r run --stream build:style",
-    "build:typescript": "tsc --build",
-    "prepack": "pnpm build",
-    "powerwash:ts": "rm packages/*/*.js & rm packages/*/*.js.map & rm packages/*/*.d.ts & rm packages/*/.tsbuildinfo",
-    "powerwash:styling": "rm packages/*/*-css.ts",
-    "powerwash": "pnpm powerwash:ts & pnpm powerwash:styling && rm -rf node_modules",
-    "watch": "pnpm build && node scripts/watcher.js",
+    "build": "wireit",
+    "build:ts": "wireit",
+    "build:css-to-ts": "wireit",
+    "build:sass": "wireit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "custom-elements-manifest": "cem analyze --litelement --globs \"packages/*/*.ts\""
+    "custom-elements-manifest": "wireit"
+  },
+  "files": [
+    "**/*.js",
+    "**/*.js.map",
+    "**/*.d.ts",
+    "**/*.scss",
+    "!css-to-ts.js",
+    "!**/test/**",
+    "!**/testing/**",
+    "!**/*_test.*",
+    "!.wireit/**"
+  ],
+  "dependencies": {
+    "@material/card": "^14.0.0",
+    "@material/web": "^0.1.0-alpha.0",
+    "lit": "^2.4.0",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.6",
-    "@custom-elements-manifest/analyzer": "^0.6.3",
+    "@babel/core": "^7.19.6",
+    "@custom-elements-manifest/analyzer": "^0.6.4",
     "@ljcl/storybook-addon-cssprops": "^2.3.5",
-    "@storybook/addon-a11y": "^7.0.0-alpha.6",
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-docs": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
-    "@storybook/addon-storysource": "^6.5.9",
-    "@storybook/addons": "^6.5.9",
-    "@storybook/api": "^6.5.9",
-    "@storybook/builder-webpack5": "^6.5.9",
-    "@storybook/components": "^6.5.9",
-    "@storybook/core-events": "^6.5.9",
-    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/addon-a11y": "^6.5.13",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-docs": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/addon-storysource": "^6.5.13",
+    "@storybook/addons": "^6.5.13",
+    "@storybook/api": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/components": "^6.5.13",
+    "@storybook/core-events": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
     "@storybook/mdx2-csf": "^0.0.3",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/theming": "^6.5.9",
-    "@storybook/web-components": "^6.5.9",
-    "@types/mdx": "^2.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.30.4",
-    "@typescript-eslint/parser": "^5.30.4",
-    "@webcomponents/webcomponentsjs": "^2.6.0",
+    "@storybook/theming": "^6.5.13",
+    "@storybook/web-components": "^6.5.13",
+    "@types/mdx": "^2.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "@webcomponents/webcomponentsjs": "^2.7.0",
     "babel-loader": "^8.2.5",
     "command-line-args": "^5.2.1",
     "css-loader": "^6.7.1",
-    "del-cli": "^4.0.1",
-    "eslint": "^8.19.0",
+    "eslint": "^8.26.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-storybook": "^0.5.13",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-storybook": "^0.6.6",
     "eslint-plugin-wc": "^1.3.2",
     "lit-analyzer": "2.0.0-pre.2",
-    "lit-html": "^2.2.6",
+    "lit-html": "^2.4.0",
     "node-sass-import": "^2.0.1",
     "node-watch": "^0.7.3",
     "react": "^17.0.2",
@@ -64,16 +85,82 @@
     "react-is": "^17.0.2",
     "requirejs": "^2.3.6",
     "rimraf": "^3.0.2",
-    "sass": "~1.53.0",
-    "sass-loader": "^13.0.2",
+    "sass": "~1.55.0",
+    "sass-loader": "^13.1.0",
+    "storybook": "^6.5.13",
     "storybook-addon-whats-new": "^1.0.3",
-    "storybook-dark-mode": "^1.1.0",
+    "storybook-dark-mode": "^1.1.2",
     "storybook-docs-toc": "^1.7.0",
     "style-loader": "^3.3.1",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "ts-dedent": "^2.2.0",
-    "typescript": "^4.7.4",
-    "webpack": "^5.73.0"
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "wireit": "^0.8.0"
   },
-  "customElements": "custom-elements.json"
+  "customElements": "custom-elements.json",
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "build:ts",
+        "custom-elements-manifest"
+      ]
+    },
+    "build:ts": {
+      "command": "tsc --pretty",
+      "files": [
+        "tsconfig.json",
+        "**/*.ts",
+        "!**/*.d.ts",
+        "!**/*.css.ts"
+      ],
+      "output": [
+        ".tsbuildinfo",
+        "**/*.js",
+        "**/*.js.map",
+        "**/*.d.ts",
+        "!*.js",
+        "!.storybook/*.js",
+        "!types/"
+      ],
+      "clean": "if-file-deleted",
+      "dependencies": [
+        "build:css-to-ts"
+      ]
+    },
+    "build:css-to-ts": {
+      "command": "find . \\( -path ./.wireit -o -path ./node_modules \\) -prune -o -name '*.css' -print | xargs node css-to-ts.js",
+      "files": [
+        "css-to-ts.js"
+      ],
+      "output": [
+        "**/*.css.ts"
+      ],
+      "dependencies": [
+        "build:sass"
+      ]
+    },
+    "build:sass": {
+      "command": "sass --style=compressed --load-path=node_modules --load-path=node_modules/sass-true/sass $(ls -d */ | grep -v node_modules)",
+      "files": [
+        "**/*.scss"
+      ],
+      "output": [
+        "**/*.css",
+        "**/*.css.map"
+      ]
+    },
+    "custom-elements-manifest": {
+      "command": "cem analyze --litelement --globs \"**/*.ts\"",
+      "files": [
+        "**/*.ts",
+        "!**/*.d.ts",
+        "!**/*.css.ts"
+      ],
+      "output": [
+        "custom-elements.json"
+      ]
+    }
+  }
 }

@@ -116,8 +116,16 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="1">
+          <list size="9">
             <item index="0" class="java.lang.String" itemvalue="@click" />
+            <item index="1" class="java.lang.String" itemvalue="@pointerup" />
+            <item index="2" class="java.lang.String" itemvalue="@focus" />
+            <item index="3" class="java.lang.String" itemvalue="@blur" />
+            <item index="4" class="java.lang.String" itemvalue="@pointerdown" />
+            <item index="5" class="java.lang.String" itemvalue="@pointercancel" />
+            <item index="6" class="java.lang.String" itemvalue="@pointerleave" />
+            <item index="7" class="java.lang.String" itemvalue="@pointerenter" />
+            <item index="8" class="java.lang.String" itemvalue="@contextmenu" />
           </list>
         </value>
       </option>
@@ -127,7 +135,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="11">
+          <list size="14">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -139,6 +147,9 @@
             <item index="8" class="java.lang.String" itemvalue="mwc-icon-button" />
             <item index="9" class="java.lang.String" itemvalue="slot" />
             <item index="10" class="java.lang.String" itemvalue="mwc-data-table-cell" />
+            <item index="11" class="java.lang.String" itemvalue="md-ripple" />
+            <item index="12" class="java.lang.String" itemvalue="md-card-primary-action" />
+            <item index="13" class="java.lang.String" itemvalue="md-card-media" />
           </list>
         </value>
       </option>
@@ -158,6 +169,7 @@
       <option name="mySeverity" value="Always" />
     </inspection_tool>
     <inspection_tool class="JSUnfilteredForInLoop" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="JSUnusedGlobalSymbols" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="LongInheritanceChainInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="MagicNumberJS" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="MultipleReturnStatementsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -210,7 +222,6 @@
     <inspection_tool class="PointlessBitwiseExpressionJS" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="m_ignoreExpressionsContainingConstants" value="false" />
     </inspection_tool>
-    <inspection_tool class="PostCssNesting" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PropertyCanBeStaticInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="RedundantDocCommentTagInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="RegExpAnonymousGroup" enabled="true" level="WARNING" enabled_by_default="true" />

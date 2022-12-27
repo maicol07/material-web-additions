@@ -1,0 +1,8 @@
+@use "card";
+@use "@material/web/tokens";
+
+$elevated-theme: tokens.md-comp-elevated-card-values();
+
+.m3--elevated {
+  @include card.theme-styles($elevated-theme);
+}

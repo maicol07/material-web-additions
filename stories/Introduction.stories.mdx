@@ -3,11 +3,9 @@ import {Meta} from '@storybook/addon-docs';
 import './introduction.scss';
 import components, {Component} from './components.ts';
 
-import '../packages/layout-grid/mwa-layout-grid';
-import '../packages/card/mwa-card';
-import '../packages/card/mwa-card-primary-action';
-import '../packages/card/mwa-card-media';
-import '@material/mwc-icon-button';
+import '../layout-grid/layout-grid';
+import '../card/elevated-card';
+import '@material/web/iconbutton/standard-icon-button.js';
 import {linkTo} from '@storybook/addon-links';
 
 <Meta title="Introduction" parameters={{previewTabs: {canvas: {hidden: true}}}} />
@@ -44,61 +42,55 @@ Example: `mwa-card` will be split into `md-card`, `md-outlined-card`, etc
 The components in this repo have been originally developed by other authors, then abandoned. I've decided to adopt and
 rework them under a unique, bigger package.
 
-<mwa-layout-grid>
+<md-layout-grid>
     {
         Object.entries(components).map(([slug, details]) => {
             /** @type {Component} */
             const component = details;
             return (
-                <mwa-card key={slug} outlined>
-                    <mwa-card-primary-action onClick={component.released ? linkTo(component.docsLink ?? component.name) : undefined} disabled={component.released ? undefined : 'true'}>
-                        <mwa-card-media
-                            style={{'--mdc-card-media-background-image': `url("${component.backgroundImage}")`}}></mwa-card-media>
-                        <div className="component-card__header">
-                            <div className="components-card-header">
-                                <div className="demo-card__title components-card-header-title">
-                                    <span className="components-card-header-title-text">
-                                        {component.name}
-                                        <code>mwa-{slug}</code></span>
-                                    {component.released && (
-                                        <a target="_blank" href={`https://www.npmjs.com/package/@maicol07/mwa-${slug}`}>
-                                            <img src={`https://img.shields.io/npm/v/@maicol07/mwa-${slug}.svg`}
-                                                 alt="Published on NPM"/>
-                                        </a>
-                                    )}
-                                </div>
-                                <div className="demo-card__subtitle">
-                                    <span className="components-card-subtitle">{component.description}</span>
-                                    {!component.released && (
-                                        <>
-                                            <br/><br/>
-                                            <small className="components-card-status">Status: <a target="_blank" href={component.status.link}>{component.status.text}</a> {component.status.afterText}</small>
-                                        </>
-                                    )}
-                                </div>
+                <md-elevated-card key={slug}
+                                  onClick={component.released ? linkTo(component.docsLink ?? component.name) : undefined}
+                                  clickable={component.released ? 'true' : undefined}>
+                    <img src={component.image} alt={component.name}/>
+                    <div className="component-card__header">
+                        <div className="components-card-header">
+                            <div className="demo-card__title components-card-header-title">
+                                <span className="components-card-header-title-text">{component.name}
+                                    <code>md-{slug}</code></span>
+                            </div>
+                            <div className="demo-card__subtitle">
+                                <span className="components-card-subtitle">{component.description}</span>
+                                {!component.released && (
+                                    <>
+                                        <br/><br/>
+                                        <small className="components-card-status">Status: <a target="_blank"
+                                                                                             href={component.status.link}>{component.status.text}</a> {component.status.afterText}
+                                        </small>
+                                    </>
+                                )}
                             </div>
                         </div>
-                    </mwa-card-primary-action>
+                    </div>
                     {component.actions && Object.entries(component.actions).map(([id, action]) => (
                         <a key={id} href={action.link} target="_blank" className="mwa-card-action" title={action.title}
                            target="_blank" slot="icon">
-                            <mwc-icon-button icon={action.icon} aria-label={action.title}/>
+                            <md-standard-icon-button icon={action.icon} aria-label={action.title}/>
                         </a>
                     ))}
-                </mwa-card>
+                </md-elevated-card>
             );
         })
     }
-</mwa-layout-grid>
+</md-layout-grid>
+> Note: Some components previously announced have been removed since they got added to the official Material Web components.
 <br/>
 
 ## Quick start
 
 #### 1) Install
-Install a component from NPM:
-
-```sh
-npm install @maicol07/mwa-layout-grid
+Install a component from
+    ```sh
+npm install @maicol07/mwa
 ```
 
 #### 2) Write HTML and JavaScript
@@ -120,11 +112,11 @@ would with a built-in element such as `<button>`:
   </head>
   <body>
     <!-- Use Web Components in your HTML like regular built-in elements. -->
-    <mwa-layout-grid id="myGrid">
+    <md-layout-grid id="myGrid">
         <p>I'm on the first column</p>
         <button> I'm in the middle</button>
         <input value="I'm in the last column"/>
-    </mwa-layout-grid>
+    </md-layout-grid>
 
     <!-- Material Web uses standard JavaScript modules. -->
     <script type="module">
@@ -133,12 +125,12 @@ would with a built-in element such as `<button>`:
       //
       // Note this import is a bare module specifier, so it must be converted
       // to a path using a server such as Web Dev Server.
-      import '@maicol07/mwa-layout-grid';
+      import '@maicol07/mwa/layout-grid/layout-grid.js';
 
       // Standard DOM APIs work with Web Components just like they do for
       // built-in elements.
       const grid = document.querySelector('#myGrid');
-      button.addEventListener('onmouseenter', () => {
+      grid.addEventListener('onmouseenter', () => {
         alert('You entered the layout grid!');
       });
     </script>
@@ -158,8 +150,7 @@ npx web-dev-server --node-resolve
 Material Web & Material Web Additions are published as
 standard [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) that use *bare
 module specifiers*. Bare module specifiers are not yet supported by browsers, so it is necessary to use a tool that
-transforms them to a *path* (for example from `@maicol07/mwa-layout-grid`
-to `./node_modules/@maicol07/mwa-layout-grid/mwa-layout-grid.js`).
+transforms them to a * path * (for example with `md-layout-grid` to`./node_modules/@maicol07/mwa/layout-grid/layout-grid.js`).
 
 Two great choices for tools that do this are:
 
@@ -170,7 +161,6 @@ the [`rollup-plugin-node-resolve`](https://github.com/rollup/rollup-plugin-node-
 
 ## Fonts
 Most applications should include the following tags in their main HTML file to ensure that text and icons render
-correctly:
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
