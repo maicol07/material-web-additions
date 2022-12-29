@@ -9,6 +9,7 @@
     "node": ">=18.0.0"
   },
   "description": "Material Web Components Additions",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/maicol07/material-web-additions.git"
