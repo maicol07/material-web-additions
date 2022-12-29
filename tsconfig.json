@@ -23,7 +23,6 @@
         "./*"
       ]
     },
-    "skipLibCheck": true,
     "sourceMap": true,
     "inlineSources": true,
     "strict": true,
@@ -33,6 +32,11 @@
       "es2020",
       "dom",
       "dom.iterable"
+    ],
+    "skipLibCheck": true,
+    "types": [
+      "lit",
+      "mdx"
     ],
     "jsx": "preserve"
   }
