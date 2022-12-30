@@ -1,4 +1,4 @@
-mwa-layout-grid mwa-card {
+md-layout-grid md-outlined-card {
   width: 100%;
   height: 100%;
 }
@@ -7,12 +7,7 @@ mwa-layout-grid mwa-card {
   display: flex;
   flex-direction: row;
   padding: 16px;
-}
-
-.components-card-header {
   width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .components-card-header-title {
@@ -28,6 +23,18 @@ mwa-layout-grid mwa-card {
   display: inline-flex;
   align-items: center;
   font-size: 1.25rem !important;
+}
+
+.components-card-header-title-slug {
+  line-height: 1;
+  margin: 0 2px;
+  padding: 3px 5px;
+  white-space: nowrap;
+  border-radius: 3px;
+  font-size: 13px;
+  border: 1px solid #ECF4F9;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #F7FAFC;
 }
 
 .components-card-subtitle {

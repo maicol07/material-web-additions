@@ -1,21 +1,20 @@
 import {ArgsTable, PRIMARY_STORY, Stories, Subtitle, Title} from '@storybook/addon-docs';
 import README from '../../layout-grid/README.md';
-import {Description, Table} from '@storybook/components';
-import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';
+import {Table} from '@storybook/components';
 
-<Title />
-<Subtitle />
+[//]  # (import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';)
 
-<Description markdown={README}/>
+<Title/>
+<Subtitle/>
+
+<README/>
 
 ## Example Usage
-Each element inside `mwa-layout-grid` will be recognized as a single cell. Default span size for cell is 4 columns.
-
+Each element inside `md-layout-grid` will be recognized as a single cell. Default span size for cell is 4 columns.
 <Stories title={""} includePrimary/>
 
 ## API
 ### Slots
-
 <Table>
     <thead>
         <tr>
@@ -32,9 +31,7 @@ Each element inside `mwa-layout-grid` will be recognized as a single cell. Defau
 </Table>
 
 [//]: # (| Name    | Description                               |)
-
 [//]: # (|---------|-------------------------------------------|)
-
 [//]: # (| default | Default slot that contains the grid cells |)
 
 ### Properties/Attributes
@@ -82,6 +79,7 @@ Each element inside `mwa-layout-grid` will be recognized as a single cell. Defau
     </tr>
 </Table>
 
+
 [//]: # (| Name               | Type     | Description                                                                                                                                                                                                                                                                                           |)
 
 [//]: # (|--------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|)
@@ -98,11 +96,13 @@ Each element inside `mwa-layout-grid` will be recognized as a single cell. Defau
 
 [//]: # (| `grid-align`       | `string` | Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of `top`, `middle` or `bottom`.                                                                                                                        |)
 
-_* You can set the cells span by applying `span` attribute, where value is an integer between `1` and `12`. If the chosen
-span size is larger than the available number of columns at the current screen size, the cell behaves as if its chosen
-span size were equal to the available number of columns at that screen size. If the span classes are not set, value will
-fallback to a default span size of 4 columns._
-
+<i>* You can set the cells span by applying `span` attribute, where value is an integer between `1` and `12`. If the
+    chosen
+    span size is larger than the available number of columns at the current screen size, the cell behaves as if its
+    chosen
+    span size were equal to the available number of columns at that screen size. If the span classes are not set, value
+    will
+    fallback to a default span size of 4 columns.</i>
 
 ### Methods
 *None*
@@ -111,7 +111,7 @@ fallback to a default span size of 4 columns._
 *None*
 
 ### CSS Custom Properties
-<CssPropsBlock customProperties={undefined}/>
+[//]  # (<CssPropsBlock customProperties={undefined}/>)
 
 ## Additional references
 - [MDC Web: Layout Grid](https://material.io/develop/web/components/layout-grid/)

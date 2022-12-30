@@ -38,6 +38,6 @@
       "lit",
       "mdx"
     ],
-    "jsx": "preserve"
+    "jsx": "react-jsx"
   }
 }

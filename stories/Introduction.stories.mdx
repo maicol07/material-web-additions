@@ -1,14 +1,13 @@
 import {Meta} from '@storybook/addon-docs';
 
 import './introduction.scss';
-import components, {Component} from './components.ts';
+import {getMarkup} from './components.tsx';
 
-import '../layout-grid/layout-grid';
-import '../card/elevated-card';
+import '../layout-grid/layout-grid.js';
+import '../card/outlined-card.js';
 import '@material/web/iconbutton/standard-icon-button.js';
-import {linkTo} from '@storybook/addon-links';
 
-<Meta title="Introduction" parameters={{previewTabs: {canvas: {hidden: true}}}} />
+<Meta title="Introduction" parameters={{previewTabs: {canvas: {hidden: true}}}}/>
 
 # Material Web Additions
 [![GitHub issues by-label](https://img.shields.io/github/issues-raw/maicol07/material-web-additions/Type:%20Bug)](https://github.com/maicol07/material-web-additions/issues?q=is%3Aissue+is%3Aopen+label%3A%22Type%3A+Bug%22)
@@ -39,49 +38,13 @@ Example: `mwa-card` will be split into `md-card`, `md-outlined-card`, etc
 [Contributing Guide](#Contributing)
 
 ## Components
-The components in this repo have been originally developed by other authors, then abandoned. I've decided to adopt and
+Some components in this repo have been originally developed by other authors, then abandoned. I've decided to adopt and
 rework them under a unique, bigger package.
 
 <md-layout-grid>
-    {
-        Object.entries(components).map(([slug, details]) => {
-            /** @type {Component} */
-            const component = details;
-            return (
-                <md-elevated-card key={slug}
-                                  onClick={component.released ? linkTo(component.docsLink ?? component.name) : undefined}
-                                  clickable={component.released ? 'true' : undefined}>
-                    <img src={component.image} alt={component.name}/>
-                    <div className="component-card__header">
-                        <div className="components-card-header">
-                            <div className="demo-card__title components-card-header-title">
-                                <span className="components-card-header-title-text">{component.name}
-                                    <code>md-{slug}</code></span>
-                            </div>
-                            <div className="demo-card__subtitle">
-                                <span className="components-card-subtitle">{component.description}</span>
-                                {!component.released && (
-                                    <>
-                                        <br/><br/>
-                                        <small className="components-card-status">Status: <a target="_blank"
-                                                                                             href={component.status.link}>{component.status.text}</a> {component.status.afterText}
-                                        </small>
-                                    </>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                    {component.actions && Object.entries(component.actions).map(([id, action]) => (
-                        <a key={id} href={action.link} target="_blank" className="mwa-card-action" title={action.title}
-                           target="_blank" slot="icon">
-                            <md-standard-icon-button icon={action.icon} aria-label={action.title}/>
-                        </a>
-                    ))}
-                </md-elevated-card>
-            );
-        })
-    }
+    {getMarkup()}
 </md-layout-grid>
+
 > Note: Some components previously announced have been removed since they got added to the official Material Web components.
 <br/>
 
@@ -95,7 +58,7 @@ npm install @maicol07/mwa
 
 #### 2) Write HTML and JavaScript
 Import the component's JavaScript module, use the component in your HTML, and control it with JavaScript, just like you
-would with a built-in element such as `<button>`:
+would with a built - in element such as`<button>`:
 
 ```html
 <!DOCTYPE html>
@@ -139,7 +102,7 @@ would with a built-in element such as `<button>`:
 ```
 
 #### 3) Serve
-Serve your HTML with any server or build process that supports *bare module specifier resolution* (see next section):
+Serve your HTML with any server or build process that supports * bare module specifier resolution * (see next section):
 
 ```sh
 npm install --save-dev @web/dev-server
@@ -149,13 +112,13 @@ npx web-dev-server --node-resolve
 ## Bare module specifiers
 Material Web & Material Web Additions are published as
 standard [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) that use *bare
-module specifiers*. Bare module specifiers are not yet supported by browsers, so it is necessary to use a tool that
+module specifiers *. Bare module specifiers are not yet supported by browsers, so it is necessary to use a tool that
 transforms them to a * path * (for example with `md-layout-grid` to`./node_modules/@maicol07/mwa/layout-grid/layout-grid.js`).
 
 Two great choices for tools that do this are:
 
-- During local development, use Modern Web's [`Web Dev Server`](https://modern-web.dev/docs/dev-server/overview/) with
-the `--node-resolve` flag.
+-During local development, use Modern Web's [`Web Dev Server`](https://modern-web.dev/docs/dev-server/overview/) with
+the`--node-resolve` flag.
 - For your production deployment, build your application with [Rollup](https://rollupjs.org/guide/en/) using
 the [`rollup-plugin-node-resolve`](https://github.com/rollup/rollup-plugin-node-resolve) plugin or similar.
 
@@ -173,5 +136,5 @@ automatically loaded, so it is the application's responsiblity to ensure that th
 
 Note that if you load the Material Icons font in a different way to the recommendation shown above, be sure to
 include [`font-display: block`](https://google.github.io/material-design-icons/) in your `@font-face` CSS rule. This
-prevents icons from initially displaying their raw *ligature* text before the font has loaded. The `<link>` tag
+prevents icons from initially displaying their raw * ligature * text before the font has loaded.The`<link>` tag
 recommended above automaticaly handles this setting.
