@@ -1,5 +1,7 @@
 import {ArgsTable, Canvas, PRIMARY_STORY, Stories, Story, Subtitle, Title} from "@storybook/addon-docs";
-import README from '../README.md'; import dedent from "ts-dedent"; import {Table} from "@storybook/components";
+import README from '../README.md';
+import dedent from "ts-dedent";
+import {Table} from "@storybook/components";
 
 <Title/>
 <Subtitle/>
@@ -25,9 +27,10 @@ import README from '../README.md'; import dedent from "ts-dedent"; import {Table
     You may want to apply padding to card contents (recommended to `16px` by the Material Design guidelines).
     In the previous live example and the following one the padding is already applied.
     ```css
-    md-elevated-card {
-    --md - card - padding: 16px;}
-    }
+    {`
+md-elevated-card {
+    --md-card-padding: 16px;
+}`}
     ```
 </blockquote>
 
@@ -146,35 +149,15 @@ Other examples are available in the sidebar or below these docs.
 </Table>
 
 
-[//]  # ([//]  # &#40;| Name     | Description                                                        |&#41;)
+[//]: # (| Name     | Description                                                        |)
 
-[//]  # ()
-[//]  # ()
-[//]  # ([//]  # &#40;&#41;)
+[//]: # (|----------|--------------------------------------------------------------------|)
 
-[//]  # ()
-[//]  # ([//]  # &#40;|----------|--------------------------------------------------------------------|&#41;)
+[//]: # (| default  | Default slot that contains the card contents and actions           |)
 
-[//]  # ()
-[//]  # ()
-[//]  # ([//]  # &#40;&#41;)
+[//]: # (| `button` | Optional `<button>` to display an action button in the action row. |)
 
-[//]  # ()
-[//]  # ([//]  # &#40;| default  | Default slot that contains the card contents and actions           |&#41;)
-
-[//]  # ()
-[//]  # ()
-[//]  # ([//]  # &#40;&#41;)
-
-[//]  # ()
-[//]  # ([//]  # &#40;| `button` | Optional `<button>` to display an action button in the action row. |&#41;)
-
-[//]  # ()
-[//]  # ()
-[//]  # ([//]  # &#40;&#41;)
-
-[//]  # ()
-[//]  # ([//]  # &#40;| `icon`   | Optional `<button>` to display an action button in the action row. |&#41;)
+[//]: # (| `icon`   | Optional `<button>` to display an action button in the action row. |)
 
 ### Properties/Attributes
 <ArgsTable story={PRIMARY_STORY}/>
@@ -187,7 +170,8 @@ Other examples are available in the sidebar or below these docs.
 
 ### CSS Custom Properties
 #### Card
-[//]  # (<CssPropsBlock customProperties={undefined}/>)
+
+[//]: # (<CssPropsBlock customProperties={undefined}/>)
 
 ## Additional references
 - [MDC Web: Card](https://material.io/develop/web/components/card/)
