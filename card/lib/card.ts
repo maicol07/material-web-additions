@@ -46,6 +46,7 @@ export abstract class Card extends ActionElement {
                 ${this.renderPrimaryAction()}
                 ${this.renderActions()}
                 ${this.renderRipple()}
+                <md-elevation shadow></md-elevation>
             </div>`;
     }
 

@@ -42,6 +42,11 @@ $feat-structure: feature-targeting.create-target($query, structure);
     border-radius: inherit;
     //@include theme.property(background-image, custom-properties.create(--mdc-card-media-background-image, none));
   }
+
+  md-elevation {
+    z-index: 0;
+    position: unset;
+  }
 }
 
 ::slotted(img:first-child) {

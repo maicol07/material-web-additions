@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-@use '@material/web/elevationold/lib/elevation-theme';
+@use '@material/web/elevation/lib/elevation';
 @use '@material/web/sass/resolvers';
 @use '@material/web/sass/theme';
 @use '@material/web/tokens';
@@ -8,35 +8,43 @@
 
 $_custom-property-prefix: 'card';
 
-@function _resolve-elevation-theme($theme, $resolvers) {
-  $theme: elevation-theme.resolve-theme(
-                  $theme,
-                  map.get($resolvers, 'elevation'),
-          $shadow-color-token: 'container-shadow-color',
-          $elevation-tokens: (container-elevation)
-  );
-  @return $theme;
-}
+//@function _resolve-elevation-theme($theme, $resolvers) {
+//  $theme: elevation.resolve-theme(
+//                  $theme,
+//                  map.get($resolvers, 'elevation'),
+//          $shadow-color-token: 'container-shadow-color',
+//          $elevation-tokens: (container-elevation)
+//  );
+//  @return $theme;
+//}
 
-@mixin theme-styles($theme, $resolvers: resolvers.$material) {
-  $elevation_theme: _resolve-elevation-theme($theme, $resolvers);
+@mixin styles($tokens, $style_name, $resolvers: resolvers.$material) {
+  $tokens: elevation.resolve-tokens($tokens, 'container-elevation');
+  $tokens: theme.create-theme-vars($tokens, $_custom-property-prefix);
 
-  $theme: theme.validate-theme-styles($theme, $theme);
-  $theme: theme.create-theme-vars($theme, $_custom-property-prefix);
+  :host {
+    @each $token, $value in $tokens {
+      --_#{$token}: #{$value};
+    }
+  }
 
-  @include oldelevation.elevation(0);
-  @include elevation-theme.theme-styles(
-                  (
-                          shadow: map.get($elevation-theme, 'container-elevation-shadow')
-                  )
-  );
+  .m3--#{$style_name} {
+    @include oldelevation.elevation(0);
+    @include elevation.theme(
+                    (
+                            level: var(--_container-elevation),
+                            shadow-color: var(--_container-shadow-color),
+                            surface-tint-color: var(--_container-surface-tint-layer-color),
+                    )
+    );
 
-  @include theme.emit-theme-vars($theme);
+    @include theme.emit-theme-vars($tokens);
 
-  border-radius: map.get($theme, 'container-shape');
-  background-color: map.get($theme, 'container-color');
+    border-radius: var(--_container-shape);
+    background-color: var(--_container-color);
 
-  @if (map.get($theme, 'outline-width')) {
-    border: map.get($theme, 'outline-width') solid map.get($theme, 'outline-color');
+    @if (map.get($tokens, 'outline-width')) {
+      border: var(--_outline-width) solid var(--_outline-color);
+    }
   }
 }

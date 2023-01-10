@@ -3,6 +3,4 @@
 
 $filled-theme: tokens.md-comp-filled-card-values();
 
-.m3--filled {
-  @include card.theme-styles($filled-theme);
-}
+@include card.styles($filled-theme, 'filled');

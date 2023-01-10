@@ -3,6 +3,4 @@
 
 $outlined-theme: tokens.md-comp-outlined-card-values();
 
-.m3--outlined {
-  @include card.theme-styles($outlined-theme);
-}
+@include card.styles($outlined-theme, 'outlined');
