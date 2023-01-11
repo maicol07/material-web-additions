@@ -22,10 +22,11 @@ $feat-structure: feature-targeting.create-target($query, structure);
   padding: var(--md-card-padding, 0);
   margin: var(--md-card-margin, 0);
   flex: 1;
+  z-index: 0;
 
   .mdc-card__ripple {
     z-index: 0;
-    --md-ripple-state-layer-shape: var(--md-card-container-shape, 12px);
+    --md-ripple-state-layer-shape: var(--_container-shape);
   }
 
   .mdc-card__primary-action {
@@ -44,14 +45,15 @@ $feat-structure: feature-targeting.create-target($query, structure);
   }
 
   md-elevation {
-    z-index: 0;
-    position: unset;
+    inset: 0;
+    position: absolute;
+    z-index: -1;
   }
 }
 
 ::slotted(img:first-child) {
-  border-top-left-radius: var(--md-card-container-shape, 12px);
-  border-top-right-radius: var(--md-card-container-shape, 12px);
+  border-top-left-radius: var(--_container-shape);
+  border-top-right-radius: var(--_container-shape);
 }
 
 /* Set styles for .mdc-card__action based on slot. Styles will not be available from Light DOM. */
