@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@7.21.0",
+  "packageManager": "pnpm@7.24.3",
   "engines": {
     "node": ">=18.0.0"
   },
