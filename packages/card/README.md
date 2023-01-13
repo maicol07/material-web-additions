@@ -22,4 +22,4 @@ MWC Card encapsulates [MDC Card](https://material.io/components/cards/web#using-
 ## API & Example Usage
 If you don't see anything else below, click this button to see the API and the example usage:
 
-[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://main--625eadb22bf40d003a32215a.chromatic.com/?path=/docs/card--basic)
+[![Storybook](https://shields.io/badge/-Play%20with%20this%20web%20component-2a0481?logo=storybook&style=for-the-badge)](https://625eadb22bf40d003a32215a-ulgonylooz.chromatic.com/?path=/docs/card--basic)
