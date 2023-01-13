@@ -13,14 +13,14 @@ of [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 
 ## Installation
 
-[![See it on NPM!](https://img.shields.io/npm/v/@maicol07/mwa?style=for-the-badge)](https://www.npmjs.com/package/@maicol07/mwa)
-[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@maicol07/mwa?style=for-the-badge)](https://bundlephobia.com/result?p=@maicol07/mwa)
+[![See it on NPM!](https://img.shields.io/npm/v/@amaicol07/material-web-additions?style=for-the-badge)](https://www.npmjs.com/package/@amaicol07/material-web-additions)
+[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@amaicol07/material-web-additions?style=for-the-badge)](https://bundlephobia.com/result?p=@amaicol07/material-web-additions)
 
 | Package Manager | Command                     |
 |-----------------|-----------------------------|
-| npm             | `npm install @maicol07/mwa` |
-| yarn            | `yarn add @maicol07/mwa`    |
-| pnpm            | `pnpm add @maicol07/mwa`    |
+| npm             | `npm install @amaicol07/material-web-additions` |
+| yarn            | `yarn add @amaicol07/material-web-additions`    |
+| pnpm            | `pnpm add @amaicol07/material-web-additions`    |
 
 > NOTE: The Material Web Components are distributed as ES2020 JavaScript Modules, and use the Custom Elements API. They
 > are compatible with all modern browsers including Chrome, Firefox, Safari and Edge.
