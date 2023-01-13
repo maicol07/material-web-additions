@@ -1,6 +1,0 @@
-@import "mwa-data-table";
-
-:host {
-  @extend .mdc-data-table__pagination;
-  display: table-footer-group;
-}

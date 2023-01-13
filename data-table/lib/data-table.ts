@@ -1,7 +1,14 @@
-import {html} from 'lit';
+import '@material/mwc-linear-progress';
+import '@material/web/autocomplete/outlined-autocomplete.js';
+import '@material/web/autocomplete/autocomplete-item.js';
+import '@material/web/iconbutton/filled-icon-button.js';
+import '../data-table-footer.js';
+
+import {html, PropertyValueMap} from 'lit';
 import {property, query, queryAssignedElements} from 'lit/decorators.js';
-import {DataTableColumn, DataTableRow} from './mwa-data-table';
+import {DataTableColumn, FilterTextFieldInputEventDetail, SortButtonClickedEventDetail} from './data-table-column.js';
 import {
+  attributes,
   MDCDataTable,
   MDCDataTableAdapter,
   MDCDataTableFoundation,
@@ -10,19 +17,11 @@ import {
   RowClickEventData,
   SortActionEventDetail
 } from '@material/data-table';
-import {cssClasses, messages, SortValue, strings} from '@material/data-table/constants';
-import {BaseElement} from '@material/mwc-base';
-import {observer} from '@material/mwc-base/observer';
-
-import {Select} from '@material/mwc-select';
-import {SelectedDetail} from '@material/mwc-list';
-
-import {IconButton} from '@material/mwc-icon-button';
-import '@material/mwc-icon-button';
-import '@material/mwc-linear-progress';
-import '@material/mwc-select';
+import {cssClasses, messages, SortValue} from '@material/data-table/constants.js';
+import {IconButton} from '@material/web/iconbutton/lib/icon-button.js';
 import {LinearProgress} from '@material/mwc-linear-progress';
-import {FilterTextFieldInputEventDetail} from './mwa-data-table-column';
+import {DataTableRow} from './data-table-row.js';
+import {BaseElement} from '@material/mwc-base';
 
 export interface RowSelectionChangedDetail {
   row: DataTableRow,
@@ -37,7 +36,12 @@ export interface FilteredDetail {
   columnIndex: number
 }
 
-export class DataTableBase extends BaseElement {
+export interface SortedDetail {
+  column: DataTableColumn,
+  isDescending: boolean
+}
+
+export class DataTable extends BaseElement {
   /**
    * Enable/disable pagination.
    */
@@ -73,39 +77,29 @@ export class DataTableBase extends BaseElement {
    * Whether the loading indicator is active.
    */
   @property({type: Boolean, reflect: true})
-  @observer(function(this: DataTableBase, value: boolean) {
-    if (value) {
-      this.mdcFoundation.showProgress();
-    } else {
-      this.mdcFoundation.hideProgress();
-    }
-  })
   inProgress = false;
   /**
    * Overall height of the table. Available in three different measures.
    */
-  @property({type: String, reflect: true})
-  @observer(function(this: DataTableBase, value, ) {
-    for (const row of this.rows) {
-      row.setAttribute('density', value);
-    }
-
-    for (const column of this.columns) {
-      column.setAttribute('density', value);
-    }
-  })
+  @property({type: String})
   density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
   /** @internal */
-  @queryAssignedElements({slot: 'header-cell', selector: 'mwa-data-table-column'}) columns!: DataTableColumn[];
+      // @ts-ignore
+  @queryAssignedElements({slot: 'header-cell', selector: 'md-data-table-column'}) columns!: DataTableColumn[];
   /** @internal */
-  @queryAssignedElements({slot: 'row', selector: 'mwa-data-table-row'}) rows!: DataTableRow[];
+      // @ts-ignore
+  @queryAssignedElements({slot: 'row', selector: 'md-data-table-row'}) rows!: DataTableRow[];
   /** @internal */
+      // @ts-ignore
   @query('.mdc-data-table') protected tableElement!: HTMLTableElement;
   /** @internal */
+      // @ts-ignore
   @query('.mdc-data-table__table-container') protected tableContainerElement!: HTMLTableElement;
   /** @internal */
+      // @ts-ignore
   @query('.mdc-data-table__header-row') protected headerRowElement!: HTMLTableSectionElement;
   /** @internal */
+      // @ts-ignore
   @query('.mdc-data-table__progress-indicator') protected progressIndicator!: LinearProgress;
 
   /** @internal */
@@ -113,10 +107,10 @@ export class DataTableBase extends BaseElement {
   /** @internal */
   protected mdcRoot: HTMLDivElement = this.tableElement;
   /** @internal */
-  // @ts-ignore (TypeScript bug)
+      // @ts-ignore (TypeScript bug)
   protected readonly mdcFoundationClass = MDCDataTableFoundation;
   /** @internal */
-  // @ts-ignore (TypeScript bug)
+      // @ts-ignore (TypeScript bug)
   protected mdcFoundation!: MDCDataTableFoundation;
 
   /** @internal */
@@ -129,32 +123,41 @@ export class DataTableBase extends BaseElement {
     return this.headerCheckboxRow?.checkbox;
   }
 
-  render() {
+  override render() {
     return html`
-        <div class="mdc-data-table">
-          <div class="mdc-data-table__table-container">
-              <div class="mdc-data-table__table" aria-label="${this.ariaLabel}" role="table">
-                  <div class="mdc-data-table__head" role="rowgroup">
-                    <div class="mdc-data-table__header-row" role="row">
-                        <slot name="header-cell" @slotchange=${() => this.requestUpdate()}></slot>
-                    </div>
-                  </div>
-                  <div class="mdc-data-table__content" role="rowgroup">
-                      <slot name="row" @slotchange=${() => this.requestUpdate()}></slot>
-                  </div>
+      <div class="mdc-data-table">
+        <div class="mdc-data-table__table-container">
+          <div class="mdc-data-table__table" aria-label="${this.ariaLabel}" role="table">
+            <div class="mdc-data-table__head" role="rowgroup">
+              <div class="mdc-data-table__header-row" role="row">
+                <slot name="header-cell" @slotchange=${this.onHeaderCellSlotChange}></slot>
               </div>
-          </div>
-            
-            ${this.renderPagination()}
-            
-            <slot name="footer"></slot>
-
-            <div class="mdc-data-table__progress-indicator">
-                <div class="mdc-data-table__scrim"></div>
-                <mwc-linear-progress indeterminate class="mdc-data-table__linear-progress" role="progressbar" aria-label="Data is being loaded..."></mwc-linear-progress>
             </div>
+            <div class="mdc-data-table__content" role="rowgroup">
+              <slot name="row" @slotchange=${() => this.requestUpdate()}></slot>
+            </div>
+          </div>
         </div>
+
+        ${this.renderPagination()}
+
+        <slot name="footer"></slot>
+
+        <div class="mdc-data-table__progress-indicator">
+          <div class="mdc-data-table__scrim"></div>
+          <mwc-linear-progress indeterminate class="mdc-data-table__linear-progress" role="progressbar"
+                               aria-label="Data is being loaded..."></mwc-linear-progress>
+        </div>
+      </div>
     `;
+  }
+
+  onHeaderCellSlotChange() {
+    this.requestUpdate();
+    const sortColumn = this.columns.find((column) => column.sortable && column.sorted);
+    if (sortColumn) {
+      sortColumn.onSortButtonClicked(new CustomEvent<{selected: boolean}>('icon-button-toggle-change', {detail: {selected: !sortColumn.sortedDescending}}));
+    }
   }
 
   /** @internal */
@@ -200,101 +203,154 @@ export class DataTableBase extends BaseElement {
       }
     }));
   };
+  sortColumnCallback = (e: Event) => {
+    const event = e as CustomEvent<SortButtonClickedEventDetail>;
+    const {column, isDescending} = event.detail;
+    this.inProgress = true;
+
+    for (const col of this.columns.filter((col) => col !== column && col.sortable)) {
+      col.sorted = false;
+      col.sortedDescending = false;
+    }
+
+    const cells = this.rows.map((row) => row.cells[this.columns.indexOf(column)]);
+
+    cells.sort((a: HTMLElement, b: HTMLElement) => {
+      let aValue: string | number = a.textContent;
+      let bValue: string | number = b.textContent;
+
+      if (column.type === 'numeric') {
+        aValue = Number.parseFloat(aValue);
+        bValue = Number.parseFloat(bValue);
+      }
+
+      if (!isDescending) {
+        const temporary = aValue;
+        aValue = bValue;
+        bValue = temporary;
+      }
+
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
+        return aValue.localeCompare(bValue);
+      }
+
+      return aValue < bValue ? -1 : (aValue > bValue ? 1 : 0);
+    });
+
+    // this.rows = cells.map((cell) => cell.parentElement as DataTableRow);
+    for (const cell of cells) {
+      const row = cell.parentElement as DataTableRow;
+      row.parentElement.append(row);
+    }
+
+    this.inProgress = false;
+    column.sorted = true;
+    column.withSortButton = true;
+
+    /**
+     * Event emitted when the data table has been filtered.
+     *
+     * Event detail: `FilteredDetail`;
+     */
+    this.dispatchEvent(new CustomEvent<SortedDetail>('sorted', {
+      detail: {
+        column: event.detail.column,
+        isDescending,
+      }
+    }));
+  };
 
   protected renderPagination() {
     if (this.paginated) {
       const initialPageLabel = this.firstRowOfPage < 1 ? 1 : this.firstRowOfPage;
       const lastPageLabel = this.lastRowOfPage > this.rows.length ? this.rows.length : this.lastRowOfPage;
       return html`
-          <div class="mdc-data-table__pagination">
-              <div class="mdc-data-table__pagination-trailing">
-                  <div class="mdc-data-table__pagination-rows-per-page">
-                      <div class="mdc-data-table__pagination-rows-per-page-label">
-                          ${this.pageSizesLabel}
-                      </div>
-
-                      <mwc-select
-                              outlined
-                              className="mdc-data-table__pagination-rows-per-page-select"
-                              fixedMenuPosition
-                              value="${this.currentPageSize}"
-                              style="--mdc-select-width: 112px; --mdc-select-height: 36px; --mdc-menu-item-height: 36px;"
-                              @selected=${this.onPageSizeSelected}
-                      >
-                        ${this.pageSizesArray.map((rowsPerPage, index) => html`
-                          <mwc-list-item value="${rowsPerPage}" ${index === 0 ? 'activated selected' : 0}>
-                              ${rowsPerPage}
-                          </mwc-list-item>
-                        `)}
-                      </mwc-select>
-                  </div>
-
-                  <div class="mdc-data-table__pagination-navigation">
-                      <div class="mdc-data-table__pagination-total">
-                          ${this.renderTemplate(this.paginationTotalLabel, {
-                            'firstRow': initialPageLabel,
-                            'lastRow': lastPageLabel,
-                            'totalRows': this.rows.length,
-                          })}
-                      </div>
-                      <mwc-icon-button class="mdc-data-table__pagination-button"
-                                       data-page="first"
-                                       ?disabled=${this.firstRowOfPage <= 1}
-                                       @click=${this.onPaginationButtonClicked}>
-                          <slot name="pagination-first-button-icon">
-                              <mwc-icon>first_page</mwc-icon>
-                          </slot>
-                      </mwc-icon-button>
-                      <mwc-icon-button class="mdc-data-table__pagination-button"
-                                       data-page="previous"
-                                       ?disabled=${this.firstRowOfPage <= 1}
-                                       @click=${this.onPaginationButtonClicked}>
-                          <slot name="pagination-previous-button-icon">
-                              <mwc-icon>chevron_left</mwc-icon>
-                          </slot>
-                      </mwc-icon-button>
-                      <mwc-icon-button class="mdc-data-table__pagination-button"
-                                       data-page="next"
-                                       ?disabled=${this.lastRowOfPage >= this.rows.length}
-                                       @click=${this.onPaginationButtonClicked}>
-                          <slot name="pagination-next-button-icon">
-                              <mwc-icon>chevron_right</mwc-icon>
-                          </slot>
-                      </mwc-icon-button>
-                      <mwc-icon-button class="mdc-data-table__pagination-button"
-                                       data-page="last"
-                                       ?disabled=${this.lastRowOfPage >= this.rows.length}
-                                       @click=${this.onPaginationButtonClicked}>
-                          <slot name="pagination-last-button-icon">
-                              <mwc-icon>last_page</mwc-icon>
-                          </slot>
-                      </mwc-icon-button>
-                  </div>
+        <md-data-table-footer>
+          <div class="mdc-data-table__pagination-trailing">
+            <div class="mdc-data-table__pagination-rows-per-page">
+              <div class="mdc-data-table__pagination-rows-per-page-label">
+                ${this.pageSizesLabel}
               </div>
-          </div>
+              
+              <md-outlined-autocomplete
+                  class="mdc-data-table__pagination-rows-per-page-select"
+                  value="${this.currentPageSize}"
+                  style="--md-outlined-autocomplete-menu-list-item-container-height: 36px;"
+                  @autocomplete-value-changed=${this.onPageSizeSelected}
+                  readonly
+              >
+                ${this.pageSizesArray.map((rowsPerPage, index) => html`
+                  <md-autocomplete-item headline="${rowsPerPage}" value="${rowsPerPage}"></md-autocomplete-item>
+                `)}
+              </md-outlined-autocomplete>
+            </div>
 
-          <div class="mdc-data-table__progress-indicator">
-              <div class="mdc-data-table__scrim"></div>
-              <mwc-linear-progress class="mdc-data-table__linear-progress" indeterminate/>
+            <div class="mdc-data-table__pagination-navigation">
+              <div class="mdc-data-table__pagination-total">
+                ${this.renderTemplate(this.paginationTotalLabel, {
+                  'firstRow': initialPageLabel,
+                  'lastRow': lastPageLabel,
+                  'totalRows': this.rows.length,
+                })}
+              </div>
+              <md-filled-icon-button class="mdc-data-table__pagination-button"
+                               data-page="first"
+                               ?disabled=${this.firstRowOfPage <= 1}
+                               @click=${this.onPaginationButtonClicked}>
+                <slot name="pagination-first-button-icon">
+                  <md-icon slot="icon">first_page</md-icon>
+                </slot>
+              </md-filled-icon-button>
+              <md-filled-icon-button class="mdc-data-table__pagination-button"
+                               data-page="previous"
+                               ?disabled=${this.firstRowOfPage <= 1}
+                               @click=${this.onPaginationButtonClicked}>
+                <slot name="pagination-previous-button-icon">
+                  <md-icon>chevron_left</md-icon>
+                </slot>
+              </md-filled-icon-button>
+              <md-filled-icon-button class="mdc-data-table__pagination-button"
+                               data-page="next"
+                               ?disabled=${this.lastRowOfPage >= this.rows.length}
+                               @click=${this.onPaginationButtonClicked}>
+                <slot name="pagination-next-button-icon">
+                  <md-icon>chevron_right</md-icon>
+                </slot>
+              </md-filled-icon-button>
+              <md-filled-icon-button class="mdc-data-table__pagination-button"
+                               data-page="last"
+                               ?disabled=${this.lastRowOfPage >= this.rows.length}
+                               @click=${this.onPaginationButtonClicked}>
+                <slot name="pagination-last-button-icon">
+                  <md-icon>last_page</md-icon>
+                </slot>
+              </md-filled-icon-button>
+            </div>
           </div>
+        </div>
+
+        <div class="mdc-data-table__progress-indicator">
+          <div class="mdc-data-table__scrim"></div>
+          <mwc-linear-progress class="mdc-data-table__linear-progress" indeterminate/>
+        </div>
       `;
     }
 
-    return;
+    return '';
   }
 
-  protected onPageSizeSelected(e: CustomEvent<SelectedDetail>) {
-    const select = e.target as Select;
-    this.currentPageSize = Number.parseInt(select.value);
+  protected onPageSizeSelected(e: CustomEvent<{value: string}>) {
+    // const select = e.target as Autocomplete;
+    this.currentPageSize = Number.parseInt(e.detail.value);
     this.paginate('first');
   }
 
   protected onPaginationButtonClicked(event: Event) {
     let button = event.target as HTMLElement;
     if (!(button instanceof IconButton)) {
-      button = button.closest('mwc-icon-button') as IconButton;
+      button = button.closest('.mdc-data-table__pagination-button') as IconButton;
     }
-    const action = button.dataset.page as 'first' | 'previous' | 'next' | 'last';
+    const action = button.dataset['page'] as 'first' | 'previous' | 'next' | 'last';
 
     this.paginate(action);
   }
@@ -332,22 +388,26 @@ export class DataTableBase extends BaseElement {
     }
   }
 
-  protected firstUpdated() {
+  protected override firstUpdated() {
     super.firstUpdated();
     this.paginate('first');
   }
 
-  protected updated(_changedProperties) {
+  protected override updated(_changedProperties: PropertyValueMap<any>) {
     super.updated(_changedProperties);
 
     for (const row of this.rows) {
       row.removeEventListener('selected', this.rowCallback);
       row.addEventListener('selected', this.rowCallback);
+      row.setAttribute('density', this.density);
     }
 
     for (const column of this.columns) {
       column.removeEventListener('filter', this.filterColumnCallback);
       column.addEventListener('filter', this.filterColumnCallback);
+      column.removeEventListener('sort', this.sortColumnCallback);
+      column.addEventListener('sort', this.sortColumnCallback);
+      column.setAttribute('density', this.density);
     }
 
     this.headerCheckboxRow?.removeEventListener('checked', this.headerRowCallback);
@@ -355,30 +415,31 @@ export class DataTableBase extends BaseElement {
 
     this.paginate();
 
-    this.mdcFoundation.layout();
+    if (this.inProgress) {
+      this.mdcFoundation?.showProgress();
+    } else {
+      this.mdcFoundation?.hideProgress();
+    }
+
+    this.mdcFoundation?.layout();
   }
 
   protected createAdapter(): MDCDataTableAdapter {
     type ClassName = typeof cssClasses[keyof typeof cssClasses];
     return {
       addClass: (className: ClassName) => {
-        switch (className) {
-          case cssClasses.IN_PROGRESS:
-            this.tableElement.classList.add(cssClasses.IN_PROGRESS);
-            break;
+        if (className === cssClasses.IN_PROGRESS) {
+          this.tableElement.classList.add(cssClasses.IN_PROGRESS);
         }
       },
       removeClass: (className: ClassName) => {
-        switch (className) {
-          case cssClasses.IN_PROGRESS:
-            this.tableElement.classList.remove(cssClasses.IN_PROGRESS);
-            break;
+        if (className === cssClasses.IN_PROGRESS) {
+          this.tableElement.classList.remove(cssClasses.IN_PROGRESS);
         }
       },
       addClassAtRowIndex: (rowIndex: number, className: ClassName) => {
-        switch (className) {
-          case cssClasses.ROW_SELECTED:
-            this.rows[rowIndex].selected = true;
+        if (className === cssClasses.ROW_SELECTED) {
+          this.rows[rowIndex].selected = true;
         }
       },
       getRowCount: () => this.rows.length,
@@ -427,22 +488,21 @@ export class DataTableBase extends BaseElement {
          */
         this.dispatchEvent(new CustomEvent('rowClick', {detail}));
       },
-      registerHeaderRowCheckbox: () => {},
-      registerRowCheckboxes: () => {},
+      registerHeaderRowCheckbox: () => {
+      },
+      registerRowCheckboxes: () => {
+      },
       removeClassAtRowIndex: (rowIndex: number, className: ClassName) => {
-        switch (className) {
-          case cssClasses.ROW_SELECTED:
-            this.rows[rowIndex].selected = false;
+        if (className === cssClasses.ROW_SELECTED) {
+          this.rows[rowIndex].selected = false;
         }
       },
       setAttributeAtRowIndex: (rowIndex: number, attr: string, value: string) => {
         const row = this.rows[rowIndex];
         if (row) {
           row.setAttribute(attr, value);
-          switch (attr) {
-            case strings.ARIA_SELECTED:
-              row.selected = value === 'true';
-              break;
+          if (attr === attributes.ARIA_SELECTED) {
+            row.selected = value === 'true';
           }
         }
       },
@@ -503,7 +563,8 @@ export class DataTableBase extends BaseElement {
             [SortValue.ASCENDING]: messages.SORTED_IN_ASCENDING,
             [SortValue.DESCENDING]: messages.SORTED_IN_DESCENDING,
           };
-          column.sortButton!.ariaLabel = mappings[sortValue];
+          // @ts-ignore
+          column.sortButton.ariaLabel = mappings[sortValue];
         }
       }
     };

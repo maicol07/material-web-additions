@@ -1,0 +1,34 @@
+@use 'sass:map';
+
+@use "@material/data-table/data-table";
+@use '@material/web/elevation/lib/elevation';
+@use '@material/web/sass/resolvers';
+@use '@material/web/sass/theme';
+@use '@material/web/tokens';
+@use "@material/elevation" as oldelevation;
+
+@mixin styles() {
+  @include data-table.core-styles;
+  @include data-table.theme-baseline;
+
+  :host {
+    @extend .mdc-data-table__pagination;
+
+    display: table-footer-group;
+    vertical-align: inherit;
+
+    border-bottom-left-radius: var(--_container-shape);
+    border-bottom-right-radius: var(--_container-shape);
+    background-color: var(--_footer-container-color);
+    height: var(--_footer-container-height);
+    color: var(--_footer-supporting-text-color);
+    font: var(--_footer-supporting-text-font);
+    font-size: var(--_footer-supporting-text-size);
+    line-height: var(--_footer-supporting-text-line-height);
+    font-weight: var(--_footer-supporting-text-weight);
+
+    padding: 0 16px;
+
+    //border: var(--_outline-width) solid var(--_outline-color);
+  }
+}

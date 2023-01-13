@@ -1,12 +1,12 @@
-import {ArgsTable, Stories, Title} from '@storybook/addon-docs';
-import README from '../../packages/data-table/README.md';
-import {Description, Table} from '@storybook/components';
-import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';
-import {Standard} from './data-table.stories';
+import {ArgsTable, PRIMARY_STORY, Stories, Title} from '@storybook/addon-docs';
+import README from '../README.md';
+import {Table} from '@storybook/components';
+
+[//]: # (import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';)
 
 <Title />
 
-<Description markdown={README}/>
+<README />
 
 ## Example Usage
 <Stories title={""} includePrimary/>
@@ -129,13 +129,14 @@ import {Standard} from './data-table.stories';
 [//]: # (| `filter-textfield` | Slot that can contain a textfield. If not supplied, an mwc-textfield element will be created for you                         |)
 
 ### Properties/Attributes & Events
-<ArgsTable story={Standard.id}/>
+<ArgsTable story={PRIMARY_STORY}/>
 
 ### Methods
 *None*
 
 ### CSS Custom Properties
-<CssPropsBlock customProperties={undefined}/>
+
+[//]: # (<CssPropsBlock customProperties={undefined}/>)
 
 ## Additional references
 - [MDC Web: Data Table](https://material.io/develop/web/components/data-table/)

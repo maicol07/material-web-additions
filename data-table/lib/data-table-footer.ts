@@ -1,10 +1,10 @@
 import {html, LitElement} from 'lit';
 
-export class DataTableFooterBase extends LitElement {
+export class DataTableFooter extends LitElement {
   /** @internal */
-  slot = 'footer';
+  override slot = 'footer';
 
-  render() {
+  override render() {
     return html`
       <div class="mdc-data-table__footer" role="rowgroup">
         <slot></slot>

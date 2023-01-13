@@ -1,0 +1,96 @@
+@use 'sass:map';
+
+@use "@material/data-table/data-table";
+@use '@material/web/elevation/lib/elevation';
+@use '@material/web/sass/resolvers';
+@use '@material/web/sass/theme';
+@use '@material/web/tokens';
+@use "@material/elevation" as oldelevation;
+
+$_custom-property-prefix: 'data-table';
+
+//@function _resolve-elevation-theme($theme, $resolvers) {
+//  $theme: elevation.resolve-theme(
+//                  $theme,
+//                  map.get($resolvers, 'elevation'),
+//          $shadow-color-token: 'container-shadow-color',
+//          $elevation-tokens: (container-elevation)
+//  );
+//  @return $theme;
+//}
+
+@mixin styles() {
+  $tokens: tokens.md-comp-data-table-values();
+  $tokens: elevation.resolve-tokens($tokens, 'container-elevation');
+  $tokens: theme.create-theme-vars($tokens, $_custom-property-prefix);
+
+  :host {
+    @each $token, $value in $tokens {
+      --_#{$token}: #{$value};
+    }
+  }
+
+  @include data-table.core-styles;
+  @include data-table.theme-baseline;
+
+  .mdc-data-table {
+    @include oldelevation.elevation(0);
+    @include elevation.theme(
+                    (
+                            level: var(--_container-elevation),
+                            shadow-color: var(--_container-shadow-color),
+                            surface-tint-color: var(--_container-surface-tint-layer-color),
+                    )
+    );
+
+    //@include theme.emit-theme-vars($tokens);
+
+    border-radius: var(--_container-shape);
+    background-color: var(--_container-color);
+
+    @if (map.get($tokens, 'outline-width')) {
+      border: var(--_outline-width) solid var(--_outline-color);
+    }
+
+    .mdc-data-table__table-container {
+      border-radius: var(--_container-shape);
+    }
+
+    .mdc-data-table__table {
+      display: table;
+
+      width: var(--mdc-data-table-width);
+      height: var(--mdc-data-table-height);
+    }
+
+    .mdc-data-table__head {
+      display: table-header-group;
+      vertical-align: middle;
+      border-color: inherit;
+    }
+
+    .mdc-data-table__header-row {
+      display: table-row;
+      vertical-align: inherit;
+      border-color: inherit;
+    }
+
+    .mdc-data-table__content {
+      display: table-row-group;
+      vertical-align: middle;
+      border-color: inherit;
+    }
+
+    slot {
+      vertical-align: inherit;
+    }
+
+    .mdc-data-table__pagination-trailing {
+      margin: 0;
+    }
+
+    .mdc-data-table__pagination-rows-per-page-select {
+      --md-outlined-text-field-container-height: var(--_footer-outlined-select-text-field-container-height)
+    }
+  }
+}

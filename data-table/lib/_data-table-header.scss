@@ -1,0 +1,81 @@
+@use 'sass:map';
+
+@use "@material/data-table/data-table";
+@use '@material/web/elevation/lib/elevation';
+@use '@material/web/sass/resolvers';
+@use '@material/web/sass/theme';
+@use '@material/web/tokens';
+@use "@material/elevation" as oldelevation;
+
+@mixin styles() {
+  @include data-table.core-styles;
+  @include data-table.theme-baseline;
+
+  :host {
+    @extend .mdc-data-table__header-cell;
+
+    display: table-cell;
+    vertical-align: inherit;
+
+    border-top-left-radius: var(--_container-shape);
+    border-top-right-radius: var(--_container-shape);
+    background-color: var(--_header-container-color);
+    height: var(--_header-container-height);
+    color: var(--_header-headline-color);
+    font: var(--_header-headline-font);
+    font-size: var(--_header-headline-size);
+    line-height: var(--_header-headline-line-height);
+    font-weight: var(--_header-headline-weight);
+
+    //border: var(--_outline-width) solid var(--_outline-color);
+  }
+
+  :host(:hover) {
+    color: var(--_header-headline-hover-color);
+  }
+
+  :host([type="numeric"]) {
+    @extend .mdc-data-table__header-cell--numeric;
+  }
+
+  :host([type="checkbox"]) {
+    @extend .mdc-data-table__header-cell--checkbox;
+  }
+
+  :host([sortable]) {
+    @extend .mdc-data-table__header-cell--with-sort;
+
+    md-standard-icon-button-toggle[hidden] {
+      display: none;
+    }
+  }
+
+  :host([sorted]) {
+    @extend .mdc-data-table__header-cell--sorted;
+  }
+
+  :host([sortedDescending]) {
+    @extend .mdc-data-table__header-cell--sorted-descending;
+  }
+
+  :host([filterable]) {
+    &:not([type="checkbox"]) {
+      padding: 8px 16px;
+    }
+
+    .mdc-data-table__header-cell-filter-wrapper {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+    }
+
+    .mdc-data-table__header-cell-label {
+      white-space: nowrap;
+    }
+
+    .mdc-data-table__header-cell-filter-textfield {
+      width: fit-content;
+    }
+  }
+}

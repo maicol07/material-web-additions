@@ -41,8 +41,11 @@
   ],
   "dependencies": {
     "@material/card": "^14.0.0",
+    "@material/data-table": "^14.0.0",
     "@material/layout-grid": "^14.0.0",
-    "@material/web": "0.1.0-alpha.2",
+    "@material/mwc-base": "^0.27.0",
+    "@material/mwc-linear-progress": "^0.27.0",
+    "@material/web": "^1.0.0-pre.1",
     "lit": "^2.5.0",
     "tslib": "^2.4.1"
   },
