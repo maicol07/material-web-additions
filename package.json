@@ -20,6 +20,7 @@
   },
   "homepage": "https://main--625eadb22bf40d003a32215a.chromatic.com/",
   "scripts": {
+    "prepublishOnly": "pnpm run build",
     "build": "wireit",
     "build:ts": "wireit",
     "build:css-to-ts": "wireit",
