@@ -19,7 +19,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "noUnusedLocals": true,
     "paths": {
-      "@amaicol07/material-web-additions/*": [
+      "@maicol07/material-web-additions/*": [
         "./*"
       ]
     },
