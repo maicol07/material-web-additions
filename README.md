@@ -14,7 +14,6 @@ of [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 ## Installation
 
 [![See it on NPM!](https://img.shields.io/npm/v/@maicol07/material-web-additions?style=for-the-badge)](https://www.npmjs.com/package/@maicol07/material-web-additions)
-[![How big is this package in your project?](https://img.shields.io/bundlephobia/minzip/@maicol07/material-web-additions?style=for-the-badge)](https://bundlephobia.com/result?p=@maicol07/material-web-additions)
 
 | Package Manager | Command                     |
 |-----------------|-----------------------------|
