@@ -112,6 +112,7 @@ export class DataTable extends BaseElement {
   /** @internal */
       // @ts-ignore (TypeScript bug)
   protected mdcFoundation!: MDCDataTableFoundation;
+  protected columnFilters: Map<DataTableColumn, string> = new Map();
 
   /** @internal */
   protected get headerCheckboxRow() {
@@ -169,23 +170,33 @@ export class DataTable extends BaseElement {
   /** @internal */
   filterColumnCallback = (e: Event) => {
     const event = e as CustomEvent<FilterTextFieldInputEventDetail>;
-    const index = this.columns.indexOf(event.detail.column);
-    let {text} = event.detail;
+    const {text, column} = event.detail;
+
+    if (text === '') {
+      this.columnFilters.delete(column);
+    } else {
+      this.columnFilters.set(column, text);
+    }
 
     for (const row of this.rows) {
       row.hidden = true;
     }
 
-    const rowsToShow = this.rows.filter((row) => {
-      let cellText = row.cells[index].textContent ?? '';
+    let rowsToShow = this.rows;
 
-      if (!event.detail.caseSensitive) {
-        cellText = cellText.toLowerCase();
-        text = text.toLowerCase();
-      }
+    for (let [column, filterText] of this.columnFilters) {
+      rowsToShow = this.rows.filter((row) => {
+        const index = this.columns.indexOf(column);
+        let cellText = row.cells[index].textContent ?? '';
 
-      return cellText.search(text) !== -1;
-    });
+        if (!event.detail.caseSensitive) {
+          cellText = cellText.toLowerCase();
+          filterText = filterText.toLowerCase();
+        }
+
+        return cellText.search(filterText) !== -1;
+      });
+    }
 
     this.showRows(rowsToShow);
 
@@ -199,7 +210,7 @@ export class DataTable extends BaseElement {
         column: event.detail.column,
         text,
         caseSensitive: event.detail.caseSensitive,
-        columnIndex: index
+        columnIndex: this.columns.indexOf(column)
       }
     }));
   };
