@@ -17,6 +17,11 @@ export interface FilterTextFieldInputEventDetail {
   column: DataTableColumn,
   caseSensitive: boolean
 }
+export interface FilterTextFieldKeyDownEventDetail {
+  field: TextField,
+  key: string,
+  column: DataTableColumn,
+}
 
 export interface SortButtonClickedEventDetail {
   column: DataTableColumn,
@@ -113,6 +118,7 @@ export class DataTableColumn extends LitElement {
                           label="${this.filterTextFieldLabel}"
                           style="--md-outlined-field-container-height: 36px;"
                           @input=${this.onFilterTextFieldInput}
+                          @keydown=${this.onFilterTextFieldKeyDown}
                   />
               </slot>
           </div>
@@ -181,6 +187,23 @@ export class DataTableColumn extends LitElement {
         text: textfield.value,
         column: this,
         caseSensitive: this.filterCaseSensitive
+      }
+    }));
+  }
+
+  /** @internal */
+  onFilterTextFieldKeyDown(e: KeyboardEvent) {
+    const textfield = e.target as TextField;
+    /**
+     * Event emitted when the user has typed in column filter textfield.
+     *
+     * Event detail: `FilterTextFieldKeyDownEventDetail`;
+     */
+    this.dispatchEvent(new CustomEvent<FilterTextFieldKeyDownEventDetail>('keydown', {
+      detail: {
+        field: textfield,
+        key: e.key,
+        column: this,
       }
     }));
   }
