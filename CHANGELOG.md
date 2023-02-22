@@ -1,6 +1,21 @@
 # Changelog
 
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/maicol07/material-web-additions/compare/1.1.0...1.1.1)
+
+> Released on February 22, 2023
+
+### 🐛 Bug Fixes
+- [`0e6aa37`](https://github.com/maicol07/material-web-additions/commit/0e6aa376f6804d942934bda20bc225074bf2dcd5) Temporarily removed autocomplete readonly to get the page size select working.
+- [`5220319`](https://github.com/maicol07/material-web-additions/commit/5220319176ef1f5aee03b3417e4fd8fc48517b43) Fix text fields height after upgrading to Material Web 1.0.0-pre2
+- [`ee04821`](https://github.com/maicol07/material-web-additions/commit/ee04821633b9a24ff934d3e5dc5168d4d1da83ac) Fix incompatibility with Material Web 1.0.0-pre2
+
+### Other changes
+- [`8cee92d`](https://github.com/maicol07/material-web-additions/commit/8cee92d7fcae1e601550ffe0e9682f8b3a93fbfd) Bump package version
+- [`3f0fd81`](https://github.com/maicol07/material-web-additions/commit/3f0fd81fc736f9c8b62decbe453ad191a3851fed) **deps:** ⬆️ Upgraded dependencies
+
+
 <a name="1.1.0"></a>
 ## [1.1.0](https://github.com/maicol07/material-web-additions/compare/1.0.0...1.1.0)
 
