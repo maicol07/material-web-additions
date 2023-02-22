@@ -286,7 +286,6 @@ export class DataTable extends BaseElement {
               <md-outlined-autocomplete
                   class="mdc-data-table__pagination-rows-per-page-select"
                   value="${this.currentPageSize}"
-                  style="--md-outlined-autocomplete-menu-list-item-container-height: 36px;"
                   @autocomplete-value-changed=${this.onPageSizeSelected}
                   readonly
               >

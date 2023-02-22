@@ -28,6 +28,7 @@ $_custom-property-prefix: 'data-table';
     @each $token, $value in $tokens {
       --_#{$token}: #{$value};
     }
+    --_footer-outlined-select-text-field-container-height: 6px;
   }
 
   @include data-table.core-styles;
@@ -90,7 +91,7 @@ $_custom-property-prefix: 'data-table';
     }
 
     .mdc-data-table__pagination-rows-per-page-select {
-      --md-outlined-text-field-container-height: var(--_footer-outlined-select-text-field-container-height)
+      --_container-padding-vertical: var(--_footer-outlined-select-text-field-container-height);
     }
   }
 }

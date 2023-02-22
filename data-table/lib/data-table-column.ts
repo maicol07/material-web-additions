@@ -116,7 +116,7 @@ export class DataTableColumn extends LitElement {
               <slot name="filter-textfield" class="mdc-data-table__filter-textfield">
                   <md-outlined-text-field
                           label="${this.filterTextFieldLabel}"
-                          style="--md-outlined-field-container-height: 36px;"
+                          style="--_container-padding-vertical: var(--_footer-outlined-select-text-field-container-height);"
                           @input=${this.onFilterTextFieldInput}
                           @keydown=${this.onFilterTextFieldKeyDown}
                   />
