@@ -286,9 +286,8 @@ export class DataTable extends BaseElement {
               <md-outlined-autocomplete
                   class="mdc-data-table__pagination-rows-per-page-select"
                   value="${this.currentPageSize}"
-                  @autocomplete-value-changed=${this.onPageSizeSelected}
-                  readonly
-              >
+                  @autocomplete-value-changed=${this.onPageSizeSelected}>
+<!--                  readonly>-->
                 ${this.pageSizesArray.map((rowsPerPage, index) => html`
                   <md-autocomplete-item headline="${rowsPerPage}" value="${rowsPerPage}"></md-autocomplete-item>
                 `)}
