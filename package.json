@@ -50,7 +50,7 @@
     "tslib": "^2.5.0"
   },
   "peerDependencies": {
-    "@material/web": "1.0.0-pre.2"
+    "@material/web": "^1.0.0-pre.4"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -59,7 +59,7 @@
     "@babel/preset-typescript": "^7.21.0",
     "@custom-elements-manifest/analyzer": "^0.6.9",
     "@ljcl/storybook-addon-cssprops": "^2.3.5",
-    "@material/web": "1.0.0-pre.4",
+    "@material/web": "^1.0.0-pre.4",
     "@storybook/addon-a11y": "next",
     "@storybook/addon-actions": "next",
     "@storybook/addon-backgrounds": "next",

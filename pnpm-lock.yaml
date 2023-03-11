@@ -15,7 +15,7 @@ importers:
       '@material/layout-grid': ^14.0.0
       '@material/mwc-base': ^0.27.0
       '@material/mwc-linear-progress': ^0.27.0
-      '@material/web': 1.0.0-pre.4
+      '@material/web': ^1.0.0-pre.4
       '@storybook/addon-a11y': next
       '@storybook/addon-actions': next
       '@storybook/addon-backgrounds': next
