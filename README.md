@@ -2,7 +2,7 @@
 
 [![GitHub issues by-label](https://img.shields.io/github/issues-raw/maicol07/material-web-additions/Type:%20Bug)](https://github.com/maicol07/material-web-additions/issues?q=is%3Aissue+is%3Aopen+label%3A%22Type%3A+Bug%22)
 
-> IMPORTANT: Material Web & Material Web Additions are a work in progress and subject to major changes until 1.0
+> IMPORTANT: Material Web & Material Web Additions are work in progress and subject to major changes until 1.0
 > release.
 
 Material Web Additions is a collection of additional components
@@ -12,11 +12,10 @@ Additions are implemented as a collection
 of [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
 
 ## Installation
-
 [![See it on NPM!](https://img.shields.io/npm/v/@maicol07/material-web-additions?style=for-the-badge)](https://www.npmjs.com/package/@maicol07/material-web-additions)
 
-| Package Manager | Command                     |
-|-----------------|-----------------------------|
+| Package Manager | Command                                        |
+|-----------------|------------------------------------------------|
 | npm             | `npm install @maicol07/material-web-additions` |
 | yarn            | `yarn add @maicol07/material-web-additions`    |
 | pnpm            | `pnpm add @maicol07/material-web-additions`    |

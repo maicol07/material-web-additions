@@ -46,3 +46,11 @@ md-layout-grid md-outlined-card {
 .components-card-status {
   font-family: Roboto, sans-serif !important;
 }
+
+pre {
+  font-family: monospace;
+
+  .token {
+    font-family: monospace !important;
+  }
+}

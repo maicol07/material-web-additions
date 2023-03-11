@@ -12,34 +12,17 @@ import '@material/web/iconbutton/standard-icon-button.js';
 # Material Web Additions
 [![GitHub issues by-label](https://img.shields.io/github/issues-raw/maicol07/material-web-additions/Type:%20Bug)](https://github.com/maicol07/material-web-additions/issues?q=is%3Aissue+is%3Aopen+label%3A%22Type%3A+Bug%22)
 
-> IMPORTANT: Material Web & Material Web Additions are a work in progress and subject to major changes until 1.0 release.
+> IMPORTANT: Material Web & Material Web Additions are work in progress and subject to major changes until 1.0 release.
 
 Material Web Additions is a collection of additional components to [Material Web](https://github.com/material-components/material-web)
 components: Google’s UI toolkit for building beautiful, accessible web applications. Material Web & Material Web
-Additions are implemented as a collection
-of [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
+Additions are implemented as a collection of [web components](https://developer.mozilla.org/en-US/docs/Web/Web_Components).
 
-The Material team is currently working on [Material You](https://material.io/blog/announcing-material-you) (Material
-Design 3) support for Material Web components.
-
-Developers using this library should expect some big changes after Material Web v1 has been released (when the Material
-team finished their work on Material You).
-
-A few notable changes you should expect:
-
-- UX changes as we adopt the new designs (production users will definitely want to pin to an appropriate release, not
-mainline)
-- A single npm package (`@maicol07/md-web-additions`)
-- Simplification of tag name prefixes to `md-` (CSS custom properties will be `--md-`)
-- Components with variant attributes will be split into several variant components:
-
-Example: `mwa-card` will be split into `md-card`, `md-outlined-card`, etc
-
-[Contributing Guide](#Contributing)
+[Material 3](https://m3.material.io/) is the latest version of Google’s open-source design system.
 
 ## Components
-Some components in this repo have been originally developed by other authors, then abandoned. I've decided to adopt and
-rework them under a unique, bigger package.
+Some components in this repo were originally developed by other authors, then abandoned. I've decided to adopt and
+rework them under a unique, bigger package, while adding new components.
 
 <md-layout-grid>
     {getMarkup()}
@@ -49,92 +32,66 @@ rework them under a unique, bigger package.
 <br/>
 
 ## Quick start
+### Install
+[![See it on NPM!](https://img.shields.io/npm/v/@maicol07/material-web-additions?style=for-the-badge)](https://www.npmjs.com/package/@maicol07/material-web-additions)
+Install Material web components using [npm](https://npm.org) or any other [NodeJS](https://nodejs.org) package manager.
 
-#### 1) Install
-Install a component from
-    ```sh
-npm install @maicol07/material-web-additions
+| Package Manager | Command                                        |
+|-----------------|------------------------------------------------|
+| npm             | `npm install @maicol07/material-web-additions` |
+| yarn            | `yarn add @maicol07/material-web-additions`    |
+| pnpm            | `pnpm add @maicol07/material-web-additions`    |
+
+### Import
+Import element definitions from `@maicol07/material-web-additions/<component>/<component-variant>.js`.
+
+```js
+// index.js
+import '@material/web/button/filled-button.js';
+import '@material/web/button/outlined-button.js';
+import '@material/web/checkbox/checkbox.js';
 ```
 
-#### 2) Write HTML and JavaScript
-Import the component's JavaScript module, use the component in your HTML, and control it with JavaScript, just like you
-would with a built - in element such as`<button>`:
+### Usage
+Use the `<component-name>` tag in HTML markup. Refer to the component docs (from the sidebar) for more guidance on using each component.
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My Example App</title>
+<script type="module" src="./index.js"></script>
 
-    <!-- Your application may load the Roboto and Material Icons fonts. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
-  </head>
-  <body>
-    <!-- Use Web Components in your HTML like regular built-in elements. -->
-    <md-layout-grid id="myGrid">
-        <p>I'm on the first column</p>
-        <button> I'm in the middle</button>
-        <input value="I'm in the last column"/>
-    </md-layout-grid>
+<md-layout-grid id="myGrid">
+    <p>I'm on the first column</p>
+    <button> I'm in the middle</button>
+    <input value="I'm in the last column"/>
+</md-layout-grid>
 
-    <!-- Material Web uses standard JavaScript modules. -->
-    <script type="module">
-      // Importing this module registers <mwc-button> as an element that you
-      // can use in this page.
-      //
-      // Note this import is a bare module specifier, so it must be converted
-      // to a path using a server such as Web Dev Server.
-      import '@maicol07/material-web-additions/layout-grid/layout-grid.js';
-
-      // Standard DOM APIs work with Web Components just like they do for
-      // built-in elements.
-      const grid = document.querySelector('#myGrid');
-      grid.addEventListener('onmouseenter', () => {
-        alert('You entered the layout grid!');
-      });
-    </script>
-  </body>
-</html>
+<md-outlined-card>
+    <h1>Card title</h1>
+    <p>Card content</p>
+</md-outlined-card>
 ```
 
-#### 3) Serve
-Serve your HTML with any server or build process that supports * bare module specifier resolution * (see next section):
+### Building
+
+Material web additions components use bare module specifiers that must be resolved with tools until
+[import maps](https://github.com/WICG/import-maps) are adopted.
+
+We recommend following [lit.dev's modern build for production](https://lit.dev/docs/tools/production/#modern-only-build)
+for a more in-depth building guide.
+
+#### Rollup quick start
+For a quick start, we recommend using [Rollup](https://rollupjs.org/) to resolve bare module specifiers into a bundled file.
+Install Rollup and a plugin to resolve bare module specifiers.
 
 ```sh
-npm install --save-dev @web/dev-server
-npx web-dev-server --node-resolve
+npm install rollup @rollup/plugin-node-resolve
 ```
 
-## Bare module specifiers
-Material Web & Material Web Additions are published as
-standard [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) that use *bare
-module specifiers *. Bare module specifiers are not yet supported by browsers, so it is necessary to use a tool that
-transforms them to a * path * (for example with `md-layout-grid` to`./node_modules/@maicol07/material-web-additions/layout-grid/layout-grid.js`).
+Create a bundle from an entrypoint `index.js` file and use it in a `<script>` `"src"` attribute.
 
-Two great choices for tools that do this are:
-
--During local development, use Modern Web's [`Web Dev Server`](https://modern-web.dev/docs/dev-server/overview/) with
-the`--node-resolve` flag.
-- For your production deployment, build your application with [Rollup](https://rollupjs.org/guide/en/) using
-the [`rollup-plugin-node-resolve`](https://github.com/rollup/rollup-plugin-node-resolve) plugin or similar.
-
-## Fonts
-Most applications should include the following tags in their main HTML file to ensure that text and icons render
+```sh
+npx rollup -p @rollup/plugin-node-resolve index.js > bundle.js
+```
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+<script src="./bundle.js"></script>
 ```
-
-Material Web & Material Web Additions default to using the [Roboto](https://fonts.google.com/specimen/Roboto) font for
-text, and the [Material Icons](https://google.github.io/material-design-icons/) font for icons. These fonts are *not*
-automatically loaded, so it is the application's responsiblity to ensure that they are loaded.
-
-Note that if you load the Material Icons font in a different way to the recommendation shown above, be sure to
-include [`font-display: block`](https://google.github.io/material-design-icons/) in your `@font-face` CSS rule. This
-prevents icons from initially displaying their raw * ligature * text before the font has loaded.The`<link>` tag
-recommended above automaticaly handles this setting.
