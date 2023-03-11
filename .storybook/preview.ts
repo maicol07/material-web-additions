@@ -1,4 +1,4 @@
-import WhatsNew from '../CHANGELOG.md';
+// import WhatsNew from '../CHANGELOG.md';
 import {setCustomElementsManifest} from '@storybook/web-components';
 // @ts-ignore
 import packageJson from '../package.json';
@@ -27,7 +27,7 @@ export const parameters = {
         theme
     },
     viewMode: 'docs',
-    whatsNewSource: WhatsNew
+    // whatsNewSource: WhatsNew
 };
 
 setCustomElementsManifest(customElements);

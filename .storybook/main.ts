@@ -24,7 +24,6 @@ const config: StorybookConfig = {
     // '@ljcl/storybook-addon-cssprops',
     '@storybook/addon-a11y',
     '@storybook/addon-storysource',
-    // 'storybook-addon-whats-new',
     'storybook-dark-mode'
   ],
   framework: {

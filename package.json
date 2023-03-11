@@ -94,7 +94,6 @@
     "remark-gfm": "^3.0.1",
     "sass": "~1.59.2",
     "storybook": "next",
-    "storybook-addon-whats-new": "^1.0.4-canary.1.f1f8e94.0",
     "storybook-dark-mode": "^3.0.0-canary.191.4282.0",
     "storybook-docs-toc": "^1.7.0",
     "styled-components": "^5.3.8",

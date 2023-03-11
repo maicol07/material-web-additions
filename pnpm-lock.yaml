@@ -51,7 +51,6 @@ importers:
       remark-gfm: ^3.0.1
       sass: ~1.59.2
       storybook: next
-      storybook-addon-whats-new: ^1.0.4-canary.1.f1f8e94.0
       storybook-dark-mode: ^3.0.0-canary.191.4282.0
       storybook-docs-toc: ^1.7.0
       styled-components: ^5.3.8
@@ -111,7 +110,6 @@ importers:
       remark-gfm: 3.0.1
       sass: 1.59.2
       storybook: 7.0.0-rc.1
-      storybook-addon-whats-new: 1.0.4-canary.1.f1f8e94.0_zuidtibmqemblnx4dnglcba74a
       storybook-dark-mode: 3.0.0-canary.191.4282.0_biqbaboplfbrettd7655fr4n2y
       storybook-docs-toc: 1.7.0_ip7yc3pl4oncwwhpbdcf7fan4a
       styled-components: 5.3.8_7i5myeigehqah43i5u7wbekgba
@@ -8184,31 +8182,6 @@ packages:
 
   /store2/2.14.2:
     resolution: {integrity: sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==}
-    dev: true
-
-  /storybook-addon-whats-new/1.0.4-canary.1.f1f8e94.0_zuidtibmqemblnx4dnglcba74a:
-    resolution: {integrity: sha512-Fa74/LzXeYxbxVngqhGezVEWJdKw4HQpqovIkX0Q9GfmhUM3Q2XC70CTwhKC/ACijrhVlpXBuGOzI3g6jgxhKQ==}
-    peerDependencies:
-      '@storybook/addons': ^6.4.0
-      '@storybook/api': ^6.4.0
-      '@storybook/components': ^6.4.0
-      '@storybook/core-events': ^6.4.0
-      '@storybook/theming': ^6.4.0
-      react: ^16.8.0 || ^17.0.0
-      react-dom: ^16.8.0 || ^17.0.0
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      '@storybook/addons': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/api': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/components': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/core-events': 7.0.0-rc.1
-      '@storybook/theming': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: true
 
   /storybook-dark-mode/3.0.0-canary.191.4282.0_biqbaboplfbrettd7655fr4n2y:
