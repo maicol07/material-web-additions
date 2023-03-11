@@ -1,6 +1,5 @@
 import {ArgsTable, PRIMARY_STORY, Stories, Title} from '@storybook/addon-docs';
 import README from '../README.md?raw';
-import {Table} from '@storybook/components';
 import Markdown from "markdown-to-jsx";
 
 [//]: # (import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';)
@@ -16,118 +15,31 @@ import Markdown from "markdown-to-jsx";
 ### Slots
 #### DataTable
 
-<Table>
-    <tr>
-        <td>Name</td>
-        <td>Description</td>
-    </tr>
-    <tr>
-        <td>default</td>
-        <td>Default slot that contains all the table elements</td>
-    </tr>
-    <tr>
-        <td>`row`</td>
-        <td>Slot that contains all the table rows</td>
-    </tr>
-    <tr>
-        <td>`column`</td>
-        <td>Slot that contains all the table columns</td>
-    </tr>
-    <tr>
-        <td>`footer`</td>
-        <td>Slot that contains the table footer</td>
-    </tr>
-</Table>
-
-[//]: # (| Name     | Description                                       |)
-
-[//]: # (|----------|---------------------------------------------------|)
-
-[//]: # (| default  | Default slot that contains all the table elements |)
-
-[//]: # (| `row`    | Slot that contains all the table rows             |)
-
-[//]: # (| `column` | Slot that contains all the table columns          |)
-
-[//]: # (| `footer` | Slot that contains the table footer               |)
+| Name     | Description                                       |
+|----------|---------------------------------------------------|
+| default  | Default slot that contains all the table elements |
+| `row`    | Slot that contains all the table rows             |
+| `column` | Slot that contains all the table columns          |
+| `footer` | Slot that contains the table footer               |
 
 #### DataTableRow
-<Table>
-    <tr>
-        <td>Name</td>
-        <td>Description</td>
-    </tr>
-    <tr>
-        <td>default</td>
-        <td>Default slot that contains all the rows elements</td>
-    </tr>
-</Table>
-
-[//]: # (| Name    | Description                                      |)
-
-[//]: # (|---------|--------------------------------------------------|)
-
-[//]: # (| default | Default slot that contains all the rows elements |)
+| Name    | Description                                      |
+|---------|--------------------------------------------------|
+| default | Default slot that contains all the rows elements |
 
 #### DataTableCell
-<Table>
-    <tr>
-        <td>Name</td>
-        <td>Description</td>
-    </tr>
-    <tr>
-        <td>default</td>
-        <td>Default slot that can contain a checkbox or a text</td>
-    </tr>
-</Table>
-
-[//]: # (| Name    | Description                                        |)
-
-[//]: # (|---------|----------------------------------------------------|)
-
-[//]: # (| default | Default slot that can contain a checkbox or a text |)
+| Name    | Description                                        |
+|---------|----------------------------------------------------|
+| default | Default slot that can contain a checkbox or a text |
 
 #### DataTableColumn
-<Table>
-    <tr>
-        <td>Name</td>
-        <td>Description</td>
-    </tr>
-    <tr>
-        <td>default</td>
-        <td>Default slot that contains the column label</td>
-    </tr>
-    <tr>
-        <td>`sort-icon-on`</td>
-        <td>Slot that contains the ascending sort icon of the sort button. If not supplied, an mwc-icon element will be created for you</td>
-    </tr>
-    <tr>
-        <td>`sort-icon-off`</td>
-        <td>Slot that contains the descending sort icon of the sort button. If not supplied, an mwc-icon element will be created for you</td>
-    </tr>
-    <tr>
-        <td>`checkbox`</td>
-        <td>Slot that can contain a checkbox. If not supplied, an mwc-checkbox element will be created for you</td>
-    </tr>
-    <tr>
-        <td>`filter-textfield`</td>
-        <td>Slot that can contain a textfield. If not supplied, an mwc-textfield element will be created for you</td>
-    </tr>
-</Table>
-
-[//]: # (| Name               | Description                                                                                                                  |)
-
-[//]: # (|--------------------|------------------------------------------------------------------------------------------------------------------------------|)
-
-[//]: # (| default            | Default slot that contains the column label                                                                                  |)
-
-[//]: # (| `sort-icon-on`     | Slot that contains the ascending sort icon of the sort button. If not supplied, an mwc-icon element will be created for you  |)
-
-[//]: # (| `sort-icon-off`    | Slot that contains the descending sort icon of the sort button. If not supplied, an mwc-icon element will be created for you |)
-
-[//]: # (| `checkbox`         | Slot that can contain a checkbox. If not supplied, an mwc-checkbox element will be created for you                           |)
-
-[//]: # (| `filter-textfield` | Slot that can contain a textfield. If not supplied, an mwc-textfield element will be created for you                         |)
+| Name               | Description                                                                                                                  |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------|
+| default            | Default slot that contains the column label                                                                                  |
+| `sort-icon-on`     | Slot that contains the ascending sort icon of the sort button. If not supplied, an mwc-icon element will be created for you  |
+| `sort-icon-off`    | Slot that contains the descending sort icon of the sort button. If not supplied, an mwc-icon element will be created for you |
+| `checkbox`         | Slot that can contain a checkbox. If not supplied, an mwc-checkbox element will be created for you                           |
+| `filter-textfield` | Slot that can contain a textfield. If not supplied, an mwc-textfield element will be created for you                         |
 
 ### Properties/Attributes & Events
 <ArgsTable story={PRIMARY_STORY}/>

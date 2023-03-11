@@ -1,4 +1,6 @@
 import {StorybookConfig} from '@storybook/web-components-vite';
+import {mergeConfig} from 'vite';
+import remarkGfm from 'remark-gfm';
 
 const config: StorybookConfig = {
   stories: [
@@ -6,6 +8,16 @@ const config: StorybookConfig = {
     '../!(node_modules)/stories/*.stories.@(ts|mdx)'
   ],
   addons: [
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/preset-scss',
@@ -18,6 +30,12 @@ const config: StorybookConfig = {
   framework: {
     name: '@storybook/web-components-vite',
     options: {}
+  },
+  async viteFinal(config) {
+    // Merge custom configuration into the default config
+    return mergeConfig(config, {
+     assetsInclude: ['**/*.md']
+    });
   },
   docs: {
     autodocs: true

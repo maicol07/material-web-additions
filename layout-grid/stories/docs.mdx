@@ -1,6 +1,5 @@
 import {ArgsTable, PRIMARY_STORY, Stories, Subtitle, Title} from '@storybook/addon-docs';
 import README from '../README.md?raw';
-import {Table} from '@storybook/components';
 import Markdown from "markdown-to-jsx";
 
 [//]:  # (import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';)
@@ -16,24 +15,9 @@ Each element inside `md-layout-grid` will be recognized as a single cell. Defaul
 
 ## API
 ### Slots
-<Table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>default</td>
-            <td>Content of the cell</td>
-        </tr>
-    </tbody>
-</Table>
-
-[//]: # (| Name    | Description                               |)
-[//]: # (|---------|-------------------------------------------|)
-[//]: # (| default | Default slot that contains the grid cells |)
+| Name    | Description                               |
+|---------|-------------------------------------------|
+| default | Default slot that contains the grid cells |
 
 ### Properties/Attributes
 #### Layout grid
@@ -42,60 +26,14 @@ Each element inside `md-layout-grid` will be recognized as a single cell. Defaul
 #### Cell
 > Cell can be any HTML element, so these attributes can be applied to any element.
 
-<Table>
-    <tr>
-        <td>Name</td>
-        <td>Type</td>
-        <td>Description</td>
-    </tr>
-    <tr>
-        <td>`grid-span`</td>
-        <td>`number`</td>
-        <td>Cell span size on all devices*</td>
-    </tr>
-    <tr>
-        <td>`grid-span-destop`</td>
-        <td>`number`</td>
-        <td>Cell span size on desktop devices*</td>
-    </tr>
-    <tr>
-        <td>`grid-span-tablet`</td>
-        <td>`number`</td>
-        <td>Cell span size on tablet devices*</td>
-    </tr>
-    <tr>
-        <td>`grid-span-phone`</td>
-        <td>`number`</td>
-        <td>Cell span size on phone devices*</td>
-    </tr>
-    <tr>
-        <td>`grid-order`</td>
-        <td>`number`</td>
-        <td>By default, items are positioned in the source order. However, you can reorder them by using the `order` attributes, where value is an integer between 1 and 12. Please bear in mind that this may have an impact on accessibility, since screen readers and other tools tend to follow source order.</td>
-    </tr>
-    <tr>
-        <td>`grid-align`</td>
-        <td>`string`</td>
-        <td>Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of `top`, `middle` or `bottom`.</td>
-    </tr>
-</Table>
-
-
-[//]: # (| Name               | Type     | Description                                                                                                                                                                                                                                                                                           |)
-
-[//]: # (|--------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|)
-
-[//]: # (| `grid-span`        | `number` | Cell span size on all devices*                                                                                                                                                                                                                                                                        |)
-
-[//]: # (| `grid-span-destop` | `number` | Cell span size on desktop devices*                                                                                                                                                                                                                                                                    |)
-
-[//]: # (| `grid-span-tablet` | `number` | Cell span size on tablet devices*                                                                                                                                                                                                                                                                     |)
-
-[//]: # (| `grid-span-phone`  | `number` | Cell span size on phone devices*                                                                                                                                                                                                                                                                      |)
-
-[//]: # (| `grid-order`       | `number` | By default, items are positioned in the source order. However, you can reorder them by using the `order` attributes, where value is an integer between 1 and 12. Please bear in mind that this may have an impact on accessibility, since screen readers and other tools tend to follow source order. |)
-
-[//]: # (| `grid-align`       | `string` | Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of `top`, `middle` or `bottom`.                                                                                                                        |)
+| Name               | Type     | Description                                                                                                                                                                                                                                                                                           |
+|--------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `grid-span`        | `number` | Cell span size on all devices*                                                                                                                                                                                                                                                                        |
+| `grid-span-destop` | `number` | Cell span size on desktop devices*                                                                                                                                                                                                                                                                    |
+| `grid-span-tablet` | `number` | Cell span size on tablet devices*                                                                                                                                                                                                                                                                     |
+| `grid-span-phone`  | `number` | Cell span size on phone devices*                                                                                                                                                                                                                                                                      |
+| `grid-order`       | `number` | By default, items are positioned in the source order. However, you can reorder them by using the `order` attributes, where value is an integer between 1 and 12. Please bear in mind that this may have an impact on accessibility, since screen readers and other tools tend to follow source order. |
+| `grid-align`       | `string` | Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of `top`, `middle` or `bottom`.                                                                                                                        |
 
 <i>* You can set the cells span by applying `span` attribute, where value is an integer between `1` and `12`. If the
     chosen
