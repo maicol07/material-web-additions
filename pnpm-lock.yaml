@@ -18,10 +18,14 @@ importers:
       '@material/web': 1.0.0-pre.4
       '@storybook/addon-a11y': next
       '@storybook/addon-actions': next
+      '@storybook/addon-backgrounds': next
+      '@storybook/addon-controls': next
       '@storybook/addon-docs': next
-      '@storybook/addon-essentials': next
       '@storybook/addon-links': next
+      '@storybook/addon-measure': next
       '@storybook/addon-storysource': next
+      '@storybook/addon-toolbars': next
+      '@storybook/addon-viewport': next
       '@storybook/addons': next
       '@storybook/api': next
       '@storybook/blocks': next
@@ -78,10 +82,14 @@ importers:
       '@material/web': 1.0.0-pre.4
       '@storybook/addon-a11y': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-actions': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
+      '@storybook/addon-backgrounds': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
+      '@storybook/addon-controls': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-docs': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/addon-essentials': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-links': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
+      '@storybook/addon-measure': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-storysource': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
+      '@storybook/addon-toolbars': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
+      '@storybook/addon-viewport': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
       '@storybook/addons': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
       '@storybook/api': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
       '@storybook/blocks': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
@@ -2699,33 +2707,6 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/addon-essentials/7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-bEkSBQxoAhOazi0Aj1sa574z+EeUiLefUfOmsh0h5HilMwOBji/5nkw5bBJJIX74o8PUiIOTrsV8gZHF2vIruw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@storybook/addon-actions': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/addon-backgrounds': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/addon-controls': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/addon-docs': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/addon-highlight': 7.0.0-rc.1
-      '@storybook/addon-measure': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/addon-outline': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/addon-toolbars': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/addon-viewport': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/core-common': 7.0.0-rc.1
-      '@storybook/manager-api': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/node-logger': 7.0.0-rc.1
-      '@storybook/preview-api': 7.0.0-rc.1
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      ts-dedent: 2.2.0
-    transitivePeerDependencies:
-      - '@storybook/mdx1-csf'
-      - supports-color
-    dev: true
-
   /@storybook/addon-highlight/7.0.0-rc.1:
     resolution: {integrity: sha512-qQMntEFAikvS7RvRbeBFUIPN70sOi9f2byRFl6KMh7onrf+FfXWRPt38pk3Eq+t/kC55mu6m+8wHOiS63DM0BA==}
     dependencies:
@@ -2779,29 +2760,6 @@ packages:
       '@storybook/types': 7.0.0-rc.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-    dev: true
-
-  /@storybook/addon-outline/7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-BGGci/VjklLXe4gqX6wIoA7I/aCaVZ0cvrBAS82+8yoLg48wDHwEXq37F5uLUa5EEs6gnBZKacGZC4+JmpjlWw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      '@storybook/client-logger': 7.0.0-rc.1
-      '@storybook/components': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/core-events': 7.0.0-rc.1
-      '@storybook/global': 5.0.0
-      '@storybook/manager-api': 7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y
-      '@storybook/preview-api': 7.0.0-rc.1
-      '@storybook/types': 7.0.0-rc.1
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      ts-dedent: 2.2.0
     dev: true
 
   /@storybook/addon-storysource/7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y:

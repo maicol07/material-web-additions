@@ -8,9 +8,16 @@ const config: StorybookConfig = {
     '../!(node_modules)/stories/*.stories.@(ts|mdx)'
   ],
   addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-actions',
+    '@storybook/addon-viewport',
     {
       name: '@storybook/addon-docs',
       options: {
+        configureJSX: true,
+        babelOptions: {},
+        sourceLoaderOptions: null,
+        transcludeMarkdown: true,
         mdxPluginOptions: {
           mdxCompileOptions: {
             remarkPlugins: [remarkGfm],
@@ -18,8 +25,11 @@ const config: StorybookConfig = {
         },
       },
     },
+    '@storybook/addon-controls',
+    '@storybook/addon-backgrounds',
+    '@storybook/addon-toolbars',
+    '@storybook/addon-measure',
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
     '@storybook/preset-scss',
     // '@ljcl/storybook-addon-cssprops',
     '@storybook/addon-a11y',
