@@ -72,7 +72,6 @@ importers:
       '@material/layout-grid': 14.0.0
       '@material/mwc-base': 0.27.0
       '@material/mwc-linear-progress': 0.27.0
-      '@material/web': 1.0.0-pre.2
       lit: 2.6.1
       tslib: 2.5.0
     devDependencies:
@@ -82,6 +81,7 @@ importers:
       '@babel/preset-typescript': 7.21.0_@babel+core@7.21.0
       '@custom-elements-manifest/analyzer': 0.6.8
       '@ljcl/storybook-addon-cssprops': 2.3.5_maqr6luryhh673hu2e2ddbxfie
+      '@material/web': 1.0.0-pre.2
       '@storybook/addon-a11y': 7.0.0-beta.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-actions': 7.0.0-beta.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-docs': 7.0.0-beta.16_biqbaboplfbrettd7655fr4n2y
@@ -2251,13 +2251,11 @@ packages:
 
   /@lit-labs/ssr-dom-shim/1.0.0:
     resolution: {integrity: sha512-ic93MBXfApIFTrup4a70M/+ddD8xdt2zxxj9sRwHQzhS9ag/syqkD8JPdTXsc1gUy2K8TTirhlCqyTEM/sifNw==}
-    dev: false
 
   /@lit/reactive-element/1.6.1:
     resolution: {integrity: sha512-va15kYZr7KZNNPZdxONGQzpUr+4sxVu7V/VG7a8mRfPPXUyhEYj5RzXCQmGrlP3tAh0L3HHm5AjBMFYRqlM9SA==}
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.0.0
-    dev: false
 
   /@ljcl/storybook-addon-cssprops/2.3.5_maqr6luryhh673hu2e2ddbxfie:
     resolution: {integrity: sha512-p2HihtLI2JEYvNKbatfwSDIKOvbmpWkzTh01xWpkeXopr86Oxs6Cokuh/OXkPJ4x4QkqTIycQduAF4sMOTMfQA==}
@@ -2666,7 +2664,7 @@ packages:
     dependencies:
       lit: 2.6.1
       tslib: 2.5.0
-    dev: false
+    dev: true
 
   /@mdx-js/react/2.2.1_react@18.2.0:
     resolution: {integrity: sha512-YdXcMcEnqZhzql98RNrqYo9cEhTTesBiCclEtoiQUbJwx87q9453GTapYU6kJ8ZZ2ek1Vp25SiAXEFy5O/eAPw==}
@@ -7015,7 +7013,6 @@ packages:
     dependencies:
       '@lit/reactive-element': 1.6.1
       lit-html: 2.6.1
-    dev: false
 
   /lit-html/2.6.1:
     resolution: {integrity: sha512-Z3iw+E+3KKFn9t2YKNjsXNEu/LRLI98mtH/C6lnFg7kvaqPIzPn124Yd4eT/43lyqrejpc5Wb6BHq3fdv4S8Rw==}
@@ -7028,7 +7025,6 @@ packages:
       '@lit/reactive-element': 1.6.1
       lit-element: 3.2.2
       lit-html: 2.6.1
-    dev: false
 
   /locate-path/2.0.0:
     resolution: {integrity: sha512-NCI2kiDkyR7VeEKm27Kda/iQHyKJe1Bu0FlTbYp3CqJu+9IFe9bLyAjMxf5ZDDbEg+iMPzB5zYyUTSm8wVTKmA==}

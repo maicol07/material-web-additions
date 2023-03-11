@@ -46,9 +46,11 @@
     "@material/layout-grid": "^14.0.0",
     "@material/mwc-base": "^0.27.0",
     "@material/mwc-linear-progress": "^0.27.0",
-    "@material/web": "1.0.0-pre.2",
     "lit": "^2.6.1",
     "tslib": "^2.5.0"
+  },
+  "peerDependencies": {
+    "@material/web": "1.0.0-pre.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -57,6 +59,7 @@
     "@babel/preset-typescript": "^7.21.0",
     "@custom-elements-manifest/analyzer": "^0.6.8",
     "@ljcl/storybook-addon-cssprops": "^2.3.5",
+    "@material/web": "1.0.0-pre.2",
     "@storybook/addon-a11y": "^7.0.0-beta.16",
     "@storybook/addon-actions": "^7.0.0-beta.16",
     "@storybook/addon-docs": "^7.0.0-beta.16",
