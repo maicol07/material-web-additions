@@ -1,12 +1,13 @@
 import {ArgsTable, Canvas, PRIMARY_STORY, Stories, Story, Subtitle, Title} from "@storybook/addon-docs";
-import README from '../README.md';
+import README from '../README.md?raw';
 import dedent from "ts-dedent";
 import {Table} from "@storybook/components";
+import Markdown from "markdown-to-jsx";
 
 <Title/>
 <Subtitle/>
 
-<README/>
+<Markdown>{README}</Markdown>
 
 
 ## Example Usage

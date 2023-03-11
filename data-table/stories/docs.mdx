@@ -1,12 +1,13 @@
 import {ArgsTable, PRIMARY_STORY, Stories, Title} from '@storybook/addon-docs';
-import README from '../README.md';
+import README from '../README.md?raw';
 import {Table} from '@storybook/components';
+import Markdown from "markdown-to-jsx";
 
 [//]: # (import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';)
 
 <Title />
 
-<README />
+<Markdown>{README}</Markdown>
 
 ## Example Usage
 <Stories title={""} includePrimary/>
