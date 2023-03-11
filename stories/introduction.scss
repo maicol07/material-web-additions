@@ -1,3 +1,15 @@
+code:not(.raw) {
+  line-height: 1;
+  margin: 0 2px;
+  padding: 3px 5px;
+  white-space: nowrap;
+  border-radius: 3px;
+  font-size: 13px;
+  border: 1px solid #ECF4F9;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #F7FAFC;
+}
+
 md-layout-grid md-outlined-card {
   width: 100%;
   height: 100%;
@@ -25,17 +37,6 @@ md-layout-grid md-outlined-card {
   font-size: 1.25rem !important;
 }
 
-.components-card-header-title-slug {
-  line-height: 1;
-  margin: 0 2px;
-  padding: 3px 5px;
-  white-space: nowrap;
-  border-radius: 3px;
-  font-size: 13px;
-  border: 1px solid #ECF4F9;
-  color: rgba(0, 0, 0, 0.85);
-  background-color: #F7FAFC;
-}
 
 .components-card-subtitle {
   font-family: Roboto, sans-serif !important;
