@@ -29,7 +29,6 @@ const config: StorybookConfig = {
     '@storybook/addon-backgrounds',
     '@storybook/addon-toolbars',
     '@storybook/addon-measure',
-    '@storybook/addon-links',
     '@storybook/preset-scss',
     // '@ljcl/storybook-addon-cssprops',
     '@storybook/addon-a11y',
