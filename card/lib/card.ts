@@ -1,13 +1,14 @@
 import '@material/web/ripple/ripple.js';
 import '@material/web/focus/focus-ring.js';
 
-import {html, PropertyValues, TemplateResult} from 'lit';
+import {html, nothing, PropertyValues, TemplateResult} from 'lit';
 import {query, queryAssignedElements, state} from 'lit/decorators.js';
 import {ClassInfo, classMap} from 'lit/directives/class-map.js';
-import {ActionElement, BeginPressConfig, EndPressConfig} from '@material/web/actionelement/action-element.js';
+import {ActionElement} from '@material/web/actionelement/action-element.js';
 import {MdRipple} from '@material/web/ripple/ripple.js';
 import {pointerPress, shouldShowStrongFocus} from '@material/web/focus/strong-focus.js';
 import {property} from 'lit/decorators/property.js';
+import {ripple} from '@material/web/ripple/directive.js';
 
 export abstract class Card extends ActionElement {
     /** Allows the card to be clickable with a ripple effect. */
@@ -39,6 +40,18 @@ export abstract class Card extends ActionElement {
      * @protected
      */
     @state() protected showFocusRing = false;
+
+  /**
+   * @internal
+   * @protected
+   */
+  @state() protected showRipple = false;
+
+    override handlePointerDown(e: PointerEvent) {
+        super.handlePointerDown(e);
+        pointerPress();
+        this.showFocusRing = shouldShowStrongFocus();
+    }
 
     override render() {
         return html`
@@ -81,32 +94,21 @@ export abstract class Card extends ActionElement {
         };
     }
 
-    override beginPress({positionEvent}: BeginPressConfig) {
-        this.ripple.beginPress(positionEvent);
-    }
-
-    override endPress(options: EndPressConfig) {
-        this.ripple.endPress();
-        super.endPress(options);
-    }
-
-    override handlePointerDown(e: PointerEvent) {
-        super.handlePointerDown(e);
-        pointerPress();
-        this.showFocusRing = shouldShowStrongFocus();
-    }
-
-    override handlePointerLeave(e: PointerEvent) {
-        super.handlePointerLeave(e);
-        this.ripple.endHover();
-    }
-
     protected override update(_changedProperties: PropertyValues) {
         if (_changedProperties.has('clickable')) {
             this.disabled = !this.clickable;
         }
         super.update(_changedProperties);
     }
+
+  /**
+   * @internal
+   * @protected
+   */
+  protected getRipple = () => {
+    this.showRipple = true;
+    return this.ripple;
+  };
 
     protected renderPrimaryAction() {
         return html`
@@ -117,16 +119,11 @@ export abstract class Card extends ActionElement {
                  @pointerup="${this.handlePointerUp}"
                  @pointercancel="${this.handlePointerCancel}"
                  @pointerleave="${this.handlePointerLeave}"
-                 @pointerenter="${this.handlePointerEnter}"
                  @click="${this.handleClick}"
-                 @contextmenu="${this.handleContextMenu}">
+                 @contextmenu="${this.handleContextMenu}"
+                 ${ripple(this.getRipple)}>
                 <slot></slot>
             </div>`;
-    }
-
-    protected renderRipple() {
-        return html`
-            <md-ripple class="${classMap(this.getRippleRenderClasses())}" ?disabled=${this.disabled}></md-ripple>`;
     }
 
     protected getRippleRenderClasses() {
@@ -159,31 +156,10 @@ export abstract class Card extends ActionElement {
         this.requestUpdate();
     }
 
-  protected renderActions() {
-    const buttonSlotTemplate = html`<slot name="button" @slotchange=${this.onButtonSlotChanged}></slot>`;
-    const iconSlotTemplate = html`<slot name="icon" @slotchange=${this.onIconSlotChanged}></slot>`;
-
-    if (this.icons.length > 0 || this.buttons.length > 0) {
-        return html`
-            <div class="${classMap(this.getRenderActionsClasses())}"
-                 @focus="${this.handleFocus}"
-                 @blur="${this.handleBlur}"
-                 @pointerdown="${this.handlePointerDown}"
-                 @pointerup="${this.handlePointerUp}"
-                 @pointercancel="${this.handlePointerCancel}"
-                 @pointerleave="${this.handlePointerLeave}"
-                 @pointerenter="${this.handlePointerEnter}"
-                 @click="${this.handleClick}"
-                 @contextmenu="${this.handleContextMenu}">
-                ${this.wrapButtonSlot(buttonSlotTemplate)}
-                ${this.wrapIconSlot(iconSlotTemplate)}
-            </div>`;
+    protected renderRipple() {
+        return this.showRipple ? html`
+            <md-ripple class="${classMap(this.getRippleRenderClasses())}" ?disabled=${this.disabled}></md-ripple>` : nothing;
     }
-      return html`
-          ${buttonSlotTemplate}
-          ${iconSlotTemplate}
-      `;
-  }
 
     protected wrapButtonSlot(buttonSlotTemplate: TemplateResult | string) {
         if (this.buttons.length > 0) {
@@ -205,10 +181,6 @@ export abstract class Card extends ActionElement {
         return iconSlotTemplate;
     }
 
-    protected handlePointerEnter(e: PointerEvent) {
-        this.ripple.beginHover(e);
-    }
-
     protected handleFocus() {
         this.showFocusRing = shouldShowStrongFocus();
     }
@@ -216,4 +188,30 @@ export abstract class Card extends ActionElement {
     protected handleBlur() {
         this.showFocusRing = false;
     }
+
+  protected renderActions() {
+    const buttonSlotTemplate = html`<slot name="button" @slotchange=${this.onButtonSlotChanged}></slot>`;
+    const iconSlotTemplate = html`<slot name="icon" @slotchange=${this.onIconSlotChanged}></slot>`;
+
+    if (this.icons.length > 0 || this.buttons.length > 0) {
+        return html`
+            <div class="${classMap(this.getRenderActionsClasses())}"
+                 @focus="${this.handleFocus}"
+                 @blur="${this.handleBlur}"
+                 @pointerdown="${this.handlePointerDown}"
+                 @pointerup="${this.handlePointerUp}"
+                 @pointercancel="${this.handlePointerCancel}"
+                 @pointerleave="${this.handlePointerLeave}"
+                 @click="${this.handleClick}"
+                 @contextmenu="${this.handleContextMenu}"
+                 ${ripple(this.getRipple)}>
+                ${this.wrapButtonSlot(buttonSlotTemplate)}
+                ${this.wrapIconSlot(iconSlotTemplate)}
+            </div>`;
+    }
+      return html`
+          ${buttonSlotTemplate}
+          ${iconSlotTemplate}
+      `;
+  }
 }
