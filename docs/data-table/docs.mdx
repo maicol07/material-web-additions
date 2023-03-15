@@ -1,9 +1,11 @@
-import {ArgTypes, Stories, Title} from '@storybook/addon-docs';
-import README from '../README.md?raw';
+import {ArgTypes, Meta, Stories, Title} from '@storybook/addon-docs';
+import README from '../../data-table/README.md?raw';
 import Markdown from "markdown-to-jsx";
+import * as DataTableStories from "./data-table.stories.ts";
 
 [//]: # (import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';)
 
+<Meta name="Docs" of={DataTableStories} />
 <Title />
 
 <Markdown>{README}</Markdown>

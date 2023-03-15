@@ -1,15 +1,14 @@
-import '../layout-grid.js';
+import '../../layout-grid/layout-grid.js';
 import {Meta, StoryObj} from '@storybook/web-components';
-import {MdLayoutGrid} from '../layout-grid.js';
+import {MdLayoutGrid} from '../../layout-grid/layout-grid.js';
 import {html} from 'lit';
 import './styles.scss';
-import DocsPage from './docs.mdx';
 import dedent from 'ts-dedent';
 
 type LayoutGridStory = StoryObj<Partial<MdLayoutGrid>>;
 
 const meta: Meta = {
-  title: 'Layout Grid',
+  title: 'Components/Layout Grid',
   component: 'md-layout-grid',
   // More on argTypes: https://storybook.js.org/docs/web-components/api/argtypes
   argTypes: {
@@ -71,10 +70,7 @@ const meta: Meta = {
         description: 'Column width for `desktop` device.',
         control: 'text',
       },
-    },
-    docs: {
-      page: DocsPage,
-    },
+    }
   },
 };
 export default meta;

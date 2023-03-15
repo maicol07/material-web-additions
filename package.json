@@ -125,10 +125,10 @@
       "files": [
         "tsconfig.json",
         "**/*.ts",
-        "!(.storybook/*.ts)",
+        "!.storybook/",
         "!**/*.d.ts",
         "!**/*.css.ts",
-        "!docs/**"
+        "!docs/"
       ],
       "output": [
         ".tsbuildinfo",
@@ -137,8 +137,8 @@
         "**/*.d.ts",
         "!*.js",
         "!types/",
-        "!(.storybook/*.{js|js.map|d.ts})",
-        "!docs/**"
+        "!.storybook/",
+        "!docs/"
       ],
       "clean": "if-file-deleted",
       "dependencies": [
@@ -146,7 +146,7 @@
       ]
     },
     "build:css-to-ts": {
-      "command": "find . \\( -path ./.wireit -o -path ./node_modules \\) -prune -o -name '*.css' -print | xargs node css-to-ts.js",
+      "command": "find . \\( -path ./.wireit -o -path ./node_modules -o -path ./docs -o -path ./.storybook \\) -prune -o -name '*.css' -print | xargs node css-to-ts.js",
       "files": [
         "css-to-ts.js"
       ],
@@ -161,14 +161,14 @@
       "command": "sass --style=compressed --load-path=node_modules --load-path=node_modules/sass-true/sass $(ls -d */ | grep -v node_modules)",
       "files": [
         "**/*.scss",
-        "!(.storybook/*.scss)",
-        "!(**/stories/*.scss)"
+        "!.storybook/",
+        "!docs/"
       ],
       "output": [
         "**/*.css",
         "**/*.css.map",
-        "!(.storybook/*.{css|css.map})",
-        "!(**/stories/*.{css|css.map})"
+        "!.storybook/",
+        "!docs/"
       ]
     },
     "custom-elements-manifest": {

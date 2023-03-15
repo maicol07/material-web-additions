@@ -1,17 +1,16 @@
-import '../data-table.js';
-import '../data-table-column.js';
-import '../data-table-row.js';
-import '../data-table-cell.js';
+import '../../data-table/data-table.js';
+import '../../data-table/data-table-column.js';
+import '../../data-table/data-table-row.js';
+import '../../data-table/data-table-cell.js';
 import {Meta, StoryObj} from '@storybook/web-components';
-import type {DataTable} from '../lib/data-table.js';
+import type {DataTable} from '../../data-table/lib/data-table.js';
 import {html} from 'lit';
 import './styles.scss';
-import DocsPage from './docs.mdx';
 
 type DataTableStory = StoryObj<Partial<DataTable>>;
 
 const meta: Meta = {
-  title: 'Data Table',
+  title: 'Components/Data Table',
   component: 'md-data-table',
   // More on argTypes: https://storybook.js.org/docs/web-components/api/argtypes
   argTypes: {
@@ -40,10 +39,7 @@ const meta: Meta = {
         description: 'Height of the table',
         control: 'text',
       },
-    },
-    docs: {
-      page: DocsPage,
-    },
+    }
   },
 };
 export default meta;

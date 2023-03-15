@@ -1,8 +1,8 @@
 import {Meta, StoryObj} from '@storybook/web-components';
-import {Card} from '../lib/card.js';
-import '../filled-card.js';
-import '../elevated-card.js';
-import '../outlined-card.js';
+import {Card} from '../../card/lib/card.js';
+import '../../card/filled-card.js';
+import '../../card/elevated-card.js';
+import '../../card/outlined-card.js';
 import {html} from 'lit';
 import '@material/web/iconbutton/standard-icon-button.js';
 import '@material/web/button/outlined-button.js';
@@ -12,7 +12,7 @@ import './styles.scss';
 type CardStory = StoryObj<Partial<Card>>;
 
 const meta: Meta = {
-  title: 'Card',
+  title: 'Components/Card',
   component: 'md-elevated-card',
   argTypes: {
     clickable: {

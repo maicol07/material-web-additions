@@ -1,9 +1,11 @@
-import {ArgTypes, Stories, Subtitle, Title} from '@storybook/addon-docs';
-import README from '../README.md?raw';
+import {ArgTypes, Meta, Stories, Subtitle, Title} from '@storybook/addon-docs';
+import README from '../../layout-grid/README.md?raw';
 import Markdown from "markdown-to-jsx";
+import * as LayoutGridStories from "./layout-grid.stories.ts";
 
 [//]:  # (import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';)
 
+<Meta of={LayoutGridStories} name="Docs"/>
 <Title/>
 <Subtitle/>
 
