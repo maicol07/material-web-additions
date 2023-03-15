@@ -1,6 +1,33 @@
 # Changelog
 
 
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/maicol07/material-web-additions/compare/1.1.1...1.1.2)
+
+> Released on March 15, 2023
+
+### 🐛 Bug Fixes
+- [`c2635af`](https://github.com/maicol07/material-web-additions/commit/c2635afe5786fdeb5cc69781fce1ef41010493da) 🐛 Fix ripple due to new Material Web ripple implementation
+
+### 📝 Docs changes
+- [`5e06528`](https://github.com/maicol07/material-web-additions/commit/5e06528d5eb81e326e95b6c683f58c3d01b0b330) Moved some global CSS to preview
+- [`8125e4b`](https://github.com/maicol07/material-web-additions/commit/8125e4b9fa89ae21a55b1164466db47f7150f9ff) 🚚 Moved docs to docs folder
+- [`a6b8cd3`](https://github.com/maicol07/material-web-additions/commit/a6b8cd3f5eeef7672aca7103205dbe8f2779cd9f) Fix deprecations
+- [`ba3ec8a`](https://github.com/maicol07/material-web-additions/commit/ba3ec8a8226cc65b2dd07add22acf33c6acf4132) 📝 Updated introduction and readme
+- [`27ea2a6`](https://github.com/maicol07/material-web-additions/commit/27ea2a68fe53ce1bb8042022924125ee301e8953) Use `md-icon` and Material Symbols
+- [`c94b15c`](https://github.com/maicol07/material-web-additions/commit/c94b15c5601d8164099b9de201828b21a0a6e7a5) Removing duplicated links addon
+- [`9791e02`](https://github.com/maicol07/material-web-additions/commit/9791e02658663ee09808cb70af724bcd649a02b3) 💄 Use code instead of class
+- [`ae2fbaa`](https://github.com/maicol07/material-web-additions/commit/ae2fbaa4ee74e461da0893438085499e4a09d3b7) Replaced essentials plugin collection with singular plugins
+- [`8e60e65`](https://github.com/maicol07/material-web-additions/commit/8e60e656e3b6d15c9854930337717ba53e05cf25) Removed what's new plugin
+- [`8ad0eaf`](https://github.com/maicol07/material-web-additions/commit/8ad0eafe8ddf0d2ec44042551418d2e447003a23) Added support for GFM tables
+- [`7270fe0`](https://github.com/maicol07/material-web-additions/commit/7270fe0c46028560bc34280abc541ade60cafb73) 🐛 Fix markdown imports
+
+### Other changes
+- [`4f1a28d`](https://github.com/maicol07/material-web-additions/commit/4f1a28df9600c6ed0b9daab159beec66943c2a67) **deps:** ⬆️ Upgraded dependencies
+- [`a6984eb`](https://github.com/maicol07/material-web-additions/commit/a6984ebb1621c74d7284d848f8ae8852d38fe589) **deps:** ⬆️ Upgraded dependencies
+- [`6111ed5`](https://github.com/maicol07/material-web-additions/commit/6111ed5629d90e8404dc6d8c1352146897c0b020) **ide:** IDE settings
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/maicol07/material-web-additions/compare/1.1.0...1.1.1)
 
@@ -89,11 +116,11 @@
 - [`56a5c58`](https://github.com/maicol07/material-web-additions/commit/56a5c5898dc71e9f8bf227d7fc08a0bcfffd0d3c) Removed unused npmrc
 - [`e749d64`](https://github.com/maicol07/material-web-additions/commit/e749d64aa60a7d651b34889ea3eaf26b910f0dcd) Updated package name
 - [`0b38643`](https://github.com/maicol07/material-web-additions/commit/0b38643b1de8acaf9213e05250342b648c09916b) **deps:** Added lock file
-- [`dc80c33`](https://github.com/maicol07/material-web-additions/commit/dc80c339422696c9879aa71e9db4ceed5dc94dc5) **deps:** ⬆️ Updated dependencies
 - [`f4d6478`](https://github.com/maicol07/material-web-additions/commit/f4d6478eb9c6702eef52d65d98822a6bf58218df) **deps:** Updated pnpm
 - [`e6ed0e0`](https://github.com/maicol07/material-web-additions/commit/e6ed0e0b69e755b1b5dca024110fff7344a1fc95) **deps:** Updated pnpm version
 - [`cd375ea`](https://github.com/maicol07/material-web-additions/commit/cd375ea26310115d571c39ac0237c04c49859152) **deps:** Updated dependencies
 - [`109432a`](https://github.com/maicol07/material-web-additions/commit/109432a83ffdf3f0c8eba6d893368ccde33d9b54) **deps:** ⬆️ Upgraded dependencies
+- [`dc80c33`](https://github.com/maicol07/material-web-additions/commit/dc80c339422696c9879aa71e9db4ceed5dc94dc5) **deps:** ⬆️ Updated dependencies
 - [`0233c44`](https://github.com/maicol07/material-web-additions/commit/0233c444abb76ba3bd74bbc9aabb723ab168c769) **deps:** ⬆️ Updated dependencies
 - [`ebd6b4e`](https://github.com/maicol07/material-web-additions/commit/ebd6b4e168d269e1ce773be1cc2fe70ad415db52) **ide:** Updated IDE files
 
@@ -129,10 +156,10 @@
 - [`d0245ba`](https://github.com/maicol07/material-web-additions/commit/d0245ba2c0a2f8fbc6c0c6a6ab06c41c0e21bbf6) Fix import for CI
 - [`5e975b1`](https://github.com/maicol07/material-web-additions/commit/5e975b1766ba92f47a0c37076452104d4158eb1d) **card:** Added missing dependency
 - [`934a2b9`](https://github.com/maicol07/material-web-additions/commit/934a2b9d87bbe6501dcaa95f8530356dab7bf25b) **data-table:** Fix class not found
+- [`6ab3de7`](https://github.com/maicol07/material-web-additions/commit/6ab3de7c581f099e2e85d80aa7f52dfa9e942077) **data-table:** Fix `lastRowOfPage` initialization error
 - [`7283206`](https://github.com/maicol07/material-web-additions/commit/72832062de5467d55e173a705b55c5f0371bb73d) **data-table:** Added missing dependency
 - [`21ef6c8`](https://github.com/maicol07/material-web-additions/commit/21ef6c8a8f815f2b1b93687766e6addd8ce8f344) **data-table:** Added missing dependency
 - [`cdf208b`](https://github.com/maicol07/material-web-additions/commit/cdf208b936e1ae7f30a442a825b3d2824175ed4b) **data-table:** Added missing dependency
-- [`6ab3de7`](https://github.com/maicol07/material-web-additions/commit/6ab3de7c581f099e2e85d80aa7f52dfa9e942077) **data-table:** Fix `lastRowOfPage` initialization error
 - [`6d1a15d`](https://github.com/maicol07/material-web-additions/commit/6d1a15df5eefc65eab19ca45b0ca9c40eeee1db0) **deps:** Added `public-hoist-pattern`
 
 ### ♻ Code Refactoring
@@ -248,12 +275,12 @@
 - [`14b9d2d`](https://github.com/maicol07/material-web-additions/commit/14b9d2d02f5d46c13eb1fd96cdb364f261685463) 💚 Use pnpm on CI
 
 ### Other changes
-- [`64a2329`](https://github.com/maicol07/material-web-additions/commit/64a2329349f411b7094e35b1b6b9e03a68d7b524) 🚚 Moved mwc-layout-grid to its folder
 - [`e9ff63f`](https://github.com/maicol07/material-web-additions/commit/e9ff63f39f64eaac616b5ea8d9f3d6aef733eff2) Reorganize packages
 - [`cfa1ce4`](https://github.com/maicol07/material-web-additions/commit/cfa1ce4a79c9f7135bf55fa8b3cd27e56dd97d5c) 💚 Fix CI and remove a workflow
 - [`e880e18`](https://github.com/maicol07/material-web-additions/commit/e880e182081ae540b7573bcc22b8900beaecdb84) Rename package
 - [`927a459`](https://github.com/maicol07/material-web-additions/commit/927a459ca50207b8da5a8afa8bf9765ba58bf576) Organized in a monorepo
 - [`6428ad4`](https://github.com/maicol07/material-web-additions/commit/6428ad4c40d988580a6e3d3a37367b1cb3117a0e) 🚚 Moved mwc-layout-grid to its folder
+- [`64a2329`](https://github.com/maicol07/material-web-additions/commit/64a2329349f411b7094e35b1b6b9e03a68d7b524) 🚚 Moved mwc-layout-grid to its folder
 - [`9767cce`](https://github.com/maicol07/material-web-additions/commit/9767ccef2ac8cb19738177b4a48665b43a3f5ac3) **deps:** ➖ Remove lerna and related scripts
 
 
