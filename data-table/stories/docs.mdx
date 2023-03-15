@@ -1,4 +1,4 @@
-import {ArgsTable, PRIMARY_STORY, Stories, Title} from '@storybook/addon-docs';
+import {ArgTypes, Stories, Title} from '@storybook/addon-docs';
 import README from '../README.md?raw';
 import Markdown from "markdown-to-jsx";
 
@@ -42,7 +42,20 @@ import Markdown from "markdown-to-jsx";
 | `filter-textfield` | Slot that can contain a textfield. If not supplied, an mwc-textfield element will be created for you                         |
 
 ### Properties/Attributes & Events
-<ArgsTable story={PRIMARY_STORY}/>
+#### DataTable
+<ArgTypes of="md-data-table"/>
+
+#### DataTableRow
+<ArgTypes of="md-data-table-row"/>
+
+#### DataTableCell
+<ArgTypes of="md-data-table-cell"/>
+
+#### DataTableColumn
+<ArgTypes of="md-data-table-column"/>
+
+#### DataTableFooter
+<ArgTypes of="md-data-table-footer"/>
 
 ### Methods
 *None*

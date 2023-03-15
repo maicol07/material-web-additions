@@ -13,12 +13,6 @@ type DataTableStory = StoryObj<Partial<DataTable>>;
 const meta: Meta = {
   title: 'Data Table',
   component: 'md-data-table',
-  subcomponents: {
-    DataTableColumn: 'md-data-table-column',
-    DataTableRow: 'md-data-table-row',
-    DataTableCell: 'md-data-table-cell',
-    DataTableFooter: 'md-data-table-footer',
-  },
   // More on argTypes: https://storybook.js.org/docs/web-components/api/argtypes
   argTypes: {
     density: {

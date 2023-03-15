@@ -1,8 +1,9 @@
-import {ArgsTable, Canvas, PRIMARY_STORY, Stories, Story, Subtitle, Title} from "@storybook/addon-docs";
+import {ArgTypes, Canvas, Meta, Source, Stories, Subtitle, Title} from "@storybook/addon-docs";
 import README from '../README.md?raw';
-import dedent from "ts-dedent";
 import Markdown from "markdown-to-jsx";
+import * as CardStories from "./card.stories.ts";
 
+<Meta name="Docs" of={CardStories}/>
 <Title/>
 <Subtitle/>
 
@@ -10,102 +11,35 @@ import Markdown from "markdown-to-jsx";
 
 
 ## Example Usage
-### Standard
-
-<Canvas
-    mdxSource={dedent`
-        <md-elevated-card>
-          Content
-        </md-elevated-card>
-    `}>
-    <md-elevated-card outlined style={{'--md-card-padding': '16px'}}>
-        Content
-    </md-elevated-card>
-</Canvas>
+### Elevated card
+<Canvas of={CardStories.SimpleElevated} withToolbar/>
 
 <blockquote>
     You may want to apply padding to card contents (recommended to `16px` by the Material Design guidelines).
     In the previous live example and the following one the padding is already applied.
-    ```css
-    {`
+    <Source language="css" code={`
 md-elevated-card {
     --md-card-padding: 16px;
-}`}
-    ```
+}`}></Source>
 </blockquote>
 
-
 ### Outlined card
-
 To use an outlined card, use the `md-outlined-card` element.
+<Canvas of={CardStories.SimpleOutlined} withToolbar/>
 
-<Canvas
-    mdxSource={dedent`
-        <md-outlined-card>
-          Content
-        </md-outlined-card>
-    `}>
-    <md-outlined-card outlined style={{'--md-card-padding': '16px'}}>
-        Content
-    </md-outlined-card>
-</Canvas>
+### Filled card
+To use a filled card, use the `md-filled-card` element.
+<Canvas of={CardStories.SimpleFilled} withToolbar/>
 
 ### Primary action
 If most of the card should be actionable, you can add the `clickable` attribute to your card element.
 
-<Canvas
-    mdxSource={dedent`
-        <md-elevated-card clickable class="demo-card">
-            <div class="demo-card__header">
-                <div class="demo-card__header-text">
-                    <div class="demo-card__title">Our Changing Planet</div>
-                    <div class="demo-card__subtitle">by Kurt Wagner</div>
-                </div>
-            </div>
-        </md-elevated-card>
-    `}>
-    <md-elevated-card clickable class="demo-card">
-        <div className="demo-card__header">
-            <div className="demo-card__header-text">
-                <div className="demo-card__title">Our Changing Planet</div>
-                <div className="demo-card__subtitle">by Kurt Wagner</div>
-            </div>
-        </div>
-    </md-elevated-card>
-</Canvas>
+<Canvas of={CardStories.PrimaryActionDemo} withToolbar/>
 
 ### Media
 If you want to display an image in the card, you can add an image with a standard `<img>` element.
 
-<Canvas
-    mdxSource={dedent`
-        <md-elevated-card class="demo-card">
-            <img src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png" alt="Background photo" class="demo-card__media" />
-            <div class="demo-card__header">
-                <div class="demo-card__header-text">
-                    <div class="demo-card__title">Our Changing Planet</div>
-                    <div class="demo-card__subtitle">by Kurt Wagner</div>
-                </div>
-            </div>
-            <div class="demo-card__secondary mdc-typography mdc-typography--body2">
-                Visit ten places on our planet that are undergoing the biggest changes today.
-            </div>
-        </md-elevated-card>
-    `}>
-    <md-elevated-card class="demo-card">
-        <img src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
-             alt="Background photo" className="demo-card__media"/>
-        <div className="demo-card__header">
-            <div className="demo-card__header-text">
-                <div className="demo-card__title">Our Changing Planet</div>
-                <div className="demo-card__subtitle">by Kurt Wagner</div>
-            </div>
-        </div>
-        <div className="demo-card__secondary mdc-typography mdc-typography--body2">
-            Visit ten places on our planet that are undergoing the biggest changes today.
-        </div>
-    </md-elevated-card>
-</Canvas>
+<Canvas of={CardStories.MediaDemo} withToolbar/>
 
 ### Actions
 This area is used to show different actions the user can take, typically at the bottom of a card.
@@ -113,16 +47,12 @@ This area is used to show different actions the user can take, typically at the 
 #### Buttons
 You can add buttons in your card via the `button` slot:
 
-<Canvas>
-    <Story id="card--basic-with-only-buttons"/>
-</Canvas>
+<Canvas of={CardStories.BasicWithOnlyButtons} withToolbar/>
 
 #### Icon Buttons
 You can add icon buttons in your card via the `icon` slot:
 
-<Canvas>
-    <Story id="card--basic-with-only-icons"/>
-</Canvas>
+<Canvas of={CardStories.BasicWithOnlyIcons} withToolbar/>
 
 #### Other examples
 Other examples are available in the sidebar or below these docs.
@@ -136,7 +66,7 @@ Other examples are available in the sidebar or below these docs.
 | `icon`   | Optional `<button>` to display an action button in the action row. |
 
 ### Properties/Attributes
-<ArgsTable story={PRIMARY_STORY}/>
+<ArgTypes/>
 
 ### Methods
 *None*
@@ -153,4 +83,4 @@ Other examples are available in the sidebar or below these docs.
 - [MDC Web: Card](https://material.io/develop/web/components/card/)
 
 ## Other examples
-<Stories />
+<Stories title="" includePrimary/>

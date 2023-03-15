@@ -5,7 +5,8 @@ import remarkGfm from 'remark-gfm';
 const config: StorybookConfig = {
   stories: [
     '../stories/**/*.stories.@(ts|mdx)',
-    '../!(node_modules)/stories/*.stories.@(ts|mdx)'
+    '../!(node_modules)/stories/*.stories.ts',
+    '../!(node_modules)/stories/docs.mdx',
   ],
   addons: [
     '@storybook/addon-links',

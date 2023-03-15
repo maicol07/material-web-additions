@@ -1,4 +1,4 @@
-import {ArgsTable, PRIMARY_STORY, Stories, Subtitle, Title} from '@storybook/addon-docs';
+import {ArgTypes, Stories, Subtitle, Title} from '@storybook/addon-docs';
 import README from '../README.md?raw';
 import Markdown from "markdown-to-jsx";
 
@@ -20,8 +20,10 @@ Each element inside `md-layout-grid` will be recognized as a single cell. Defaul
 | default | Default slot that contains the grid cells |
 
 ### Properties/Attributes
-#### Layout grid
-<ArgsTable story={PRIMARY_STORY} />
+#### Layout grid/Layout grid inner
+<ArgTypes />
+
+> Layout grid inner has the same properties as layout grid, but it is used to create nested grids.
 
 #### Cell
 > Cell can be any HTML element, so these attributes can be applied to any element.

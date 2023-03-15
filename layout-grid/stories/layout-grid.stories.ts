@@ -11,9 +11,6 @@ type LayoutGridStory = StoryObj<Partial<MdLayoutGrid>>;
 const meta: Meta = {
   title: 'Layout Grid',
   component: 'md-layout-grid',
-  subcomponents: {
-    LayoutGridInner: 'md-layout-grid-inner',
-  },
   // More on argTypes: https://storybook.js.org/docs/web-components/api/argtypes
   argTypes: {
     align: {

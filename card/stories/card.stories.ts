@@ -8,17 +8,12 @@ import '@material/web/iconbutton/standard-icon-button.js';
 import '@material/web/button/outlined-button.js';
 import '@material/web/button/filled-button.js';
 import './styles.scss';
-import DocsPage from './docs.mdx';
 
 type CardStory = StoryObj<Partial<Card>>;
 
 const meta: Meta = {
   title: 'Card',
   component: 'md-elevated-card',
-  subcomponents: {
-    'Outlined card': 'md-outlined-card',
-    'Filled card': 'md-filled-card',
-  },
   argTypes: {
     clickable: {
       control: 'boolean',
@@ -41,39 +36,117 @@ const meta: Meta = {
         description: 'Border radius of the card',
         control: 'text',
       },
-    },
-    docs: {
-      page: DocsPage,
-    },
+    }
   },
 };
 export default meta;
 
+export const SimpleElevated: CardStory = {
+  render: ({clickable}) => html`
+      <md-elevated-card outlined style="--md-card-padding: 16px;" ?clickable="${clickable}">
+          Content
+      </md-elevated-card>
+  `,
+  parameters: {
+    docs: {
+      description: 'A simple elevated card with no content.'
+    }
+  }
+};
+
+export const SimpleOutlined: CardStory = {
+  render: ({clickable}) => html`
+      <md-outlined-card outlined style="--md-card-padding: 16px;" ?clickable="${clickable}">
+          Content
+      </md-outlined-card>
+  `,
+  parameters: {
+    docs: {
+      description: 'A simple outlined card with no content.'
+    }
+  }
+};
+
+export const SimpleFilled: CardStory = {
+  render: ({clickable}) => html`
+      <md-filled-card outlined style="--md-card-padding: 16px;" ?clickable="${clickable}">
+          Content
+      </md-filled-card>
+  `,
+  parameters: {
+    docs: {
+      description: 'A simple filled card with no content.'
+    }
+  }
+};
+
+export const PrimaryActionDemo: CardStory = {
+  render: ({clickable}) => html`
+      <md-elevated-card ?clickable="${clickable}" class="demo-card">
+          <div class="demo-card__header">
+              <div class="demo-card__header-text">
+                  <div class="demo-card__title">Our Changing Planet</div>
+                  <div class="demo-card__subtitle">by Kurt Wagner</div>
+              </div>
+          </div>
+      </md-elevated-card>
+  `,
+  parameters: {
+    args: {
+      clickable: true
+    }
+  }
+};
+
+export const MediaDemo: CardStory = {
+  render: ({clickable}) => html`
+      <md-elevated-card class="demo-card" ?clickable="${clickable}">
+          <img src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
+               alt="Background photo" class="demo-card__media"/>
+          <div class="demo-card__header">
+              <div class="demo-card__header-text">
+                  <div class="demo-card__title">Our Changing Planet</div>
+                  <div class="demo-card__subtitle">by Kurt Wagner</div>
+              </div>
+          </div>
+          <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+              Visit ten places on our planet that are undergoing the biggest changes today.
+          </div>
+      </md-elevated-card>
+  `
+};
+
 export const BasicElevated: CardStory = {
   render: ({clickable}) => html`
-    <md-elevated-card class="demo-card" ?clickable="${clickable}">
-      <img
-          src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
-          alt="Background photo"
-          class="demo-card__media"
-      />
-      <div class="demo-card__header">
-        <div class="demo-card__header-text">
-          <div class="demo-card__title">Title</div>
-          <div class="demo-card__subtitle">Subtitle</div>
-        </div>
-      </div>
-      <div class="demo-card__secondary mdc-typography mdc-typography--body2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <md-outlined-button slot="button" label="Read"></md-outlined-button>
-      <md-filled-button slot="button" label="Bookmark"></md-filled-button>
-      <md-standard-icon-button slot="icon"><md-icon>favorite</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>share</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>more_vert</md-icon></md-standard-icon-button>
-    </md-elevated-card>
+      <md-elevated-card class="demo-card" ?clickable="${clickable}">
+          <img
+                  src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
+                  alt="Background photo"
+                  class="demo-card__media"
+          />
+          <div class="demo-card__header">
+              <div class="demo-card__header-text">
+                  <div class="demo-card__title">Title</div>
+                  <div class="demo-card__subtitle">Subtitle</div>
+              </div>
+          </div>
+          <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+          <md-outlined-button slot="button" label="Read"></md-outlined-button>
+          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>favorite</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>share</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>more_vert</md-icon>
+          </md-standard-icon-button>
+      </md-elevated-card>
   `,
   parameters: {
     docs: {
@@ -83,29 +156,35 @@ export const BasicElevated: CardStory = {
 };
 export const BasicOutline: CardStory = {
   render: ({clickable}) => html`
-    <md-outlined-card class="demo-card" ?clickable="${clickable}">
-      <img
-          src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
-          alt="Background photo"
-          class="demo-card__media"
-      />
-      <div class="demo-card__header">
-        <div class="demo-card__header-text">
-          <div class="demo-card__title">Title</div>
-          <div class="demo-card__subtitle">Subtitle</div>
-        </div>
-      </div>
-      <div class="demo-card__secondary mdc-typography mdc-typography--body2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <md-outlined-button slot="button" label="Read"></md-outlined-button>
-      <md-filled-button slot="button" label="Bookmark"></md-filled-button>
-      <md-standard-icon-button slot="icon"><md-icon>favorite</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>share</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>more_vert</md-icon></md-standard-icon-button>
-    </md-outlined-card>
+      <md-outlined-card class="demo-card" ?clickable="${clickable}">
+          <img
+                  src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
+                  alt="Background photo"
+                  class="demo-card__media"
+          />
+          <div class="demo-card__header">
+              <div class="demo-card__header-text">
+                  <div class="demo-card__title">Title</div>
+                  <div class="demo-card__subtitle">Subtitle</div>
+              </div>
+          </div>
+          <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+          <md-outlined-button slot="button" label="Read"></md-outlined-button>
+          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>favorite</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>share</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>more_vert</md-icon>
+          </md-standard-icon-button>
+      </md-outlined-card>
   `,
   parameters: {
     docs: {
@@ -115,29 +194,35 @@ export const BasicOutline: CardStory = {
 };
 export const BasicFilled: CardStory = {
   render: ({clickable}) => html`
-    <md-filled-card class="demo-card" ?clickable="${clickable}">
-      <img
-          src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
-          alt="Background photo"
-          class="demo-card__media"
-      />
-      <div class="demo-card__header">
-        <div class="demo-card__header-text">
-          <div class="demo-card__title">Title</div>
-          <div class="demo-card__subtitle">Subtitle</div>
-        </div>
-      </div>
-      <div class="demo-card__secondary mdc-typography mdc-typography--body2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <md-outlined-button slot="button" label="Read"></md-outlined-button>
-      <md-filled-button slot="button" label="Bookmark"></md-filled-button>
-      <md-standard-icon-button slot="icon"><md-icon>favorite</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>share</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>more_vert</md-icon></md-standard-icon-button>
-    </md-filled-card>
+      <md-filled-card class="demo-card" ?clickable="${clickable}">
+          <img
+                  src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
+                  alt="Background photo"
+                  class="demo-card__media"
+          />
+          <div class="demo-card__header">
+              <div class="demo-card__header-text">
+                  <div class="demo-card__title">Title</div>
+                  <div class="demo-card__subtitle">Subtitle</div>
+              </div>
+          </div>
+          <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+          <md-outlined-button slot="button" label="Read"></md-outlined-button>
+          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>favorite</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>share</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>more_vert</md-icon>
+          </md-standard-icon-button>
+      </md-filled-card>
   `,
   parameters: {
     docs: {
@@ -147,86 +232,104 @@ export const BasicFilled: CardStory = {
 };
 export const BasicWithHeader: CardStory = {
   render: ({clickable}) => html`
-    <md-elevated-card clickable class="demo-card" ?clickable="${clickable}">
-      <div class="demo-card__header">
-        <div class="demo-card__header-text">
-          <div class="demo-card__title">Title</div>
-          <div class="demo-card__subtitle">Subtitle</div>
-        </div>
-      </div>
-      <img
-          src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
-          alt="Background photo"
-          class="demo-card__media"
-      />
-      <div class="demo-card__secondary mdc-typography mdc-typography--body2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <md-outlined-button slot="button" label="Read"></md-outlined-button>
-      <md-filled-button slot="button" label="Bookmark"></md-filled-button>
-      <md-standard-icon-button slot="icon"><md-icon>favorite</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>share</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>more_vert</md-icon></md-standard-icon-button>
-    </md-elevated-card>
+      <md-elevated-card clickable class="demo-card" ?clickable="${clickable}">
+          <div class="demo-card__header">
+              <div class="demo-card__header-text">
+                  <div class="demo-card__title">Title</div>
+                  <div class="demo-card__subtitle">Subtitle</div>
+              </div>
+          </div>
+          <img
+                  src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
+                  alt="Background photo"
+                  class="demo-card__media"
+          />
+          <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+          <md-outlined-button slot="button" label="Read"></md-outlined-button>
+          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>favorite</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>share</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>more_vert</md-icon>
+          </md-standard-icon-button>
+      </md-elevated-card>
   `,
 };
 
 export const BasicWithHeaderAndThumbnail: CardStory = {
   render: ({clickable}) => html`
-    <md-elevated-card clickable class="demo-card" ?clickable="${clickable}">
-      <div class="demo-card__header">
-        <div class="demo-card-thumbnail"></div>
-        <div class="demo-card__header-text">
-          <div class="demo-card__title">Title</div>
-          <div class="demo-card__subtitle">Subtitle</div>
-        </div>
-      </div>
-      <img
-          src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
-          alt="Background photo"
-          class="demo-card__media"
-      />
-      <div class="demo-card__secondary mdc-typography mdc-typography--body2">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <md-outlined-button slot="button" label="Read"></md-outlined-button>
-      <md-filled-button slot="button" label="Bookmark"></md-filled-button>
-      <md-standard-icon-button slot="icon"><md-icon>favorite</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>share</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>more_vert</md-icon></md-standard-icon-button>
-    </md-elevated-card>
+      <md-elevated-card clickable class="demo-card" ?clickable="${clickable}">
+          <div class="demo-card__header">
+              <div class="demo-card-thumbnail"></div>
+              <div class="demo-card__header-text">
+                  <div class="demo-card__title">Title</div>
+                  <div class="demo-card__subtitle">Subtitle</div>
+              </div>
+          </div>
+          <img
+                  src="https://cdn.glitch.me/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png"
+                  alt="Background photo"
+                  class="demo-card__media"
+          />
+          <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+          <md-outlined-button slot="button" label="Read"></md-outlined-button>
+          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>favorite</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>share</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>more_vert</md-icon>
+          </md-standard-icon-button>
+      </md-elevated-card>
   `,
 };
 export const BasicWithOnlyButtons: CardStory = {
   render: ({clickable}) => html`
-    <md-elevated-card class="demo-card" ?clickable="${clickable}">
-      <div class="demo-card__header">
-        <div class="demo-card__header-text">
-          <div class="demo-card__title">Title</div>
-          <div class="demo-card__subtitle">Subtitle</div>
-        </div>
-      </div>
-      <md-outlined-button slot="button" label="Read"></md-outlined-button>
-      <md-filled-button slot="button" label="Bookmark"></md-filled-button>
-    </md-elevated-card>
+      <md-elevated-card class="demo-card" ?clickable="${clickable}">
+          <div class="demo-card__header">
+              <div class="demo-card__header-text">
+                  <div class="demo-card__title">Title</div>
+                  <div class="demo-card__subtitle">Subtitle</div>
+              </div>
+          </div>
+          <md-outlined-button slot="button" label="Read"></md-outlined-button>
+          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+      </md-elevated-card>
   `,
 };
 export const BasicWithOnlyIcons: CardStory = {
   render: ({clickable}) => html`
-    <md-elevated-card class="demo-card" ?clickable="${clickable}">
-      <div class="demo-card__header">
-        <div class="demo-card__header-text">
-          <div class="demo-card__title">Title</div>
-          <div class="demo-card__subtitle">Subtitle</div>
-        </div>
-      </div>
-      <md-standard-icon-button slot="icon"><md-icon>favorite</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>share</md-icon></md-standard-icon-button>
-      <md-standard-icon-button slot="icon"><md-icon>more_vert</md-icon></md-standard-icon-button>
-    </md-elevated-card>
+      <md-elevated-card class="demo-card" ?clickable="${clickable}">
+          <div class="demo-card__header">
+              <div class="demo-card__header-text">
+                  <div class="demo-card__title">Title</div>
+                  <div class="demo-card__subtitle">Subtitle</div>
+              </div>
+          </div>
+          <md-standard-icon-button slot="icon">
+              <md-icon>favorite</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>share</md-icon>
+          </md-standard-icon-button>
+          <md-standard-icon-button slot="icon">
+              <md-icon>more_vert</md-icon>
+          </md-standard-icon-button>
+      </md-elevated-card>
   `,
 };

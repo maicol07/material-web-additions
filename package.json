@@ -126,9 +126,9 @@
         "tsconfig.json",
         "**/*.ts",
         "!(.storybook/*.ts)",
-        "!(**/stories/*.ts)",
         "!**/*.d.ts",
-        "!**/*.css.ts"
+        "!**/*.css.ts",
+        "!docs/**"
       ],
       "output": [
         ".tsbuildinfo",
@@ -138,7 +138,7 @@
         "!*.js",
         "!types/",
         "!(.storybook/*.{js|js.map|d.ts})",
-        "!(**/stories/*.{js|js.map|d.ts})"
+        "!docs/**"
       ],
       "clean": "if-file-deleted",
       "dependencies": [
