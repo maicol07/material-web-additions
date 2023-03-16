@@ -12,22 +12,29 @@ export class DataTableRow extends LitElement {
    * Whether the row is selected.
    */
   @property({type: Boolean, reflect: true}) selected = false;
-  /** @internal */
-  override slot = 'row';
-
-  /**
-   * Cells of the row.
-   */
-      // @ts-ignore
-  @queryAssignedElements({selector: 'md-data-table-cell'}) cells!: DataTableCell[];
   /**
    * Overall height of the table. Available in three different measures.
    */
-  @property({type: String, reflect: true})
-  density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
-  /** @internal */
-      // @ts-ignore
+  @property({type: String, reflect: true}) density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
+
+  /**
+   * Cells of the row.
+   * @internal
+   */
+  @queryAssignedElements({selector: 'md-data-table-cell'}) cells!: DataTableCell[];
+  /**
+   * Cells with type `checkbox`.
+   *
+   * @internal
+   */
   @queryAssignedElements({selector: 'md-data-table-cell[type="checkbox"]'}) protected checkboxCells!: DataTableCell[];
+
+  override connectedCallback() {
+    super.connectedCallback();
+
+    this.role = 'row';
+    this.slot = 'row';
+  }
 
   /** @internal */
   get checkboxCell(): DataTableCell | undefined {

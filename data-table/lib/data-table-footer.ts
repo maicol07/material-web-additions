@@ -1,8 +1,12 @@
 import {html, LitElement} from 'lit';
 
 export class DataTableFooter extends LitElement {
-  /** @internal */
-  override slot = 'footer';
+  override connectedCallback() {
+    super.connectedCallback();
+
+    this.role = 'rowgroup';
+    this.slot = 'footer';
+  }
 
   override render() {
     return html`

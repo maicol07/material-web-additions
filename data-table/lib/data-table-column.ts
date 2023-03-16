@@ -50,7 +50,6 @@ export class DataTableColumn extends LitElement {
    * Whether the column is displaying a sort button.
    */
   @property({type: Boolean, reflect: true, attribute: 'with-sort-button'}) withSortButton = false;
-
   /**
    * Whether the column can be filtered.
    */
@@ -65,14 +64,18 @@ export class DataTableColumn extends LitElement {
   @property({type: Boolean, reflect: true}) filterCaseSensitive = false;
 
   /** @internal */
-  override slot = 'header-cell';
-
-  /** @internal */
     // @ts-ignore
   @query('md-standard-icon-button-toggle') sortButton?: IconButtonToggle;
   /** @internal */
     // @ts-ignore
   @queryAssignedElements({slot: 'checkbox', flatten: true}) protected checkboxSlotElements!: Checkbox[];
+
+  override connectedCallback() {
+    super.connectedCallback();
+
+    this.role = 'column-header';
+    this.slot = 'header-cell';
+  }
 
   /** @internal */
   get checkbox(): Checkbox | undefined {

@@ -19,6 +19,12 @@ export class DataTableCell extends LitElement {
     // @ts-ignore
   @queryAssignedElements({selector: 'md-checkbox', flatten: true}) protected checkboxSlotElements!: MdCheckbox[];
 
+  override connectedCallback() {
+    super.connectedCallback();
+
+    this.role = 'cell';
+  }
+
   /** @internal */
   get checkbox(): MdCheckbox | undefined {
     return this.checkboxSlotElements?.[0];
