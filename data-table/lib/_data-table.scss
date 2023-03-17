@@ -93,5 +93,13 @@ $_custom-property-prefix: 'data-table';
     .mdc-data-table__pagination-rows-per-page-select {
       --_container-padding-vertical: var(--_footer-outlined-select-text-field-container-height);
     }
+
+    .mdc-data-table__pagination-total, .mdc-data-table__pagination-rows-per-page-label, .mdc-data-table__cell {
+      font: var(--_footer-supporting-text-font);
+      line-height: var(--_footer-supporting-text-line-height);
+      font-size: var(--_footer-supporting-text-size);
+      font-weight: var(--_footer-supporting-text-weight);
+      color: var(--_footer-supporting-text-color);
+    }
   }
 }
