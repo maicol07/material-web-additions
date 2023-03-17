@@ -1,13 +1,34 @@
 # Changelog
 
 
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/maicol07/material-web-additions/compare/1.1.3...1.1.4)
+
+> Released on March 17, 2023
+
+### ♻ Code Refactoring
+- [`7761ab4`](https://github.com/maicol07/material-web-additions/commit/7761ab47d880979de2404432e69275c0a495a29e) **data-table:** ♻️ Code refactor
+
+### 🎨 Code styling
+- [`7a43b9a`](https://github.com/maicol07/material-web-additions/commit/7a43b9a8d96140002da6278edd0f5f29554762cf) **data-table:** 💄 Improved text presentation in footer
+- [`5e76e7d`](https://github.com/maicol07/material-web-additions/commit/5e76e7d2a27406cd05e13271b74de57beb6f05e2) **data-table:** 💄 Fix border radius
+
+
 <a name="1.1.3"></a>
-## [1.1.3](https://github.com/maicol07/material-web-additions/compare/1.1.1...1.1.3)
+## [1.1.3](https://github.com/maicol07/material-web-additions/compare/1.1.2...1.1.3)
 
 > Released on March 16, 2023
 
 ### 🐛 Bug Fixes
 - [`4dd2291`](https://github.com/maicol07/material-web-additions/commit/4dd2291256578002de04795fb893bd922a2aeb93) 🐛 Fix slots throwing an error when instantiating data table components.
+
+
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/maicol07/material-web-additions/compare/1.1.1...1.1.2)
+
+> Released on March 15, 2023
+
+### 🐛 Bug Fixes
 - [`c2635af`](https://github.com/maicol07/material-web-additions/commit/c2635afe5786fdeb5cc69781fce1ef41010493da) 🐛 Fix ripple due to new Material Web ripple implementation
 
 ### 📝 Docs changes
