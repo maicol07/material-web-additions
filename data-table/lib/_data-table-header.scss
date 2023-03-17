@@ -17,8 +17,6 @@
     display: table-cell;
     vertical-align: inherit;
 
-    border-top-left-radius: var(--_container-shape);
-    border-top-right-radius: var(--_container-shape);
     background-color: var(--_header-container-color);
     height: var(--_header-container-height);
     color: var(--_header-headline-color);
@@ -28,6 +26,14 @@
     font-weight: var(--_header-headline-weight);
 
     //border: var(--_outline-width) solid var(--_outline-color);
+  }
+
+  :host(:first-of-type) {
+    border-top-left-radius: var(--_container-shape);
+  }
+
+  :host(:last-of-type) {
+    border-top-right-radius: var(--_container-shape);
   }
 
   :host(:hover) {
