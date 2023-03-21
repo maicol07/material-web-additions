@@ -337,11 +337,6 @@ export class DataTable extends BaseElement {
             </div>
           </div>
         </div>
-
-        <div class="mdc-data-table__progress-indicator">
-          <div class="mdc-data-table__scrim"></div>
-          <mwc-linear-progress class="mdc-data-table__linear-progress" indeterminate/>
-        </div>
       `;
     }
 
