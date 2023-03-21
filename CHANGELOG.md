@@ -1,6 +1,15 @@
 # Changelog
 
 
+<a name="1.1.6"></a>
+## [1.1.6](https://github.com/maicol07/material-web-additions/compare/1.1.4...1.1.6)
+
+> Released on March 21, 2023
+
+### 🐛 Bug Fixes
+- [`129ffb4`](https://github.com/maicol07/material-web-additions/commit/129ffb49904735421a467d9cfe2e2fbcf6e24ac7) 🐛 Double progress bar
+
+
 <a name="1.1.4"></a>
 ## [1.1.4](https://github.com/maicol07/material-web-additions/compare/1.1.3...1.1.4)
 
