@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@7.24.3",
+  "packageManager": "pnpm@8.0.0",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -46,20 +46,20 @@
     "@material/layout-grid": "^14.0.0",
     "@material/mwc-base": "^0.27.0",
     "@material/mwc-linear-progress": "^0.27.0",
-    "lit": "^2.6.1",
+    "lit": "^2.7.0",
     "tslib": "^2.5.0"
   },
   "peerDependencies": {
     "@material/web": "^1.0.0-pre.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
+    "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.0",
-    "@custom-elements-manifest/analyzer": "^0.6.9",
+    "@custom-elements-manifest/analyzer": "^0.8.0",
     "@ljcl/storybook-addon-cssprops": "^2.3.5",
-    "@material/web": "^1.0.0-pre.4",
+    "@material/web": "1.0.0-pre.5",
     "@storybook/addon-a11y": "next",
     "@storybook/addon-actions": "next",
     "@storybook/addon-backgrounds": "next",
@@ -79,10 +79,10 @@
     "@storybook/theming": "next",
     "@storybook/web-components": "next",
     "@storybook/web-components-vite": "next",
-    "@types/mdx": "^2.0.3",
-    "@types/react": "^18.0.28",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
+    "@types/mdx": "^2.0.4",
+    "@types/react": "^18.0.30",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
     "@webcomponents/webcomponentsjs": "^2.7.0",
     "eslint": "^8.36.0",
     "eslint-config-google": "^0.14.0",
@@ -90,27 +90,31 @@
     "eslint-plugin-storybook": "^0.6.11",
     "eslint-plugin-wc": "^1.4.0",
     "lit-analyzer": "2.0.0-pre.2",
-    "lit-html": "^2.6.1",
-    "markdown-to-jsx": "^7.1.9",
+    "lit-html": "^2.7.0",
+    "markdown-to-jsx": "^7.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "remark-gfm": "^3.0.1",
-    "sass": "~1.59.2",
+    "sass": "~1.60.0",
     "storybook": "next",
     "storybook-dark-mode": "^3.0.0-canary.191.4282.0",
     "storybook-docs-toc": "^1.7.0",
-    "styled-components": "^5.3.8",
+    "styled-components": "^5.3.9",
     "ts-dedent": "^2.2.0",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.4",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1",
     "wireit": "^0.9.5"
   },
   "customElements": "custom-elements.json",
   "pnpm": {
     "peerDependencyRules": {
-      "ignoreMissing": ["css-loader", "sass-loader", "style-loader"]
+      "ignoreMissing": [
+        "css-loader",
+        "sass-loader",
+        "style-loader"
+      ]
     }
   },
   "wireit": {
