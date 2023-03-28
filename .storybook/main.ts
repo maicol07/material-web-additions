@@ -8,7 +8,6 @@ const config: StorybookConfig = {
   ],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-actions',
     '@storybook/addon-viewport',
     {
       name: '@storybook/addon-docs',
@@ -32,6 +31,7 @@ const config: StorybookConfig = {
     // '@ljcl/storybook-addon-cssprops',
     '@storybook/addon-a11y',
     '@storybook/addon-storysource',
+    '@storybook/addon-actions',
     'storybook-dark-mode'
   ],
   framework: {
