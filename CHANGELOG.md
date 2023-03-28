@@ -1,6 +1,23 @@
 # Changelog
 
 
+<a name="1.1.7"></a>
+## [1.1.7](https://github.com/maicol07/material-web-additions/compare/1.1.6...1.1.7)
+
+> Released on March 28, 2023
+
+### 🐛 Bug Fixes
+- [`34f11d5`](https://github.com/maicol07/material-web-additions/commit/34f11d5fdf7f285de8ae90723857cf08873f6930) Fix Material Web pre5 breaking changes
+
+### 📝 Docs changes
+- [`cc2c165`](https://github.com/maicol07/material-web-additions/commit/cc2c165a950c5d04d5590d9a580961f1b27cea8d) 📝 Layout fix
+- [`4783a63`](https://github.com/maicol07/material-web-additions/commit/4783a63b21aace323426a0720a8e5d35aab51f8a) 📝 Changed sandbox tab order so that Controls is the first one
+
+### Other changes
+- [`3fba4fc`](https://github.com/maicol07/material-web-additions/commit/3fba4fc3c45a4d4a204fe2f2d142eea86bcbe93a) **deps:** ⬆️ Upgraded dependencies
+- [`d502a55`](https://github.com/maicol07/material-web-additions/commit/d502a55f18833a11f5c27db0b2933029c111e92a) **ide:** IDE files
+
+
 <a name="1.1.6"></a>
 ## [1.1.6](https://github.com/maicol07/material-web-additions/compare/1.1.4...1.1.6)
 
