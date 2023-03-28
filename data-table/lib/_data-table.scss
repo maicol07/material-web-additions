@@ -1,27 +1,15 @@
 @use 'sass:map';
 
 @use "@material/data-table/data-table";
-@use '@material/web/elevation/lib/elevation';
-@use '@material/web/sass/resolvers';
 @use '@material/web/sass/theme';
 @use '@material/web/tokens';
+@use "@material/web/elevation/elevation";
 @use "@material/elevation" as oldelevation;
 
 $_custom-property-prefix: 'data-table';
 
-//@function _resolve-elevation-theme($theme, $resolvers) {
-//  $theme: elevation.resolve-theme(
-//                  $theme,
-//                  map.get($resolvers, 'elevation'),
-//          $shadow-color-token: 'container-shadow-color',
-//          $elevation-tokens: (container-elevation)
-//  );
-//  @return $theme;
-//}
-
 @mixin styles() {
   $tokens: tokens.md-comp-data-table-values();
-  $tokens: elevation.resolve-tokens($tokens, 'container-elevation');
   $tokens: theme.create-theme-vars($tokens, $_custom-property-prefix);
 
   :host {
@@ -44,7 +32,7 @@ $_custom-property-prefix: 'data-table';
                     )
     );
 
-    //@include theme.emit-theme-vars($tokens);
+    @include theme.emit-theme-vars($tokens);
 
     border-radius: var(--_container-shape);
     background-color: var(--_container-color);
@@ -53,9 +41,9 @@ $_custom-property-prefix: 'data-table';
       border: var(--_outline-width) solid var(--_outline-color);
     }
 
-    .mdc-data-table__table-container:not(+ md-data-table-footer) {
-      border-radius: var(--_container-shape);
-    }
+    //.mdc-data-table__table-container:not(+ md-data-table-footer) {
+    //  border-radius: var(--_container-shape);
+    //}
 
     .mdc-data-table__table {
       display: table;

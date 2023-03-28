@@ -1,25 +1,13 @@
 @use 'sass:map';
 
 @use '@material/web/elevation/lib/elevation';
-@use '@material/web/sass/resolvers';
 @use '@material/web/sass/theme';
 @use '@material/web/tokens';
 @use "@material/elevation" as oldelevation;
 
 $_custom-property-prefix: 'card';
 
-//@function _resolve-elevation-theme($theme, $resolvers) {
-//  $theme: elevation.resolve-theme(
-//                  $theme,
-//                  map.get($resolvers, 'elevation'),
-//          $shadow-color-token: 'container-shadow-color',
-//          $elevation-tokens: (container-elevation)
-//  );
-//  @return $theme;
-//}
-
-@mixin styles($tokens, $style_name, $resolvers: resolvers.$material) {
-  $tokens: elevation.resolve-tokens($tokens, 'container-elevation');
+@mixin styles($tokens, $style_name) {
   $tokens: theme.create-theme-vars($tokens, $_custom-property-prefix);
 
   :host {

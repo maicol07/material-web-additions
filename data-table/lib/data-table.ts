@@ -1,6 +1,4 @@
 import '@material/mwc-linear-progress';
-import '@material/web/autocomplete/outlined-autocomplete.js';
-import '@material/web/autocomplete/autocomplete-item.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '../data-table-footer.js';
 
@@ -22,6 +20,7 @@ import {IconButton} from '@material/web/iconbutton/lib/icon-button.js';
 import {LinearProgress} from '@material/mwc-linear-progress';
 import {DataTableRow} from './data-table-row.js';
 import {BaseElement} from '@material/mwc-base';
+import {TextField} from '@material/web/textfield/lib/text-field.js';
 
 export interface RowSelectionChangedDetail {
   row: DataTableRow,
@@ -283,15 +282,14 @@ export class DataTable extends BaseElement {
                 ${this.pageSizesLabel}
               </div>
               
-              <md-outlined-autocomplete
+              <md-outlined-text-field
+                  type="number"
                   class="mdc-data-table__pagination-rows-per-page-select"
                   value="${this.currentPageSize}"
-                  @autocomplete-value-changed=${this.onPageSizeSelected}>
-<!--                  readonly>-->
-                ${this.pageSizesArray.map((rowsPerPage, index) => html`
-                  <md-autocomplete-item headline="${rowsPerPage}" value="${rowsPerPage}"></md-autocomplete-item>
-                `)}
-              </md-outlined-autocomplete>
+                  min="1"
+                  step="1"
+                  @input=${this.onPageSizeSelected}>
+              </md-outlined-text->
             </div>
 
             <div class="mdc-data-table__pagination-navigation">
@@ -343,9 +341,9 @@ export class DataTable extends BaseElement {
     return '';
   }
 
-  protected onPageSizeSelected(e: CustomEvent<{value: string}>) {
+  protected onPageSizeSelected(e: InputEvent) {
     // const select = e.target as Autocomplete;
-    this.currentPageSize = Number.parseInt(e.detail.value);
+    this.currentPageSize = Number.parseInt((e.target as TextField).value);
     this.paginate('first');
   }
 

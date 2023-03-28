@@ -1,11 +1,6 @@
 @use 'sass:map';
-
 @use "@material/data-table/data-table";
-@use '@material/web/elevation/lib/elevation';
-@use '@material/web/sass/resolvers';
-@use '@material/web/sass/theme';
-@use '@material/web/tokens';
-@use "@material/elevation" as oldelevation;
+@use "density";
 
 @mixin styles() {
   @include data-table.core-styles;
