@@ -8,6 +8,7 @@
 
   display: table-cell;
   vertical-align: inherit;
+  color: var(--_row-item-label-text-color);
 }
 
 :host([type="numeric"]) {

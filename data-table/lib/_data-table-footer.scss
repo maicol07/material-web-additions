@@ -21,6 +21,7 @@
     font-size: var(--_footer-supporting-text-size);
     line-height: var(--_footer-supporting-text-line-height);
     font-weight: var(--_footer-supporting-text-weight);
+    --md-icon-color: var(--md-sys-color-on-surface-variant, inherit);
 
     padding: 0 16px;
 
