@@ -1,6 +1,19 @@
 # Changelog
 
 
+<a name="1.1.8"></a>
+## [1.1.8](https://github.com/maicol07/material-web-additions/compare/1.1.7...1.1.8)
+
+> Released on March 29, 2023
+
+### 🐛 Bug Fixes
+- [`a936117`](https://github.com/maicol07/material-web-additions/commit/a93611767f3465035b4daf1980fdaf8356c33ad0) **data-table:** Colors when using dark theme
+
+### Other changes
+- [`8466725`](https://github.com/maicol07/material-web-additions/commit/8466725458a265bc81a7eb33bf92833c6a84d6ee) Bump package version
+- [`4b91326`](https://github.com/maicol07/material-web-additions/commit/4b91326014bc891b74f4253dbaba3093614fb1ed) **deps:** ⬆️ Upgraded dependencies
+
+
 <a name="1.1.7"></a>
 ## [1.1.7](https://github.com/maicol07/material-web-additions/compare/1.1.6...1.1.7)
 
@@ -14,6 +27,7 @@
 - [`4783a63`](https://github.com/maicol07/material-web-additions/commit/4783a63b21aace323426a0720a8e5d35aab51f8a) 📝 Changed sandbox tab order so that Controls is the first one
 
 ### Other changes
+- [`e3b4f13`](https://github.com/maicol07/material-web-additions/commit/e3b4f1326e113a3fcb643cb3419b0f47dd421a0c) Bump package version
 - [`3fba4fc`](https://github.com/maicol07/material-web-additions/commit/3fba4fc3c45a4d4a204fe2f2d142eea86bcbe93a) **deps:** ⬆️ Upgraded dependencies
 - [`d502a55`](https://github.com/maicol07/material-web-additions/commit/d502a55f18833a11f5c27db0b2933029c111e92a) **ide:** IDE files
 
