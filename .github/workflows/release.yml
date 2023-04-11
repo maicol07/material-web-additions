@@ -15,8 +15,8 @@ on:
         options:
           - patch
           - minor
-          - rc
           - major
+          - rc
       release_channel:
         type: choice
         description: "Release channel"
