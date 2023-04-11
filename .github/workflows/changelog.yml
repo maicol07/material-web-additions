@@ -13,9 +13,11 @@ on:
   workflow_call:
     inputs:
       next_version:
+        type: string
         description: "Next version tag"
         required: false
       commit_message:
+        type: string
         description: "Commit message"
         required: false
 
