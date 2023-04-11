@@ -3,9 +3,9 @@ import {property} from 'lit/decorators/property.js';
 import {queryAssignedElements} from 'lit/decorators/query-assigned-elements.js';
 import {query} from 'lit/decorators/query.js';
 import {TextField} from '@material/web/textfield/lib/text-field.js';
-import {IconButtonToggle} from '@material/web/iconbutton/lib/icon-button-toggle.js';
+import {IconButton} from '@material/web/iconbutton/lib/icon-button.js';
 import '@material/web/textfield/outlined-text-field.js';
-import '@material/web/iconbutton/standard-icon-button-toggle.js';
+import '@material/web/iconbutton/standard-icon-button.js';
 import '@material/web/checkbox/checkbox.js';
 import '@material/web/icon/icon.js';
 import {CellCheckedEventDetail} from './data-table-cell.js';
@@ -65,7 +65,7 @@ export class DataTableColumn extends LitElement {
 
   /** @internal */
     // @ts-ignore
-  @query('md-standard-icon-button-toggle') sortButton?: IconButtonToggle;
+  @query('md-standard-icon-button') sortButton?: IconButton;
   /** @internal */
     // @ts-ignore
   @queryAssignedElements({slot: 'checkbox', flatten: true}) protected checkboxSlotElements!: Checkbox[];
@@ -135,17 +135,18 @@ export class DataTableColumn extends LitElement {
       // noinspection AssignmentResultUsedJS
       return html`
           <div class="mdc-data-table__header-cell-wrapper">
-              <md-standard-icon-button-toggle ?selected=${this.sortedDescending} 
-                                                  @icon-button-toggle-change=${this.onSortButtonClicked}
-                                                  @click="${(e: PointerEvent) => e.stopPropagation()}"
-                                                  ?hidden="${!this.withSortButton}">
-              <slot name="sort-icon-on" slot="onIcon">
-                  <md-icon slot="onIcon">arrow_downward</md-icon>
+              <md-standard-icon-button ?selected=${this.sortedDescending}
+                                       toggle
+                                       @change=${this.onSortButtonClicked}
+                                       @click="${(e: PointerEvent) => e.stopPropagation()}"
+                                       ?hidden="${!this.withSortButton}">
+              <slot name="sort-icon-on" slot="selectedIcon">
+                  <md-icon>arrow_downward</md-icon>
               </slot>
-              <slot name="sort-icon-off" slot="offIcon">
-                  <md-icon slot="offIcon">arrow_upward</md-icon>
+              <slot name="sort-icon-off">
+                  <md-icon>arrow_upward</md-icon>
               </slot>
-              </md-standard-icon-button-toggle>
+              </md-standard-icon-button>
               &nbsp;
               <slot class="mdc-data-table__header-cell-label"></slot>
           </div>
@@ -212,8 +213,8 @@ export class DataTableColumn extends LitElement {
   }
 
   /** @internal */
-  onSortButtonClicked(e: CustomEvent<{ selected: boolean }>) {
-    this.sortedDescending = e.detail.selected;
+  onSortButtonClicked(e: Event) {
+    this.sortedDescending = this.sortButton.selected;
     /**
      * Event emitted when the user has typed in column filter textfield.
      *

@@ -60,9 +60,9 @@ $feat-structure: feature-targeting.create-target($query, structure);
 slot::slotted(.mdc-card__action) {
   @include feature-targeting.targets($feat-structure) {
     @include card.actions-layout_(inline-flex);
+    align-items: initial;
 
     justify-content: center;
-    cursor: pointer;
     user-select: none;
   }
 }

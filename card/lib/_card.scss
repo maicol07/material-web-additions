@@ -21,8 +21,7 @@ $_custom-property-prefix: 'card';
     @include elevation.theme(
                     (
                             level: var(--_container-elevation),
-                            shadow-color: var(--_container-shadow-color),
-                            surface-tint: var(--_container-surface-tint-layer-color),
+                            shadow-color: var(--_container-shadow-color)
                     )
     );
 
