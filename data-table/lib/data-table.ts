@@ -169,6 +169,12 @@ export class DataTable extends BaseElement {
   /** @internal */
   filterColumnCallback = (e: Event) => {
     const event = e as CustomEvent<FilterTextFieldInputEventDetail>;
+
+    // Don't filter if the column is using custom filtering
+    if (event.detail.customFiltering) {
+      return;
+    }
+
     const {text, column} = event.detail;
 
     if (text === '') {
@@ -215,6 +221,12 @@ export class DataTable extends BaseElement {
   };
   sortColumnCallback = (e: Event) => {
     const event = e as CustomEvent<SortButtonClickedEventDetail>;
+
+    // Don't sort if the column is using custom sorting
+    if (event.detail.customSorting) {
+      return;
+    }
+
     const {column, isDescending} = event.detail;
     this.inProgress = true;
 

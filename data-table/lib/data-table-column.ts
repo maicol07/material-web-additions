@@ -15,7 +15,8 @@ export interface FilterTextFieldInputEventDetail {
   field: TextField,
   text: string,
   column: DataTableColumn,
-  caseSensitive: boolean
+  caseSensitive: boolean,
+  customFiltering: boolean
 }
 export interface FilterTextFieldKeyDownEventDetail {
   field: TextField,
@@ -25,7 +26,8 @@ export interface FilterTextFieldKeyDownEventDetail {
 
 export interface SortButtonClickedEventDetail {
   column: DataTableColumn,
-  isDescending: boolean
+  isDescending: boolean,
+  customSorting: boolean,
 }
 
 export class DataTableColumn extends LitElement {
@@ -51,6 +53,10 @@ export class DataTableColumn extends LitElement {
    */
   @property({type: Boolean, reflect: true, attribute: 'with-sort-button'}) withSortButton = false;
   /**
+   * Whether the column is using a custom sorting function.
+   */
+  @property({type: Boolean, attribute: 'custom-sorting'}) customSorting = false;
+  /**
    * Whether the column can be filtered.
    */
   @property({type: Boolean, reflect: true}) filterable = false;
@@ -62,6 +68,10 @@ export class DataTableColumn extends LitElement {
    * Sets the filtering to be case-sensitive.
    */
   @property({type: Boolean, reflect: true}) filterCaseSensitive = false;
+  /**
+   * Whether the column is using a custom filtering function.
+   */
+  @property({type: Boolean, attribute: 'custom-filtering'}) customFiltering = false;
 
   /** @internal */
     // @ts-ignore
@@ -190,7 +200,8 @@ export class DataTableColumn extends LitElement {
         field: textfield,
         text: textfield.value,
         column: this,
-        caseSensitive: this.filterCaseSensitive
+        caseSensitive: this.filterCaseSensitive,
+        customFiltering: this.customFiltering
       }
     }));
   }
@@ -223,7 +234,8 @@ export class DataTableColumn extends LitElement {
     this.dispatchEvent(new CustomEvent<SortButtonClickedEventDetail>('sort', {
       detail: {
         column: this,
-        isDescending: this.sortedDescending
+        isDescending: this.sortedDescending,
+        customSorting: this.customSorting
       }
     }));
   }

@@ -13,10 +13,15 @@ import * as DataTableStories from "./data-table.stories.ts";
 ## Example Usage
 <Stories title={""} includePrimary/>
 
+## Custom sorting and filtering
+The data table component allows you to provide custom sorting and filtering functions.
+This is done by setting the `customSorting` and `customFilter` properties on the `md-data-table-column` element.
+This will disable the default sorting and filtering functionality of the data table.
+You'll then have to implement your own sorting and filtering logic by listening to the `sort` and `filter` events.
+
 ## API
 ### Slots
 #### DataTable
-
 | Name     | Description                                       |
 |----------|---------------------------------------------------|
 | default  | Default slot that contains all the table elements |
