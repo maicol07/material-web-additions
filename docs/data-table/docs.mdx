@@ -2,8 +2,7 @@ import {ArgTypes, Meta, Stories, Title} from '@storybook/addon-docs';
 import README from '../../data-table/README.md?raw';
 import Markdown from "markdown-to-jsx";
 import * as DataTableStories from "./data-table.stories.ts";
-
-[//]: # (import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';)
+import {CssPropsBlock} from "@ljcl/storybook-addon-cssprops";
 
 <Meta name="Docs" of={DataTableStories} />
 <Title />
@@ -68,8 +67,7 @@ You'll then have to implement your own sorting and filtering logic by listening 
 *None*
 
 ### CSS Custom Properties
-
-[//]: # (<CssPropsBlock customProperties={undefined}/>)
+<CssPropsBlock customProperties={undefined}/>
 
 ## Additional references
 - [MDC Web: Data Table](https://material.io/develop/web/components/data-table/)

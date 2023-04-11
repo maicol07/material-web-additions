@@ -2,8 +2,7 @@ import {ArgTypes, Meta, Stories, Subtitle, Title} from '@storybook/addon-docs';
 import README from '../../layout-grid/README.md?raw';
 import Markdown from "markdown-to-jsx";
 import * as LayoutGridStories from "./layout-grid.stories.ts";
-
-[//]:  # (import {CssPropsBlock} from '@ljcl/storybook-addon-cssprops';)
+import {CssPropsBlock} from "@ljcl/storybook-addon-cssprops";
 
 <Meta of={LayoutGridStories} name="Docs"/>
 <Title/>
@@ -54,7 +53,7 @@ Each element inside `md-layout-grid` will be recognized as a single cell. Defaul
 *None*
 
 ### CSS Custom Properties
-[//]:  # (<CssPropsBlock customProperties={undefined}/>)
+<CssPropsBlock customProperties={undefined}/>
 
 ## Additional references
 - [MDC Web: Layout Grid](https://material.io/develop/web/components/layout-grid/)

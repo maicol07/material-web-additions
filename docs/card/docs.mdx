@@ -2,6 +2,7 @@ import {ArgTypes, Canvas, Meta, Source, Stories, Subtitle, Title} from "@storybo
 import README from '../../card/README.md?raw';
 import Markdown from "markdown-to-jsx";
 import * as CardStories from "./card.stories.ts";
+import {CssPropsBlock} from "@ljcl/storybook-addon-cssprops";
 
 <Meta name="Docs" of={CardStories}/>
 <Title/>
@@ -76,8 +77,7 @@ Other examples are available in the sidebar or below these docs.
 
 ### CSS Custom Properties
 #### Card
-
-[//]: # (<CssPropsBlock customProperties={undefined}/>)
+<CssPropsBlock customProperties={undefined}/>
 
 ## Additional references
 - [MDC Web: Card](https://material.io/develop/web/components/card/)
