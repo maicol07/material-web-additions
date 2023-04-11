@@ -1,6 +1,33 @@
 # Changelog
 
 
+<a name="1.2.0"></a>
+## [1.2.0](https://github.com/maicol07/material-web-additions/compare/1.1.8...1.2.0)
+
+> Released on April 11, 2023
+
+### ✨ Features
+- [`21646a5`](https://github.com/maicol07/material-web-additions/commit/21646a5807dd1e3457acbf5138a07dfb81b6835c) **data-table:** Added custom filtering and sorting
+
+### 🐛 Bug Fixes
+- [`ba64e34`](https://github.com/maicol07/material-web-additions/commit/ba64e34749ca6c8858546933c2ea31dfbf49420f) Fix Material Web pre6 breaking changes
+
+### 📝 Docs changes
+- [`6cf2e1c`](https://github.com/maicol07/material-web-additions/commit/6cf2e1c4ccd192877f64b916cb5ae79493121727) 📝 Re-added documented CSS props
+
+### 👷 CI changes
+- [`3acd619`](https://github.com/maicol07/material-web-additions/commit/3acd6197d30550aaf96da4e55eb5d6d757a6b89d) Fix action schema
+- [`9c824de`](https://github.com/maicol07/material-web-additions/commit/9c824de1935cf4554d1fa1d20eeafbbd9e0ef8cb) Fix actions
+- [`2c88937`](https://github.com/maicol07/material-web-additions/commit/2c88937a046213c77f2c8bfdce99ad5f724aeeb2) Change version type select items order
+- [`2205129`](https://github.com/maicol07/material-web-additions/commit/22051299e69baf96bcee895e9990f6bf3ee6e029) 👷 Fixed overridden `GITHUB_TOKEN` secret
+- [`4b04bd8`](https://github.com/maicol07/material-web-additions/commit/4b04bd8553011b6588fcd33eaba50e5683b4b4b7) 👷 Fixed release workflow
+- [`1d637c9`](https://github.com/maicol07/material-web-additions/commit/1d637c9eaf1faf4fd5e3d657b8fcba5726556ba4) 👷 Added release workflow
+
+### Other changes
+- [`a31b8c5`](https://github.com/maicol07/material-web-additions/commit/a31b8c5cca2c7df9dfa26a4e7ed85f9ac962330e) **deps:** Enforce pre6 as minimum required version of `[@material](:/material)/web`
+- [`6810469`](https://github.com/maicol07/material-web-additions/commit/68104691bdfa20caee9d8f24447eb1a38bc5be54) **deps:** ⬆️ Upgraded dependencies
+
+
 <a name="1.1.8"></a>
 ## [1.1.8](https://github.com/maicol07/material-web-additions/compare/1.1.7...1.1.8)
 
