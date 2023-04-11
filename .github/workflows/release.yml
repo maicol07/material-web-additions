@@ -34,6 +34,7 @@ jobs:
       next_version: ${{ github.event.inputs.next_version }}
       commit_message: ${{ github.event.inputs.commit_message }}
   release_publish:
+    needs: changelog
     runs-on: ubuntu-latest
     strategy:
       matrix:
