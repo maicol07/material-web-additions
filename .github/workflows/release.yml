@@ -1,7 +1,5 @@
-name: Build changelog
+name: Publish & Release
 on:
-  repository_dispatch:
-    types: [ trigger-changelog-workflow ]
   workflow_dispatch:
     inputs:
       next_version:
@@ -56,7 +54,6 @@ jobs:
         with:
           next_version: ${{ github.event.inputs.next_version }}
           commit_message: ${{ github.event.inputs.commit_message }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Automated Version Bump
         uses: 'phips28/gh-action-bump-version@master'
         env:
