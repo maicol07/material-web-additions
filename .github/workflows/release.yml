@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       next_version:
-        description: "Next version tag"
+        description: "Changelog Next version tag"
         required: false
       commit_message:
         description: "Commit message"
@@ -28,7 +28,12 @@ on:
           - alpha
 
 jobs:
-  package:
+  changelog:
+    uses: ./.github/workflows/changelog.yml
+    with:
+      next_version: ${{ github.event.inputs.next_version }}
+      commit_message: ${{ github.event.inputs.commit_message }}
+  release_publish:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -49,11 +54,6 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      - name: Generate changelog
-        uses: ./.github/workflows/changelog.yml
-        with:
-          next_version: ${{ github.event.inputs.next_version }}
-          commit_message: ${{ github.event.inputs.commit_message }}
       - name: Automated Version Bump
         uses: 'phips28/gh-action-bump-version@master'
         env:

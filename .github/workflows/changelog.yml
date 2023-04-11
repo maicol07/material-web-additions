@@ -20,7 +20,7 @@ on:
         required: false
 
 jobs:
-  package:
+  generate_changelog:
     runs-on: ubuntu-latest
     steps:
       -   name: Checkout repo
