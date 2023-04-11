@@ -1,0 +1,86 @@
+name: Build changelog
+on:
+  repository_dispatch:
+    types: [ trigger-changelog-workflow ]
+  workflow_dispatch:
+    inputs:
+      next_version:
+        description: "Next version tag"
+        required: false
+      commit_message:
+        description: "Commit message"
+        required: false
+      version_type:
+        type: choice
+        description: "Version type"
+        required: false
+        options:
+          - patch
+          - minor
+          - rc
+          - major
+      release_channel:
+        type: choice
+        description: "Release channel"
+        required: false
+        options:
+          - next
+          - latest
+          - beta
+          - alpha
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [19]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Generate changelog
+        uses: ./.github/workflows/changelog.yml
+        with:
+          next_version: ${{ github.event.inputs.next_version }}
+          commit_message: ${{ github.event.inputs.commit_message }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Automated Version Bump
+        uses: 'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          version-type: ${{ github.event.inputs.version_type }}
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
+          # note you'll typically need to create a personal access token
+          # with permissions to create releases in the other repo
+          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        env:
+          GITHUB_REPOSITORY: my_gh_org/my_gh_repo
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      - name: Set publishing config
+        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Publish
+        run: pnpm publish --access public --tag ${{ github.event.inputs.release_channel }}

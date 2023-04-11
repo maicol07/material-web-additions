@@ -10,6 +10,18 @@ on:
       commit_message:
         description: "Commit message"
         required: false
+  workflow_call:
+    inputs:
+      next_version:
+        description: "Next version tag"
+        required: false
+      commit_message:
+        description: "Commit message"
+        required: false
+    secrets:
+      GITHUB_TOKEN:
+        description: "GitHub token"
+        required: true
 
 jobs:
   package:
