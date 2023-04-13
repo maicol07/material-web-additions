@@ -14,6 +14,8 @@
 - [`c673be1`](https://github.com/maicol07/material-web-additions/commit/c673be1488a144214e08c335f7a9748a959f9ea7) **data-table:** 💄 Fix cells borders
 
 ### 👷 CI changes
+- [`a52239d`](https://github.com/maicol07/material-web-additions/commit/a52239dd2e375b2cc7aedca186a40a5357dde6a5) Improve changelog commit & push
+- [`123cc73`](https://github.com/maicol07/material-web-additions/commit/123cc733d6171ca6549370aa5b1d4af08f562a93) Fix version bump commit
 - [`4ea6415`](https://github.com/maicol07/material-web-additions/commit/4ea6415dda5e8e91016b3de219049330b4ac4c2c) Removed duplicated release
 - [`4f14ac5`](https://github.com/maicol07/material-web-additions/commit/4f14ac5ce843e1e796a4d515fc46286562befefc) Fix changelog generation
 - [`7195927`](https://github.com/maicol07/material-web-additions/commit/7195927d7ec005d5f7b40769f9f7899bd37a95f0) Added release generation
