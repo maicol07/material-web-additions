@@ -19,6 +19,8 @@
     font-size: var(--_header-headline-size);
     line-height: var(--_header-headline-line-height);
     font-weight: var(--_header-headline-weight);
+
+    border-bottom: var(--_row-item-outline-width) solid var(--_row-item-outline-color);
   }
 
   :host(:first-of-type) {
