@@ -46,7 +46,7 @@
   :host([sortable]) {
     @extend .mdc-data-table__header-cell--with-sort;
 
-    md-standard-icon-button-toggle[hidden] {
+    md-standard-icon-button[hidden] {
       display: none;
     }
   }

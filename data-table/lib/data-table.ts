@@ -221,52 +221,50 @@ export class DataTable extends BaseElement {
   };
   sortColumnCallback = (e: Event) => {
     const event = e as CustomEvent<SortButtonClickedEventDetail>;
+    const {column, isDescending} = event.detail;
 
     // Don't sort if the column is using custom sorting
-    if (event.detail.customSorting) {
-      return;
-    }
+    if (!event.detail.customSorting) {
+      this.inProgress = true;
 
-    const {column, isDescending} = event.detail;
-    this.inProgress = true;
-
-    for (const col of this.columns.filter((col) => col !== column && col.sortable)) {
-      col.sorted = false;
-      col.sortedDescending = false;
-    }
-
-    const cells = this.rows.map((row) => row.cells[this.columns.indexOf(column)]);
-
-    cells.sort((a: HTMLElement, b: HTMLElement) => {
-      let aValue: string | number = a.textContent;
-      let bValue: string | number = b.textContent;
-
-      if (column.type === 'numeric') {
-        aValue = Number.parseFloat(aValue);
-        bValue = Number.parseFloat(bValue);
+      for (const col of this.columns.filter((col) => col !== column && col.sortable)) {
+        col.sorted = false;
+        col.sortedDescending = false;
       }
 
-      if (!isDescending) {
-        const temporary = aValue;
-        aValue = bValue;
-        bValue = temporary;
+      const cells = this.rows.map((row) => row.cells[this.columns.indexOf(column)]);
+
+      cells.sort((a: HTMLElement, b: HTMLElement) => {
+        let aValue: string | number = a.textContent;
+        let bValue: string | number = b.textContent;
+
+        if (column.type === 'numeric') {
+          aValue = Number.parseFloat(aValue);
+          bValue = Number.parseFloat(bValue);
+        }
+
+        if (!isDescending) {
+          const temporary = aValue;
+          aValue = bValue;
+          bValue = temporary;
+        }
+
+        if (typeof aValue === 'string' && typeof bValue === 'string') {
+          return aValue.localeCompare(bValue);
+        }
+
+        return aValue < bValue ? -1 : (aValue > bValue ? 1 : 0);
+      });
+
+      // this.rows = cells.map((cell) => cell.parentElement as DataTableRow);
+      for (const cell of cells) {
+        const row = cell.parentElement as DataTableRow;
+        row.parentElement.append(row);
       }
 
-      if (typeof aValue === 'string' && typeof bValue === 'string') {
-        return aValue.localeCompare(bValue);
-      }
-
-      return aValue < bValue ? -1 : (aValue > bValue ? 1 : 0);
-    });
-
-    // this.rows = cells.map((cell) => cell.parentElement as DataTableRow);
-    for (const cell of cells) {
-      const row = cell.parentElement as DataTableRow;
-      row.parentElement.append(row);
+      this.inProgress = false;
+      column.sorted = true;
     }
-
-    this.inProgress = false;
-    column.sorted = true;
     column.withSortButton = true;
 
     /**
