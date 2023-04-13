@@ -36,7 +36,7 @@ jobs:
       -   uses: oleksiyrudenko/gha-git-credentials@v2-latest
           with:
             token: '${{ secrets.GITHUB_TOKEN }}'
-      -   run: "git commit -m \"changelog: 📝 Updated changelog for ${{ github.event.inputs.next_version && 'release ${{ github.event.inputs.next_version }}' || 'commit ${{ github.sha }}' }}\" -a"
+      -   run: "git commit -m \"changelog: 📝 Updated changelog for ${{ github.event.inputs.next_version && 'release' || 'commit' }} ${{ github.event.inputs.next_version && github.event.inputs.next_version || github.sha }}\" -a"
           if: ${{ !github.event.inputs.commit_message }}
       -   run: "git commit -m \"${{ github.event.inputs.commit_message }}\" -a"
           if: ${{ github.event.inputs.commit_message }}
