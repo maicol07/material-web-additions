@@ -1,6 +1,26 @@
 # Changelog
 
 
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/maicol07/material-web-additions/compare/1.2.0...1.2.1)
+
+> Released on April 13, 2023
+
+### 🐛 Bug Fixes
+- [`c802ac7`](https://github.com/maicol07/material-web-additions/commit/c802ac7590265864cffef410fbc7a1059177a45b) **data-table:** Fixed filter textfield and sort button layout when used together
+
+### 🎨 Code styling
+- [`3929c23`](https://github.com/maicol07/material-web-additions/commit/3929c23aec36b3b625c7289cf695539153d8dc23) **data-table:** 💄 Use M3 header cell border
+- [`c673be1`](https://github.com/maicol07/material-web-additions/commit/c673be1488a144214e08c335f7a9748a959f9ea7) **data-table:** 💄 Fix cells borders
+
+### 👷 CI changes
+- [`4ea6415`](https://github.com/maicol07/material-web-additions/commit/4ea6415dda5e8e91016b3de219049330b4ac4c2c) Removed duplicated release
+- [`4f14ac5`](https://github.com/maicol07/material-web-additions/commit/4f14ac5ce843e1e796a4d515fc46286562befefc) Fix changelog generation
+- [`7195927`](https://github.com/maicol07/material-web-additions/commit/7195927d7ec005d5f7b40769f9f7899bd37a95f0) Added release generation
+- [`3d239ce`](https://github.com/maicol07/material-web-additions/commit/3d239ce59175ec9b0e0b60b8779075b0cfa393bf) Improved changelog action
+- [`e5e0ce0`](https://github.com/maicol07/material-web-additions/commit/e5e0ce0f33d1e6ebd05c6b069c79d6056d569a3f) Run release job sequentially
+
+
 <a name="1.2.0"></a>
 ## [1.2.0](https://github.com/maicol07/material-web-additions/compare/1.1.8...1.2.0)
 
@@ -16,6 +36,7 @@
 - [`6cf2e1c`](https://github.com/maicol07/material-web-additions/commit/6cf2e1c4ccd192877f64b916cb5ae79493121727) 📝 Re-added documented CSS props
 
 ### 👷 CI changes
+- [`ca64428`](https://github.com/maicol07/material-web-additions/commit/ca6442816500f34a1d0c315c4c3f1e5913885563) version bump to 1.2.0
 - [`3acd619`](https://github.com/maicol07/material-web-additions/commit/3acd6197d30550aaf96da4e55eb5d6d757a6b89d) Fix action schema
 - [`9c824de`](https://github.com/maicol07/material-web-additions/commit/9c824de1935cf4554d1fa1d20eeafbbd9e0ef8cb) Fix actions
 - [`2c88937`](https://github.com/maicol07/material-web-additions/commit/2c88937a046213c77f2c8bfdce99ad5f724aeeb2) Change version type select items order
