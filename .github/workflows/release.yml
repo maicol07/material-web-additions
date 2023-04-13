@@ -55,23 +55,20 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      - name: Pull
+      - name: Pull changes
         run: git pull
       - name: Automated Version Bump
+        id: version_bump
         uses: 'phips28/gh-action-bump-version@master'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           version-type: ${{ github.event.inputs.version_type }}
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           body_path: CHANGELOG.txt
+          tag_name: ${{ steps.version_bump.outputs.newTag }}
       - name: Set publishing config
         run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
         env:
