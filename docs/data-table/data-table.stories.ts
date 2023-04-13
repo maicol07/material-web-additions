@@ -496,3 +496,82 @@ export const WithSorting: DataTableStory = {
     },
   },
 };
+
+export const WithSortingAndFilter: DataTableStory = {
+  render: (args) => html`
+    <md-data-table
+      aria-label="Dessert calories"
+      ?paginated="${args.paginated}"
+      ?inProgress="${args.inProgress}"
+      density="${args.density}"
+      pageSizes="${args.pageSizes}"
+      pageSizesLabel="${args.pageSizesLabel}"
+      firstRowOfPage="${args.firstRowOfPage}"
+      currentPageSize="${args.currentPageSize}"
+      lastRowOfPage="${args.lastRowOfPage}"
+      paginationTotalLabel="${args.paginationTotalLabel}"
+      currentPageSize="${args.currentPageSize}"
+      lastRowOfPage="${args.lastRowOfPage}"
+    >
+      <md-data-table-column sortable sorted filterable>Signal name</md-data-table-column>
+      <md-data-table-column filterable>Status</md-data-table-column>
+      <md-data-table-column>Severity</md-data-table-column>
+      <md-data-table-column sortable>Stage</md-data-table-column>
+      <md-data-table-column>Time</md-data-table-column>
+      <md-data-table-column filterable>Roles</md-data-table-column>
+
+      <md-data-table-row>
+        <md-data-table-cell>Arcus watch slowdown</md-data-table-cell>
+        <md-data-table-cell>Online</md-data-table-cell>
+        <md-data-table-cell>Medium</md-data-table-cell>
+        <md-data-table-cell>Triaged</md-data-table-cell>
+        <md-data-table-cell type="numeric">0:33</md-data-table-cell>
+        <md-data-table-cell>Allison Brie</md-data-table-cell>
+      </md-data-table-row>
+      <md-data-table-row>
+        <md-data-table-cell
+          >monarch: prod shared ares-managed-features-provider-heavy</md-data-table-cell
+        >
+        <md-data-table-cell>Offline</md-data-table-cell>
+        <md-data-table-cell>Huge</md-data-table-cell>
+        <md-data-table-cell>Triaged</md-data-table-cell>
+        <md-data-table-cell type="numeric">0:33</md-data-table-cell>
+        <md-data-table-cell>Allison Brie</md-data-table-cell>
+      </md-data-table-row>
+      <md-data-table-row>
+        <md-data-table-cell>Arcus watch slowdown</md-data-table-cell>
+        <md-data-table-cell>Online</md-data-table-cell>
+        <md-data-table-cell>Medium</md-data-table-cell>
+        <md-data-table-cell>Triaged</md-data-table-cell>
+        <md-data-table-cell type="numeric">0:33</md-data-table-cell>
+        <md-data-table-cell>Brie Larson</md-data-table-cell>
+      </md-data-table-row>
+      <md-data-table-row>
+        <md-data-table-cell
+          >monarch: prod shared ares-managed-features-provider-heavy</md-data-table-cell
+        >
+        <md-data-table-cell>Online</md-data-table-cell>
+        <md-data-table-cell>Minor</md-data-table-cell>
+        <md-data-table-cell>Not triaged</md-data-table-cell>
+        <md-data-table-cell type="numeric">0:33</md-data-table-cell>
+        <md-data-table-cell>Jeremy Lake</md-data-table-cell>
+      </md-data-table-row>
+      <md-data-table-row>
+        <md-data-table-cell>Arcus watch slowdown</md-data-table-cell>
+        <md-data-table-cell>Online</md-data-table-cell>
+        <md-data-table-cell>Negligible</md-data-table-cell>
+        <md-data-table-cell>Triaged</md-data-table-cell>
+        <md-data-table-cell type="numeric">0:33</md-data-table-cell>
+        <md-data-table-cell>Angelina Cheng</md-data-table-cell>
+      </md-data-table-row>
+    </md-data-table>
+  `,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Data table with some sortable and filterable columns. Enabled when the `sortable` and `filterable` attributes are added to a column.',
+      },
+    },
+  },
+};

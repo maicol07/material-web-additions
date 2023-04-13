@@ -1,4 +1,4 @@
-import {html, LitElement, PropertyValues} from 'lit';
+import {html, LitElement, nothing, PropertyValues} from 'lit';
 import {property} from 'lit/decorators/property.js';
 import {queryAssignedElements} from 'lit/decorators/query-assigned-elements.js';
 import {query} from 'lit/decorators/query.js';
@@ -18,6 +18,7 @@ export interface FilterTextFieldInputEventDetail {
   caseSensitive: boolean,
   customFiltering: boolean
 }
+
 export interface FilterTextFieldKeyDownEventDetail {
   field: TextField,
   key: string,
@@ -102,7 +103,6 @@ export class DataTableColumn extends LitElement {
   override render() {
     return html`
         ${this.renderCheckbox()}
-        ${this.renderFilterTextField()}
         ${this.renderSlot()}
     `;
   }
@@ -124,47 +124,48 @@ export class DataTableColumn extends LitElement {
   renderFilterTextField() {
     if (this.filterable && this.type !== 'checkbox') {
       return html`
-          <div class="mdc-data-table__header-cell-filter-wrapper">
-              <slot class="mdc-data-table__header-cell-label"></slot>
-              <slot name="filter-textfield" class="mdc-data-table__filter-textfield">
-                  <md-outlined-text-field
-                          label="${this.filterTextFieldLabel}"
-                          style="--_container-padding-vertical: var(--_footer-outlined-select-text-field-container-height);"
-                          @input=${this.onFilterTextFieldInput}
-                          @keydown=${this.onFilterTextFieldKeyDown}
-                  />
-              </slot>
-          </div>
+          <slot name="filter-textfield" class="mdc-data-table__filter-textfield">
+              <md-outlined-text-field
+                      label="${this.filterTextFieldLabel}"
+                      style="--_container-padding-vertical: var(--_footer-outlined-select-text-field-container-height);"
+                      @input=${this.onFilterTextFieldInput}
+                      @keydown=${this.onFilterTextFieldKeyDown}
+              />
+          </slot>
       `;
     }
-    return '';
+    return nothing;
   }
 
   renderSlot() {
-    if (this.sortable) {
-      // noinspection AssignmentResultUsedJS
-      return html`
-          <div class="mdc-data-table__header-cell-wrapper">
-              <md-standard-icon-button ?selected=${this.sortedDescending}
-                                       toggle
-                                       @change=${this.onSortButtonClicked}
-                                       @click="${(e: PointerEvent) => e.stopPropagation()}"
-                                       ?hidden="${!this.withSortButton}">
-              <slot name="sort-icon-on" slot="selectedIcon">
-                  <md-icon>arrow_downward</md-icon>
-              </slot>
-              <slot name="sort-icon-off">
-                  <md-icon>arrow_upward</md-icon>
-              </slot>
-              </md-standard-icon-button>
-              &nbsp;
-              <slot class="mdc-data-table__header-cell-label"></slot>
-          </div>
-      `;
-    }
-
     return html`
-        <slot></slot>`;
+        <div class="mdc-data-table__header-cell-filter-wrapper">
+            ${this.sortable ? this.renderSortButton() : html`
+                <slot class="mdc-data-table__header-cell-label"></slot>`}
+            ${this.renderFilterTextField()}
+        </div>
+    `;
+  }
+
+  renderSortButton() {
+    return html`
+        <div class="mdc-data-table__header-cell-wrapper">
+            <md-standard-icon-button ?selected=${this.sortedDescending}
+                                     toggle
+                                     @change=${this.onSortButtonClicked}
+                                     @click="${(e: PointerEvent) => e.stopPropagation()}"
+                                     ?hidden="${!this.withSortButton}">
+                <slot name="sort-icon-on" slot="selectedIcon">
+                    <md-icon>arrow_downward</md-icon>
+                </slot>
+                <slot name="sort-icon-off">
+                    <md-icon>arrow_upward</md-icon>
+                </slot>
+            </md-standard-icon-button>
+            &nbsp;
+            <slot class="mdc-data-table__header-cell-label"></slot>
+        </div>
+    `;
   }
 
   /** @internal */
