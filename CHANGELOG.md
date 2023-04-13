@@ -1,6 +1,24 @@
 # Changelog
 
 
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/maicol07/material-web-additions/compare/1.2.1...1.2.2)
+
+> Released on April 13, 2023
+
+### 🐛 Bug Fixes
+- [`3eb577d`](https://github.com/maicol07/material-web-additions/commit/3eb577d2bf0371a867b4e769ab43ea63cde3909b) **data-table:** Fix sort button not disappearing when clicking on a column
+
+### 🎨 Code styling
+- [`6e49d8e`](https://github.com/maicol07/material-web-additions/commit/6e49d8e363c0ad39f8d411cf2c9699a457a65ea1) **data-table:** 💄 Fix footer/pagination border
+
+### 👷 CI changes
+- [`12b958b`](https://github.com/maicol07/material-web-additions/commit/12b958be340936fc84f2c4b4b6121d61b146acd2) Fixed newTag from version_bump step
+
+### Other changes
+- [`ab82688`](https://github.com/maicol07/material-web-additions/commit/ab82688f33e6f175ae5f95b1ce4cb33aaa28aa32) **deps:** ⬆️ Upgraded dependencies
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/maicol07/material-web-additions/compare/1.2.0...1.2.1)
 
@@ -14,6 +32,7 @@
 - [`c673be1`](https://github.com/maicol07/material-web-additions/commit/c673be1488a144214e08c335f7a9748a959f9ea7) **data-table:** 💄 Fix cells borders
 
 ### 👷 CI changes
+- [`5d20e79`](https://github.com/maicol07/material-web-additions/commit/5d20e796166a465df7f1dc8d86221ac9b42a2f37) version bump to 1.2.1
 - [`a52239d`](https://github.com/maicol07/material-web-additions/commit/a52239dd2e375b2cc7aedca186a40a5357dde6a5) Improve changelog commit & push
 - [`123cc73`](https://github.com/maicol07/material-web-additions/commit/123cc733d6171ca6549370aa5b1d4af08f562a93) Fix version bump commit
 - [`4ea6415`](https://github.com/maicol07/material-web-additions/commit/4ea6415dda5e8e91016b3de219049330b4ac4c2c) Removed duplicated release
