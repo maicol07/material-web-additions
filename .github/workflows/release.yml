@@ -55,6 +55,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
+      - name: Pull
+        run: git pull
       - name: Automated Version Bump
         uses: 'phips28/gh-action-bump-version@master'
         env:
