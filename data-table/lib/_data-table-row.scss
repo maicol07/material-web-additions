@@ -21,9 +21,6 @@
     font-size: var(--_row-item-label-text-size);
     line-height: var(--_row-item-label-text-line-height);
     font-weight: var(--_row-item-label-text-weight);
-
-    border-top: var(--_row-item-outline-width) solid var(--_row-item-outline-color);
-    border-bottom: var(--_row-item-outline-width) solid var(--_row-item-outline-color);
   }
 
   :host(:not([selected]):hover) {
@@ -34,6 +31,13 @@
   :host(.without-bottom-border) ::slotted(md-data-table-cell),
   :host(:not([hidden]):last-of-type) ::slotted(md-data-table-cell) {
     border-bottom: none;
+  }
+
+  :host(:not([hidden]):last-of-type) ::slotted(md-data-table-cell:first-of-type) {
+    border-bottom-left-radius: var(--_container-shape);
+  }
+  :host(:not([hidden]):last-of-type) ::slotted(md-data-table-cell:last-of-type) {
+    border-bottom-right-radius: var(--_container-shape);
   }
 
   :host([selected]) {
