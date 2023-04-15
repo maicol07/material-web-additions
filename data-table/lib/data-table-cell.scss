@@ -18,4 +18,5 @@
 
 :host([type="checkbox"]) {
   @extend .mdc-data-table__cell--checkbox;
+  padding: 0 6px;
 }
