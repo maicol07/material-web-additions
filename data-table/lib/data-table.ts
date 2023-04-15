@@ -80,7 +80,7 @@ export class DataTable extends BaseElement {
   /**
    * Overall height of the table. Available in three different measures.
    */
-  @property({type: String})
+  @property({type: String, reflect: true})
   density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
   /** @internal */
       // @ts-ignore

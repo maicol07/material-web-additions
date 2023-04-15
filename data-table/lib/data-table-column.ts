@@ -36,7 +36,7 @@ export class DataTableColumn extends LitElement {
    * Column type. If `checkbox`, the checkbox inside the column will be also created if not supplied via the default slot.
    * If `numeric`, the column label will be aligned to the right.
    */
-  @property({type: String}) type: '' | 'numeric' | 'checkbox' = '';
+  @property({type: String, reflect: true}) type: '' | 'numeric' | 'checkbox' = '';
   /**
    * Whether the column can be sorted.
    */
