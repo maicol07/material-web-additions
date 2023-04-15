@@ -40,7 +40,7 @@ export class DataTableColumn extends LitElement {
   /**
    * Whether the column can be sorted.
    */
-  @property({type: Boolean}) sortable = false;
+  @property({type: Boolean, reflect: true}) sortable = false;
   /**
    * Whether the column is sorted.
    */
