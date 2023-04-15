@@ -1,6 +1,22 @@
 # Changelog
 
 
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/maicol07/material-web-additions/compare/1.2.2...1.2.3)
+
+> Released on April 15, 2023
+
+### 🐛 Bug Fixes
+- [`2f0f18e`](https://github.com/maicol07/material-web-additions/commit/2f0f18ed1dcacf998e077cf702f212779199d332) **data-table:** Added reflection to some attributes to apply styles correctly
+- [`b74eef4`](https://github.com/maicol07/material-web-additions/commit/b74eef4ebe07d7ba5c5e17f929ac40ec88556983) **data-table:** Fix sort button not disappearing when clicking on a column when manually setting the `sortable` property
+
+### 🎨 Code styling
+- [`a4ee3bd`](https://github.com/maicol07/material-web-additions/commit/a4ee3bdc88766f4ec98416944d86b2a6f51fe7f5) **data-table:** 💄 Fix data table checkbox layout
+
+### 👷 CI changes
+- [`fc00e72`](https://github.com/maicol07/material-web-additions/commit/fc00e728b8aeb024348138791d5555a1572ac315) ✏️ Fix typo
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/maicol07/material-web-additions/compare/1.2.1...1.2.2)
 
@@ -13,6 +29,7 @@
 - [`6e49d8e`](https://github.com/maicol07/material-web-additions/commit/6e49d8e363c0ad39f8d411cf2c9699a457a65ea1) **data-table:** 💄 Fix footer/pagination border
 
 ### 👷 CI changes
+- [`ec287a8`](https://github.com/maicol07/material-web-additions/commit/ec287a8a3b74046322667061fcc719dce581bdec) version bump to 1.2.2
 - [`12b958b`](https://github.com/maicol07/material-web-additions/commit/12b958be340936fc84f2c4b4b6121d61b146acd2) Fixed newTag from version_bump step
 
 ### Other changes
