@@ -10,9 +10,7 @@ export class DataTableFooter extends LitElement {
 
   override render() {
     return html`
-      <div class="mdc-data-table__footer" role="rowgroup">
-        <slot></slot>
-      </div>
+      <slot></slot>
     `;
   }
 }
