@@ -75,3 +75,4 @@ jobs:
     with:
       version_type: ${{ github.event.inputs.version_type }}
       release_channel: ${{ github.event.inputs.release_channel }}
+    secrets: inherit
