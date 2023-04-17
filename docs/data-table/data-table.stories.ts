@@ -90,6 +90,54 @@ export const Standard: DataTableStory = {
     </md-data-table>
   `,
 };
+export const WithFooter: DataTableStory = {
+  render: (args) => html`
+    <md-data-table
+      aria-label="Desserts"
+      ?paginated="${args.paginated}"
+      ?inProgress="${args.inProgress}"
+      density="${args.density}"
+      pageSizes="${args.pageSizes}"
+      pageSizesLabel="${args.pageSizesLabel}"
+      firstRowOfPage="${args.firstRowOfPage}"
+      currentPageSize="${args.currentPageSize}"
+      lastRowOfPage="${args.lastRowOfPage}"
+      paginationTotalLabel="${args.paginationTotalLabel}"
+      currentPageSize="${args.currentPageSize}"
+      lastRowOfPage="${args.lastRowOfPage}"
+    >
+      <md-data-table-column>Dessert</md-data-table-column>
+      <md-data-table-column>Calories</md-data-table-column>
+      <md-data-table-column>Fat</md-data-table-column>
+      <md-data-table-column>Carbs</md-data-table-column>
+      <md-data-table-column>Protein (g)</md-data-table-column>
+      <md-data-table-row>
+        <md-data-table-cell>Frozen yogurt</md-data-table-cell>
+        <md-data-table-cell type="number">159</md-data-table-cell>
+        <md-data-table-cell type="number">6.0</md-data-table-cell>
+        <md-data-table-cell type="number">24</md-data-table-cell>
+        <md-data-table-cell type="number">4.0</md-data-table-cell>
+      </md-data-table-row>
+      <md-data-table-row>
+        <md-data-table-cell>Ice cream sandwich</md-data-table-cell>
+        <md-data-table-cell type="number">237</md-data-table-cell>
+        <md-data-table-cell type="number">9.0</md-data-table-cell>
+        <md-data-table-cell type="number">37</md-data-table-cell>
+        <md-data-table-cell type="number">4.3</md-data-table-cell>
+      </md-data-table-row>
+      <md-data-table-row>
+        <md-data-table-cell>Eclair</md-data-table-cell>
+        <md-data-table-cell type="number">262</md-data-table-cell>
+        <md-data-table-cell type="number">16.0</md-data-table-cell>
+        <md-data-table-cell type="number">24</md-data-table-cell>
+        <md-data-table-cell type="number">6.0</md-data-table-cell>
+      </md-data-table-row>
+        <md-data-table-footer slot="footer" style="display: flex; align-items: center; justify-content: center;">
+            This is a footer
+        </md-data-table-footer>
+    </md-data-table>
+  `,
+};
 export const RowSelection: DataTableStory = {
   render: (args) => html`
     <md-data-table
