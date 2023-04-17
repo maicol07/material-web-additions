@@ -4,6 +4,18 @@
 ## Unreleased
 
 ### 🐛 Bug Fixes
+- [`e383c8d`](https://github.com/maicol07/material-web-additions/commit/e383c8d08e47e0e6ba8b2818a977c91d0f78c41f) **data-table:** Removed inner container
+
+### 📝 Docs changes
+- [`6fbd02f`](https://github.com/maicol07/material-web-additions/commit/6fbd02f7446b8b6e3a12dd4d9016a3c34527cc40) **data-table:** 📝 Updated data table footer example
+
+
+<a name="1.2.4"></a>
+## [1.2.4](https://github.com/maicol07/material-web-additions/compare/1.2.3...1.2.4)
+
+> Released on April 17, 2023
+
+### 🐛 Bug Fixes
 - [`c347abe`](https://github.com/maicol07/material-web-additions/commit/c347abeb5d69762716fe23360f770677d725649f) **data-table:** Footer inheriting column
 - [`0d7e0e9`](https://github.com/maicol07/material-web-additions/commit/0d7e0e984593f886a26eaeb71f41c3c2bd4fcdfd) **data-table:** ✏️ Fix typo
 
@@ -12,6 +24,7 @@
 - [`bbedab3`](https://github.com/maicol07/material-web-additions/commit/bbedab315f6cab43fb0b6c24d23f23abcc9244a3) **data-table:** Added basic footer example
 
 ### 👷 CI changes
+- [`0830bad`](https://github.com/maicol07/material-web-additions/commit/0830bad2259768b10f9136d1565be799f82b5fa1) version bump to 1.2.4
 - [`653cfb6`](https://github.com/maicol07/material-web-additions/commit/653cfb69ce51efc0a59417bc103ed834281bd7e4) 💚 Fix workflows
 - [`4db946a`](https://github.com/maicol07/material-web-additions/commit/4db946a2d50d13d1fe71e9e152b0a29a295a1cf6) 👷 Updated workflows
 
