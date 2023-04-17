@@ -299,7 +299,7 @@ export class DataTable extends BaseElement {
                   min="1"
                   step="1"
                   @input=${this.onPageSizeSelected}>
-              </md-outlined-text->
+              </md-outlined-text-field>
             </div>
 
             <div class="mdc-data-table__pagination-navigation">
