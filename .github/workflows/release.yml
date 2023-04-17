@@ -3,14 +3,41 @@ on:
   workflow_dispatch:
     inputs:
       next_version:
-        description: "Changelog Next version tag"
+        description: '[CHANGELOG] Next version tag to use instead of UNRELEASED'
+        type: string
         required: false
+
+      config_dir:
+        description: '[CHANGELOG] git-chglog configuration directory'
+        type: string
+        required: false
+
+      filename:
+        description: '[CHANGELOG] Filename to write the changelog to'
+        type: string
+        required: false
+        default: CHANGELOG.md
+
+      path:
+        description: '[CHANGELOG] Optional path to follow for directory'
+        default: ''
+        type: string
+        required: false
+
+      tag_query:
+        description: '[CHANGELOG] Optional tag query to use for changelog generation'
+        default: ''
+        type: string
+        required: false
+
       commit_message:
-        description: "Commit message"
+        type: string
+        description: "[CHANGELOG] Commit message"
         required: false
+
       version_type:
         type: choice
-        description: "Version type"
+        description: "Version bump type"
         required: false
         options:
           - patch
@@ -22,56 +49,24 @@ on:
         description: "Release channel"
         required: false
         options:
-          - next
           - latest
+          - next
           - beta
           - alpha
 
 jobs:
   changelog:
-    uses: ./.github/workflows/changelog.yml
+    uses: maicol07/actions/.github/workflows/changelog.yml
     with:
       next_version: ${{ github.event.inputs.next_version }}
+      config_dir: ${{ github.event.inputs.config_dir }}
+      filename: ${{ github.event.inputs.filename }}
+      path: ${{ github.event.inputs.path }}
+      tag_query: ${{ github.event.inputs.tag_query }}
       commit_message: ${{ github.event.inputs.commit_message }}
   release_publish:
     needs: changelog
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [19]
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          submodules: recursive
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
-      - name: Pull changes
-        run: git pull
-      - name: Automated Version Bump
-        id: version_bump
-        uses: 'phips28/gh-action-bump-version@master'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          version-type: ${{ github.event.inputs.version_type }}
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          body_path: CHANGELOG.md
-          tag_name: ${{ steps.version_bump.outputs.newTag }}
-      - name: Set publishing config
-        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-      - name: Publish
-        run: pnpm publish --access public --tag ${{ github.event.inputs.release_channel }}
+    uses: maicol07/actions/.github/workflows/release_publish.yml
+    with:
+      version_type: ${{ github.event.inputs.version_type }}
+      release_channel: ${{ github.event.inputs.release_channel }}
