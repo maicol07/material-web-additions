@@ -2,6 +2,7 @@ import '../../data-table/data-table.js';
 import '../../data-table/data-table-column.js';
 import '../../data-table/data-table-row.js';
 import '../../data-table/data-table-cell.js';
+import '@material/web/button/text-button.js';
 import {Meta, StoryObj} from '@storybook/web-components';
 import type {DataTable} from '../../data-table/lib/data-table.js';
 import {html} from 'lit';
@@ -132,8 +133,11 @@ export const WithFooter: DataTableStory = {
         <md-data-table-cell type="number">24</md-data-table-cell>
         <md-data-table-cell type="number">6.0</md-data-table-cell>
       </md-data-table-row>
-        <md-data-table-footer slot="footer" style="display: flex; align-items: center; justify-content: center;">
-            This is a footer
+        <md-data-table-footer slot="footer" style="display: flex; align-items: center; justify-content: right; gap: 4px;">
+            Actions:
+            <md-text-button>Action 1</md-text-button>
+            <md-text-button>Action 2</md-text-button>
+            <md-text-button>Action 3</md-text-button>
         </md-data-table-footer>
     </md-data-table>
   `,
