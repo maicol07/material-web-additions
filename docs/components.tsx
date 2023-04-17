@@ -100,8 +100,7 @@ export function getMarkup() {
         const component = details;
         return (
             // @ts-ignore
-            <md-outlined-card key={slug}
-                              onClick={component.released ? linkTo(component.docsLink ?? component.name) : undefined}
+            <md-outlined-card key={slug} onClick={component.released ? linkTo(component.docsLink ?? `components/${component.name}`) : undefined}
                               clickable={component.released ? 'true' : undefined}>
                 <img src={component.image} alt={component.name}/>
                 <div className="component-card__header">
