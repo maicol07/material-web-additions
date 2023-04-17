@@ -1,6 +1,6 @@
 {
   "name": "@maicol07/material-web-additions",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "publishConfig": {
     "access": "public"
   },
