@@ -1,5 +1,20 @@
 # Changelog
 
+<a name="unreleased"></a>
+## Unreleased
+
+### 🐛 Bug Fixes
+- [`c347abe`](https://github.com/maicol07/material-web-additions/commit/c347abeb5d69762716fe23360f770677d725649f) **data-table:** Footer inheriting column
+- [`0d7e0e9`](https://github.com/maicol07/material-web-additions/commit/0d7e0e984593f886a26eaeb71f41c3c2bd4fcdfd) **data-table:** ✏️ Fix typo
+
+### 📝 Docs changes
+- [`d3e15e6`](https://github.com/maicol07/material-web-additions/commit/d3e15e65e339e10ca6735e1ef0d35773227eb28b) Fixed card link
+- [`bbedab3`](https://github.com/maicol07/material-web-additions/commit/bbedab315f6cab43fb0b6c24d23f23abcc9244a3) **data-table:** Added basic footer example
+
+### 👷 CI changes
+- [`653cfb6`](https://github.com/maicol07/material-web-additions/commit/653cfb69ce51efc0a59417bc103ed834281bd7e4) 💚 Fix workflows
+- [`4db946a`](https://github.com/maicol07/material-web-additions/commit/4db946a2d50d13d1fe71e9e152b0a29a295a1cf6) 👷 Updated workflows
+
 
 <a name="1.2.3"></a>
 ## [1.2.3](https://github.com/maicol07/material-web-additions/compare/1.2.2...1.2.3)
@@ -14,6 +29,7 @@
 - [`a4ee3bd`](https://github.com/maicol07/material-web-additions/commit/a4ee3bdc88766f4ec98416944d86b2a6f51fe7f5) **data-table:** 💄 Fix data table checkbox layout
 
 ### 👷 CI changes
+- [`537a2d5`](https://github.com/maicol07/material-web-additions/commit/537a2d58989714e363bbb821f246c70073dbd734) version bump to 1.2.3
 - [`fc00e72`](https://github.com/maicol07/material-web-additions/commit/fc00e728b8aeb024348138791d5555a1572ac315) ✏️ Fix typo
 
 
