@@ -61,15 +61,6 @@ permissions:
   contents: write
 
 jobs:
-  changelog:
-    uses: maicol07/actions/.github/workflows/changelog.yml@main
-    with:
-      next_version: ${{ github.event.inputs.next_version }}
-      config_dir: ${{ github.event.inputs.config_dir }}
-      filename: ${{ github.event.inputs.filename }}
-      path: ${{ github.event.inputs.path }}
-      tag_query: ${{ github.event.inputs.tag_query }}
-      commit_message: ${{ github.event.inputs.commit_message }}
   release_publish:
     needs: changelog
     uses: maicol07/actions/.github/workflows/release_publish.yml@main
