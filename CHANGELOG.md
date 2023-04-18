@@ -4,10 +4,25 @@
 ## Unreleased
 
 ### 🐛 Bug Fixes
+- [`4a25410`](https://github.com/maicol07/material-web-additions/commit/4a25410916b95ff30149eb362563d9cdc5feeac1) Row doesn't chnge state when using view frameworks
+
+### 👷 CI changes
+- [`417cc1b`](https://github.com/maicol07/material-web-additions/commit/417cc1ba3457c53d7c9e7bc2860490e6cd476d45) 💚 Fix secrets hidden from workflow
+
+
+<a name="1.2.5"></a>
+## [1.2.5](https://github.com/maicol07/material-web-additions/compare/1.2.4...1.2.5)
+
+> Released on April 17, 2023
+
+### 🐛 Bug Fixes
 - [`e383c8d`](https://github.com/maicol07/material-web-additions/commit/e383c8d08e47e0e6ba8b2818a977c91d0f78c41f) **data-table:** Removed inner container
 
 ### 📝 Docs changes
 - [`6fbd02f`](https://github.com/maicol07/material-web-additions/commit/6fbd02f7446b8b6e3a12dd4d9016a3c34527cc40) **data-table:** 📝 Updated data table footer example
+
+### 👷 CI changes
+- [`849bd06`](https://github.com/maicol07/material-web-additions/commit/849bd066316c12477085542586e8e758d6ee3abf) version bump to 1.2.5
 
 
 <a name="1.2.4"></a>
