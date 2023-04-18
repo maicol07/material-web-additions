@@ -43,7 +43,7 @@ export class DataTableRow extends LitElement {
 
   override render() {
     return html`
-      <slot></slot>`;
+      <slot @slotchange="${this.requestUpdate}"></slot>`;
   }
 
   /** @internal */
