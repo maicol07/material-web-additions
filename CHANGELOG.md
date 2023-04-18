@@ -3,8 +3,23 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### ⚡ Performance Improvements
+- [`2623d3f`](https://github.com/maicol07/material-web-additions/commit/2623d3f2ec2060641de8c249f4750b38e38f5389) **data-table:** Improved row update when new cells are added
+
+### 👷 CI changes
+- [`25ab2a0`](https://github.com/maicol07/material-web-additions/commit/25ab2a076d2db4be09a278e797f383f618e7c9ae) Added autodetect option
+
+
+<a name="1.2.7"></a>
+## [1.2.7](https://github.com/maicol07/material-web-additions/compare/1.2.6...1.2.7)
+
+> Released on April 18, 2023
+
 ### 🐛 Bug Fixes
 - [`4be3c17`](https://github.com/maicol07/material-web-additions/commit/4be3c170ca5fc5bfc518acae5947059a6d409535) **data-table:** Wait cells initialization if they didn't update
+
+### 👷 CI changes
+- [`3bfb953`](https://github.com/maicol07/material-web-additions/commit/3bfb95340e457507c497c7d1bb6e5523437272e8) version bump to 1.2.7
 
 
 <a name="1.2.6"></a>
