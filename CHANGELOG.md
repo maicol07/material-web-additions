@@ -7,6 +7,12 @@
 - [`2623d3f`](https://github.com/maicol07/material-web-additions/commit/2623d3f2ec2060641de8c249f4750b38e38f5389) **data-table:** Improved row update when new cells are added
 
 ### 👷 CI changes
+- [`4cb485e`](https://github.com/maicol07/material-web-additions/commit/4cb485ecf7b28a8a6c8a1cc695743a12e97b84f6) version bump to 1.2.8
+- [`711ee89`](https://github.com/maicol07/material-web-additions/commit/711ee89625418ccbc4993dfe46150a13ba2aaaf3) version bump to 1.2.9
+- [`8830893`](https://github.com/maicol07/material-web-additions/commit/88308931ac7b86e81633a2da01fbef99ce45d633) version bump to 1.2.8
+- [`a6321a4`](https://github.com/maicol07/material-web-additions/commit/a6321a4f4006d81ee438d9b32e54e677258d9eba) Removed autodetect from release workflow
+- [`f130721`](https://github.com/maicol07/material-web-additions/commit/f13072136263c1cec94e823c0f817525f3b26afe) Removed changelog action from release workflow
+- [`95a8433`](https://github.com/maicol07/material-web-additions/commit/95a84339bb28d09a3e4f17bb7cadeb3d526ae0ff) Removed changelog action from release workflow
 - [`25ab2a0`](https://github.com/maicol07/material-web-additions/commit/25ab2a076d2db4be09a278e797f383f618e7c9ae) Added autodetect option
 
 
