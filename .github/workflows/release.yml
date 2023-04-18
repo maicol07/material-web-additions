@@ -62,7 +62,6 @@ permissions:
 
 jobs:
   release_publish:
-    needs: changelog
     uses: maicol07/actions/.github/workflows/release_publish.yml@main
     with:
       version_type: ${{ github.event.inputs.version_type }}
