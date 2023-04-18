@@ -4,9 +4,19 @@
 ## Unreleased
 
 ### 🐛 Bug Fixes
+- [`4be3c17`](https://github.com/maicol07/material-web-additions/commit/4be3c170ca5fc5bfc518acae5947059a6d409535) **data-table:** Wait cells initialization if they didn't update
+
+
+<a name="1.2.6"></a>
+## [1.2.6](https://github.com/maicol07/material-web-additions/compare/1.2.5...1.2.6)
+
+> Released on April 18, 2023
+
+### 🐛 Bug Fixes
 - [`4a25410`](https://github.com/maicol07/material-web-additions/commit/4a25410916b95ff30149eb362563d9cdc5feeac1) Row doesn't chnge state when using view frameworks
 
 ### 👷 CI changes
+- [`800b4b9`](https://github.com/maicol07/material-web-additions/commit/800b4b9e1d0ba14e8cdef97b0d79ada88ddf1aae) version bump to 1.2.6
 - [`417cc1b`](https://github.com/maicol07/material-web-additions/commit/417cc1ba3457c53d7c9e7bc2860490e6cd476d45) 💚 Fix secrets hidden from workflow
 
 
