@@ -70,7 +70,7 @@ export class DataTableRow extends LitElement {
       // Wait for the checkbox cell to be created
       for (const cell of this.cells) {
         cell.updateComplete.then(() => {
-          if (!this.checkboxCell && cell.type === 'checkbox') {
+          if (cell.type === 'checkbox' && !this.isUpdatePending) {
             this.requestUpdate();
           }
         });
