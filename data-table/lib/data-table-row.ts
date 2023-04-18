@@ -66,6 +66,17 @@ export class DataTableRow extends LitElement {
     super.updated(_changedProperties);
 
     const checkboxCell = this.checkboxCell;
+    if (!checkboxCell && this.checkboxCells.length === 0) {
+      // Wait for the checkbox cell to be created
+      for (const cell of this.cells) {
+        cell.updateComplete.then(() => {
+          if (!this.checkboxCell && cell.type === 'checkbox') {
+            this.requestUpdate();
+          }
+        });
+      }
+    }
+
     if (checkboxCell) {
       checkboxCell.removeEventListener('checked', this.onCheckboxClicked);
       checkboxCell.addEventListener('checked', this.onCheckboxClicked);
