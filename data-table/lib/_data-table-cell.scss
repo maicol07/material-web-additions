@@ -1,0 +1,23 @@
+@use "@material/data-table/data-table";
+
+@mixin styles() {
+  @include data-table.core-styles;
+  @include data-table.theme-baseline;
+  :host {
+    @extend .mdc-data-table__cell;
+
+    display: table-cell;
+    vertical-align: inherit;
+    color: var(--_row-item-label-text-color);
+    border-bottom: var(--_row-item-outline-width) solid var(--_row-item-outline-color);
+  }
+
+  :host([type="numeric"]) {
+    @extend .mdc-data-table__cell--numeric;
+  }
+
+  :host([type="checkbox"]) {
+    @extend .mdc-data-table__cell--checkbox;
+    padding: 0 6px;
+  }
+}
