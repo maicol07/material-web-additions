@@ -130,6 +130,7 @@ export class DataTableColumn extends LitElement {
                       style="--_container-padding-vertical: var(--_footer-outlined-select-text-field-container-height);"
                       @input=${this.onFilterTextFieldInput}
                       @keydown=${this.onFilterTextFieldKeyDown}
+                      @click="${(e: PointerEvent) => e.stopPropagation()}"
               />
           </slot>
       `;
