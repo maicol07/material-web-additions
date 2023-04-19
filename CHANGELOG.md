@@ -7,6 +7,7 @@
 - [`2623d3f`](https://github.com/maicol07/material-web-additions/commit/2623d3f2ec2060641de8c249f4750b38e38f5389) **data-table:** Improved row update when new cells are added
 
 ### 👷 CI changes
+- [`513d6b3`](https://github.com/maicol07/material-web-additions/commit/513d6b369298e553d567e97f87fe7d7013a28731) version bump to 1.2.9
 - [`4cb485e`](https://github.com/maicol07/material-web-additions/commit/4cb485ecf7b28a8a6c8a1cc695743a12e97b84f6) version bump to 1.2.8
 - [`711ee89`](https://github.com/maicol07/material-web-additions/commit/711ee89625418ccbc4993dfe46150a13ba2aaaf3) version bump to 1.2.9
 - [`8830893`](https://github.com/maicol07/material-web-additions/commit/88308931ac7b86e81633a2da01fbef99ce45d633) version bump to 1.2.8
