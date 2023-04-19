@@ -12,19 +12,21 @@
     display: table-footer-group;
     vertical-align: inherit;
 
-    border-bottom-left-radius: var(--_container-shape);
-    border-bottom-right-radius: var(--_container-shape);
     background-color: var(--_footer-container-color);
     height: var(--_footer-container-height);
     color: var(--_footer-supporting-text-color);
-    font: var(--_footer-supporting-text-font);
-    font-size: var(--_footer-supporting-text-size);
+
+    font-family: var(--_footer-supporting-text-font);
     line-height: var(--_footer-supporting-text-line-height);
+    font-size: var(--_footer-supporting-text-size);
+    letter-spacing: var(--_footer-supporting-text-tracking);
     font-weight: var(--_footer-supporting-text-weight);
     --md-icon-color: var(--md-sys-color-on-surface-variant, inherit);
 
     padding: 0 16px;
 
     border-top: var(--_row-item-outline-width) solid var(--_row-item-outline-color);
+    border-bottom-left-radius: var(--_container-shape);
+    border-bottom-right-radius: var(--_container-shape);
   }
 }

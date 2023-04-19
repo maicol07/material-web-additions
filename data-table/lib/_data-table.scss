@@ -32,7 +32,6 @@ $_custom-property-prefix: 'data-table';
     );
 
     border-radius: var(--_container-shape);
-    background-color: var(--_container-color);
 
     @if (map.get($tokens, 'outline-width')) {
       border: var(--_outline-width) solid var(--_outline-color);

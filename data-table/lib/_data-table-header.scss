@@ -15,9 +15,11 @@
     background-color: var(--_header-container-color);
     height: var(--_header-container-height);
     color: var(--_header-headline-color);
-    font: var(--_header-headline-font);
-    font-size: var(--_header-headline-size);
+
+    font-family: var(--_header-headline-font);
     line-height: var(--_header-headline-line-height);
+    font-size: var(--_header-headline-size);
+    letter-spacing: var(--_header-headline-tracking);
     font-weight: var(--_header-headline-weight);
 
     border-bottom: var(--_row-item-outline-width) solid var(--_row-item-outline-color);
@@ -47,8 +49,14 @@
   :host([sortable]) {
     @extend .mdc-data-table__header-cell--with-sort;
 
-    md-standard-icon-button[hidden] {
-      display: none;
+    md-standard-icon-button {
+      &:hover {
+        --md-icon-button-unselected-icon-color: var(--_header-hover-sorting-icon-button-color);
+      }
+
+      &[hidden] {
+        display: none;
+      }
     }
   }
 

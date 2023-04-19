@@ -16,16 +16,10 @@
     border-radius: var(--_container-shape);
     background-color: var(--_row-item-unselected-container-color);
     height: var(--_row-item-container-height);
-    color: var(--_row-item-label-text-color);
-    font: var(--_row-item-label-text-font);
-    font-size: var(--_row-item-label-text-size);
-    line-height: var(--_row-item-label-text-line-height);
-    font-weight: var(--_row-item-label-text-weight);
-  }
 
-  :host(:not([selected]):hover) {
-    color: rgba(var(--_row-item-unselected-hover-state-layer-color), var(--_row-item-unselected-hover-state-layer-opacity));
-    //background-color: rgba(0, 0, 0, 0.04);
+    &:has(::slotted(md-data-table-cell[type="checkbox"])) {
+      background-color: var(--_row-item-unselected-container-color);
+    }
   }
 
   :host(.without-bottom-border) ::slotted(md-data-table-cell),
@@ -46,11 +40,15 @@
     background-color: var(--_row-item-selected-container-color);
   }
 
-  :host([selected]:hover) {
+  :host([selected]:hover) ::slotted(md-data-table-cell) {
     color: rgba(var(--_row-item-selected-hover-state-layer-color), var(--_row-item-selected-hover-state-layer-opacity));
   }
 
-  :host(:disabled) {
+  :host(:not([selected]):hover) ::slotted(md-data-table-cell) {
+    color: rgba(var(--_row-item-unselected-hover-state-layer-color), var(--_row-item-unselected-hover-state-layer-opacity));
+  }
+
+  :host(:disabled) ::slotted(md-data-table-cell) {
     color: rgba(var(--_row-item-disabled-label-text-color), var(row-item-disabled-label-text-opacity));
   }
 
