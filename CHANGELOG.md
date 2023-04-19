@@ -3,11 +3,30 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 🐛 Bug Fixes
+- [`f507435`](https://github.com/maicol07/material-web-additions/commit/f50743554ff47e441f3fcc2ddd82e716894efefa) **data-table:** Don't propagate click event on textfield
+
+    This will stop showing the filter button when clicking on the filter textfield
+
+### ♻ Code Refactoring
+- [`70c8b6d`](https://github.com/maicol07/material-web-additions/commit/70c8b6dc7251217aef6a2dab26ea78e9ba6f696a) **data-table:** 💄 Aligned styles with latest M3 tokens
+- [`6beb686`](https://github.com/maicol07/material-web-additions/commit/6beb686d66837d920c5f5858e97dbf8cc751772e) **data-table:** ⚰ Removed unused styles
+- [`e7a00df`](https://github.com/maicol07/material-web-additions/commit/e7a00dfb5e140fd13e7acd62d07f0e4655f4901b) **data-table:** 🚚 Move cell styles into its own private file
+
+### 👷 CI changes
+- [`1340eaf`](https://github.com/maicol07/material-web-additions/commit/1340eaf215f7108b80706171af8f8849d2b6d1c9) version bump to 1.2.10
+- [`513d6b3`](https://github.com/maicol07/material-web-additions/commit/513d6b369298e553d567e97f87fe7d7013a28731) version bump to 1.2.9
+
+
+<a name="1.2.9"></a>
+## [1.2.9](https://github.com/maicol07/material-web-additions/compare/1.2.7...1.2.9)
+
+> Released on April 19, 2023
+
 ### ⚡ Performance Improvements
 - [`2623d3f`](https://github.com/maicol07/material-web-additions/commit/2623d3f2ec2060641de8c249f4750b38e38f5389) **data-table:** Improved row update when new cells are added
 
 ### 👷 CI changes
-- [`513d6b3`](https://github.com/maicol07/material-web-additions/commit/513d6b369298e553d567e97f87fe7d7013a28731) version bump to 1.2.9
 - [`4cb485e`](https://github.com/maicol07/material-web-additions/commit/4cb485ecf7b28a8a6c8a1cc695743a12e97b84f6) version bump to 1.2.8
 - [`711ee89`](https://github.com/maicol07/material-web-additions/commit/711ee89625418ccbc4993dfe46150a13ba2aaaf3) version bump to 1.2.9
 - [`8830893`](https://github.com/maicol07/material-web-additions/commit/88308931ac7b86e81633a2da01fbef99ce45d633) version bump to 1.2.8
@@ -15,6 +34,15 @@
 - [`f130721`](https://github.com/maicol07/material-web-additions/commit/f13072136263c1cec94e823c0f817525f3b26afe) Removed changelog action from release workflow
 - [`95a8433`](https://github.com/maicol07/material-web-additions/commit/95a84339bb28d09a3e4f17bb7cadeb3d526ae0ff) Removed changelog action from release workflow
 - [`25ab2a0`](https://github.com/maicol07/material-web-additions/commit/25ab2a076d2db4be09a278e797f383f618e7c9ae) Added autodetect option
+
+### ⏪ Reverts
+
+- [`62502f4`](https://github.com/maicol07/material-web-additions/commit/62502f42bfccfb8ccda04c28dc0dc4d6e73eebe5) ci: version bump to 1.2.8
+
+      This reverts commit 88308931ac7b86e81633a2da01fbef99ce45d633.
+- [`fc5b4f0`](https://github.com/maicol07/material-web-additions/commit/fc5b4f0db0e184d24e844d8188f233f60bff003f) ci: version bump to 1.2.9
+
+      This reverts commit 711ee89625418ccbc4993dfe46150a13ba2aaaf3.
 
 
 <a name="1.2.7"></a>
