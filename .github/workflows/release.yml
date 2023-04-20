@@ -62,7 +62,7 @@ permissions:
 
 jobs:
   release_publish:
-    uses: maicol07/actions/.github/workflows/release_publish.yml@main
+    uses: maicol07/actions/.github/workflows/release_publish_v2.yml@main
     with:
       version_type: ${{ github.event.inputs.version_type }}
       release_channel: ${{ github.event.inputs.release_channel }}
