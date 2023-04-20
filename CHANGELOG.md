@@ -4,6 +4,23 @@
 ## Unreleased
 
 ### 🐛 Bug Fixes
+- [`b37810b`](https://github.com/maicol07/material-web-additions/commit/b37810bc5caaaf15772e76d0a485697ea8fb5acc) **data-table:** ✏️ Typo in property name
+
+### 👷 CI changes
+- [`0716522`](https://github.com/maicol07/material-web-additions/commit/071652292a127e24f71a770ada0988419bad5f31) version bump to 1.2.11
+- [`1f67252`](https://github.com/maicol07/material-web-additions/commit/1f672529ec003949497b5b014b124c792297cd17) Use new release workflow
+- [`1340eaf`](https://github.com/maicol07/material-web-additions/commit/1340eaf215f7108b80706171af8f8849d2b6d1c9) version bump to 1.2.10
+
+### Other changes
+- [`9973964`](https://github.com/maicol07/material-web-additions/commit/997396471114267fef098d12ff360d4e3c45cafa) **deps:** ⬆️ Upgraded dependencies
+
+
+<a name="1.2.10"></a>
+## [1.2.10](https://github.com/maicol07/material-web-additions/compare/1.2.9...1.2.10)
+
+> Released on April 19, 2023
+
+### 🐛 Bug Fixes
 - [`f507435`](https://github.com/maicol07/material-web-additions/commit/f50743554ff47e441f3fcc2ddd82e716894efefa) **data-table:** Don't propagate click event on textfield
 
     This will stop showing the filter button when clicking on the filter textfield
@@ -14,7 +31,6 @@
 - [`e7a00df`](https://github.com/maicol07/material-web-additions/commit/e7a00dfb5e140fd13e7acd62d07f0e4655f4901b) **data-table:** 🚚 Move cell styles into its own private file
 
 ### 👷 CI changes
-- [`1340eaf`](https://github.com/maicol07/material-web-additions/commit/1340eaf215f7108b80706171af8f8849d2b6d1c9) version bump to 1.2.10
 - [`513d6b3`](https://github.com/maicol07/material-web-additions/commit/513d6b369298e553d567e97f87fe7d7013a28731) version bump to 1.2.9
 
 
