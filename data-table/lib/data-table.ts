@@ -294,14 +294,15 @@ export class DataTable extends BaseElement {
                 ${this.pageSizesLabel}
               </div>
               
-              <md-outlined-text-field
+              <md-outlined-select
                   type="number"
                   class="mdc-data-table__pagination-rows-per-page-select"
                   value="${this.currentPageSize}"
-                  min="1"
-                  step="1"
                   @input=${this.onPageSizeSelected}>
-              </md-outlined-text-field>
+                  ${this.pageSizesArray.map((size) => html`
+                  <md-select-option value="${size}" headline="${size}">${size}</md-select-option>
+                  `)}
+              </md-outlined-select>
             </div>
 
             <div class="mdc-data-table__pagination-navigation">
@@ -355,7 +356,7 @@ export class DataTable extends BaseElement {
 
   protected onPageSizeSelected(e: InputEvent) {
     // const select = e.target as Autocomplete;
-    this.currentPageSize = Number.parseInt((e.target as TextField).value);
+    this.currentPageSize = Number.parseInt((e.target as Select).value);
     this.paginate('first');
   }
 
