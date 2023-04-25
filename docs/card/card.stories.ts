@@ -135,8 +135,8 @@ export const BasicElevated: CardStory = {
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
               laboris nisi ut aliquip ex ea commodo consequat.
           </div>
-          <md-outlined-button slot="button" label="Read"></md-outlined-button>
-          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-outlined-button slot="button">Read</md-outlined-button>
+          <md-filled-button slot="button">Bookmark</md-filled-button>
           <md-standard-icon-button slot="icon">
               <md-icon>favorite</md-icon>
           </md-standard-icon-button>
@@ -173,8 +173,8 @@ export const BasicOutline: CardStory = {
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
               laboris nisi ut aliquip ex ea commodo consequat.
           </div>
-          <md-outlined-button slot="button" label="Read"></md-outlined-button>
-          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-outlined-button slot="button">Read</md-outlined-button>
+          <md-filled-button slot="button">Bookmark</md-filled-button>
           <md-standard-icon-button slot="icon">
               <md-icon>favorite</md-icon>
           </md-standard-icon-button>
@@ -211,8 +211,8 @@ export const BasicFilled: CardStory = {
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
               laboris nisi ut aliquip ex ea commodo consequat.
           </div>
-          <md-outlined-button slot="button" label="Read"></md-outlined-button>
-          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-outlined-button slot="button">Read</md-outlined-button>
+          <md-filled-button slot="button">Bookmark</md-filled-button>
           <md-standard-icon-button slot="icon">
               <md-icon>favorite</md-icon>
           </md-standard-icon-button>
@@ -249,8 +249,8 @@ export const BasicWithHeader: CardStory = {
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
               laboris nisi ut aliquip ex ea commodo consequat.
           </div>
-          <md-outlined-button slot="button" label="Read"></md-outlined-button>
-          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-outlined-button slot="button">Read</md-outlined-button>
+          <md-filled-button slot="button">Bookmark</md-filled-button>
           <md-standard-icon-button slot="icon">
               <md-icon>favorite</md-icon>
           </md-standard-icon-button>
@@ -284,8 +284,8 @@ export const BasicWithHeaderAndThumbnail: CardStory = {
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
               laboris nisi ut aliquip ex ea commodo consequat.
           </div>
-          <md-outlined-button slot="button" label="Read"></md-outlined-button>
-          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-outlined-button slot="button">Read</md-outlined-button>
+          <md-filled-button slot="button">Bookmark</md-filled-button>
           <md-standard-icon-button slot="icon">
               <md-icon>favorite</md-icon>
           </md-standard-icon-button>
@@ -307,8 +307,8 @@ export const BasicWithOnlyButtons: CardStory = {
                   <div class="demo-card__subtitle">Subtitle</div>
               </div>
           </div>
-          <md-outlined-button slot="button" label="Read"></md-outlined-button>
-          <md-filled-button slot="button" label="Bookmark"></md-filled-button>
+          <md-outlined-button slot="button">Read</md-outlined-button>
+          <md-filled-button slot="button">Bookmark</md-filled-button>
       </md-elevated-card>
   `,
 };

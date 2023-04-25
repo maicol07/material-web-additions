@@ -1,16 +1,15 @@
 import '@material/web/ripple/ripple.js';
 import '@material/web/focus/focus-ring.js';
 
-import {html, nothing, PropertyValues, TemplateResult} from 'lit';
-import {query, queryAssignedElements, state} from 'lit/decorators.js';
+import {html, LitElement, nothing, PropertyValues, TemplateResult} from 'lit';
+import {queryAssignedElements, queryAsync, state} from 'lit/decorators.js';
 import {ClassInfo, classMap} from 'lit/directives/class-map.js';
-import {ActionElement} from '@material/web/actionelement/action-element.js';
 import {MdRipple} from '@material/web/ripple/ripple.js';
 import {pointerPress, shouldShowStrongFocus} from '@material/web/focus/strong-focus.js';
 import {property} from 'lit/decorators/property.js';
 import {ripple} from '@material/web/ripple/directive.js';
 
-export abstract class Card extends ActionElement {
+export abstract class Card extends LitElement {
     /** Allows the card to be clickable with a ripple effect. */
     @property({type: Boolean, reflect: true}) clickable = false;
     /** @internal */
@@ -19,21 +18,18 @@ export abstract class Card extends ActionElement {
      * @internal
      * @protected
      */
-        // @ts-ignore
     @queryAssignedElements({slot: 'button'}) protected buttons!: HTMLElement[];
     /**
      * @internal
      * @protected
      */
-        // @ts-ignore
     @queryAssignedElements({slot: 'icon'}) protected icons!: HTMLElement[];
 
     /**
      * @internal
      * @protected
      */
-        // @ts-ignore
-    @query('md-ripple') protected ripple!: MdRipple;
+    @queryAsync('md-ripple') protected ripple!: Promise<MdRipple | null>;
 
     /**
      * @internal
@@ -47,8 +43,7 @@ export abstract class Card extends ActionElement {
    */
   @state() protected showRipple = false;
 
-    override handlePointerDown(e: PointerEvent) {
-        super.handlePointerDown(e);
+    handlePointerDown(e: PointerEvent) {
         pointerPress();
         this.showFocusRing = shouldShowStrongFocus();
     }
@@ -116,11 +111,6 @@ export abstract class Card extends ActionElement {
                  @focus="${this.handleFocus}"
                  @blur="${this.handleBlur}"
                  @pointerdown="${this.handlePointerDown}"
-                 @pointerup="${this.handlePointerUp}"
-                 @pointercancel="${this.handlePointerCancel}"
-                 @pointerleave="${this.handlePointerLeave}"
-                 @click="${this.handleClick}"
-                 @contextmenu="${this.handleContextMenu}"
                  ${ripple(this.getRipple)}>
                 <slot></slot>
             </div>`;
@@ -199,11 +189,6 @@ export abstract class Card extends ActionElement {
                  @focus="${this.handleFocus}"
                  @blur="${this.handleBlur}"
                  @pointerdown="${this.handlePointerDown}"
-                 @pointerup="${this.handlePointerUp}"
-                 @pointercancel="${this.handlePointerCancel}"
-                 @pointerleave="${this.handlePointerLeave}"
-                 @click="${this.handleClick}"
-                 @contextmenu="${this.handleContextMenu}"
                  ${ripple(this.getRipple)}>
                 ${this.wrapButtonSlot(buttonSlotTemplate)}
                 ${this.wrapIconSlot(iconSlotTemplate)}
