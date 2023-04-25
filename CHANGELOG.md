@@ -3,11 +3,35 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### ✨ Features
+- [`84aa55d`](https://github.com/maicol07/material-web-additions/commit/84aa55d0278f5043d1b2d3c849edab113f34b62d) **data-table:** ✨ Replaced pagination text field with select
+
+### 🐛 Bug Fixes
+- [`3eeeac5`](https://github.com/maicol07/material-web-additions/commit/3eeeac58a0385ddce91799684d61e5fe6f6ce5e2) Breaking changes from latest M3 pre
+
+### 📝 Docs changes
+- [`f7ce91a`](https://github.com/maicol07/material-web-additions/commit/f7ce91aaf70725c67b0e92ebebbc43676cd1f163) **data-table:** 📝 Removed line from README
+
+### 👷 CI changes
+- [`1d2bcf3`](https://github.com/maicol07/material-web-additions/commit/1d2bcf3ec67b6c7c5c1800c9e7572c4fc2eb5013) version bump to 1.2.12
+- [`a3bdf77`](https://github.com/maicol07/material-web-additions/commit/a3bdf774861465c249021c419cafebc8ca8a8dcc) Use release action v1
+- [`6d857bc`](https://github.com/maicol07/material-web-additions/commit/6d857bc7e3a087f0b30eeae11c529b76f3613df5) Run action only on release
+- [`0716522`](https://github.com/maicol07/material-web-additions/commit/071652292a127e24f71a770ada0988419bad5f31) version bump to 1.2.11
+
+### Other changes
+- [`fa84c1d`](https://github.com/maicol07/material-web-additions/commit/fa84c1dd3e041c832bce53aed8f5c3b878011c5c) **data-table:** Replaced M2 linear progress with M3 one
+- [`8528a60`](https://github.com/maicol07/material-web-additions/commit/8528a602351d4bcac91d6d33e7450f1b1632cfcb) **deps:** ⬆️ Upgraded dependencies
+
+
+<a name="1.2.11"></a>
+## [1.2.11](https://github.com/maicol07/material-web-additions/compare/1.2.10...1.2.11)
+
+> Released on April 20, 2023
+
 ### 🐛 Bug Fixes
 - [`b37810b`](https://github.com/maicol07/material-web-additions/commit/b37810bc5caaaf15772e76d0a485697ea8fb5acc) **data-table:** ✏️ Typo in property name
 
 ### 👷 CI changes
-- [`0716522`](https://github.com/maicol07/material-web-additions/commit/071652292a127e24f71a770ada0988419bad5f31) version bump to 1.2.11
 - [`1f67252`](https://github.com/maicol07/material-web-additions/commit/1f672529ec003949497b5b014b124c792297cd17) Use new release workflow
 - [`1340eaf`](https://github.com/maicol07/material-web-additions/commit/1340eaf215f7108b80706171af8f8849d2b6d1c9) version bump to 1.2.10
 
