@@ -10,8 +10,6 @@ Data tables can contain:
 - Non-interactive elements (such as badges)
 - Tools to query and manipulate data
 
-For additional information, see the [API](#API--usage).
-
 MD Data table encapsulates [MDC Data Table](https://material.io/components/data-tables).
 
 ## API & Example Usage
