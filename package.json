@@ -45,7 +45,6 @@
     "@material/data-table": "^14.0.0",
     "@material/layout-grid": "^14.0.0",
     "@material/mwc-base": "^0.27.0",
-    "@material/mwc-linear-progress": "^0.27.0",
     "lit": "^2.7.2",
     "tslib": "^2.5.0"
   },

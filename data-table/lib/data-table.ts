@@ -1,5 +1,7 @@
-import '@material/mwc-linear-progress';
+import '@material/web/linearprogress/linear-progress.js';
 import '@material/web/iconbutton/filled-icon-button.js';
+import '@material/web/select/outlined-select.js';
+import '@material/web/select/select-option.js';
 import '../data-table-footer.js';
 
 import {html, PropertyValueMap} from 'lit';
@@ -17,10 +19,10 @@ import {
 } from '@material/data-table';
 import {cssClasses, messages, SortValue} from '@material/data-table/constants.js';
 import {IconButton} from '@material/web/iconbutton/lib/icon-button.js';
-import {LinearProgress} from '@material/mwc-linear-progress';
+import {LinearProgress} from '@material/web/linearprogress/lib/linear-progress.js';
 import {DataTableRow} from './data-table-row.js';
 import {BaseElement} from '@material/mwc-base';
-import {TextField} from '@material/web/textfield/lib/text-field.js';
+import {Select} from '@material/web/select/lib/select.js';
 
 export interface RowSelectionChangedDetail {
   row: DataTableRow,
@@ -145,8 +147,8 @@ export class DataTable extends BaseElement {
 
         <div class="mdc-data-table__progress-indicator">
           <div class="mdc-data-table__scrim"></div>
-          <mwc-linear-progress indeterminate class="mdc-data-table__linear-progress" role="progressbar"
-                               aria-label="Data is being loaded..."></mwc-linear-progress>
+          <md-linear-progress indeterminate class="mdc-data-table__linear-progress" role="progressbar"
+                               aria-label="Data is being loaded..."></md-linear-progress>
         </div>
       </div>
     `;

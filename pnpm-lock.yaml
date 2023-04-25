@@ -16,9 +16,6 @@ importers:
       '@material/mwc-base':
         specifier: ^0.27.0
         version: 0.27.0
-      '@material/mwc-linear-progress':
-        specifier: ^0.27.0
-        version: 0.27.0
       lit:
         specifier: ^2.7.2
         version: 2.7.2
@@ -2197,12 +2194,6 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@material/animation@14.0.0-canary.53b3cad2f.0:
-    resolution: {integrity: sha512-GBuR4VmcTQW1D0lPXEosf5Giho72LLbyGIydWGtaEUtLJoive/D9kFkwTN4Fsyt9Kkl7hbhs35vrNe6QkAH4/Q==}
-    dependencies:
-      tslib: 2.5.0
-    dev: false
-
   /@material/base@14.0.0:
     resolution: {integrity: sha512-Ou7vS7n1H4Y10MUZyYAbt6H0t67c6urxoCgeVT7M38aQlaNUwFMODp7KT/myjYz2YULfhu3PtfSV3Sltgac9mA==}
     dependencies:
@@ -2375,19 +2366,6 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@material/linear-progress@14.0.0-canary.53b3cad2f.0:
-    resolution: {integrity: sha512-QqkDBcqX7TMt3zQn51LgS7K0y13rJ4ppMQL1f2uYBhDOov8nqndlaXw456KYE9RhU39JrLzVQlaAbU3eecVb/Q==}
-    dependencies:
-      '@material/animation': 14.0.0-canary.53b3cad2f.0
-      '@material/base': 14.0.0-canary.53b3cad2f.0
-      '@material/dom': 14.0.0-canary.53b3cad2f.0
-      '@material/feature-targeting': 14.0.0-canary.53b3cad2f.0
-      '@material/progress-indicator': 14.0.0-canary.53b3cad2f.0
-      '@material/rtl': 14.0.0-canary.53b3cad2f.0
-      '@material/theme': 14.0.0-canary.53b3cad2f.0
-      tslib: 2.5.0
-    dev: false
-
   /@material/list@14.0.0:
     resolution: {integrity: sha512-AFaBGV9vQyfnG8BT2R3UGVdF5w2SigQqBH+qbOSxQhk4BgVvhDfJUIKT415poLNMdnaDtcuYz+ZWvVNoRDaL7w==}
     dependencies:
@@ -2440,16 +2418,6 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@material/mwc-linear-progress@0.27.0:
-    resolution: {integrity: sha512-kpWVLHPb7RzHU70Dq9bl1lBv05S49rQkyfFoL3PU5tEZHozT8IPQjdBLqAqd7H10cfLVjO7oIB+mVmvnFV+UsQ==}
-    dependencies:
-      '@material/linear-progress': 14.0.0-canary.53b3cad2f.0
-      '@material/mwc-base': 0.27.0
-      '@material/theme': 14.0.0-canary.53b3cad2f.0
-      lit: 2.7.2
-      tslib: 2.5.0
-    dev: false
-
   /@material/notched-outline@14.0.0:
     resolution: {integrity: sha512-6S58DlWmhCDr4RQF2RuwqANxlmLdHtWy2mF4JQLD9WOiCg4qY9eCQnMXu3Tbhr7f/nOZ0vzc7AtA3vfJoZmCSw==}
     dependencies:
@@ -2464,12 +2432,6 @@ packages:
 
   /@material/progress-indicator@14.0.0:
     resolution: {integrity: sha512-09JRTuIySxs670Tcy4jVlqCUbyrO+Ad6z3nHnAi8pYl74duco4n/9jTROV0mlFdr9NIFifnd08lKbiFLDmfJGQ==}
-    dependencies:
-      tslib: 2.5.0
-    dev: false
-
-  /@material/progress-indicator@14.0.0-canary.53b3cad2f.0:
-    resolution: {integrity: sha512-vW0oZK70QOpAarip95ueCQ/I3kBClcWjxsc0F0QjkqT76DOVXpjnZ4XoRRyq9eMpwLqlKLTecrsSNpmqwwF1Dg==}
     dependencies:
       tslib: 2.5.0
     dev: false
@@ -2490,13 +2452,6 @@ packages:
     resolution: {integrity: sha512-xl6OZYyRjuiW2hmbjV2omMV8sQtfmKAjeWnD1RMiAPLCTyOW9Lh/PYYnXjxUrNa0cRwIIbOn5J7OYXokja8puA==}
     dependencies:
       '@material/theme': 14.0.0
-      tslib: 2.5.0
-    dev: false
-
-  /@material/rtl@14.0.0-canary.53b3cad2f.0:
-    resolution: {integrity: sha512-f08LT0HSa0WYU+4Jz/tbm1TQ9Fcf2k+H6dPPYv0J1sZmX6hMgCEmNiUdUFLQFvszoXx2XrRi1/hIFjbz2e69Yg==}
-    dependencies:
-      '@material/theme': 14.0.0-canary.53b3cad2f.0
       tslib: 2.5.0
     dev: false
 
@@ -2537,13 +2492,6 @@ packages:
     resolution: {integrity: sha512-6/SENWNIFuXzeHMPHrYwbsXKgkvCtWuzzQ3cUu4UEt3KcQ5YpViazIM6h8ByYKZP8A9d8QpkJ0WGX5btGDcVoA==}
     dependencies:
       '@material/feature-targeting': 14.0.0
-      tslib: 2.5.0
-    dev: false
-
-  /@material/theme@14.0.0-canary.53b3cad2f.0:
-    resolution: {integrity: sha512-S06XAevDCDWMe+GgsEpITMS07imUidzadNaTbJsqssFajBLr53QWVZsG84BpjXKXoYvyEJvb0hX5U0lq6ip9UQ==}
-    dependencies:
-      '@material/feature-targeting': 14.0.0-canary.53b3cad2f.0
       tslib: 2.5.0
     dev: false
 
