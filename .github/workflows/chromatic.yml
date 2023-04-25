@@ -1,18 +1,9 @@
-# Workflow name
 name: 'Chromatic Publish'
-
-# Event for the workflow
 on: [release, workflow_dispatch]
 
-# List of jobs
 jobs:
-  test:
-    # Operating System
+  publish:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 18, 19 ]
-    # Job steps
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
