@@ -2,6 +2,15 @@ import {html, LitElement} from 'lit';
 import {property} from 'lit/decorators/property.js';
 import {ClassInfo, classMap} from 'lit/directives/class-map.js';
 
+export interface LayoutGridAttributes {
+    'grid-span'?: number,
+    'grid-span-desktop'?: number,
+    'grid-span-tablet'?: number,
+    'grid-span-phone'?: number,
+    'grid-align'?: 'top' | 'middle' | 'bottom',
+    'grid-order'?: number,
+}
+
 export class LayoutGrid extends LitElement {
     /**
      * You can designate each column to have a certain width. The column width can be specified through the CSS custom property `--mdc-layout-grid-column-width-{screen_size}`. The column width is set to 72px on all devices by default.

@@ -1,6 +1,15 @@
 import {LayoutGrid} from './layout-grid.js';
 import {html} from 'lit';
 
+export interface LayoutGridInnerAttributes {
+    'grid-span'?: number,
+    'grid-span-desktop'?: number,
+    'grid-span-tablet'?: number,
+    'grid-span-phone'?: number,
+    'grid-align'?: 'top' | 'middle' | 'bottom',
+    'grid-order'?: number,
+}
+
 export class LayoutGridInner extends LayoutGrid {
     override getRenderClasses() {
         const classes = super.getRenderClasses();
