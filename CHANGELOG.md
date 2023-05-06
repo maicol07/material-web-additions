@@ -3,6 +3,27 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 🐛 Bug Fixes
+- [`ee74892`](https://github.com/maicol07/material-web-additions/commit/ee74892f3b59ef84b4d7584fed66ba5a92c8ef73) **layout-grid:** 🏷️ Fix types
+
+### 👷 CI changes
+- [`3ef2206`](https://github.com/maicol07/material-web-additions/commit/3ef2206e00a4e3481688cc25ca0e266b080fe06a) version bump to 1.2.13
+- [`652a4d8`](https://github.com/maicol07/material-web-additions/commit/652a4d8c963ccf9607e4dfde6a800db110448b06) Refactored workflow
+- [`c223a3f`](https://github.com/maicol07/material-web-additions/commit/c223a3f563dd301c63f87865382857b5911cc8f1) 💚 Fix workflow events
+- [`1d2bcf3`](https://github.com/maicol07/material-web-additions/commit/1d2bcf3ec67b6c7c5c1800c9e7572c4fc2eb5013) version bump to 1.2.12
+
+### Other changes
+- [`81fed86`](https://github.com/maicol07/material-web-additions/commit/81fed86d7c27094310cfe05dfafc9a7893984b40) **deps:** ⬆️ Upgraded dependencies
+- [`8cf255e`](https://github.com/maicol07/material-web-additions/commit/8cf255e3379476c0452328903651e18433afff5d) **deps:** ➕ Added web types
+
+    Lit autocompletion on Webstorm/PHPStorm
+
+
+<a name="1.2.12"></a>
+## [1.2.12](https://github.com/maicol07/material-web-additions/compare/1.2.11...1.2.12)
+
+> Released on April 25, 2023
+
 ### ✨ Features
 - [`84aa55d`](https://github.com/maicol07/material-web-additions/commit/84aa55d0278f5043d1b2d3c849edab113f34b62d) **data-table:** ✨ Replaced pagination text field with select
 
@@ -13,7 +34,6 @@
 - [`f7ce91a`](https://github.com/maicol07/material-web-additions/commit/f7ce91aaf70725c67b0e92ebebbc43676cd1f163) **data-table:** 📝 Removed line from README
 
 ### 👷 CI changes
-- [`1d2bcf3`](https://github.com/maicol07/material-web-additions/commit/1d2bcf3ec67b6c7c5c1800c9e7572c4fc2eb5013) version bump to 1.2.12
 - [`a3bdf77`](https://github.com/maicol07/material-web-additions/commit/a3bdf774861465c249021c419cafebc8ca8a8dcc) Use release action v1
 - [`6d857bc`](https://github.com/maicol07/material-web-additions/commit/6d857bc7e3a087f0b30eeae11c529b76f3613df5) Run action only on release
 - [`0716522`](https://github.com/maicol07/material-web-additions/commit/071652292a127e24f71a770ada0988419bad5f31) version bump to 1.2.11
