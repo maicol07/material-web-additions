@@ -4,10 +4,27 @@
 ## Unreleased
 
 ### 🐛 Bug Fixes
+- [`8f1d9a9`](https://github.com/maicol07/material-web-additions/commit/8f1d9a9fb72d3bb26d6fa9f4dc0ff62f9a744c99) **card:** Fix compatibility with M3 pre8
+
+### 👷 CI changes
+- [`f097906`](https://github.com/maicol07/material-web-additions/commit/f0979065d21d6091da4ad8494a0a04e540dc3c58) version bump to 1.2.14
+- [`760d7b0`](https://github.com/maicol07/material-web-additions/commit/760d7b08a834b63bfa12f5ea01bb370f7aee909b) Updated chromatic workflow triggers
+- [`3ef2206`](https://github.com/maicol07/material-web-additions/commit/3ef2206e00a4e3481688cc25ca0e266b080fe06a) version bump to 1.2.13
+
+### Other changes
+- [`8bbe8bf`](https://github.com/maicol07/material-web-additions/commit/8bbe8bf30ee926acaba7ee0a2223a8fa24081eb2) 🔧 Removed `skipLibCheck`
+- [`eeba48f`](https://github.com/maicol07/material-web-additions/commit/eeba48fb4ed1696c57d73d5041f998ba37d155cc) **deps:** ⬆️ Upgraded dependencies
+
+
+<a name="1.2.13"></a>
+## [1.2.13](https://github.com/maicol07/material-web-additions/compare/1.2.12...1.2.13)
+
+> Released on May 06, 2023
+
+### 🐛 Bug Fixes
 - [`ee74892`](https://github.com/maicol07/material-web-additions/commit/ee74892f3b59ef84b4d7584fed66ba5a92c8ef73) **layout-grid:** 🏷️ Fix types
 
 ### 👷 CI changes
-- [`3ef2206`](https://github.com/maicol07/material-web-additions/commit/3ef2206e00a4e3481688cc25ca0e266b080fe06a) version bump to 1.2.13
 - [`652a4d8`](https://github.com/maicol07/material-web-additions/commit/652a4d8c963ccf9607e4dfde6a800db110448b06) Refactored workflow
 - [`c223a3f`](https://github.com/maicol07/material-web-additions/commit/c223a3f563dd301c63f87865382857b5911cc8f1) 💚 Fix workflow events
 - [`1d2bcf3`](https://github.com/maicol07/material-web-additions/commit/1d2bcf3ec67b6c7c5c1800c9e7572c4fc2eb5013) version bump to 1.2.12
