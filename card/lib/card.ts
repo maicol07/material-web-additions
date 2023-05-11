@@ -5,7 +5,6 @@ import {html, LitElement, nothing, PropertyValues, TemplateResult} from 'lit';
 import {queryAssignedElements, queryAsync, state} from 'lit/decorators.js';
 import {ClassInfo, classMap} from 'lit/directives/class-map.js';
 import {MdRipple} from '@material/web/ripple/ripple.js';
-import {pointerPress, shouldShowStrongFocus} from '@material/web/focus/strong-focus.js';
 import {property} from 'lit/decorators/property.js';
 import {ripple} from '@material/web/ripple/directive.js';
 
@@ -31,22 +30,11 @@ export abstract class Card extends LitElement {
      */
     @queryAsync('md-ripple') protected ripple!: Promise<MdRipple | null>;
 
-    /**
-     * @internal
-     * @protected
-     */
-    @state() protected showFocusRing = false;
-
   /**
    * @internal
    * @protected
    */
   @state() protected showRipple = false;
-
-    handlePointerDown(e: PointerEvent) {
-        pointerPress();
-        this.showFocusRing = shouldShowStrongFocus();
-    }
 
     override render() {
         return html`
@@ -107,11 +95,12 @@ export abstract class Card extends LitElement {
 
     protected renderPrimaryAction() {
         return html`
-            <div class="${classMap(this.getPrimaryActionRenderClasses())}" tabindex="0" aria-label="${this.ariaLabel}"
-                 @focus="${this.handleFocus}"
-                 @blur="${this.handleBlur}"
-                 @pointerdown="${this.handlePointerDown}"
+            <div id="primary-action"
+                 class="${classMap(this.getPrimaryActionRenderClasses())}"
+                 tabindex="0"
+                 aria-label="${this.ariaLabel}"
                  ${ripple(this.getRipple)}>
+                ${this.renderFocusRing()}
                 <slot></slot>
             </div>`;
     }
@@ -125,7 +114,7 @@ export abstract class Card extends LitElement {
     /** @soyTemplate */
     protected renderFocusRing() {
         return html`
-            <md-focus-ring .visible="${this.showFocusRing}"></md-focus-ring>`;
+            <md-focus-ring for="primary-action"></md-focus-ring>`;
     }
 
     protected onButtonSlotChanged() {
@@ -171,14 +160,6 @@ export abstract class Card extends LitElement {
         return iconSlotTemplate;
     }
 
-    protected handleFocus() {
-        this.showFocusRing = shouldShowStrongFocus();
-    }
-
-    protected handleBlur() {
-        this.showFocusRing = false;
-    }
-
   protected renderActions() {
     const buttonSlotTemplate = html`<slot name="button" @slotchange=${this.onButtonSlotChanged}></slot>`;
     const iconSlotTemplate = html`<slot name="icon" @slotchange=${this.onIconSlotChanged}></slot>`;
@@ -186,9 +167,6 @@ export abstract class Card extends LitElement {
     if (this.icons.length > 0 || this.buttons.length > 0) {
         return html`
             <div class="${classMap(this.getRenderActionsClasses())}"
-                 @focus="${this.handleFocus}"
-                 @blur="${this.handleBlur}"
-                 @pointerdown="${this.handlePointerDown}"
                  ${ripple(this.getRipple)}>
                 ${this.wrapButtonSlot(buttonSlotTemplate)}
                 ${this.wrapIconSlot(iconSlotTemplate)}
