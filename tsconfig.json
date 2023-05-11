@@ -33,7 +33,6 @@
       "dom",
       "dom.iterable"
     ],
-    "skipLibCheck": true,
     "types": [
       "lit",
       "mdx"
