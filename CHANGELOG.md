@@ -4,10 +4,26 @@
 ## Unreleased
 
 ### 🐛 Bug Fixes
+- [`ceb2ccb`](https://github.com/maicol07/material-web-additions/commit/ceb2ccb183027967f340b4cba83aee5a5741938d) 🐛 Fix MD web pre10 breaking changes
+
+### 👷 CI changes
+- [`606ce7e`](https://github.com/maicol07/material-web-additions/commit/606ce7e704ed70207441d598067310311d6a0ff6) version bump to 1.2.15
+- [`f097906`](https://github.com/maicol07/material-web-additions/commit/f0979065d21d6091da4ad8494a0a04e540dc3c58) version bump to 1.2.14
+
+### Other changes
+- [`67c1b14`](https://github.com/maicol07/material-web-additions/commit/67c1b141efbb254e9fda78cde6a5a740d4d97f57) **deps:** ⬆️ Updated dependencies
+- [`aa66e5e`](https://github.com/maicol07/material-web-additions/commit/aa66e5e6e8f351ccf144dfd33a5613494395ebaa) **deps:** ⬆️ Updated dependencies
+
+
+<a name="1.2.14"></a>
+## [1.2.14](https://github.com/maicol07/material-web-additions/compare/1.2.13...1.2.14)
+
+> Released on May 11, 2023
+
+### 🐛 Bug Fixes
 - [`8f1d9a9`](https://github.com/maicol07/material-web-additions/commit/8f1d9a9fb72d3bb26d6fa9f4dc0ff62f9a744c99) **card:** Fix compatibility with M3 pre8
 
 ### 👷 CI changes
-- [`f097906`](https://github.com/maicol07/material-web-additions/commit/f0979065d21d6091da4ad8494a0a04e540dc3c58) version bump to 1.2.14
 - [`760d7b0`](https://github.com/maicol07/material-web-additions/commit/760d7b08a834b63bfa12f5ea01bb370f7aee909b) Updated chromatic workflow triggers
 - [`3ef2206`](https://github.com/maicol07/material-web-additions/commit/3ef2206e00a4e3481688cc25ca0e266b080fe06a) version bump to 1.2.13
 
