@@ -1,12 +1,10 @@
 import '@material/web/ripple/ripple.js';
 import '@material/web/focus/focus-ring.js';
 
-import {html, LitElement, nothing, PropertyValues, TemplateResult} from 'lit';
-import {queryAssignedElements, queryAsync, state} from 'lit/decorators.js';
+import {html, LitElement, PropertyValues, TemplateResult} from 'lit';
+import {queryAssignedElements} from 'lit/decorators.js';
 import {ClassInfo, classMap} from 'lit/directives/class-map.js';
-import {MdRipple} from '@material/web/ripple/ripple.js';
 import {property} from 'lit/decorators/property.js';
-import {ripple} from '@material/web/ripple/directive.js';
 
 export abstract class Card extends LitElement {
     /** Allows the card to be clickable with a ripple effect. */
@@ -24,24 +22,11 @@ export abstract class Card extends LitElement {
      */
     @queryAssignedElements({slot: 'icon'}) protected icons!: HTMLElement[];
 
-    /**
-     * @internal
-     * @protected
-     */
-    @queryAsync('md-ripple') protected ripple!: Promise<MdRipple | null>;
-
-  /**
-   * @internal
-   * @protected
-   */
-  @state() protected showRipple = false;
-
     override render() {
         return html`
             <div class="${classMap(this.getRenderClasses())}">
                 ${this.renderPrimaryAction()}
                 ${this.renderActions()}
-                ${this.renderRipple()}
                 <md-elevation shadow></md-elevation>
             </div>`;
     }
@@ -84,22 +69,13 @@ export abstract class Card extends LitElement {
         super.update(_changedProperties);
     }
 
-  /**
-   * @internal
-   * @protected
-   */
-  protected getRipple = () => {
-    this.showRipple = true;
-    return this.ripple;
-  };
-
     protected renderPrimaryAction() {
         return html`
             <div id="primary-action"
                  class="${classMap(this.getPrimaryActionRenderClasses())}"
                  tabindex="0"
-                 aria-label="${this.ariaLabel}"
-                 ${ripple(this.getRipple)}>
+                 aria-label="${this.ariaLabel}">
+                 ${this.renderRipple()}
                 ${this.renderFocusRing()}
                 <slot></slot>
             </div>`;
@@ -136,8 +112,7 @@ export abstract class Card extends LitElement {
     }
 
     protected renderRipple() {
-        return this.showRipple ? html`
-            <md-ripple class="${classMap(this.getRippleRenderClasses())}" ?disabled=${this.disabled}></md-ripple>` : nothing;
+        return html`<md-ripple class="${classMap(this.getRippleRenderClasses())}" ?disabled=${this.disabled}></md-ripple>`;
     }
 
     protected wrapButtonSlot(buttonSlotTemplate: TemplateResult | string) {
@@ -167,7 +142,7 @@ export abstract class Card extends LitElement {
     if (this.icons.length > 0 || this.buttons.length > 0) {
         return html`
             <div class="${classMap(this.getRenderActionsClasses())}"
-                 ${ripple(this.getRipple)}>
+                ${this.renderRipple()}>
                 ${this.wrapButtonSlot(buttonSlotTemplate)}
                 ${this.wrapIconSlot(iconSlotTemplate)}
             </div>`;
