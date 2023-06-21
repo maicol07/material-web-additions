@@ -70,3 +70,4 @@ jobs:
   chromatic:
     needs: release_publish
     uses: ./.github/workflows/chromatic.yml
+    secrets: inherit
