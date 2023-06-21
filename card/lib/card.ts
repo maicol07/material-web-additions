@@ -90,7 +90,7 @@ export abstract class Card extends LitElement {
     /** @soyTemplate */
     protected renderFocusRing() {
         return html`
-            <md-focus-ring for="primary-action"></md-focus-ring>`;
+            <md-focus-ring for="primary-action" inward></md-focus-ring>`;
     }
 
     protected onButtonSlotChanged() {

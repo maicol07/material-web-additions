@@ -32,4 +32,11 @@ $_custom-property-prefix: 'card';
 
     border: var(--_outline-width) solid var(--_outline-color);
   }
+
+  md-focus-ring {
+    --md-focus-ring-shape: 12px;
+    --md-focus-ring-outward-offset: -3px;
+    --md-focus-ring-shape-end-end: 0;
+    --md-focus-ring-shape-end-start: 0;
+  }
 }
