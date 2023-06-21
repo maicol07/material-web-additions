@@ -4,10 +4,32 @@
 ## Unreleased
 
 ### 🐛 Bug Fixes
+- [`5aad44d`](https://github.com/maicol07/material-web-additions/commit/5aad44d107a3b02a47743c0a9677037e5dbd267b) 🐛 Fix MD web pre11 breaking changes
+
+### ♻ Code Refactoring
+- [`912bf60`](https://github.com/maicol07/material-web-additions/commit/912bf60e6cd34d416bbb5cbb40e5936f31c5a868) ♻️ Code refactor
+
+### 🎨 Code styling
+- [`7043e9f`](https://github.com/maicol07/material-web-additions/commit/7043e9f7b075bd361d5331671f7edf8bf8f87f7d) **card:** Improved focus ring
+
+### 👷 CI changes
+- [`afa20ec`](https://github.com/maicol07/material-web-additions/commit/afa20ec550deed90bffd8c8d0acc65c7490577ca) version bump to 1.2.16
+- [`a1e0fba`](https://github.com/maicol07/material-web-additions/commit/a1e0fba0de91d5be39d0a78187b08cc4b44c9b44) 💚 Fix chromatic workflow not starting after automated release
+- [`606ce7e`](https://github.com/maicol07/material-web-additions/commit/606ce7e704ed70207441d598067310311d6a0ff6) version bump to 1.2.15
+
+### Other changes
+- [`0f6c85a`](https://github.com/maicol07/material-web-additions/commit/0f6c85aef18cc57fed29e4406bd4145b194aae94) **deps:** ⬆️ Updated dependencies
+
+
+<a name="1.2.15"></a>
+## [1.2.15](https://github.com/maicol07/material-web-additions/compare/1.2.14...1.2.15)
+
+> Released on June 06, 2023
+
+### 🐛 Bug Fixes
 - [`ceb2ccb`](https://github.com/maicol07/material-web-additions/commit/ceb2ccb183027967f340b4cba83aee5a5741938d) 🐛 Fix MD web pre10 breaking changes
 
 ### 👷 CI changes
-- [`606ce7e`](https://github.com/maicol07/material-web-additions/commit/606ce7e704ed70207441d598067310311d6a0ff6) version bump to 1.2.15
 - [`f097906`](https://github.com/maicol07/material-web-additions/commit/f0979065d21d6091da4ad8494a0a04e540dc3c58) version bump to 1.2.14
 
 ### Other changes
