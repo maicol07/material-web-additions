@@ -39,7 +39,7 @@ const components: Record<string, Component> = {
         released: true,
         actions: {
             'View on GitHub': {
-                link: 'https://github.com/maicol07/material-web-additions/card',
+                link: 'https://github.com/maicol07/material-web-additions/blob/main/card',
                 title: 'View on GitHub',
                 icon: 'code'
             },
@@ -57,7 +57,7 @@ const components: Record<string, Component> = {
         released: true,
         actions: {
             'View on GitHub': {
-                link: 'https://github.com/maicol07/material-web-additions/data-table',
+                link: 'https://github.com/maicol07/material-web-additions/blob/main/data-table',
                 title: 'View on GitHub',
                 icon: 'code'
             }
@@ -70,7 +70,7 @@ const components: Record<string, Component> = {
         released: true,
         actions: {
             'View on GitHub': {
-                link: 'https://github.com/maicol07/material-web-additions/layout-grid',
+                link: 'https://github.com/maicol07/material-web-additions/blob/main/layout-grid',
                 title: 'View on GitHub',
                 icon: 'code'
             },
