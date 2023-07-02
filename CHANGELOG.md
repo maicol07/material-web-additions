@@ -3,6 +3,24 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 📝 Docs changes
+- [`38e0e23`](https://github.com/maicol07/material-web-additions/commit/38e0e234b12b1d31211970aa71995992b4781a49) Fix Github links not working
+- [`6614dd6`](https://github.com/maicol07/material-web-additions/commit/6614dd68342001347a4a78a1d8f5910a6f0fb56b) Fix icons not loading
+
+### 👷 CI changes
+- [`edd6df6`](https://github.com/maicol07/material-web-additions/commit/edd6df6c420e650dbca9b8ea01040514573997ad) version bump to 1.2.17
+- [`5bf0503`](https://github.com/maicol07/material-web-additions/commit/5bf050318037f28c42350e6a2a6c946e4d6ea6d0) Added missing secrets inheritance
+- [`afa20ec`](https://github.com/maicol07/material-web-additions/commit/afa20ec550deed90bffd8c8d0acc65c7490577ca) version bump to 1.2.16
+
+### Other changes
+- [`f530b84`](https://github.com/maicol07/material-web-additions/commit/f530b845f1d6c8882d939998f7bffa3676197241) **deps:** ⬆️ Updated dependencies
+
+
+<a name="1.2.16"></a>
+## [1.2.16](https://github.com/maicol07/material-web-additions/compare/1.2.15...1.2.16)
+
+> Released on June 21, 2023
+
 ### 🐛 Bug Fixes
 - [`5aad44d`](https://github.com/maicol07/material-web-additions/commit/5aad44d107a3b02a47743c0a9677037e5dbd267b) 🐛 Fix MD web pre11 breaking changes
 
@@ -13,7 +31,6 @@
 - [`7043e9f`](https://github.com/maicol07/material-web-additions/commit/7043e9f7b075bd361d5331671f7edf8bf8f87f7d) **card:** Improved focus ring
 
 ### 👷 CI changes
-- [`afa20ec`](https://github.com/maicol07/material-web-additions/commit/afa20ec550deed90bffd8c8d0acc65c7490577ca) version bump to 1.2.16
 - [`a1e0fba`](https://github.com/maicol07/material-web-additions/commit/a1e0fba0de91d5be39d0a78187b08cc4b44c9b44) 💚 Fix chromatic workflow not starting after automated release
 - [`606ce7e`](https://github.com/maicol07/material-web-additions/commit/606ce7e704ed70207441d598067310311d6a0ff6) version bump to 1.2.15
 
