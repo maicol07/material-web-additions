@@ -74,7 +74,7 @@ export class DataTable extends BaseElement {
   /**
    * Index of the first row to be shown on the current page.
    */
-  @property({type: Number, reflect: true}) firstRowOfPage = 1;
+  @property({type: Number, reflect: true}) currentFirstRow = 1;
   /** @internal */
   protected pageSizesArray: number[] = JSON.parse(this.pageSizes);
   /**
@@ -84,7 +84,7 @@ export class DataTable extends BaseElement {
   /**
    * Index of the last row to be shown on the current page.
    */
-  @property({type: Number, reflect: true}) lastRowOfPage = this.currentPageSize;
+  @property({type: Number, reflect: true}) currentLastRow = this.currentPageSize;
   /**
    * Label pattern to show after the page size select that indicates the current rows shown in the page.
    * It should contain the following parameters: `:firstRow`, `:lastRow`, `:totalRows`
@@ -101,22 +101,22 @@ export class DataTable extends BaseElement {
   @property({type: String, reflect: true})
   density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
   /** @internal */
-      // @ts-ignore
+    // @ts-ignore
   @queryAssignedElements({slot: 'header-cell', selector: 'md-data-table-column'}) columns!: DataTableColumn[];
   /** @internal */
-      // @ts-ignore
+    // @ts-ignore
   @queryAssignedElements({slot: 'row', selector: 'md-data-table-row'}) rows!: DataTableRow[];
   /** @internal */
-      // @ts-ignore
+    // @ts-ignore
   @query('.mdc-data-table') protected tableElement!: HTMLTableElement;
   /** @internal */
-      // @ts-ignore
+    // @ts-ignore
   @query('.mdc-data-table__table-container') protected tableContainerElement!: HTMLTableElement;
   /** @internal */
-      // @ts-ignore
+    // @ts-ignore
   @query('.mdc-data-table__header-row') protected headerRowElement!: HTMLTableSectionElement;
   /** @internal */
-      // @ts-ignore
+    // @ts-ignore
   @query('.mdc-data-table__progress-indicator') protected progressIndicator!: LinearProgress;
 
   /** @internal */
@@ -124,10 +124,10 @@ export class DataTable extends BaseElement {
   /** @internal */
   protected mdcRoot: HTMLDivElement = this.tableElement;
   /** @internal */
-      // @ts-ignore (TypeScript bug)
+    // @ts-ignore (TypeScript bug)
   protected readonly mdcFoundationClass = MDCDataTableFoundation;
   /** @internal */
-      // @ts-ignore (TypeScript bug)
+    // @ts-ignore (TypeScript bug)
   protected mdcFoundation!: MDCDataTableFoundation;
   protected columnFilters: Map<DataTableColumn, string> = new Map();
 
@@ -143,30 +143,30 @@ export class DataTable extends BaseElement {
 
   override render() {
     return html`
-      <div class="mdc-data-table">
-        <div class="mdc-data-table__table-container">
-          <div class="mdc-data-table__table" aria-label="${this.ariaLabel}" role="table">
-            <div class="mdc-data-table__head" role="rowgroup">
-              <div class="mdc-data-table__header-row" role="row">
-                <slot name="header-cell" @slotchange=${this.onHeaderCellSlotChange}></slot>
-              </div>
+        <div class="mdc-data-table">
+            <div class="mdc-data-table__table-container">
+                <div class="mdc-data-table__table" aria-label="${this.ariaLabel}" role="table">
+                    <div class="mdc-data-table__head" role="rowgroup">
+                        <div class="mdc-data-table__header-row" role="row">
+                            <slot name="header-cell" @slotchange=${this.onHeaderCellSlotChange}></slot>
+                        </div>
+                    </div>
+                    <div class="mdc-data-table__content" role="rowgroup">
+                        <slot name="row" @slotchange=${() => this.requestUpdate()}></slot>
+                    </div>
+                </div>
             </div>
-            <div class="mdc-data-table__content" role="rowgroup">
-              <slot name="row" @slotchange=${() => this.requestUpdate()}></slot>
+
+            ${this.renderPagination()}
+
+            <slot name="footer"></slot>
+
+            <div class="mdc-data-table__progress-indicator">
+                <div class="mdc-data-table__scrim"></div>
+                <md-linear-progress indeterminate class="mdc-data-table__linear-progress" role="progressbar"
+                                    aria-label="Data is being loaded..."></md-linear-progress>
             </div>
-          </div>
         </div>
-
-        ${this.renderPagination()}
-
-        <slot name="footer"></slot>
-
-        <div class="mdc-data-table__progress-indicator">
-          <div class="mdc-data-table__scrim"></div>
-          <md-linear-progress indeterminate class="mdc-data-table__linear-progress" role="progressbar"
-                               aria-label="Data is being loaded..."></md-linear-progress>
-        </div>
-      </div>
     `;
   }
 
@@ -174,7 +174,9 @@ export class DataTable extends BaseElement {
     this.requestUpdate();
     const sortColumn = this.columns.find((column) => column.sortable && column.sorted);
     if (sortColumn) {
-      sortColumn.onSortButtonClicked(new CustomEvent<{selected: boolean}>('icon-button-toggle-change', {detail: {selected: !sortColumn.sortedDescending}}));
+      sortColumn.onSortButtonClicked(new CustomEvent<{
+        selected: boolean
+      }>('icon-button-toggle-change', {detail: {selected: !sortColumn.sortedDescending}}));
     }
   }
 
@@ -300,70 +302,70 @@ export class DataTable extends BaseElement {
 
   protected renderPagination() {
     if (this.paginated) {
-      const initialPageLabel = this.firstRowOfPage < 1 ? 1 : this.firstRowOfPage;
-      const lastPageLabel = this.lastRowOfPage > this.rows.length ? this.rows.length : this.lastRowOfPage;
+      const initialPageLabel = this.currentFirstRow < 1 ? 1 : this.currentFirstRow;
+      const lastPageLabel = this.currentLastRow > this.rows.length ? this.rows.length : this.currentLastRow;
       return html`
-        <md-data-table-footer>
-          <div class="mdc-data-table__pagination-trailing">
-            <div class="mdc-data-table__pagination-rows-per-page">
-              <div class="mdc-data-table__pagination-rows-per-page-label">
-                ${this.pageSizesLabel}
-              </div>
-              
-              <md-outlined-select
-                  type="number"
-                  class="mdc-data-table__pagination-rows-per-page-select"
-                  value="${this.currentPageSize}"
-                  @input=${this.onPageSizeSelected}>
-                  ${this.pageSizesArray.map((size) => html`
-                  <md-select-option value="${size}" headline="${size}">${size}</md-select-option>
-                  `)}
-              </md-outlined-select>
-            </div>
+          <md-data-table-footer>
+              <div class="mdc-data-table__pagination-trailing">
+                  <div class="mdc-data-table__pagination-rows-per-page">
+                      <div class="mdc-data-table__pagination-rows-per-page-label">
+                          ${this.pageSizesLabel}
+                      </div>
 
-            <div class="mdc-data-table__pagination-navigation">
-              <div class="mdc-data-table__pagination-total">
-                ${this.renderTemplate(this.paginationTotalLabel, {
-                  'firstRow': initialPageLabel,
-                  'lastRow': lastPageLabel,
-                  'totalRows': this.rows.length,
-                })}
+                      <md-outlined-select
+                              type="number"
+                              class="mdc-data-table__pagination-rows-per-page-select"
+                              value="${this.currentPageSize}"
+                              @input=${this.onPageSizeSelected}>
+                          ${this.pageSizesArray.map((size) => html`
+                              <md-select-option value="${size}" headline="${size}">${size}</md-select-option>
+                          `)}
+                      </md-outlined-select>
+                  </div>
+
+                  <div class="mdc-data-table__pagination-navigation">
+                      <div class="mdc-data-table__pagination-total">
+                          ${this.renderTemplate(this.paginationTotalLabel, {
+                              'firstRow': initialPageLabel,
+                              'lastRow': lastPageLabel,
+                              'totalRows': this.rows.length,
+                          })}
+                      </div>
+                      <md-filled-icon-button class="mdc-data-table__pagination-button"
+                                             data-page="first"
+                                             ?disabled=${this.currentFirstRow <= 1}
+                                             @click=${this.onPaginationButtonClicked}>
+                          <slot name="pagination-first-button-icon">
+                              <md-icon slot="icon">first_page</md-icon>
+                          </slot>
+                      </md-filled-icon-button>
+                      <md-filled-icon-button class="mdc-data-table__pagination-button"
+                                             data-page="previous"
+                                             ?disabled=${this.currentFirstRow <= 1}
+                                             @click=${this.onPaginationButtonClicked}>
+                          <slot name="pagination-previous-button-icon">
+                              <md-icon>chevron_left</md-icon>
+                          </slot>
+                      </md-filled-icon-button>
+                      <md-filled-icon-button class="mdc-data-table__pagination-button"
+                                             data-page="next"
+                                             ?disabled=${this.currentLastRow >= this.rows.length}
+                                             @click=${this.onPaginationButtonClicked}>
+                          <slot name="pagination-next-button-icon">
+                              <md-icon>chevron_right</md-icon>
+                          </slot>
+                      </md-filled-icon-button>
+                      <md-filled-icon-button class="mdc-data-table__pagination-button"
+                                             data-page="last"
+                                             ?disabled=${this.currentLastRow >= this.rows.length}
+                                             @click=${this.onPaginationButtonClicked}>
+                          <slot name="pagination-last-button-icon">
+                              <md-icon>last_page</md-icon>
+                          </slot>
+                      </md-filled-icon-button>
+                  </div>
               </div>
-              <md-filled-icon-button class="mdc-data-table__pagination-button"
-                               data-page="first"
-                               ?disabled=${this.firstRowOfPage <= 1}
-                               @click=${this.onPaginationButtonClicked}>
-                <slot name="pagination-first-button-icon">
-                  <md-icon slot="icon">first_page</md-icon>
-                </slot>
-              </md-filled-icon-button>
-              <md-filled-icon-button class="mdc-data-table__pagination-button"
-                               data-page="previous"
-                               ?disabled=${this.firstRowOfPage <= 1}
-                               @click=${this.onPaginationButtonClicked}>
-                <slot name="pagination-previous-button-icon">
-                  <md-icon>chevron_left</md-icon>
-                </slot>
-              </md-filled-icon-button>
-              <md-filled-icon-button class="mdc-data-table__pagination-button"
-                               data-page="next"
-                               ?disabled=${this.lastRowOfPage >= this.rows.length}
-                               @click=${this.onPaginationButtonClicked}>
-                <slot name="pagination-next-button-icon">
-                  <md-icon>chevron_right</md-icon>
-                </slot>
-              </md-filled-icon-button>
-              <md-filled-icon-button class="mdc-data-table__pagination-button"
-                               data-page="last"
-                               ?disabled=${this.lastRowOfPage >= this.rows.length}
-                               @click=${this.onPaginationButtonClicked}>
-                <slot name="pagination-last-button-icon">
-                  <md-icon>last_page</md-icon>
-                </slot>
-              </md-filled-icon-button>
-            </div>
-          </div>
-        </div>
+              </div>
       `;
     }
 
@@ -416,24 +418,24 @@ export class DataTable extends BaseElement {
 
       switch (action) {
         case 'first':
-          this.firstRowOfPage = 1;
-          this.lastRowOfPage = this.currentPageSize;
+          this.currentFirstRow = 1;
+          this.currentLastRow = this.currentPageSize;
           break;
         case 'previous':
-          this.firstRowOfPage -= this.currentPageSize;
-          this.lastRowOfPage -= this.currentPageSize;
+          this.currentFirstRow -= this.currentPageSize;
+          this.currentLastRow -= this.currentPageSize;
           break;
         case 'next':
-          this.firstRowOfPage += this.currentPageSize;
-          this.lastRowOfPage += this.currentPageSize;
+          this.currentFirstRow += this.currentPageSize;
+          this.currentLastRow += this.currentPageSize;
           break;
         case 'last':
-          this.firstRowOfPage = this.rows.length - this.currentPageSize + 1;
-          this.lastRowOfPage = this.rows.length;
+          this.currentFirstRow = this.rows.length - this.currentPageSize + 1;
+          this.currentLastRow = this.rows.length;
           break;
       }
 
-      const rowsToShow = this.rows.slice(this.firstRowOfPage - 1, this.lastRowOfPage);
+      const rowsToShow = this.rows.slice(this.currentFirstRow - 1, this.currentLastRow);
       this.showRows(rowsToShow);
     }
   }

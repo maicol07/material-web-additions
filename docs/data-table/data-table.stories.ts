@@ -55,12 +55,12 @@ export const Standard: DataTableStory = {
       density="${args.density}"
       pageSizes="${args.pageSizes}"
       pageSizesLabel="${args.pageSizesLabel}"
-      firstRowOfPage="${args.firstRowOfPage}"
+      firstRowOfPage="${args.currentFirstRow}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
       paginationTotalLabel="${args.paginationTotalLabel}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
     >
       <md-data-table-column>Dessert</md-data-table-column>
       <md-data-table-column>Calories</md-data-table-column>
@@ -100,12 +100,12 @@ export const WithFooter: DataTableStory = {
       density="${args.density}"
       pageSizes="${args.pageSizes}"
       pageSizesLabel="${args.pageSizesLabel}"
-      firstRowOfPage="${args.firstRowOfPage}"
+      firstRowOfPage="${args.currentFirstRow}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
       paginationTotalLabel="${args.paginationTotalLabel}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
     >
       <md-data-table-column>Dessert</md-data-table-column>
       <md-data-table-column>Calories</md-data-table-column>
@@ -151,12 +151,12 @@ export const RowSelection: DataTableStory = {
       density="${args.density}"
       pageSizes="${args.pageSizes}"
       pageSizesLabel="${args.pageSizesLabel}"
-      firstRowOfPage="${args.firstRowOfPage}"
+      firstRowOfPage="${args.currentFirstRow}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
       paginationTotalLabel="${args.paginationTotalLabel}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
     >
       <md-data-table-column type="checkbox"></md-data-table-column>
       <md-data-table-column>Signal name</md-data-table-column>
@@ -235,12 +235,12 @@ export const Paginated: DataTableStory = {
       density="${args.density}"
       pageSizes="${args.pageSizes}"
       pageSizesLabel="${args.pageSizesLabel}"
-      firstRowOfPage="${args.firstRowOfPage}"
+      firstRowOfPage="${args.currentFirstRow}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
       paginationTotalLabel="${args.paginationTotalLabel}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
     >
       <md-data-table-column>Signal name</md-data-table-column>
       <md-data-table-column>Status</md-data-table-column>
@@ -321,12 +321,12 @@ export const InProgress: DataTableStory = {
       density="${args.density}"
       pageSizes="${args.pageSizes}"
       pageSizesLabel="${args.pageSizesLabel}"
-      firstRowOfPage="${args.firstRowOfPage}"
+      firstRowOfPage="${args.currentFirstRow}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
       paginationTotalLabel="${args.paginationTotalLabel}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
     >
       <md-data-table-column>Signal name</md-data-table-column>
       <md-data-table-column>Status</md-data-table-column>
@@ -401,12 +401,12 @@ export const WithFilterTextField: DataTableStory = {
       density="${args.density}"
       pageSizes="${args.pageSizes}"
       pageSizesLabel="${args.pageSizesLabel}"
-      firstRowOfPage="${args.firstRowOfPage}"
+      firstRowOfPage="${args.currentFirstRow}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
       paginationTotalLabel="${args.paginationTotalLabel}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
     >
       <md-data-table-column filterable>Signal name</md-data-table-column>
       <md-data-table-column>Status</md-data-table-column>
@@ -479,12 +479,12 @@ export const WithSorting: DataTableStory = {
       density="${args.density}"
       pageSizes="${args.pageSizes}"
       pageSizesLabel="${args.pageSizesLabel}"
-      firstRowOfPage="${args.firstRowOfPage}"
+      firstRowOfPage="${args.currentFirstRow}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
       paginationTotalLabel="${args.paginationTotalLabel}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
     >
       <md-data-table-column sortable sorted>Signal name</md-data-table-column>
       <md-data-table-column>Status</md-data-table-column>
@@ -558,12 +558,12 @@ export const WithSortingAndFilter: DataTableStory = {
       density="${args.density}"
       pageSizes="${args.pageSizes}"
       pageSizesLabel="${args.pageSizesLabel}"
-      firstRowOfPage="${args.firstRowOfPage}"
+      firstRowOfPage="${args.currentFirstRow}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
       paginationTotalLabel="${args.paginationTotalLabel}"
       currentPageSize="${args.currentPageSize}"
-      lastRowOfPage="${args.lastRowOfPage}"
+      lastRowOfPage="${args.currentLastRow}"
     >
       <md-data-table-column sortable sorted filterable>Signal name</md-data-table-column>
       <md-data-table-column filterable>Status</md-data-table-column>
