@@ -16,7 +16,6 @@ export class DataTableCell extends LitElement {
   @property({type: String, reflect: true}) type?: '' | 'numeric' | 'checkbox';
 
   /** @internal */
-    // @ts-ignore
   @queryAssignedElements({selector: 'md-checkbox', flatten: true}) protected checkboxSlotElements!: MdCheckbox[];
 
   override connectedCallback() {

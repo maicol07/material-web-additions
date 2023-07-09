@@ -97,25 +97,18 @@ export class DataTable extends BaseElement {
   /**
    * Overall height of the table. Available in three different measures.
    */
-  @property({type: String, reflect: true})
-  density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
+  @property({type: String, reflect: true}) density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
   /** @internal */
-    // @ts-ignore
   @queryAssignedElements({slot: 'header-cell', selector: 'md-data-table-column'}) columns!: DataTableColumn[];
   /** @internal */
-    // @ts-ignore
   @queryAssignedElements({slot: 'row', selector: 'md-data-table-row'}) rows!: DataTableRow[];
   /** @internal */
-    // @ts-ignore
   @query('.mdc-data-table') protected tableElement!: HTMLTableElement;
   /** @internal */
-    // @ts-ignore
   @query('.mdc-data-table__table-container') protected tableContainerElement!: HTMLTableElement;
   /** @internal */
-    // @ts-ignore
   @query('.mdc-data-table__header-row') protected headerRowElement!: HTMLTableSectionElement;
   /** @internal */
-    // @ts-ignore
   @query('.mdc-data-table__progress-indicator') protected progressIndicator!: LinearProgress;
 
   /** @internal */
@@ -123,10 +116,10 @@ export class DataTable extends BaseElement {
   /** @internal */
   protected mdcRoot: HTMLDivElement = this.tableElement;
   /** @internal */
-    // @ts-ignore (TypeScript bug)
+    // @ts-expect-error (TypeScript bug)
   protected readonly mdcFoundationClass = MDCDataTableFoundation;
   /** @internal */
-    // @ts-ignore (TypeScript bug)
+    // @ts-expect-error (TypeScript bug)
   protected mdcFoundation!: MDCDataTableFoundation;
   protected columnFilters: Map<DataTableColumn, string> = new Map();
 

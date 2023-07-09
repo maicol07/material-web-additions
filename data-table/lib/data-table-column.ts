@@ -75,10 +75,8 @@ export class DataTableColumn extends LitElement {
   @property({type: Boolean, attribute: 'custom-filtering'}) customFiltering = false;
 
   /** @internal */
-    // @ts-ignore
   @query('md-standard-icon-button') sortButton?: IconButton;
   /** @internal */
-    // @ts-ignore
   @queryAssignedElements({slot: 'checkbox', flatten: true}) protected checkboxSlotElements!: Checkbox[];
 
   override connectedCallback() {
