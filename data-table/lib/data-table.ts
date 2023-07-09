@@ -91,6 +91,13 @@ export class DataTable extends BaseElement {
    */
   @property({type: String}) paginationTotalLabel = ':firstRow-:lastRow of :totalRows';
   /**
+   * Whether the data table is using a custom pagination function. If true, the automatic pagination is disabled and
+   * the `current-first-row`, `current-last-row` and `current-page-size` attributes are not updated automatically.
+   * You'll have to handle the pagination yourself by listening to the `paginate` event and updating the
+   * `current-first-row`, `current-last-row` and `current-page-size` attributes accordingly.
+   */
+  @property({type: Boolean, attribute: 'custom-pagination'}) customPagination = false;
+  /**
    * Whether the loading indicator is active.
    */
   @property({type: Boolean, reflect: true, attribute: 'in-progress'}) inProgress = false;
@@ -405,7 +412,7 @@ export class DataTable extends BaseElement {
       }
     }));
 
-    if (this.paginated) {
+    if (this.paginated && !this.customPagination) {
       this.hideRows();
 
       switch (action) {
