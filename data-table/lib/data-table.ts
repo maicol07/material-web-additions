@@ -66,25 +66,25 @@ export class DataTable extends BaseElement {
   /**
    * JSON array with the page sizes to be used in the pagination and shown as page size select options.
    */
-  @property({type: String, reflect: true}) pageSizes = '[10, 25, 100]';
+  @property({type: String, reflect: true, attribute: 'page-sizes'}) pageSizes = '[10, 25, 100]';
   /**
    * Label to show before the page size select.
    */
-  @property({type: String, reflect: true}) pageSizesLabel = 'Rows per page:';
+  @property({type: String, reflect: true, attribute: 'page-sizes-label'}) pageSizesLabel = 'Rows per page:';
   /**
    * Index of the first row to be shown on the current page.
    */
-  @property({type: Number, reflect: true}) currentFirstRow = 1;
+  @property({type: Number, reflect: true, attribute: 'current-first-row'}) currentFirstRow = 1;
   /** @internal */
   protected pageSizesArray: number[] = JSON.parse(this.pageSizes);
   /**
    * Size of the current page.
    */
-  @property({type: Number, reflect: true}) currentPageSize = this.pageSizesArray[0];
+  @property({type: Number, reflect: true, attribute: 'current-page-size'}) currentPageSize = this.pageSizesArray[0];
   /**
    * Index of the last row to be shown on the current page.
    */
-  @property({type: Number, reflect: true}) currentLastRow = this.currentPageSize;
+  @property({type: Number, reflect: true, attribute: 'current-last-row'}) currentLastRow = this.currentPageSize;
   /**
    * Label pattern to show after the page size select that indicates the current rows shown in the page.
    * It should contain the following parameters: `:firstRow`, `:lastRow`, `:totalRows`
@@ -93,8 +93,7 @@ export class DataTable extends BaseElement {
   /**
    * Whether the loading indicator is active.
    */
-  @property({type: Boolean, reflect: true})
-  inProgress = false;
+  @property({type: Boolean, reflect: true, attribute: 'in-progress'}) inProgress = false;
   /**
    * Overall height of the table. Available in three different measures.
    */

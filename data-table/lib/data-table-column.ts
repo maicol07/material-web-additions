@@ -64,11 +64,11 @@ export class DataTableColumn extends LitElement {
   /**
    * Label to show on the filter textfield.
    */
-  @property({type: String}) filterTextFieldLabel = 'Filter';
+  @property({type: String, attribute: 'filter-text-field-label'}) filterTextFieldLabel = 'Filter';
   /**
    * Sets the filtering to be case-sensitive.
    */
-  @property({type: Boolean, reflect: true}) filterCaseSensitive = false;
+  @property({type: Boolean, reflect: true, attribute: 'filter-case-sensitive'}) filterCaseSensitive = false;
   /**
    * Whether the column is using a custom filtering function.
    */
