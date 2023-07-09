@@ -42,6 +42,22 @@ export interface SortedDetail {
   isDescending: boolean
 }
 
+export interface PageSizeChangedDetail {
+  pageSize: number
+}
+
+export type PaginationAction = 'current' | 'first' | 'previous' | 'next' | 'last';
+
+export interface PageChangedDetail {
+  action: PaginationAction,
+}
+
+export interface PaginatedDetail {
+  firstRow: number,
+  lastRow: number,
+  pageSize: number
+}
+
 export class DataTable extends BaseElement {
   /**
    * Enable/disable pagination.
@@ -357,6 +373,11 @@ export class DataTable extends BaseElement {
   protected onPageSizeSelected(e: InputEvent) {
     // const select = e.target as Autocomplete;
     this.currentPageSize = Number.parseInt((e.target as Select).value);
+    this.dispatchEvent(new CustomEvent<PageSizeChangedDetail>('pagesizechanged', {
+      detail: {
+        pageSize: this.currentPageSize,
+      }
+    }));
     this.paginate('first');
   }
 
@@ -365,16 +386,30 @@ export class DataTable extends BaseElement {
     if (!(button instanceof IconButton)) {
       button = button.closest('.mdc-data-table__pagination-button') as IconButton;
     }
-    const action = button.dataset['page'] as 'first' | 'previous' | 'next' | 'last';
+    const action = button.dataset['page'] as PaginationAction;
+
+    this.dispatchEvent(new CustomEvent<PageChangedDetail>('pagechanged', {
+      detail: {
+        action
+      }
+    }));
 
     this.paginate(action);
   }
 
-  protected paginate(action: 'current' | 'first' | 'previous' | 'next' | 'last' = 'current') {
+  protected paginate(action: PaginationAction = 'current') {
     this.pageSizesArray = JSON.parse(this.pageSizes);
     if (!this.pageSizesArray.includes(this.currentPageSize)) {
       this.currentPageSize = this.pageSizesArray[0];
     }
+
+    this.dispatchEvent(new CustomEvent<PaginatedDetail>('paginated', {
+      detail: {
+        pageSize: this.currentPageSize,
+        firstRow: this.currentFirstRow,
+        lastRow: this.currentLastRow
+      }
+    }));
 
     if (this.paginated) {
       this.hideRows();
