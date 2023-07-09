@@ -15,7 +15,7 @@ export class LayoutGrid extends LitElement {
     /**
      * You can designate each column to have a certain width. The column width can be specified through the CSS custom property `--mdc-layout-grid-column-width-{screen_size}`. The column width is set to 72px on all devices by default.
      */
-    @property({type: Boolean}) fixedColumnWidth = false;
+    @property({type: Boolean, attribute: 'fixed-column-width'}) fixedColumnWidth = false;
 
     /**
      * The grid is by default center aligned. You can set this attribute to `left` or `right` to change this behavior. Note, these modifiers will have no effect when the grid already fills its container.
