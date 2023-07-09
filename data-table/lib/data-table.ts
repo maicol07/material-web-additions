@@ -42,17 +42,17 @@ export interface SortedDetail {
   isDescending: boolean
 }
 
-export interface PageSizeChangedDetail {
+export interface PageSizeChangeDetail {
   pageSize: number
 }
 
 export type PaginationAction = 'current' | 'first' | 'previous' | 'next' | 'last';
 
-export interface PageChangedDetail {
+export interface PageChangeDetail {
   action: PaginationAction,
 }
 
-export interface PaginatedDetail {
+export interface PaginateDetail {
   firstRow: number,
   lastRow: number,
   pageSize: number
@@ -374,7 +374,7 @@ export class DataTable extends BaseElement {
   protected onPageSizeSelected(e: InputEvent) {
     // const select = e.target as Autocomplete;
     this.currentPageSize = Number.parseInt((e.target as Select).value);
-    this.dispatchEvent(new CustomEvent<PageSizeChangedDetail>('pagesizechanged', {
+    this.dispatchEvent(new CustomEvent<PageSizeChangeDetail>('page-size-change', {
       detail: {
         pageSize: this.currentPageSize,
       }
@@ -389,7 +389,7 @@ export class DataTable extends BaseElement {
     }
     const action = button.dataset['page'] as PaginationAction;
 
-    this.dispatchEvent(new CustomEvent<PageChangedDetail>('pagechanged', {
+    this.dispatchEvent(new CustomEvent<PageChangeDetail>('page-changed', {
       detail: {
         action
       }
@@ -404,7 +404,7 @@ export class DataTable extends BaseElement {
       this.currentPageSize = this.pageSizesArray[0];
     }
 
-    this.dispatchEvent(new CustomEvent<PaginatedDetail>('paginated', {
+    this.dispatchEvent(new CustomEvent<PaginateDetail>('paginate', {
       detail: {
         pageSize: this.currentPageSize,
         firstRow: this.currentFirstRow,
@@ -523,13 +523,13 @@ export class DataTable extends BaseElement {
         /**
          * Event emitted when header row checkbox is checked.
          */
-        this.dispatchEvent(new CustomEvent('selectedAll'));
+        this.dispatchEvent(new CustomEvent('selected-all'));
       },
       notifyUnselectedAll: () => {
         /**
          * Event emitted when header row checkbox is unchecked.
          */
-        this.dispatchEvent(new CustomEvent('unselectedAll'));
+        this.dispatchEvent(new CustomEvent('unselected-all'));
       },
       notifyRowClick: (detail: RowClickEventData) => {
         /**
@@ -537,7 +537,7 @@ export class DataTable extends BaseElement {
          *
          * Event detail: `RowClickEventData`.
          */
-        this.dispatchEvent(new CustomEvent('rowClick', {detail}));
+        this.dispatchEvent(new CustomEvent('row-click', {detail}));
       },
       registerHeaderRowCheckbox: () => {
       },

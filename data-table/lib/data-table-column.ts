@@ -54,7 +54,8 @@ export class DataTableColumn extends LitElement {
    */
   @property({type: Boolean, reflect: true, attribute: 'with-sort-button'}) withSortButton = false;
   /**
-   * Whether the column is using a custom sorting function.
+   * Whether the column is using a custom sorting function. If true, the column will not sort automatically and
+   * you will need to handle the sorting yourself (see `sort` event).
    */
   @property({type: Boolean, attribute: 'custom-sorting'}) customSorting = false;
   /**
@@ -70,7 +71,8 @@ export class DataTableColumn extends LitElement {
    */
   @property({type: Boolean, reflect: true, attribute: 'filter-case-sensitive'}) filterCaseSensitive = false;
   /**
-   * Whether the column is using a custom filtering function.
+   * Whether the column is using a custom filtering function. If true, the column will not filter automatically and
+   * you will need to handle the filtering yourself (see `filter` event).
    */
   @property({type: Boolean, attribute: 'custom-filtering'}) customFiltering = false;
 
