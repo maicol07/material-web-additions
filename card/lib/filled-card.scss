@@ -1,5 +1,5 @@
 @use "card";
-@use "@material/webold/tokens";
+@use "../../tokens";
 
 $filled-theme: tokens.md-comp-filled-card-values();
 

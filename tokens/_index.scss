@@ -1,0 +1,11 @@
+//
+// Copyright 2023 Google LLC
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// go/keep-sorted start
+@forward './md-comp-data-table' as md-comp-data-table-*;
+@forward './md-comp-elevated-card' as md-comp-elevated-card-*;
+@forward './md-comp-filled-card' as md-comp-filled-card-*;
+@forward './md-comp-outlined-card' as md-comp-outlined-card-*;
+// go/keep-sorted end

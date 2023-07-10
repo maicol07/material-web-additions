@@ -59,7 +59,6 @@
     "@custom-elements-manifest/analyzer": "^0.8.3",
     "@ljcl/storybook-addon-cssprops": "^3.1.0",
     "@material/web": "1.0.0-pre.12",
-    "@material/webold": "npm:@material/web@=1.0.0-pre.10",
     "@storybook/addon-a11y": "^7.0.24",
     "@storybook/addon-actions": "^7.0.24",
     "@storybook/addon-backgrounds": "^7.0.24",
