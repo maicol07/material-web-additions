@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Project" pattern="file:*//*&amp;&amp;!file:.idea//*&amp;&amp;!file:pnpm-lock.yaml&amp;&amp;!file:.wireit//*&amp;&amp;!file:.*.js&amp;&amp;!file[material-web-additions]:*.css*" />
+</component>
