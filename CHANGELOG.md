@@ -1,10 +1,7 @@
 # Changelog
 
-
-<a name="1.3"></a>
-## [1.3](https://github.com/maicol07/material-web-additions/compare/1.2.17...1.3)
-
-> Released on July 10, 2023
+<a name="unreleased"></a>
+## Unreleased
 
 ### ✨ Features
 - [`ca5b38e`](https://github.com/maicol07/material-web-additions/commit/ca5b38ea60838db37d1ecf0f49b4d4224e91ce80) **data-table:** ✨ Added some events to pagination actions
@@ -16,6 +13,7 @@
 - [`0061893`](https://github.com/maicol07/material-web-additions/commit/0061893ad3d9b01ab6a68358db92ca9bb9ff27f9) **data-table:** Fix minor graphic issues with dark theme
 
 ### 👷 CI changes
+- [`6ea2c0f`](https://github.com/maicol07/material-web-additions/commit/6ea2c0f7e4d8d03335db4600486816e146ce185c) version bump to 1.3.0
 - [`edd6df6`](https://github.com/maicol07/material-web-additions/commit/edd6df6c420e650dbca9b8ea01040514573997ad) version bump to 1.2.17
 
 
