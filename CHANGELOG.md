@@ -1,7 +1,10 @@
 # Changelog
 
-<a name="unreleased"></a>
-## Unreleased
+
+<a name="1.3"></a>
+## [1.3](https://github.com/maicol07/material-web-additions/compare/1.2.17...1.3)
+
+> Released on July 10, 2023
 
 ### ✨ Features
 - [`ca5b38e`](https://github.com/maicol07/material-web-additions/commit/ca5b38ea60838db37d1ecf0f49b4d4224e91ce80) **data-table:** ✨ Added some events to pagination actions
