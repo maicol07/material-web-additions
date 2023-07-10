@@ -12,11 +12,22 @@ import {CssPropsBlock} from "@ljcl/storybook-addon-cssprops";
 ## Example Usage
 <Stories title={""} includePrimary/>
 
-## Custom sorting and filtering
-The data table component allows you to provide custom sorting and filtering functions.
-This is done by setting the `customSorting` and `customFilter` properties on the `md-data-table-column` element.
-This will disable the default sorting and filtering functionality of the data table.
-You'll then have to implement your own sorting and filtering logic by listening to the `sort` and `filter` events.
+## Custom logic
+The data table component allows you to provide custom logic functions.
+### Custom sorting
+You can provide custom sorting logic by setting the `customSorting` property on the `md-data-table-column` element.
+This will disable the default sorting functionality of the data table.
+You'll then have to implement your own sorting logic by listening to the `sort` event.
+
+### Custom filtering
+You can provide custom filtering logic by setting the `customFilter` property on the `md-data-table-column` element.
+This will disable the default filtering functionality of the data table.
+You'll then have to implement your own filtering logic by listening to the `filter` event.
+
+### Custom pagination
+You can provide custom pagination logic by setting the `customPagination` property on the `md-data-table` element.
+This will disable the default pagination functionality of the data table.
+You'll then have to implement your own pagination logic by listening to the `paginate` event.
 
 ## API
 ### Slots
