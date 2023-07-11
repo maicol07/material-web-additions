@@ -55,7 +55,8 @@ export interface PageChangeDetail {
 export interface PaginateDetail {
   firstRow: number,
   lastRow: number,
-  pageSize: number
+  pageSize: number,
+  action: PaginationAction
 }
 
 export class DataTable extends BaseElement {
@@ -408,7 +409,8 @@ export class DataTable extends BaseElement {
       detail: {
         pageSize: this.currentPageSize,
         firstRow: this.currentFirstRow,
-        lastRow: this.currentLastRow
+        lastRow: this.currentLastRow,
+        action
       }
     }));
 
