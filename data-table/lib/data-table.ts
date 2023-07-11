@@ -87,6 +87,10 @@ export class DataTable extends BaseElement {
    */
   @property({type: Number, reflect: true, attribute: 'current-last-row'}) currentLastRow = this.currentPageSize;
   /**
+   * Total number of rows in the data table to show in the pagination label and
+   */
+  @property({type: Number, reflect: true, attribute: 'total-rows'}) totalRows: number;
+  /**
    * Label pattern to show after the page size select that indicates the current rows shown in the page.
    * It should contain the following parameters: `:firstRow`, `:lastRow`, `:totalRows`
    */
@@ -304,6 +308,7 @@ export class DataTable extends BaseElement {
     if (this.paginated) {
       const initialPageLabel = this.currentFirstRow < 1 ? 1 : this.currentFirstRow;
       const lastPageLabel = this.currentLastRow > this.rows.length ? this.rows.length : this.currentLastRow;
+      const totalRows = this.totalRows ?? this.rows.length;
       return html`
           <md-data-table-footer>
               <div class="mdc-data-table__pagination-trailing">
@@ -328,7 +333,7 @@ export class DataTable extends BaseElement {
                           ${this.renderTemplate(this.paginationTotalLabel, {
                               'firstRow': initialPageLabel,
                               'lastRow': lastPageLabel,
-                              'totalRows': this.rows.length,
+                              totalRows,
                           })}
                       </div>
                       <md-filled-icon-button class="mdc-data-table__pagination-button"
@@ -349,7 +354,7 @@ export class DataTable extends BaseElement {
                       </md-filled-icon-button>
                       <md-filled-icon-button class="mdc-data-table__pagination-button"
                                              data-page="next"
-                                             ?disabled=${this.currentLastRow >= this.rows.length}
+                                             ?disabled=${this.currentLastRow >= this.totalRows}
                                              @click=${this.onPaginationButtonClicked}>
                           <slot name="pagination-next-button-icon">
                               <md-icon>chevron_right</md-icon>
@@ -357,7 +362,7 @@ export class DataTable extends BaseElement {
                       </md-filled-icon-button>
                       <md-filled-icon-button class="mdc-data-table__pagination-button"
                                              data-page="last"
-                                             ?disabled=${this.currentLastRow >= this.rows.length}
+                                             ?disabled=${this.currentLastRow >= this.totalRows}
                                              @click=${this.onPaginationButtonClicked}>
                           <slot name="pagination-last-button-icon">
                               <md-icon>last_page</md-icon>
@@ -495,7 +500,7 @@ export class DataTable extends BaseElement {
           this.rows[rowIndex].selected = true;
         }
       },
-      getRowCount: () => this.rows.length,
+      getRowCount: () => this.totalRows ?? this.rows.length,
       getRowElements: () => this.rows,
       getRowIdAtIndex: (rowIndex: number) => this.rows?.[rowIndex].id ?? null,
       getRowIndexByChildElement: (el: Element) => this.rows.findIndex((row) => row.contains(el)),
