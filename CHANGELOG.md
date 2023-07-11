@@ -3,11 +3,23 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 🐛 Bug Fixes
+- [`1f376fb`](https://github.com/maicol07/material-web-additions/commit/1f376fbe54a6c4c59a1c43135ecb057f78700fe1) **data-table:** Current last row not showing when totalRows was more than displayed table rows
+
+### 👷 CI changes
+- [`c13590d`](https://github.com/maicol07/material-web-additions/commit/c13590df596b885dda065cc5be48a9e4b7643fc7) version bump to 1.3.4
+- [`662707b`](https://github.com/maicol07/material-web-additions/commit/662707be41f59d24ce648230bf38f5ed7cfda0d1) version bump to 1.3.3
+
+
+<a name="1.3.3"></a>
+## [1.3.3](https://github.com/maicol07/material-web-additions/compare/1.3.2...1.3.3)
+
+> Released on July 11, 2023
+
 ### ✨ Features
 - [`f874fdd`](https://github.com/maicol07/material-web-additions/commit/f874fdd314fd5ca0dd297a50ef89d2a1cdf21566) ✨ Added totalRows attribute
 
 ### 👷 CI changes
-- [`662707b`](https://github.com/maicol07/material-web-additions/commit/662707be41f59d24ce648230bf38f5ed7cfda0d1) version bump to 1.3.3
 - [`54c494c`](https://github.com/maicol07/material-web-additions/commit/54c494ca44c58dcd08442c8cc4120fdb303e4c04) version bump to 1.3.2
 
 
