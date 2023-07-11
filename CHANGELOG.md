@@ -4,10 +4,22 @@
 ## Unreleased
 
 ### ✨ Features
+- [`f874fdd`](https://github.com/maicol07/material-web-additions/commit/f874fdd314fd5ca0dd297a50ef89d2a1cdf21566) ✨ Added totalRows attribute
+
+### 👷 CI changes
+- [`662707b`](https://github.com/maicol07/material-web-additions/commit/662707be41f59d24ce648230bf38f5ed7cfda0d1) version bump to 1.3.3
+- [`54c494c`](https://github.com/maicol07/material-web-additions/commit/54c494ca44c58dcd08442c8cc4120fdb303e4c04) version bump to 1.3.2
+
+
+<a name="1.3.2"></a>
+## [1.3.2](https://github.com/maicol07/material-web-additions/compare/1.3.1...1.3.2)
+
+> Released on July 11, 2023
+
+### ✨ Features
 - [`7c67b84`](https://github.com/maicol07/material-web-additions/commit/7c67b843c5489e109317a8a63f139afddc5b0c16) ✨ Added action parameter to the `paginate` event detail
 
 ### 👷 CI changes
-- [`54c494c`](https://github.com/maicol07/material-web-additions/commit/54c494ca44c58dcd08442c8cc4120fdb303e4c04) version bump to 1.3.2
 - [`49f8062`](https://github.com/maicol07/material-web-additions/commit/49f80625bf357f5fae37fa0234504a126bcdf1cd) version bump to 1.3.1
 
 ### Other changes
