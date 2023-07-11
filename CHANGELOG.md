@@ -4,13 +4,29 @@
 ## Unreleased
 
 ### ✨ Features
+- [`7c67b84`](https://github.com/maicol07/material-web-additions/commit/7c67b843c5489e109317a8a63f139afddc5b0c16) ✨ Added action parameter to the `paginate` event detail
+
+### 👷 CI changes
+- [`54c494c`](https://github.com/maicol07/material-web-additions/commit/54c494ca44c58dcd08442c8cc4120fdb303e4c04) version bump to 1.3.2
+- [`49f8062`](https://github.com/maicol07/material-web-additions/commit/49f80625bf357f5fae37fa0234504a126bcdf1cd) version bump to 1.3.1
+
+### Other changes
+- [`7173cea`](https://github.com/maicol07/material-web-additions/commit/7173ceadcb3b1f753d901967e3fbe223eef5f15f) Re-enabled autoInstallPeers
+- [`8173c7b`](https://github.com/maicol07/material-web-additions/commit/8173c7ba9b4c17861af19260179196fd5fe34bf4) Added ide scope
+
+
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/maicol07/material-web-additions/compare/1.3.0...1.3.1)
+
+> Released on July 10, 2023
+
+### ✨ Features
 - [`38d8a8c`](https://github.com/maicol07/material-web-additions/commit/38d8a8c6763b885c6061914245256acddaf45634) **data-table:** ✨ Added custom pagination
 
 ### 📝 Docs changes
 - [`9b78523`](https://github.com/maicol07/material-web-additions/commit/9b7852390505d88d78a0f0ef2d02738dae40ca02) **data-table:** 📝 Updated custom logic docs
 
 ### 👷 CI changes
-- [`49f8062`](https://github.com/maicol07/material-web-additions/commit/49f80625bf357f5fae37fa0234504a126bcdf1cd) version bump to 1.3.1
 - [`3d31784`](https://github.com/maicol07/material-web-additions/commit/3d31784ec6f194e1dff7113bee1c6f66c0a210dd) 💚 Added no changelog setting
 - [`6ea2c0f`](https://github.com/maicol07/material-web-additions/commit/6ea2c0f7e4d8d03335db4600486816e146ce185c) version bump to 1.3.0
 
