@@ -3,11 +3,23 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 👷 CI changes
+- [`a6bc8d9`](https://github.com/maicol07/material-web-additions/commit/a6bc8d966ecae2c3af07ba55fad6f11cc51e3f0d) version bump to 1.3.5
+- [`c13590d`](https://github.com/maicol07/material-web-additions/commit/c13590df596b885dda065cc5be48a9e4b7643fc7) version bump to 1.3.4
+
+### Other changes
+- [`de99fab`](https://github.com/maicol07/material-web-additions/commit/de99fab61ef6bb2f556831f1fb390131577ae7cf) **deps:** ⬆️ Upgraded dependencies
+
+
+<a name="1.3.4"></a>
+## [1.3.4](https://github.com/maicol07/material-web-additions/compare/1.3.3...1.3.4)
+
+> Released on July 11, 2023
+
 ### 🐛 Bug Fixes
 - [`1f376fb`](https://github.com/maicol07/material-web-additions/commit/1f376fbe54a6c4c59a1c43135ecb057f78700fe1) **data-table:** Current last row not showing when totalRows was more than displayed table rows
 
 ### 👷 CI changes
-- [`c13590d`](https://github.com/maicol07/material-web-additions/commit/c13590df596b885dda065cc5be48a9e4b7643fc7) version bump to 1.3.4
 - [`662707b`](https://github.com/maicol07/material-web-additions/commit/662707be41f59d24ce648230bf38f5ed7cfda0d1) version bump to 1.3.3
 
 
