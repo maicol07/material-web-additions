@@ -516,7 +516,7 @@ export class DataTable extends BaseElement {
          * Event detail: `RowSelectionChangedDetail`.
          */
         this.dispatchEvent(new CustomEvent<RowSelectionChangedDetail>(
-          'rowSelectionChanged',
+          'row-selection-changed',
           {
             detail: {
               row: this.rows[data.rowIndex],
