@@ -2,14 +2,14 @@ import {html, LitElement, nothing, PropertyValues} from 'lit';
 import {property} from 'lit/decorators/property.js';
 import {queryAssignedElements} from 'lit/decorators/query-assigned-elements.js';
 import {query} from 'lit/decorators/query.js';
-import {TextField} from '@material/web/textfield/lib/text-field.js';
-import {IconButton} from '@material/web/iconbutton/lib/icon-button.js';
+import {TextField} from '@material/web/textfield/internal/text-field.js';
+import {IconButton} from '@material/web/iconbutton/internal/icon-button.js';
 import '@material/web/textfield/outlined-text-field.js';
 import '@material/web/iconbutton/standard-icon-button.js';
 import '@material/web/checkbox/checkbox.js';
 import '@material/web/icon/icon.js';
 import {CellCheckedEventDetail} from './data-table-cell.js';
-import {Checkbox} from '@material/web/checkbox/lib/checkbox.js';
+import {Checkbox} from '@material/web/checkbox/internal/checkbox.js';
 
 export interface FilterTextFieldInputEventDetail {
   field: TextField,

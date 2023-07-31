@@ -1,4 +1,4 @@
-import '@material/web/linearprogress/linear-progress.js';
+import '@material/web/progress/linear-progress.js';
 import '@material/web/iconbutton/filled-icon-button.js';
 import '@material/web/select/outlined-select.js';
 import '@material/web/select/select-option.js';
@@ -18,11 +18,11 @@ import {
   SortActionEventDetail
 } from '@material/data-table';
 import {cssClasses, messages, SortValue} from '@material/data-table/constants.js';
-import {IconButton} from '@material/web/iconbutton/lib/icon-button.js';
-import {LinearProgress} from '@material/web/linearprogress/lib/linear-progress.js';
+import {IconButton} from '@material/web/iconbutton/internal/icon-button.js';
+import {LinearProgress} from '@material/web/progress/internal/linear-progress.js';
 import {DataTableRow} from './data-table-row.js';
 import {BaseElement} from '@material/mwc-base';
-import {Select} from '@material/web/select/lib/select.js';
+import {Select} from '@material/web/select/internal/select.js';
 
 export interface RowSelectionChangedDetail {
   row: DataTableRow,
