@@ -3,8 +3,23 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 🐛 Bug Fixes
+- [`9dfe127`](https://github.com/maicol07/material-web-additions/commit/9dfe127aab7e747c601cd88a59c858e1316e1a54) 👽 Material web pre14 breaking changes
+
 ### 👷 CI changes
+- [`947d95d`](https://github.com/maicol07/material-web-additions/commit/947d95d6761440e65a50067a0c3c22ba04483140) version bump to 1.3.6
 - [`a6bc8d9`](https://github.com/maicol07/material-web-additions/commit/a6bc8d966ecae2c3af07ba55fad6f11cc51e3f0d) version bump to 1.3.5
+
+### Other changes
+- [`e178ae3`](https://github.com/maicol07/material-web-additions/commit/e178ae3d55a13c81cf64f1a80890868103d36786) **deps:** ⬆️ Upgraded dependencies
+
+
+<a name="1.3.5"></a>
+## [1.3.5](https://github.com/maicol07/material-web-additions/compare/1.3.4...1.3.5)
+
+> Released on July 13, 2023
+
+### 👷 CI changes
 - [`c13590d`](https://github.com/maicol07/material-web-additions/commit/c13590df596b885dda065cc5be48a9e4b7643fc7) version bump to 1.3.4
 
 ### Other changes
