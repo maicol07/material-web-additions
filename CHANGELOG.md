@@ -3,11 +3,28 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 🎨 Code styling
+- [`587abdc`](https://github.com/maicol07/material-web-additions/commit/587abdc18e094d170cfd08a7959254d81c0364ee) Fix text fields and select spacing
+
+### 👷 CI changes
+- [`d29ac25`](https://github.com/maicol07/material-web-additions/commit/d29ac2568e38d03ec755240680a8ef21b944ace0) version bump to 1.3.7
+- [`e2a9e7f`](https://github.com/maicol07/material-web-additions/commit/e2a9e7f18c769720f54e597a8bdd470783a8f1fd) Fix autoinstallpeers setting
+- [`947d95d`](https://github.com/maicol07/material-web-additions/commit/947d95d6761440e65a50067a0c3c22ba04483140) version bump to 1.3.6
+
+### Other changes
+- [`092fb78`](https://github.com/maicol07/material-web-additions/commit/092fb7813d0113783f2e9e9c40ab786ad0e0aff7) PHPStorm metadata
+- [`4a0a5a7`](https://github.com/maicol07/material-web-additions/commit/4a0a5a719ffdc071c502701b45795401ea2b613a) **deps:** ⬆️ Upgraded dependencies
+
+
+<a name="1.3.6"></a>
+## [1.3.6](https://github.com/maicol07/material-web-additions/compare/1.3.5...1.3.6)
+
+> Released on July 31, 2023
+
 ### 🐛 Bug Fixes
 - [`9dfe127`](https://github.com/maicol07/material-web-additions/commit/9dfe127aab7e747c601cd88a59c858e1316e1a54) 👽 Material web pre14 breaking changes
 
 ### 👷 CI changes
-- [`947d95d`](https://github.com/maicol07/material-web-additions/commit/947d95d6761440e65a50067a0c3c22ba04483140) version bump to 1.3.6
 - [`a6bc8d9`](https://github.com/maicol07/material-web-additions/commit/a6bc8d966ecae2c3af07ba55fad6f11cc51e3f0d) version bump to 1.3.5
 
 ### Other changes
