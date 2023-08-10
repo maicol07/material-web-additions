@@ -127,7 +127,7 @@ export class DataTableColumn extends LitElement {
           <slot name="filter-textfield" class="mdc-data-table__filter-textfield">
               <md-outlined-text-field
                       label="${this.filterTextFieldLabel}"
-                      style="--_container-padding-vertical: var(--_pagination-outlined-select-field-container-padding-vertical);"
+                      style="--md-outlined-text-field-top-space: var(--_pagination-outlined-select-field-top-space); --md-outlined-text-field-bottom-space: var(--_pagination-outlined-select-field-bottom-space);"
                       @input=${this.onFilterTextFieldInput}
                       @keydown=${this.onFilterTextFieldKeyDown}
                       @click="${(e: PointerEvent) => e.stopPropagation()}"

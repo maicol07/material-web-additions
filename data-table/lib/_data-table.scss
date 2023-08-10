@@ -16,7 +16,8 @@ $_custom-property-prefix: 'data-table';
     @each $token, $value in $tokens {
       --_#{$token}: #{$value};
     }
-    --_pagination-outlined-select-field-container-padding-vertical: var(--md-data-table-pagination-outlined-select-field-container-padding-vertical, 6px);
+    --_pagination-outlined-select-field-top-space: var(--md-data-table-pagination-outlined-select-field-top-space, 6px);
+    --_pagination-outlined-select-field-bottom-space: var(--md-data-table-pagination-outlined-select-field-bottom-space, 6px);
   }
 
   @include data-table.core-styles;
@@ -72,7 +73,8 @@ $_custom-property-prefix: 'data-table';
     }
 
     .mdc-data-table__pagination-rows-per-page-select {
-      --md-outlined-field-container-top-space: var(--_pagination-outlined-select-field-container-padding-vertical);
+      --md-outlined-field-top-space: var(--_pagination-outlined-select-field-top-space);
+      --md-outlined-field-bottom-space: var(--_pagination-outlined-select-field-bottom-space);
     }
 
     .mdc-data-table__pagination-total, .mdc-data-table__pagination-rows-per-page-label, .mdc-data-table__cell {
