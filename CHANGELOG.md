@@ -3,11 +3,33 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 🐛 Bug Fixes
+- [`6e17b29`](https://github.com/maicol07/material-web-additions/commit/6e17b29955f7969f31fa6ab9927fcd72ec99a7e3) Fix MD web pre15 BC
+- [`a6d1e44`](https://github.com/maicol07/material-web-additions/commit/a6d1e441ec430cf1ff225765d0d2dc15cad176ec) **data-table:** Pagination buttons are enabled in rare cases
+- [`6b8ad3c`](https://github.com/maicol07/material-web-additions/commit/6b8ad3c3f45bde033e365cf418754507a8dc768d) **data-table:** Fix pagination not displaying any rows if `currentFirstRow` is < 1
+- [`3b176cd`](https://github.com/maicol07/material-web-additions/commit/3b176cdf7650073ce2d47678dfe634b915ac0047) **docs:** Data table stories parameters not working
+
+### ♻ Code Refactoring
+- [`6c68489`](https://github.com/maicol07/material-web-additions/commit/6c684892f73c28120800eb65bb74136f7f29135a) **data-table:** ♻️ Renamed local variables
+
+### 👷 CI changes
+- [`7f6531a`](https://github.com/maicol07/material-web-additions/commit/7f6531a8ef040dbb722c2d6e6f6542b45de91906) version bump to 1.4.0
+- [`d29ac25`](https://github.com/maicol07/material-web-additions/commit/d29ac2568e38d03ec755240680a8ef21b944ace0) version bump to 1.3.7
+
+### Other changes
+- [`67b2001`](https://github.com/maicol07/material-web-additions/commit/67b2001e88ed288aeef60eea31ba7b946ac54542) PHPStorm metadata
+- [`46687e7`](https://github.com/maicol07/material-web-additions/commit/46687e779114b559bfda57ac186d6c143b5810e0) **deps:** ⬆️ Upgraded dependencies
+
+
+<a name="1.3.7"></a>
+## [1.3.7](https://github.com/maicol07/material-web-additions/compare/1.3.6...1.3.7)
+
+> Released on August 10, 2023
+
 ### 🎨 Code styling
 - [`587abdc`](https://github.com/maicol07/material-web-additions/commit/587abdc18e094d170cfd08a7959254d81c0364ee) Fix text fields and select spacing
 
 ### 👷 CI changes
-- [`d29ac25`](https://github.com/maicol07/material-web-additions/commit/d29ac2568e38d03ec755240680a8ef21b944ace0) version bump to 1.3.7
 - [`e2a9e7f`](https://github.com/maicol07/material-web-additions/commit/e2a9e7f18c769720f54e597a8bdd470783a8f1fd) Fix autoinstallpeers setting
 - [`947d95d`](https://github.com/maicol07/material-web-additions/commit/947d95d6761440e65a50067a0c3c22ba04483140) version bump to 1.3.6
 
