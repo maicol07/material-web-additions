@@ -338,7 +338,7 @@ export class DataTable extends BaseElement {
                       </div>
                       <md-filled-icon-button class="mdc-data-table__pagination-button"
                                              data-page="first"
-                                             ?disabled=${this.currentFirstRow <= 1}
+                                             ?disabled=${currentFirstRow <= 1}
                                              @click=${this.onPaginationButtonClicked}>
                           <slot name="pagination-first-button-icon">
                               <md-icon slot="icon">first_page</md-icon>
@@ -346,7 +346,7 @@ export class DataTable extends BaseElement {
                       </md-filled-icon-button>
                       <md-filled-icon-button class="mdc-data-table__pagination-button"
                                              data-page="previous"
-                                             ?disabled=${this.currentFirstRow <= 1}
+                                             ?disabled=${currentFirstRow <= 1}
                                              @click=${this.onPaginationButtonClicked}>
                           <slot name="pagination-previous-button-icon">
                               <md-icon>chevron_left</md-icon>
@@ -354,7 +354,7 @@ export class DataTable extends BaseElement {
                       </md-filled-icon-button>
                       <md-filled-icon-button class="mdc-data-table__pagination-button"
                                              data-page="next"
-                                             ?disabled=${this.currentLastRow >= this.totalRows}
+                                             ?disabled=${currentLastRow >= totalRows}
                                              @click=${this.onPaginationButtonClicked}>
                           <slot name="pagination-next-button-icon">
                               <md-icon>chevron_right</md-icon>
@@ -362,7 +362,7 @@ export class DataTable extends BaseElement {
                       </md-filled-icon-button>
                       <md-filled-icon-button class="mdc-data-table__pagination-button"
                                              data-page="last"
-                                             ?disabled=${this.currentLastRow >= this.totalRows}
+                                             ?disabled=${currentLastRow >= totalRows}
                                              @click=${this.onPaginationButtonClicked}>
                           <slot name="pagination-last-button-icon">
                               <md-icon>last_page</md-icon>
