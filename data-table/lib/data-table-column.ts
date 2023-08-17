@@ -5,7 +5,7 @@ import {query} from 'lit/decorators/query.js';
 import {TextField} from '@material/web/textfield/internal/text-field.js';
 import {IconButton} from '@material/web/iconbutton/internal/icon-button.js';
 import '@material/web/textfield/outlined-text-field.js';
-import '@material/web/iconbutton/standard-icon-button.js';
+import '@material/web/iconbutton/icon-button.js';
 import '@material/web/checkbox/checkbox.js';
 import '@material/web/icon/icon.js';
 import {CellCheckedEventDetail} from './data-table-cell.js';
@@ -77,7 +77,7 @@ export class DataTableColumn extends LitElement {
   @property({type: Boolean, attribute: 'custom-filtering'}) customFiltering = false;
 
   /** @internal */
-  @query('md-standard-icon-button') sortButton?: IconButton;
+  @query('md-icon-button') sortButton?: IconButton;
   /** @internal */
   @queryAssignedElements({slot: 'checkbox', flatten: true}) protected checkboxSlotElements!: Checkbox[];
 
@@ -114,6 +114,7 @@ export class DataTableColumn extends LitElement {
               <md-checkbox
                       class="mdc-data-table__header-row-checkbox"
                       @change=${this.onCheckboxClicked}
+                      touch-target="wrapper"
                       aria-label="Toggle all rows"></md-checkbox>
           </slot>
       `;
@@ -151,7 +152,7 @@ export class DataTableColumn extends LitElement {
   renderSortButton() {
     return html`
         <div class="mdc-data-table__header-cell-wrapper">
-            <md-standard-icon-button ?selected=${this.sortedDescending}
+            <md-icon-button ?selected=${this.sortedDescending}
                                      toggle
                                      @change=${this.onSortButtonClicked}
                                      @click="${(e: PointerEvent) => e.stopPropagation()}"
@@ -163,7 +164,7 @@ export class DataTableColumn extends LitElement {
                 <slot name="sort-icon-off">
                     <md-icon>arrow_upward</md-icon>
                 </slot>
-            </md-standard-icon-button>
+            </md-icon-button>
             &nbsp;
             <slot class="mdc-data-table__header-cell-label"></slot>
         </div>

@@ -4,7 +4,7 @@ import '../../card/filled-card.js';
 import '../../card/elevated-card.js';
 import '../../card/outlined-card.js';
 import {html} from 'lit';
-import '@material/web/iconbutton/standard-icon-button.js';
+import '@material/web/iconbutton/icon-button.js';
 import '@material/web/button/outlined-button.js';
 import '@material/web/button/filled-button.js';
 import './styles.scss';
@@ -137,15 +137,15 @@ export const BasicElevated: CardStory = {
           </div>
           <md-outlined-button slot="button">Read</md-outlined-button>
           <md-filled-button slot="button">Bookmark</md-filled-button>
-          <md-standard-icon-button slot="icon">
+          <md-icon-button slot="icon">
               <md-icon>favorite</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>share</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>more_vert</md-icon>
-          </md-standard-icon-button>
+          </md-icon-button>
       </md-elevated-card>
   `,
   parameters: {
@@ -175,15 +175,15 @@ export const BasicOutline: CardStory = {
           </div>
           <md-outlined-button slot="button">Read</md-outlined-button>
           <md-filled-button slot="button">Bookmark</md-filled-button>
-          <md-standard-icon-button slot="icon">
+          <md-icon-button slot="icon">
               <md-icon>favorite</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>share</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>more_vert</md-icon>
-          </md-standard-icon-button>
+          </md-icon-button>
       </md-outlined-card>
   `,
   parameters: {
@@ -213,15 +213,15 @@ export const BasicFilled: CardStory = {
           </div>
           <md-outlined-button slot="button">Read</md-outlined-button>
           <md-filled-button slot="button">Bookmark</md-filled-button>
-          <md-standard-icon-button slot="icon">
+          <md-icon-button slot="icon">
               <md-icon>favorite</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>share</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>more_vert</md-icon>
-          </md-standard-icon-button>
+          </md-icon-button>
       </md-filled-card>
   `,
   parameters: {
@@ -251,15 +251,15 @@ export const BasicWithHeader: CardStory = {
           </div>
           <md-outlined-button slot="button">Read</md-outlined-button>
           <md-filled-button slot="button">Bookmark</md-filled-button>
-          <md-standard-icon-button slot="icon">
+          <md-icon-button slot="icon">
               <md-icon>favorite</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>share</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>more_vert</md-icon>
-          </md-standard-icon-button>
+          </md-icon-button>
       </md-elevated-card>
   `,
 };
@@ -286,15 +286,15 @@ export const BasicWithHeaderAndThumbnail: CardStory = {
           </div>
           <md-outlined-button slot="button">Read</md-outlined-button>
           <md-filled-button slot="button">Bookmark</md-filled-button>
-          <md-standard-icon-button slot="icon">
+          <md-icon-button slot="icon">
               <md-icon>favorite</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>share</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>more_vert</md-icon>
-          </md-standard-icon-button>
+          </md-icon-button>
       </md-elevated-card>
   `,
 };
@@ -321,15 +321,15 @@ export const BasicWithOnlyIcons: CardStory = {
                   <div class="demo-card__subtitle">Subtitle</div>
               </div>
           </div>
-          <md-standard-icon-button slot="icon">
+          <md-icon-button slot="icon">
               <md-icon>favorite</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>share</md-icon>
-          </md-standard-icon-button>
-          <md-standard-icon-button slot="icon">
+          </md-icon-button>
+          <md-icon-button slot="icon">
               <md-icon>more_vert</md-icon>
-          </md-standard-icon-button>
+          </md-icon-button>
       </md-elevated-card>
   `,
 };

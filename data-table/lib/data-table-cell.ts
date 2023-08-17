@@ -37,7 +37,7 @@ export class DataTableCell extends LitElement {
 
   renderCheckbox() {
     if (this.type === 'checkbox') {
-      return html`<md-checkbox class="mdc-data-table__row-checkbox" @change=${this.onCheckboxClicked}></md-checkbox>`;
+      return html`<md-checkbox class="mdc-data-table__row-checkbox" touch-target="wrapper" @change=${this.onCheckboxClicked}></md-checkbox>`;
     }
 
     return '';

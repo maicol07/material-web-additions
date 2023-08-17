@@ -49,7 +49,7 @@
   :host([sortable]) {
     @extend .mdc-data-table__header-cell--with-sort;
 
-    md-standard-icon-button {
+    md-icon-button {
       &:hover {
         --md-icon-button-unselected-icon-color: var(--_header-hover-sorting-icon-button-color);
       }
