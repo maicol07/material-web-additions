@@ -1,7 +1,7 @@
 import {customElement} from 'lit/decorators/custom-element.js';
 
-import * as styles from './lib/layout-grid.css.js';
-import {LayoutGridInner} from './lib/layout-grid-inner.js';
+import * as styles from '@maicol07/material-web-additions/layout-grid/internal/layout-grid.css.js';
+import {LayoutGridInner} from '@maicol07/material-web-additions/layout-grid/internal/layout-grid-inner.js';
 
 declare global {
   interface HTMLElementTagNameMap {

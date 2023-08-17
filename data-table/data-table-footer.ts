@@ -1,6 +1,6 @@
 import {customElement} from 'lit/decorators.js';
-import {styles as footerStyles} from './lib/data-table-footer.css.js';
-import {DataTableFooter} from './lib/data-table-footer.js';
+import {styles as footerStyles} from '@maicol07/material-web-additions/data-table/internal/data-table-footer.css.js';
+import {DataTableFooter} from '@maicol07/material-web-additions/data-table/internal/data-table-footer.js';
 
 declare global {
   interface HTMLElementTagNameMap {

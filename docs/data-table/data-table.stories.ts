@@ -4,7 +4,7 @@ import '../../data-table/data-table-row.js';
 import '../../data-table/data-table-cell.js';
 import '@material/web/button/text-button.js';
 import {Meta, StoryObj} from '@storybook/web-components';
-import type {DataTable} from '../../data-table/lib/data-table.js';
+import type {DataTable} from '@maicol07/material-web-additions/data-table/internal/data-table.js';
 import {html} from 'lit';
 import './styles.scss';
 

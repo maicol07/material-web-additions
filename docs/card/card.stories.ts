@@ -1,5 +1,5 @@
 import {Meta, StoryObj} from '@storybook/web-components';
-import {Card} from '../../card/lib/card.js';
+import {Card} from '@maicol07/material-web-additions/card/internal/card.js';
 import '../../card/filled-card.js';
 import '../../card/elevated-card.js';
 import '../../card/outlined-card.js';

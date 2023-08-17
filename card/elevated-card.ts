@@ -1,8 +1,8 @@
 import {customElement} from 'lit/decorators.js';
 
-import {styles as shared} from './lib/shared.css.js';
-import {styles} from './lib/elevated-card.css.js';
-import {ElevatedCard} from './lib/elevated-card.js';
+import {styles as shared} from '@maicol07/material-web-additions/card/internal/shared.css.js';
+import {styles} from '@maicol07/material-web-additions/card/internal/elevated-card.css.js';
+import {ElevatedCard} from '@maicol07/material-web-additions/card/internal/elevated-card.js';
 
 declare global {
     interface HTMLElementTagNameMap {
