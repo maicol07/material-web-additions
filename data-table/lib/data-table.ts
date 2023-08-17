@@ -307,8 +307,8 @@ export class DataTable extends BaseElement {
   protected renderPagination() {
     if (this.paginated) {
       const totalRows = this.totalRows ?? this.rows.length;
-      const initialPageLabel = this.currentFirstRow < 1 ? 1 : this.currentFirstRow;
-      const lastPageLabel = this.currentLastRow > totalRows ? totalRows : this.currentLastRow;
+      const currentFirstRow = this.currentFirstRow < 1 ? 1 : this.currentFirstRow;
+      const currentLastRow = this.currentLastRow > totalRows ? totalRows : this.currentLastRow;
       return html`
           <md-data-table-footer>
               <div class="mdc-data-table__pagination-trailing">
@@ -331,8 +331,8 @@ export class DataTable extends BaseElement {
                   <div class="mdc-data-table__pagination-navigation">
                       <div class="mdc-data-table__pagination-total">
                           ${this.renderTemplate(this.paginationTotalLabel, {
-                              'firstRow': initialPageLabel,
-                              'lastRow': lastPageLabel,
+                              'firstRow': currentFirstRow,
+                              'lastRow': currentLastRow,
                               totalRows,
                           })}
                       </div>
