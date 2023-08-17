@@ -3,6 +3,19 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 👷 Building scripts changes
+- [`312cb6b`](https://github.com/maicol07/material-web-additions/commit/312cb6ba29de25826c562c9252cb2b5c0e9132a3) Fix compiling issues
+
+### 👷 CI changes
+- [`84ad1c2`](https://github.com/maicol07/material-web-additions/commit/84ad1c216735b8b58ae12460141e959cde2a7354) version bump to 1.4.1
+- [`7f6531a`](https://github.com/maicol07/material-web-additions/commit/7f6531a8ef040dbb722c2d6e6f6542b45de91906) version bump to 1.4.0
+
+
+<a name="1.4.0"></a>
+## [1.4.0](https://github.com/maicol07/material-web-additions/compare/1.3.7...1.4.0)
+
+> Released on August 17, 2023
+
 ### 🐛 Bug Fixes
 - [`6e17b29`](https://github.com/maicol07/material-web-additions/commit/6e17b29955f7969f31fa6ab9927fcd72ec99a7e3) Fix MD web pre15 BC
 - [`a6d1e44`](https://github.com/maicol07/material-web-additions/commit/a6d1e441ec430cf1ff225765d0d2dc15cad176ec) **data-table:** Pagination buttons are enabled in rare cases
@@ -13,7 +26,6 @@
 - [`6c68489`](https://github.com/maicol07/material-web-additions/commit/6c684892f73c28120800eb65bb74136f7f29135a) **data-table:** ♻️ Renamed local variables
 
 ### 👷 CI changes
-- [`7f6531a`](https://github.com/maicol07/material-web-additions/commit/7f6531a8ef040dbb722c2d6e6f6542b45de91906) version bump to 1.4.0
 - [`d29ac25`](https://github.com/maicol07/material-web-additions/commit/d29ac2568e38d03ec755240680a8ef21b944ace0) version bump to 1.3.7
 
 ### Other changes
