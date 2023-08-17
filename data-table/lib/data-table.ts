@@ -430,6 +430,10 @@ export class DataTable extends BaseElement {
         case 'previous':
           this.currentFirstRow -= this.currentPageSize;
           this.currentLastRow -= this.currentPageSize;
+          if (this.currentFirstRow < 1) {
+            this.currentFirstRow = 1;
+            this.currentLastRow = this.currentPageSize;
+          }
           break;
         case 'next':
           this.currentFirstRow += this.currentPageSize;
