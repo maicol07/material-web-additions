@@ -1,6 +1,6 @@
 import {customElement} from 'lit/decorators.js';
-import {DataTableRow} from '@maicol07/material-web-additions/data-table/internal/data-table-row.js';
-import {styles as rowStyles} from '@maicol07/material-web-additions/data-table/internal/data-table-row.css.js';
+import {DataTableRow} from './internal/data-table-row.js';
+import {styles as rowStyles} from './internal/data-table-row.css.js';
 
 declare global {
   interface HTMLElementTagNameMap {
