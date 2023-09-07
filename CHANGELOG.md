@@ -3,11 +3,31 @@
 <a name="unreleased"></a>
 ## Unreleased
 
+### 🐛 Bug Fixes
+- [`d199fe2`](https://github.com/maicol07/material-web-additions/commit/d199fe21cb3e49af9e61986c20d2461b62ffac0f) Fix MD web pre17 BC
+
+### 👷 Building scripts changes
+- [`491a6f2`](https://github.com/maicol07/material-web-additions/commit/491a6f2de211c9e358598afed24024430c661246) Update tsconfig.json to exclude certain directories
+
+    Adjusted the TypeScript configuration file to exclude 'node_modules' and 'docs' directories from TypeScript compilation. This is necessary to limit the scope of the TypeScript compiler, improve the compilation speed, and prevent unnecessary issues that can occur when TypeScript attempts to compile the whole project.
+
+### 👷 CI changes
+- [`3989607`](https://github.com/maicol07/material-web-additions/commit/39896078dc2790a73d7d3c1eb2a3d039583aaf0c) version bump to 1.4.2
+- [`84ad1c2`](https://github.com/maicol07/material-web-additions/commit/84ad1c216735b8b58ae12460141e959cde2a7354) version bump to 1.4.1
+
+### Other changes
+- [`688d7ce`](https://github.com/maicol07/material-web-additions/commit/688d7ce186a47dfe2796cc443fbfc61008594346) **deps:** ⬆️ Upgraded dependencies
+
+
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/maicol07/material-web-additions/compare/1.4.0...1.4.1)
+
+> Released on August 17, 2023
+
 ### 👷 Building scripts changes
 - [`312cb6b`](https://github.com/maicol07/material-web-additions/commit/312cb6ba29de25826c562c9252cb2b5c0e9132a3) Fix compiling issues
 
 ### 👷 CI changes
-- [`84ad1c2`](https://github.com/maicol07/material-web-additions/commit/84ad1c216735b8b58ae12460141e959cde2a7354) version bump to 1.4.1
 - [`7f6531a`](https://github.com/maicol07/material-web-additions/commit/7f6531a8ef040dbb722c2d6e6f6542b45de91906) version bump to 1.4.0
 
 
