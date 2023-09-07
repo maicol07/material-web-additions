@@ -38,5 +38,9 @@
       "mdx"
     ],
     "jsx": "react-jsx"
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "docs"
+  ]
 }
