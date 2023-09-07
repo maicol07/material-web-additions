@@ -1,6 +1,0 @@
-@use "card";
-@use "../../tokens";
-
-$outlined-theme: tokens.md-comp-outlined-card-values();
-
-@include card.styles($outlined-theme, 'outlined');

@@ -130,7 +130,7 @@ export function getMarkup() {
                         <a key={id} href={action.link} target="_blank" className="mwa-card-action" title={action.title}
                            slot="icon">
                             {/* @ts-ignore */}
-                            <md-standard-icon-button aria-label={action.title}><md-icon>{action.icon}</md-icon></md-standard-icon-button>
+                            <md-icon-button aria-label={action.title}><md-icon>{action.icon}</md-icon></md-icon-button>
                         </a>
                     ))
                 }

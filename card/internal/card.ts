@@ -33,7 +33,8 @@ export abstract class Card extends LitElement {
 
     getRenderClasses(): ClassInfo {
         return {
-            'mdc-card': true
+            'mdc-card': true,
+            'card': true,
         };
     }
 

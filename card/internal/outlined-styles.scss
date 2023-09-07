@@ -1,0 +1,6 @@
+@use "card";
+@use "outlined-card";
+
+
+@include card.styles();
+@include outlined-card.styles();

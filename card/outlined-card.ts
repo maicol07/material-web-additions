@@ -1,7 +1,7 @@
 import {customElement} from 'lit/decorators.js';
 
-import {styles as shared} from './internal/shared.css.js';
-import {styles} from './internal/outlined-card.css.js';
+import {styles as shared} from './internal/shared-styles.css.js';
+import {styles} from './internal/outlined-styles.css.js';
 import {OutlinedCard} from './internal/outlined-card.js';
 
 declare global {

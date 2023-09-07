@@ -1,7 +1,6 @@
 @use 'sass:map';
 
 @use "@material/data-table/data-table";
-@use '@material/web/internal/sass/theme';
 @use '../../tokens';
 @use "@material/web/elevation/elevation";
 @use "@material/elevation" as oldelevation;
@@ -10,11 +9,10 @@ $_custom-property-prefix: 'data-table';
 
 @mixin styles() {
   $tokens: tokens.md-comp-data-table-values();
-  $tokens: theme.create-theme-vars($tokens, $_custom-property-prefix);
 
   :host {
     @each $token, $value in $tokens {
-      --_#{$token}: #{$value};
+      --_#{$token}: var(--md-data-table-#{$token}, #{$value});
     }
     --_pagination-outlined-select-field-top-space: var(--md-data-table-pagination-outlined-select-field-top-space, 6px);
     --_pagination-outlined-select-field-bottom-space: var(--md-data-table-pagination-outlined-select-field-bottom-space, 6px);
@@ -83,6 +81,10 @@ $_custom-property-prefix: 'data-table';
       font-size: var(--_footer-supporting-text-size);
       font-weight: var(--_footer-supporting-text-weight);
       color: var(--_footer-supporting-text-color);
+    }
+
+    .mdc-data-table__linear-progress {
+      width: 100%;
     }
   }
 }

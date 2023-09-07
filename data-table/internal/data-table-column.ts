@@ -158,7 +158,7 @@ export class DataTableColumn extends LitElement {
                                      @click="${(e: PointerEvent) => e.stopPropagation()}"
                                      aria-hidden="${this.withSortButton ? 'false' : 'true'}"
                                      ?hidden="${!this.withSortButton}">
-                <slot name="sort-icon-on" slot="selectedIcon">
+                <slot name="sort-icon-on" slot="selected">
                     <md-icon>arrow_downward</md-icon>
                 </slot>
                 <slot name="sort-icon-off">

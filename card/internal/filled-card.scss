@@ -1,6 +1,0 @@
-@use "card";
-@use "../../tokens";
-
-$filled-theme: tokens.md-comp-filled-card-values();
-
-@include card.styles($filled-theme, 'filled');
