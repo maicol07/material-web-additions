@@ -50,7 +50,7 @@ import {SignalElement} from '../signals/signal-element.js';
           </section>
 
           <a href="/" id="home-link">
-            Material Web
+            Material Web Additions
             <md-focus-ring for="home-link"></md-focus-ring>
           </a>
 
