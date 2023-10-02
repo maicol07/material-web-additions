@@ -89,7 +89,7 @@ export class DataTable extends BaseElement {
   /**
    * Total number of rows in the data table to show in the pagination label and
    */
-  @property({type: Number, reflect: true, attribute: 'total-rows'}) totalRows: number;
+  @property({type: Number, attribute: 'total-rows'}) totalRows: number = 0;
   /**
    * Label pattern to show after the page size select that indicates the current rows shown in the page.
    * It should contain the following parameters: `:firstRow`, `:lastRow`, `:totalRows`
@@ -109,7 +109,7 @@ export class DataTable extends BaseElement {
   /**
    * Overall height of the table. Available in three different measures.
    */
-  @property({type: String, reflect: true}) density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
+  @property({type: String}) density: '' | 'tight' | 'comfortable' | 'dense' | 'compact' = '';
   /** @internal */
   @queryAssignedElements({slot: 'header-cell', selector: 'md-data-table-column'}) columns!: DataTableColumn[];
   /** @internal */
@@ -259,10 +259,10 @@ export class DataTable extends BaseElement {
       const cells = this.rows.map((row) => row.cells[this.columns.indexOf(column)]);
 
       cells.sort((a: HTMLElement, b: HTMLElement) => {
-        let aValue: string | number = a.textContent;
-        let bValue: string | number = b.textContent;
+        let aValue: string | number = a.textContent as string;
+        let bValue: string | number = b.textContent as string;
 
-        if (column.type === 'numeric') {
+        if (column.type === 'numeric' && (typeof aValue === 'string' || typeof bValue === 'string')) {
           aValue = Number.parseFloat(aValue);
           bValue = Number.parseFloat(bValue);
         }
@@ -283,7 +283,7 @@ export class DataTable extends BaseElement {
       // this.rows = cells.map((cell) => cell.parentElement as DataTableRow);
       for (const cell of cells) {
         const row = cell.parentElement as DataTableRow;
-        row.parentElement.append(row);
+        row.parentElement?.append(row);
       }
 
       this.inProgress = false;

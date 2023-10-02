@@ -229,7 +229,7 @@ export class DataTableColumn extends LitElement {
 
   /** @internal */
   onSortButtonClicked(e: Event) {
-    this.sortedDescending = this.sortButton.selected;
+    this.sortedDescending = this.sortButton?.selected ?? false;
     /**
      * Event emitted when the user has typed in column filter textfield.
      *

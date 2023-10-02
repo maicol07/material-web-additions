@@ -10,7 +10,8 @@ export abstract class Card extends LitElement {
     /** Allows the card to be clickable with a ripple effect. */
     @property({type: Boolean, reflect: true}) clickable = false;
     /** @internal */
-    disabled: boolean;
+    // TODO: Remove this once we have a better way to handle this.
+    private disabled: boolean = false;
     /**
      * @internal
      * @protected
