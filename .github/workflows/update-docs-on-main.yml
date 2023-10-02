@@ -35,7 +35,6 @@ jobs:
         if: steps.ifChange.outputs.changed == 'yes'
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.LIT_ROBOT_ACCESS_TOKEN }}
           commit-message: 'docs: update API docs'
           author: lit-robot <lit-robot@google.com>
           committer: lit-robot <lit-robot@google.com>
