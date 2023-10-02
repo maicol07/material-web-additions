@@ -2,6 +2,12 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.wireit" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/.wireit" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/_dev" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/_prod" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/build" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/lib" />
       <excludePattern pattern="*.css,*.css.ts,.wireit/*" />
     </content>
     <orderEntry type="inheritedJdk" />

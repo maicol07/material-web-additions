@@ -20,8 +20,11 @@
     "noUnusedLocals": true,
     "paths": {
       "@maicol07/material-web-additions/*": [
-        "./*"
-      ]
+        "*"
+      ],
+      "~catalog/*": [
+        "catalog/*"
+      ],
     },
     "sourceMap": true,
     "inlineSources": true,
@@ -34,13 +37,15 @@
       "dom.iterable"
     ],
     "types": [
-      "lit",
-      "mdx"
+      "lit"
     ],
-    "jsx": "react-jsx"
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",
-    "docs"
+    "catalog",
+    "docs",
+    "**/demo",
+    "scripts/"
   ]
 }

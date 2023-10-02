@@ -1,0 +1,160 @@
+/**
+ * @license
+ * Copyright 2023 Google LLC
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* latin */
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/google-sans/regular.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin -mono */
+@font-face {
+  font-family: 'Google Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/google-sans/mono.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  font-family: 'Google Sans', Roboto, system-ui;
+  --md-ref-typeface-plain: 'Google Sans', Roboto, system-ui;
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  /* These values are copied from mio */
+  --catalog-display-xl-font-size: 88px;
+  --catalog-display-m-font-size: 45px;
+  --catalog-title-l-font-size: 22px;
+  --catalog-title-m-font-size: 16px;
+  --catalog-title-s-font-size: 14px;
+  --catalog-body-l-font-size: 16px;
+  --catalog-body-m-font-size: 14px;
+  --catalog-headline-s-font-size: 24px;
+  --catalog-label-s-font-size: 11px;
+  --catalog-shape-xl: 28px;
+  --catalog-shape-l: 16px;
+  --catalog-shape-m: 12px;
+  --catalog-shape-s: 8px;
+  --catalog-shape-xs: 4px;
+  --catalog-spacing-xl: 28px;
+  --catalog-spacing-l: 16px;
+  --catalog-spacing-m: 12px;
+  --catalog-spacing-s: 8px;
+  --catalog-top-app-bar-height: calc(48px + 2 * var(--catalog-spacing-m));
+  scroll-padding-block-start: calc(
+    var(--catalog-top-app-bar-height) + var(--catalog-top-app-bar-padding-block) *
+      2
+  );
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --catalog-display-xl-font-size: 55px;
+    --catalog-title-l-font-size: 16px;
+    --catalog-body-l-font-size: 14px;
+    --catalog-body-m-font-size: 12px;
+    /* Mostly to accommodate content padding on small screens */
+    --catalog-spacing-xl: 16px;
+    --catalog-spacing-l: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  font-size: var(--catalog-body-l-font-size);
+}
+
+a {
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+nav-drawer md-list.nav md-list-item[href][selected] {
+  background-color: var(--md-sys-color-surface-container-highest);
+}
+
+nav-drawer md-list.nav md-list-item::part(focus-ring) {
+  --md-focus-ring-shape: var(--catalog-shape-xl);
+}
+
+@media (forced-colors: active) {
+  nav-drawer md-list.nav md-list-item[href][selected] {
+    border: 4px double CanvasText;
+  }
+
+  nav-drawer md-list.nav md-list-item[href] {
+    border-radius: var(--catalog-shape-xl);
+    border: 1px solid CanvasText;
+  }
+}
+
+nav-drawer md-list.nav {
+  --md-list-container-color: transparent;
+  display: block;
+  margin-inline: var(--catalog-spacing-m);
+  min-width: unset;
+}
+
+nav-drawer md-list.nav md-list-item[href] {
+  margin-block: var(--catalog-spacing-m);
+  display: block;
+  --md-focus-ring-shape: var(--catalog-shape-xl);
+  border-radius: var(--catalog-shape-xl);
+}
+
+nav-drawer md-list.nav md-item [slot="headline"] {
+  /* shadow root slot has overflow:hidden, it's cutting some text off */
+  padding: block 2px;
+}
+
+nav-drawer md-list.nav md-item:first-of-type {
+  padding-block: 0;
+}
+
+nav-drawer md-list.nav md-item {
+  font-size: var(--catalog-headline-s-font-size);
+  padding-block-end: 0;
+}
+
+nav-drawer md-list.nav md-item + md-list-item[href] {
+  margin-block-start: 0;
+}
+
+h1 {
+  font-size: var(--catalog-display-xl-font-size);
+}
+
+.toc ol {
+  list-style-type: none;
+  font-size: var(--catalog-body-m-font-size);
+}
+
+.toc > ol {
+  padding: 0;
+}
+
+.toc > ol ol {
+  list-style-type: circle;
+  padding-inline-start: var(--catalog-spacing-xl);
+}
+
+.toc ol li {
+  margin-block: var(--catalog-spacing-m);
+}

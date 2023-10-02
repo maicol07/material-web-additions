@@ -1,32 +1,32 @@
-name: 'Chromatic Publish'
-on:
-  release:
-    types: [published]
-  workflow_call:
-
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2
-        with:
-          version: latest
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: ${{ !env.ACT && 'pnpm' || '' }}
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build components
-        run: pnpm run build
-      - name: Create custom elements manifest
-        run: pnpm custom-elements-manifest
-      - uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+#name: 'Chromatic Publish'
+#on:
+#  release:
+#    types: [published]
+#  workflow_call:
+#
+#jobs:
+#  publish:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repo
+#        uses: actions/checkout@v3
+#        with:
+#          fetch-depth: 0
+#      - uses: pnpm/action-setup@v2
+#        with:
+#          version: latest
+#      - name: Use Node.js ${{ matrix.node-version }}
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: ${{ matrix.node-version }}
+#          cache: ${{ !env.ACT && 'pnpm' || '' }}
+#      - name: Install dependencies
+#        run: pnpm install
+#      - name: Build components
+#        run: pnpm run build
+#      - name: Create custom elements manifest
+#        run: pnpm custom-elements-manifest
+#      - uses: chromaui/action@v1
+#        with:
+#          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+#          token: ${{ secrets.GITHUB_TOKEN }}
