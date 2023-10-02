@@ -31,6 +31,12 @@ export interface SortButtonClickedEventDetail {
   customSorting: boolean,
 }
 
+/**
+ * @fires checked - Event emitted when the column checkbox has been checked or unchecked. Detail contains the `checked` property.
+ * @fires filter - Event emitted when the user has typed in column filter textfield. Detail contains the `field`, `text`, `column`, `caseSensitive` and `customFiltering` properties.
+ * @fires keydown - Event emitted when the user has typed in column filter textfield. Detail contains the `field`, `key` and `column` properties.
+ * @fires sort - Event emitted when the user has typed in column filter textfield. Detail contains the `column`, `isDescending` and `customSorting` properties.
+ */
 export class DataTableColumn extends LitElement {
   /**
    * Column type. If `checkbox`, the checkbox inside the column will be also created if not supplied via the default slot.
@@ -77,7 +83,7 @@ export class DataTableColumn extends LitElement {
   @property({type: Boolean, attribute: 'custom-filtering'}) customFiltering = false;
 
   /** @internal */
-  @query('md-icon-button') sortButton?: IconButton;
+  @query('md-icon-button') protected sortButton?: IconButton;
   /** @internal */
   @queryAssignedElements({slot: 'checkbox', flatten: true}) protected checkboxSlotElements!: Checkbox[];
 
@@ -100,14 +106,14 @@ export class DataTableColumn extends LitElement {
     });
   }
 
-  override render() {
+  protected override render() {
     return html`
         ${this.renderCheckbox()}
         ${this.renderSlot()}
     `;
   }
 
-  renderCheckbox() {
+  protected renderCheckbox() {
     if (this.type === 'checkbox') {
       return html`
           <slot name="checkbox" @slotchange=${this.onCheckboxSlotChanged}>
@@ -122,7 +128,7 @@ export class DataTableColumn extends LitElement {
     return '';
   }
 
-  renderFilterTextField() {
+  protected renderFilterTextField() {
     if (this.filterable && this.type !== 'checkbox') {
       return html`
           <slot name="filter-textfield" class="mdc-data-table__filter-textfield">
@@ -139,7 +145,7 @@ export class DataTableColumn extends LitElement {
     return nothing;
   }
 
-  renderSlot() {
+  protected renderSlot() {
     return html`
         <div class="mdc-data-table__header-cell-filter-wrapper">
             ${this.sortable ? this.renderSortButton() : html`
@@ -149,7 +155,7 @@ export class DataTableColumn extends LitElement {
     `;
   }
 
-  renderSortButton() {
+  protected renderSortButton() {
     return html`
         <div class="mdc-data-table__header-cell-wrapper">
             <md-icon-button ?selected=${this.sortedDescending}
@@ -172,7 +178,7 @@ export class DataTableColumn extends LitElement {
   }
 
   /** @internal */
-  onCheckboxClicked(e: Event) {
+  protected onCheckboxClicked(e: Event) {
     const checkbox = e.target as Checkbox;
     /**
      * Event emitted when the column checkbox has been checked or unchecked.
@@ -186,13 +192,13 @@ export class DataTableColumn extends LitElement {
     }));
   }
 
-  onCheckboxSlotChanged() {
+  protected onCheckboxSlotChanged() {
     this.checkbox?.removeEventListener('change', this.onCheckboxClicked);
     this.checkbox?.addEventListener('change', this.onCheckboxClicked);
   }
 
   /** @internal */
-  onFilterTextFieldInput(e: InputEvent) {
+  protected onFilterTextFieldInput(e: InputEvent) {
     const textfield = e.target as TextField;
     /**
      * Event emitted when the user has typed in column filter textfield.
@@ -211,7 +217,7 @@ export class DataTableColumn extends LitElement {
   }
 
   /** @internal */
-  onFilterTextFieldKeyDown(e: KeyboardEvent) {
+  protected onFilterTextFieldKeyDown(e: KeyboardEvent) {
     const textfield = e.target as TextField;
     /**
      * Event emitted when the user has typed in column filter textfield.
@@ -228,7 +234,7 @@ export class DataTableColumn extends LitElement {
   }
 
   /** @internal */
-  onSortButtonClicked(e: Event) {
+  protected onSortButtonClicked(e: Event) {
     this.sortedDescending = this.sortButton?.selected ?? false;
     /**
      * Event emitted when the user has typed in column filter textfield.
