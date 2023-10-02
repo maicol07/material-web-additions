@@ -189,6 +189,7 @@ export class DataTable extends BaseElement {
     this.requestUpdate();
     const sortColumn = this.columns.find((column) => column.sortable && column.sorted);
     if (sortColumn) {
+      // @ts-ignore
       sortColumn.onSortButtonClicked(new CustomEvent<{
         selected: boolean
       }>('icon-button-toggle-change', {detail: {selected: !sortColumn.sortedDescending}}));
