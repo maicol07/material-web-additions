@@ -250,7 +250,7 @@ export class DataTable extends BaseElement {
       }
     }));
   };
-  sortColumnCallback = (e: Event) => {
+  protected sortColumnCallback = (e: Event) => {
     const event = e as CustomEvent<SortButtonClickedEventDetail>;
     const {column, isDescending} = event.detail;
 
