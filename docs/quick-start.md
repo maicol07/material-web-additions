@@ -1,6 +1,7 @@
 <!-- catalog-only-start --><!-- ---
 name: Quick Start
 title: Quick Start
+order: 1
 -----><!-- catalog-only-end -->
 
 # Quick start
@@ -80,7 +81,7 @@ Create a bundle from an entrypoint `index.js` file and use it in a `<script>`
 `"src"` attribute.
 
 ```shell
-npx rollup -p @rollup/plugin-node-resolve index.js > bundle.js
+npx rollup -p @rollup/plugin-node-resolve index.js -o bundle.js
 ```
 
 ```html
