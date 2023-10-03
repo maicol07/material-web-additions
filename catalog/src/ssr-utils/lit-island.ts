@@ -6,8 +6,6 @@
 
 import * as Island from '@11ty/is-land';
 
-console.log('lit-island.ts', Island);
-
 customElements.define('lit-island', // @ts-ignore
   class extends Island.component {
   // Removes the feature in which 11ty island removes DOM to render a fallback.
