@@ -67,7 +67,6 @@
             role="menubar"
             class="nav">
           <!-- About section -->
-          <md-item><div slot="headline">About</div></md-item>
           {% for file in collections.about|filtersort('data.order') %}
             <md-list-item
               href="{{ file.url }}"
