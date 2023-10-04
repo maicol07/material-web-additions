@@ -113,13 +113,7 @@
     <inspection_tool class="JSXDomNesting" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="MethodShouldBeFinalInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="MethodVisibilityInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
-    <inspection_tool class="NativeMemberUsageInspection" enabled="true" level="ERROR" enabled_by_default="true">
-      <option name="strictChecking" value="false" />
-    </inspection_tool>
     <inspection_tool class="NullPointerExceptionInspection" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="NullableTypeFormatInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
-      <option name="nullableTypeFormat" value="SHORT" />
-    </inspection_tool>
     <inspection_tool class="ParameterDefaultsNullInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PhpClassConstantAccessedViaChildClassInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PhpStanGlobal" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
