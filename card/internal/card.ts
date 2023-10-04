@@ -2,7 +2,7 @@ import '@material/web/ripple/ripple.js';
 import '@material/web/focus/md-focus-ring.js';
 import '@material/web/elevation/elevation.js';
 
-import {html, LitElement, PropertyValues, TemplateResult} from 'lit';
+import {html, LitElement, TemplateResult} from 'lit';
 import {queryAssignedElements} from 'lit/decorators.js';
 import {ClassInfo, classMap} from 'lit/directives/class-map.js';
 import {property} from 'lit/decorators/property.js';
@@ -10,9 +10,6 @@ import {property} from 'lit/decorators/property.js';
 export abstract class Card extends LitElement {
     /** Allows the card to be clickable with a ripple effect. */
     @property({type: Boolean, reflect: true}) clickable = false;
-    /** @internal */
-    // TODO: Remove this once we have a better way to handle this.
-    private disabled: boolean = false;
     /**
      * @internal
      * @protected
@@ -43,7 +40,7 @@ export abstract class Card extends LitElement {
     protected getPrimaryActionRenderClasses(): ClassInfo {
         return {
             'mdc-card__primary-action': true,
-            'mdc-card__primary-action--disabled': this.disabled
+            'mdc-card__primary-action--disabled': !this.clickable
         };
     }
 
@@ -63,13 +60,6 @@ export abstract class Card extends LitElement {
         return {
             'mdc-card__actions': true,
         };
-    }
-
-    protected override update(_changedProperties: PropertyValues) {
-        if (_changedProperties.has('clickable')) {
-            this.disabled = !this.clickable;
-        }
-        super.update(_changedProperties);
     }
 
     protected renderPrimaryAction() {
@@ -115,7 +105,7 @@ export abstract class Card extends LitElement {
     }
 
     protected renderRipple() {
-        return html`<md-ripple class="${classMap(this.getRippleRenderClasses())}" ?disabled=${this.disabled}></md-ripple>`;
+        return html`<md-ripple class="${classMap(this.getRippleRenderClasses())}" ?disabled=${!this.clickable}></md-ripple>`;
     }
 
     protected wrapButtonSlot(buttonSlotTemplate: TemplateResult | string) {
