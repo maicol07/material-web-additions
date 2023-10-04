@@ -7,6 +7,9 @@ export interface RowCheckedEventDetail {
   selected: boolean;
 }
 
+/**
+ * @fires selected - Event emitted when a row has been selected or unselected. Detail contains the `selected` property.
+ */
 export class DataTableRow extends LitElement {
   /**
    * Whether the row is selected.
@@ -41,20 +44,15 @@ export class DataTableRow extends LitElement {
     return this.checkboxCells?.[0];
   }
 
-  override render() {
+  protected override render() {
     return html`
       <slot @slotchange="${this.requestUpdate}"></slot>`;
   }
 
   /** @internal */
-  onCheckboxClicked = (e: Event) => {
+  protected onCheckboxClicked = (e: Event) => {
     const event = e as CustomEvent<CellCheckedEventDetail>;
     this.selected = event.detail.checked;
-    /**
-     * Event emitted when a row has been selected or unselected.
-     *
-     * Event detail: `RowCheckedEventData`.
-     */
     this.dispatchEvent(new CustomEvent<RowCheckedEventDetail>('selected', {
       detail: {
         selected: event.detail.checked

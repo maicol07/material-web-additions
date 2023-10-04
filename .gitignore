@@ -10,6 +10,24 @@ package-lock.json
 !types/*.d.ts
 .wireit/
 
+!catalog/**/*.css
+catalog/_dev
+catalog/_prod
+catalog/node_modules
+catalog/.wireit
+catalog/lib/
+catalog/build/
+catalog/site/components/*.md
+catalog/site/components/images
+catalog/site/theming/*.md
+catalog/site/theming/images
+catalog/site/about/*.md
+catalog/site/about/images
+catalog/*.tsbuildinfo
+catalog/stories/*/
+!catalog/stories/components/
+!catalog/src/types/**/*.d.ts
+
 # Created by https://www.toptal.com/developers/gitignore/api/phpstorm+iml
 # Edit at https://www.toptal.com/developers/gitignore?templates=phpstorm+iml
 

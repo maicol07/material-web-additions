@@ -11,7 +11,7 @@ export interface LayoutGridInnerAttributes {
 }
 
 export class LayoutGridInner extends LayoutGrid {
-    override getRenderClasses() {
+    protected override getRenderClasses() {
         const classes = super.getRenderClasses();
 
         delete classes['mdc-layout-grid'];
@@ -20,7 +20,7 @@ export class LayoutGridInner extends LayoutGrid {
         return classes;
     }
 
-    override renderSlot() {
+    protected override renderSlot() {
         return html`
             <slot></slot>`;
     }

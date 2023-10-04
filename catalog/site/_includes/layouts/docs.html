@@ -1,0 +1,14 @@
+{% extends 'default.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="/css/md-layout.css" />
+  <link rel="stylesheet" href="/css/syntax-highlight.css" />
+{% endblock %}
+
+{% block toc%}
+{{ content | toc | filterToc | safe }}
+{% endblock %}
+
+{% block content %}
+{{ content | mdMarkdown | safe }}
+{% endblock %}

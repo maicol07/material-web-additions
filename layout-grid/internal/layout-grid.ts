@@ -22,7 +22,7 @@ export class LayoutGrid extends LitElement {
      */
     @property({type: String}) align: 'center' | 'left' | 'right' = 'center';
 
-    getRenderClasses(): Record<string, boolean> {
+    protected getRenderClasses(): Record<string, boolean> {
         return {
             'mdc-layout-grid': true,
             'mdc-layout-grid--fixed-column-width': this.fixedColumnWidth,
@@ -31,7 +31,7 @@ export class LayoutGrid extends LitElement {
         };
     }
 
-    override render() {
+    protected override render() {
         return html`
             <div class="${classMap(this.getRenderClasses() as ClassInfo)}">
                 ${this.renderSlot()}
@@ -39,7 +39,7 @@ export class LayoutGrid extends LitElement {
         `;
     }
 
-    renderSlot() {
+    protected renderSlot() {
         return html`
             <md-layout-grid-inner>
                 <slot></slot>

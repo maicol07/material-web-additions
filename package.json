@@ -25,9 +25,9 @@
     "build:ts": "wireit",
     "build:css-to-ts": "wireit",
     "build:sass": "wireit",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "custom-elements-manifest": "wireit"
+    "build:catalog": "wireit",
+    "build:analyzer": "wireit",
+    "update-docs": "wireit"
   },
   "files": [
     "**/*.js",
@@ -35,10 +35,13 @@
     "**/*.d.ts",
     "**/*.scss",
     "!css-to-ts.js",
+    "!web-test-runner.config.js",
     "!**/test/**",
     "!**/testing/**",
     "!**/*_test.*",
-    "!.wireit/**"
+    "!.wireit/**",
+    "!catalog",
+    "!scripts/"
   ],
   "dependencies": {
     "@material/card": "^14.0.0",
@@ -49,38 +52,12 @@
     "tslib": "^2.6.2"
   },
   "peerDependencies": {
-    "@material/web": "1.0.0-pre.13"
+    "@material/web": "1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.15",
-    "@babel/preset-env": "^7.22.15",
-    "@babel/preset-react": "^7.22.15",
-    "@babel/preset-typescript": "^7.22.15",
-    "@custom-elements-manifest/analyzer": "^0.8.4",
-    "@ljcl/storybook-addon-cssprops": "^3.1.0",
-    "@material/web": "1.0.0-pre.17",
-    "@storybook/addon-a11y": "^7.4.0",
-    "@storybook/addon-actions": "^7.4.0",
-    "@storybook/addon-backgrounds": "^7.4.0",
-    "@storybook/addon-controls": "^7.4.0",
-    "@storybook/addon-docs": "^7.4.0",
-    "@storybook/addon-links": "^7.4.0",
-    "@storybook/addon-measure": "^7.4.0",
-    "@storybook/addon-storysource": "^7.4.0",
-    "@storybook/addon-toolbars": "^7.4.0",
-    "@storybook/addon-viewport": "^7.4.0",
-    "@storybook/addons": "^7.4.0",
-    "@storybook/api": "^7.4.0",
-    "@storybook/blocks": "^7.4.0",
-    "@storybook/components": "^7.4.0",
-    "@storybook/core-events": "^7.4.0",
-    "@storybook/preset-scss": "^1.0.3",
-    "@storybook/preview-api": "^7.4.0",
-    "@storybook/theming": "^7.4.0",
-    "@storybook/web-components": "^7.4.0",
-    "@storybook/web-components-vite": "^7.4.0",
-    "@types/mdx": "^2.0.7",
-    "@types/react": "^18.2.21",
+    "@lit-labs/analyzer": "^0.9.2",
+    "@material/web": "1.0.0",
+    "@types/node": "^20.7.1",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "@web-types/lit": "2.0.0-3",
@@ -88,27 +65,12 @@
     "eslint": "^8.48.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-n": "^16.0.2",
-    "eslint-plugin-storybook": "^0.6.13",
     "eslint-plugin-wc": "^1.5.0",
-    "lit-analyzer": "2.0.0-pre.2",
-    "lit-html": "^2.8.0",
-    "markdown-to-jsx": "^7.3.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-is": "^18.2.0",
-    "remark-gfm": "^3.0.1",
     "sass": "~1.66.1",
-    "storybook": "^7.4.0",
-    "storybook-dark-mode": "^3.0.1",
-    "storybook-docs-toc": "^1.7.0",
-    "styled-components": "6.0.7",
-    "ts-dedent": "^2.2.0",
-    "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "wireit": "^0.13.0"
   },
-  "customElements": "custom-elements.json",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
@@ -121,8 +83,7 @@
   "wireit": {
     "build": {
       "dependencies": [
-        "build:ts",
-        "custom-elements-manifest"
+        "build:ts"
       ]
     },
     "build:ts": {
@@ -130,20 +91,22 @@
       "files": [
         "tsconfig.json",
         "**/*.ts",
-        "!.storybook/",
         "!**/*.d.ts",
         "!**/*.css.ts",
-        "!docs/"
+        "!catalog",
+        "!scripts/",
+        "!node_modules"
       ],
       "output": [
         ".tsbuildinfo",
         "**/*.js",
         "**/*.js.map",
         "**/*.d.ts",
-        "!*.js",
+        "!css-to-ts.js",
+        "!web-test-runner.config.js",
         "!types/",
-        "!.storybook/",
-        "!docs/"
+        "!catalog",
+        "!scripts/"
       ],
       "clean": "if-file-deleted",
       "dependencies": [
@@ -151,40 +114,72 @@
       ]
     },
     "build:css-to-ts": {
-      "command": "find . \\( -path ./.wireit -o -path ./node_modules -o -path ./docs -o -path ./.storybook \\) -prune -o -name '*.css' -print | xargs node css-to-ts.js",
+      "command": "find . \\( -path ./.wireit -o -path ./node_modules -o -path ./catalog \\) -prune -o -name '*.css' -print | xargs node css-to-ts.js",
       "files": [
-        "css-to-ts.js"
+        "css-to-ts.js",
+        "!scripts/",
+        "!node_modules"
       ],
       "output": [
-        "**/*.css.ts"
+        "**/*.css.ts",
+        "!catalog",
+        "!scripts/"
       ],
       "dependencies": [
         "build:sass"
       ]
     },
     "build:sass": {
-      "command": "sass --style=compressed --load-path=node_modules --load-path=node_modules/sass-true/sass $(ls -d */ | grep -v node_modules)",
+      "command": "sass --style=compressed --load-path=node_modules --load-path=node_modules/sass-true/sass $(ls -d */ | grep -vE 'node_modules|catalog')",
       "files": [
         "**/*.scss",
-        "!.storybook/",
-        "!docs/"
+        "!catalog",
+        "!scripts/",
+        "!node_modules"
       ],
       "output": [
         "**/*.css",
         "**/*.css.map",
-        "!.storybook/",
-        "!docs/"
+        "!catalog",
+        "!scripts/"
       ]
     },
-    "custom-elements-manifest": {
-      "command": "cem analyze --litelement --globs \"**/*.ts\"",
+    "build:catalog": {
+      "dependencies": [
+        "./catalog:build:prod"
+      ]
+    },
+    "build:analyzer": {
+      "command": "tsc -b scripts/tsconfig.json --pretty",
       "files": [
-        "**/*.ts",
+        "scripts/tsconfig.json",
+        "scripts/analyzer/**/*.ts",
         "!**/*.d.ts",
         "!**/*.css.ts"
       ],
       "output": [
-        "custom-elements.json"
+        "scripts/.tsbuildinfo",
+        "scripts/analyzer/**/*.js",
+        "scripts/analyzer/**/*.js.map",
+        "scripts/analyzer/**/*.d.ts"
+      ],
+      "clean": "if-file-deleted"
+    },
+    "update-docs": {
+      "command": "node scripts/analyzer/update-docs.js",
+      "files": [
+        "docs/components/*.md",
+        "**/*.ts",
+        "!**/*.d.ts",
+        "!**/*.css.ts",
+        "!catalog",
+        "!scripts/",
+        "scripts/analyzer/update-docs.js",
+        "!node_modules"
+      ],
+      "output": [],
+      "dependencies": [
+        "build:analyzer"
       ]
     }
   }

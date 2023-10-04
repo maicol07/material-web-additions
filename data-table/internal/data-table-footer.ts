@@ -8,7 +8,7 @@ export class DataTableFooter extends LitElement {
     this.slot = 'footer';
   }
 
-  override render() {
+  protected override render() {
     return html`
       <slot></slot>
     `;

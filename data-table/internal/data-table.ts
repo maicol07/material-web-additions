@@ -59,6 +59,17 @@ export interface PaginateDetail {
   action: PaginationAction
 }
 
+/**
+ * @fires row-selection-changed - Event emitted when row checkbox is checked or unchecked. Detail contains the `row` element, `rowIndex` and `selected`.
+ * @fires selected-all - Event emitted when header row checkbox is checked.
+ * @fires unselected-all - Event emitted when header row checkbox is unchecked.
+ * @fires row-click - Event emitted when a row has been checked or unchecked. Detail contains the `row` element, `rowIndex` and `selected`.
+ * @fires filtered - Event emitted when the data table has been filtered. Detail contains the `column` element, `text`, `caseSensitive` and `columnIndex`.
+ * @fires sorted - Event emitted when the data table has been sorted. Detail contains the `column` element and `isDescending`.
+ * @fires page-size-change - Event emitted when the page size has been changed. Detail contains the `pageSize`.
+ * @fires page-changed - Event emitted when the page has been changed. Detail contains the `action`.
+ * @fires paginate - Event emitted when the data table has been paginated. Detail contains the `firstRow`, `lastRow`, `pageSize` and `action`.
+ */
 export class DataTable extends BaseElement {
   /**
    * Enable/disable pagination.
@@ -89,7 +100,7 @@ export class DataTable extends BaseElement {
   /**
    * Total number of rows in the data table to show in the pagination label and
    */
-  @property({type: Number, reflect: true, attribute: 'total-rows'}) totalRows: number;
+  @property({type: Number, attribute: 'total-rows'}) totalRows: number = 0;
   /**
    * Label pattern to show after the page size select that indicates the current rows shown in the page.
    * It should contain the following parameters: `:firstRow`, `:lastRow`, `:totalRows`
@@ -109,11 +120,11 @@ export class DataTable extends BaseElement {
   /**
    * Overall height of the table. Available in three different measures.
    */
-  @property({type: String, reflect: true}) density?: '' | 'tight' | 'comfortable' | 'dense' | 'compact';
+  @property({type: String}) density: '' | 'tight' | 'comfortable' | 'dense' | 'compact' = '';
   /** @internal */
-  @queryAssignedElements({slot: 'header-cell', selector: 'md-data-table-column'}) columns!: DataTableColumn[];
+  @queryAssignedElements({slot: 'header-cell', selector: 'md-data-table-column'}) protected columns!: DataTableColumn[];
   /** @internal */
-  @queryAssignedElements({slot: 'row', selector: 'md-data-table-row'}) rows!: DataTableRow[];
+  @queryAssignedElements({slot: 'row', selector: 'md-data-table-row'}) protected rows!: DataTableRow[];
   /** @internal */
   @query('.mdc-data-table') protected tableElement!: HTMLTableElement;
   /** @internal */
@@ -145,7 +156,7 @@ export class DataTable extends BaseElement {
     return this.headerCheckboxRow?.checkbox;
   }
 
-  override render() {
+  protected override render() {
     return html`
         <div class="mdc-data-table">
             <div class="mdc-data-table__table-container">
@@ -174,10 +185,11 @@ export class DataTable extends BaseElement {
     `;
   }
 
-  onHeaderCellSlotChange() {
+  protected onHeaderCellSlotChange() {
     this.requestUpdate();
     const sortColumn = this.columns.find((column) => column.sortable && column.sorted);
     if (sortColumn) {
+      // @ts-ignore
       sortColumn.onSortButtonClicked(new CustomEvent<{
         selected: boolean
       }>('icon-button-toggle-change', {detail: {selected: !sortColumn.sortedDescending}}));
@@ -185,13 +197,13 @@ export class DataTable extends BaseElement {
   }
 
   /** @internal */
-  rowCallback = (e: Event) => this.mdcFoundation.handleRowCheckboxChange(e);
+  protected rowCallback = (e: Event) => this.mdcFoundation.handleRowCheckboxChange(e);
 
   /** @internal */
-  headerRowCallback = () => this.mdcFoundation.handleHeaderRowCheckboxChange();
+  protected headerRowCallback = () => this.mdcFoundation.handleHeaderRowCheckboxChange();
 
   /** @internal */
-  filterColumnCallback = (e: Event) => {
+  protected filterColumnCallback = (e: Event) => {
     const event = e as CustomEvent<FilterTextFieldInputEventDetail>;
 
     // Don't filter if the column is using custom filtering
@@ -229,11 +241,6 @@ export class DataTable extends BaseElement {
 
     this.showRows(rowsToShow);
 
-    /**
-     * Event emitted when the data table has been filtered.
-     *
-     * Event detail: `FilteredDetail`;
-     */
     this.dispatchEvent(new CustomEvent<FilteredDetail>('filtered', {
       detail: {
         column: event.detail.column,
@@ -243,7 +250,7 @@ export class DataTable extends BaseElement {
       }
     }));
   };
-  sortColumnCallback = (e: Event) => {
+  protected sortColumnCallback = (e: Event) => {
     const event = e as CustomEvent<SortButtonClickedEventDetail>;
     const {column, isDescending} = event.detail;
 
@@ -259,10 +266,10 @@ export class DataTable extends BaseElement {
       const cells = this.rows.map((row) => row.cells[this.columns.indexOf(column)]);
 
       cells.sort((a: HTMLElement, b: HTMLElement) => {
-        let aValue: string | number = a.textContent;
-        let bValue: string | number = b.textContent;
+        let aValue: string | number = a.textContent as string;
+        let bValue: string | number = b.textContent as string;
 
-        if (column.type === 'numeric') {
+        if (column.type === 'numeric' && (typeof aValue === 'string' || typeof bValue === 'string')) {
           aValue = Number.parseFloat(aValue);
           bValue = Number.parseFloat(bValue);
         }
@@ -283,7 +290,7 @@ export class DataTable extends BaseElement {
       // this.rows = cells.map((cell) => cell.parentElement as DataTableRow);
       for (const cell of cells) {
         const row = cell.parentElement as DataTableRow;
-        row.parentElement.append(row);
+        row.parentElement?.append(row);
       }
 
       this.inProgress = false;
@@ -291,11 +298,6 @@ export class DataTable extends BaseElement {
     }
     column.withSortButton = true;
 
-    /**
-     * Event emitted when the data table has been filtered.
-     *
-     * Event detail: `FilteredDetail`;
-     */
     this.dispatchEvent(new CustomEvent<SortedDetail>('sorted', {
       detail: {
         column: event.detail.column,
@@ -404,7 +406,7 @@ export class DataTable extends BaseElement {
     this.paginate(action);
   }
 
-  protected paginate(action: PaginationAction = 'current') {
+  paginate(action: PaginationAction = 'current') {
     this.pageSizesArray = JSON.parse(this.pageSizes);
     if (!this.pageSizesArray.includes(this.currentPageSize)) {
       this.currentPageSize = this.pageSizesArray[0];
@@ -514,11 +516,6 @@ export class DataTable extends BaseElement {
       isRowsSelectable: () => this.headerCheckbox !== undefined ||
         this.rows.filter((row) => row.checkboxCell !== undefined).length > 0,
       notifyRowSelectionChanged: (data: MDCDataTableRowSelectionChangedEventDetail) => {
-        /**
-         * Event emitted when row checkbox is checked or unchecked.
-         *
-         * Event detail: `RowSelectionChangedDetail`.
-         */
         this.dispatchEvent(new CustomEvent<RowSelectionChangedDetail>(
           'row-selection-changed',
           {
@@ -531,23 +528,12 @@ export class DataTable extends BaseElement {
         ));
       },
       notifySelectedAll: () => {
-        /**
-         * Event emitted when header row checkbox is checked.
-         */
         this.dispatchEvent(new CustomEvent('selected-all'));
       },
       notifyUnselectedAll: () => {
-        /**
-         * Event emitted when header row checkbox is unchecked.
-         */
         this.dispatchEvent(new CustomEvent('unselected-all'));
       },
       notifyRowClick: (detail: RowClickEventData) => {
-        /**
-         * Event emitted when a row has been checked or unchecked.
-         *
-         * Event detail: `RowClickEventData`.
-         */
         this.dispatchEvent(new CustomEvent('row-click', {detail}));
       },
       registerHeaderRowCheckbox: () => {
@@ -605,12 +591,7 @@ export class DataTable extends BaseElement {
         this.columns[columnIndex].toggleAttribute(attributesMapping[className], false);
       },
       notifySortAction: (data: SortActionEventDetail) => {
-        /**
-         * Event emitted when a column has been sorted.
-         *
-         * Event detail: `SortActionEventDetail`.
-         */
-        this.dispatchEvent(new CustomEvent('sorted', {detail: data}));
+        this.dispatchEvent(new CustomEvent<SortActionEventDetail>('sorted', {detail: data}));
       },
       getTableContainerHeight: () => this.tableContainerElement.getBoundingClientRect().height,
       getTableHeaderHeight: () => this.headerRowElement.getBoundingClientRect().height,
@@ -640,14 +621,14 @@ export class DataTable extends BaseElement {
     return template;
   }
 
-  protected hideRows(rows: DataTableRow[] = this.rows) {
+  hideRows(rows: DataTableRow[] = this.rows) {
     for (const row of rows) {
       row.hidden = true;
       row.classList.remove('without-bottom-border');
     }
   }
 
-  protected showRows(rows: DataTableRow[] = this.rows) {
+  showRows(rows: DataTableRow[] = this.rows) {
     for (const row of rows) {
       row.hidden = false;
     }

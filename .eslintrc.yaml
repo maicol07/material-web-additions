@@ -49,6 +49,7 @@ rules:
 
   prefer-const: error
   comma-dangle: off
+  'n/no-missing-import': warn
 overrides:
   - files: [ "**/*.ts" ]
     rules:

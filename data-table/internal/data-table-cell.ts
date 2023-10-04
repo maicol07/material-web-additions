@@ -8,6 +8,9 @@ export interface CellCheckedEventDetail {
   checked: boolean
 }
 
+/**
+ * @fires checked - Event emitted when the cell checkbox has been checked or unchecked. Detail contains the `checked` property.
+ */
 export class DataTableCell extends LitElement {
   /**
    * Cell type. If `checkbox`, the checkbox inside the cell will also be created if not supplied via default slot.
@@ -29,13 +32,13 @@ export class DataTableCell extends LitElement {
     return this.checkboxSlotElements?.[0];
   }
 
-  override render() {
+  protected override render() {
     return html`
       <slot @slotchange=${this.onSlotChanged}>${this.renderCheckbox()}</slot>
     `;
   }
 
-  renderCheckbox() {
+  protected renderCheckbox() {
     if (this.type === 'checkbox') {
       return html`<md-checkbox class="mdc-data-table__row-checkbox" touch-target="wrapper" @change=${this.onCheckboxClicked}></md-checkbox>`;
     }
@@ -43,19 +46,14 @@ export class DataTableCell extends LitElement {
     return '';
   }
 
-  onSlotChanged() {
+  protected onSlotChanged() {
     this.requestUpdate();
     this.checkbox?.removeEventListener('change', this.onCheckboxClicked);
     this.checkbox?.addEventListener('change', this.onCheckboxClicked);
   }
 
-  onCheckboxClicked = (e: Event) => {
+  protected onCheckboxClicked = (e: Event) => {
     const checkbox = e.target as MdCheckbox;
-    /**
-     * Event emitted when the cell checkbox has been checked or unchecked.
-     *
-     * Event detail: `CellCheckedEventDetail`.
-     */
     this.dispatchEvent(new CustomEvent<CellCheckedEventDetail>('checked', {
       detail: {
         checked: checkbox.checked

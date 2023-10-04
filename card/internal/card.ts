@@ -10,7 +10,8 @@ export abstract class Card extends LitElement {
     /** Allows the card to be clickable with a ripple effect. */
     @property({type: Boolean, reflect: true}) clickable = false;
     /** @internal */
-    disabled: boolean;
+    // TODO: Remove this once we have a better way to handle this.
+    private disabled: boolean = false;
     /**
      * @internal
      * @protected
@@ -22,7 +23,7 @@ export abstract class Card extends LitElement {
      */
     @queryAssignedElements({slot: 'icon'}) protected icons!: HTMLElement[];
 
-    override render() {
+    protected override render() {
         return html`
             <div class="${classMap(this.getRenderClasses())}">
                 ${this.renderPrimaryAction()}
@@ -31,21 +32,21 @@ export abstract class Card extends LitElement {
             </div>`;
     }
 
-    getRenderClasses(): ClassInfo {
+    protected getRenderClasses(): ClassInfo {
         return {
             'mdc-card': true,
             'card': true,
         };
     }
 
-    getPrimaryActionRenderClasses(): ClassInfo {
+    protected getPrimaryActionRenderClasses(): ClassInfo {
         return {
             'mdc-card__primary-action': true,
             'mdc-card__primary-action--disabled': this.disabled
         };
     }
 
-    stopActionPropagation(action: HTMLElement) {
+    protected stopActionPropagation(action: HTMLElement) {
         const events = ['click', 'pointerdown', 'pointerup', 'pointercancel', 'pointerleave', 'pointerenter', 'contextmenu'];
         for (const event of events) {
             action.addEventListener(event, (e) => {
@@ -57,7 +58,7 @@ export abstract class Card extends LitElement {
         action.addEventListener('blur', () => this.focus());
     }
 
-    getRenderActionsClasses() {
+    protected getRenderActionsClasses() {
         return {
             'mdc-card__actions': true,
         };
