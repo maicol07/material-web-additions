@@ -308,7 +308,7 @@ export class DataTable extends BaseElement {
 
   protected renderPagination() {
     if (this.paginated) {
-      const totalRows = this.totalRows ?? this.rows.length;
+      const totalRows = this.totalRows || this.rows.length;
       const currentFirstRow = this.currentFirstRow < 1 ? 1 : this.currentFirstRow;
       const currentLastRow = this.currentLastRow > totalRows ? totalRows : this.currentLastRow;
       return html`
@@ -319,13 +319,11 @@ export class DataTable extends BaseElement {
                           ${this.pageSizesLabel}
                       </div>
 
-                      <md-outlined-select
-                              type="number"
-                              class="mdc-data-table__pagination-rows-per-page-select"
-                              value="${this.currentPageSize}"
-                              @input=${this.onPageSizeSelected}>
+                      <md-outlined-select type="number" class="mdc-data-table__pagination-rows-per-page-select" @input=${this.onPageSizeSelected}>
                           ${this.pageSizesArray.map((size) => html`
-                              <md-select-option value="${size}" headline="${size}">${size}</md-select-option>
+                              <md-select-option value="${size}" ?selected="${this.currentPageSize === size}">
+                                  <span slot="headline">${size}</span>
+                              </md-select-option>
                           `)}
                       </md-outlined-select>
                   </div>
@@ -380,7 +378,6 @@ export class DataTable extends BaseElement {
   }
 
   protected onPageSizeSelected(e: InputEvent) {
-    // const select = e.target as Autocomplete;
     this.currentPageSize = Number.parseInt((e.target as Select).value);
     this.dispatchEvent(new CustomEvent<PageSizeChangeDetail>('page-size-change', {
       detail: {
@@ -506,7 +503,7 @@ export class DataTable extends BaseElement {
           this.rows[rowIndex].selected = true;
         }
       },
-      getRowCount: () => this.totalRows ?? this.rows.length,
+      getRowCount: () => this.totalRows || this.rows.length,
       getRowElements: () => this.rows,
       getRowIdAtIndex: (rowIndex: number) => this.rows?.[rowIndex].id ?? null,
       getRowIndexByChildElement: (el: Element) => this.rows.findIndex((row) => row.contains(el)),
