@@ -24,16 +24,15 @@ $feat-structure: feature-targeting.create-target($query, structure);
   flex: 1;
   z-index: 0;
 
-  .mdc-card__ripple {
-    z-index: 0;
-    --md-ripple-state-layer-shape: var(--_container-shape);
-  }
-
   .mdc-card__primary-action {
     flex: 1;
 
     &.mdc-card__primary-action--disabled {
       cursor: initial;
+    }
+
+    &:not(:has(+ .mdc-card__actions)) .mdc-card__ripple {
+      border-radius: var(--_container-shape);
     }
   }
 
@@ -44,10 +43,8 @@ $feat-structure: feature-targeting.create-target($query, structure);
     //@include theme.property(background-image, custom-properties.create(--mdc-card-media-background-image, none));
   }
 
-  md-elevation {
-    inset: 0;
-    position: absolute;
-    z-index: -1;
+  md-focus-ring {
+    border-radius: var(--_container-shape);
   }
 }
 
