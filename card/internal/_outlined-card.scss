@@ -1,10 +1,10 @@
 @use "../../tokens";
 
 @mixin styles() {
-  $tokens: tokens.md-comp-filled-card-values();
+  $tokens: tokens.md-comp-outlined-card-values();
   :host {
     @each $token, $value in $tokens {
-      --_#{$token}: var(--md-filled-card-#{$token}, #{$value});
+      --_#{$token}: var(--md-outlined-card-#{$token}, #{$value});
     }
   }
 }
