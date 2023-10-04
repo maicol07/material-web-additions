@@ -20,6 +20,16 @@
 
 
 <a name="1.4.1"></a>
+## [1.4.3](https://github.com/maicol07/material-web-additions/compare/1.4.2...v1.4.3) (2023-10-04)
+
+
+### Bug Fixes
+
+* Elevation may not be shown everytime ([7d36c55](https://github.com/maicol07/material-web-additions/commit/7d36c551aa19b86aeb3afeb8099dd08e2cd43130))
+* Fix pagination not showing correct values ([2185a76](https://github.com/maicol07/material-web-additions/commit/2185a763f164cfa2adb700b2f7f8e5bc39262773))
+* Fixed typo in card component example ([1899a2d](https://github.com/maicol07/material-web-additions/commit/1899a2dc50e04def884fda896b99d8c773bf1281))
+* Outlined showing filled styles ([a7ecf82](https://github.com/maicol07/material-web-additions/commit/a7ecf82e8f7650865c06149f97fc0bc83e55bf66))
+
 ## [1.4.1](https://github.com/maicol07/material-web-additions/compare/1.4.0...1.4.1)
 
 > Released on August 17, 2023
