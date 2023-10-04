@@ -1,5 +1,6 @@
 import '@material/web/ripple/ripple.js';
 import '@material/web/focus/md-focus-ring.js';
+import '@material/web/elevation/elevation.js';
 
 import {html, LitElement, PropertyValues, TemplateResult} from 'lit';
 import {queryAssignedElements} from 'lit/decorators.js';
