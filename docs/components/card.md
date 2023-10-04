@@ -433,7 +433,7 @@ A card can contain buttons.
 <!-- catalog-only-end -->
 
 ```html
-<md-elevated-card class="demo-card" clickable">
+<md-elevated-card class="demo-card" clickable>
     <div class="demo-card__header">
         <div class="demo-card__header-text">
             <div class="demo-card__title">Title</div>
