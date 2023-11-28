@@ -20,6 +20,14 @@
 
 
 <a name="1.4.1"></a>
+## [1.4.4](https://github.com/maicol07/material-web-additions/compare/v1.4.3...v1.4.4) (2023-11-28)
+
+
+### Bug Fixes
+
+* Set width for checkbox type in data-table styles ([5169aed](https://github.com/maicol07/material-web-additions/commit/5169aed18e4f3f9356b259151f9ad404f78f2ec1)), closes [#12](https://github.com/maicol07/material-web-additions/issues/12)
+* upgrade playground-elements from 0.17.1 to 0.18.1 ([e025c32](https://github.com/maicol07/material-web-additions/commit/e025c32bb758171049314733bcce75194abd1267))
+
 ## [1.4.3](https://github.com/maicol07/material-web-additions/compare/1.4.2...v1.4.3) (2023-10-04)
 
 
