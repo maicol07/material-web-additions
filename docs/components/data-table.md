@@ -259,7 +259,7 @@ Data table with row selection. A checkbox cell must be added to all the rows and
       style="justify-content:center;gap: 8px;padding: 16px;"
       title="Outlined and filled cards."
       aria-label="A clickable elevated card with the title 'Our Changing Planet', the subtitle 'by Kurt Wagner', a description and a placeholder image">
-    <md-data-table aria-label="Dessert calories" density="" page-sizes="[10, 25, 100]" page-sizes-label="Rows per page:" first-row-of-page="" current-page-size="" last-row-of-page="" pagination-total-label=":firstRow-:lastRow of :totalRows">
+    <md-data-table aria-label="Dessert calories" density="" page-sizes="[10, 25, 100]" page-sizes-label="Rows per page:" first-row-of-page="" current-page-size="" last-row-of-page="" pagination-total-label=":firstRow-:lastRow of :totalRows" style="--mdc-data-table-width: 875px">
       <md-data-table-column type="checkbox"></md-data-table-column>
       <md-data-table-column>Signal name</md-data-table-column>
       <md-data-table-column>Status</md-data-table-column>
