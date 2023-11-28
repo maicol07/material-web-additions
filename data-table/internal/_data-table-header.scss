@@ -44,6 +44,7 @@
   :host([type="checkbox"]) {
     @extend .mdc-data-table__header-cell--checkbox;
     padding: 0 6px;
+    width: 50px;
   }
 
   :host([sortable]) {
