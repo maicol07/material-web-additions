@@ -13,11 +13,11 @@ import '@material/web/select/select-option.js';
 import '@material/web/textfield/filled-text-field.js';
 import '@material/web/ripple/ripple.js';
 
-import {css, html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
-import {StyleInfo, styleMap} from 'lit/directives/style-map.js';
+import { css, html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+import { StyleInfo, styleMap } from 'lit/directives/style-map.js';
 
-import {Knob, KnobUi} from '../knobs.js';
+import { Knob, KnobUi } from '../knobs.js';
 
 /**
  * A boolean Knob UI.
@@ -52,7 +52,7 @@ export function boolInput(): KnobUi<boolean> {
  */
 @customElement('knob-color-selector')
 export class KnobColorSelector extends LitElement {
-  static override styles = css`
+  static styles = css`
     :host {
       display: inline-block;
       position: relative;
@@ -106,7 +106,7 @@ export class KnobColorSelector extends LitElement {
 
   private internalValue = '';
 
-  @property({type: Boolean}) hasAlpha = false;
+  @property({ type: Boolean }) hasAlpha = false;
 
   set value(val: string) {
     const oldVal = this.internalValue;
@@ -114,12 +114,12 @@ export class KnobColorSelector extends LitElement {
     this.requestUpdate('value', oldVal);
   }
 
-  @property({type: String, reflect: true})
+  @property({ type: String, reflect: true })
   get value() {
     return this.internalValue;
   }
 
-  override render() {
+  render() {
     return html`<span id="wrapper">
       <span>
         ${this.hasAlpha ? this.renderTextInput() : this.renderColorInput()}
@@ -174,14 +174,14 @@ export class KnobColorSelector extends LitElement {
     this.dispatchEvent(newEvt);
   }
 
-  override click() {
+  click() {
     const input = this.renderRoot!.querySelector(
                       'input,md-filled-text-field') as HTMLElement;
     input.click();
     input.focus();
   }
 
-  override focus() {
+  focus() {
     const input = this.renderRoot!.querySelector(
                       'input,md-filled-text-field') as HTMLElement;
     input.focus();
@@ -242,7 +242,7 @@ const sharedTextFieldStyles: StyleInfo = {
   '--md-filled-field-trailing-space': '8px',
   '--md-filled-field-top-space': '4px',
   '--md-filled-field-bottom-space': '4px',
-  'width': '150px',
+  width: '150px',
   'min-width': '150px',
 };
 
@@ -332,7 +332,7 @@ export function button(): KnobUi<number> {
         const count = knob.latestValue ?? 0;
         onChange(count + 1);
       };
-      const styles = styleMap({display: 'inline-block'});
+      const styles = styleMap({ display: 'inline-block' });
       return html`
         <md-outlined-button outlined @click=${onClick} style=${styles}>
           ${knob.name}
@@ -343,7 +343,10 @@ export function button(): KnobUi<number> {
 }
 
 interface RadioSelectorConfig<T extends string> {
-  readonly options: ReadonlyArray<{readonly value: T; readonly label: string;}>;
+  readonly options: ReadonlyArray<{
+    readonly value: T;
+    readonly label: string;
+  }>;
   readonly name: string;
 }
 
@@ -375,7 +378,10 @@ export function radioSelector<T extends string>({
 }
 
 interface SelectDropdownConfig<T extends string> {
-  readonly options: ReadonlyArray<{readonly value: T; readonly label: string;}>;
+  readonly options: ReadonlyArray<{
+    readonly value: T;
+    readonly label: string;
+  }>;
 }
 
 /** A select dropdown Knob UI. */
@@ -391,15 +397,18 @@ export function selectDropdown<T extends string>({
         return html`<md-select-option
           ?selected="${knob.latestValue === option.value}"
           .value="${option.value}"
-          .headline=${option.label}
-        ></md-select-option>`;
+        >
+          <div slot="headline">${option.label}
+        </div>
+        </md-select-option>`;
       });
       return html`
         <label>
           <md-filled-select
               @change="${valueChanged}"
               menu-positioning="fixed"
-              style=${styleMap(sharedTextFieldStyles)}>
+              style=${styleMap(sharedTextFieldStyles)}
+          >
             ${listItems}
           </md-filled-select>
           ${knob.name}
