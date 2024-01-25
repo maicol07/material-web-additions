@@ -8,6 +8,9 @@ declare global {
   }
 }
 
+/**
+ * @inheritDoc
+ */
 @customElement('md-data-table-cell')
 export class MdDataTableCell extends DataTableCell {
   static override styles = [cellStyles];
