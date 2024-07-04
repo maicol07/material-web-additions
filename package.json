@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@8.11.0",
+  "packageManager": "pnpm@9.4.0",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -55,6 +55,7 @@
     "@material/web": "^1.5.1"
   },
   "devDependencies": {
+    "@lit-labs/gen-manifest": "^0.3.3",
     "@lit-labs/analyzer": "^0.12.1",
     "@material/web": "^1.5.1",
     "@types/node": "^20.14.9",
@@ -62,6 +63,8 @@
     "@typescript-eslint/parser": "^7.15.0",
     "@web-types/lit": "2.0.0-3",
     "@webcomponents/webcomponentsjs": "^2.8.0",
+    "custom-element-jet-brains-integration": "^1.5.0",
+    "custom-elements-manifest-inheritance": "^1.1.1",
     "eslint": "^9.6.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-n": "^17.9.0",
@@ -181,5 +184,6 @@
         "build:analyzer"
       ]
     }
-  }
+  },
+  "web-types": "./web-types.json"
 }

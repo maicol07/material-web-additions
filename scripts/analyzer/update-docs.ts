@@ -11,6 +11,9 @@ import * as path from 'path';
 import {analyzeElementApi, MdMethodParameterInfo, MdModuleInfo, MdPropertyInfo,} from './analyze-element.js';
 import {docsToElementMapping} from './element-docs-map.js';
 import {MarkdownTable} from './markdown-tree-builder.js';
+import {generateJetBrainsWebTypes} from 'custom-element-jet-brains-integration';
+import {generateManifest} from '@lit-labs/gen-manifest';
+import {updateCemInheritance} from 'custom-elements-manifest-inheritance';
 
 interface MarkdownTableSection {
   name: string;
@@ -49,6 +52,14 @@ async function updateApiDocs() {
 
   // Wait for all the files to be written
   await Promise.all(filesWritten);
+
+  // Generate CEM manifest
+  const file = await generateManifest(analyzer.getPackage());
+  const cem = JSON.parse(file['custom-elements.json'] as string);
+  await fs.writeFile('custom-elements.json', JSON.stringify(cem, null, 2));
+  updateCemInheritance(cem);
+
+  generateJetBrainsWebTypes(cem, {packageJson: true});
 }
 
 /**
