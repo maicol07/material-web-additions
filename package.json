@@ -49,26 +49,26 @@
     "@material/layout-grid": "^14.0.0",
     "@material/mwc-base": "^0.27.0",
     "lit": "^2.8.0",
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.3"
   },
   "peerDependencies": {
-    "@material/web": "1.0.0"
+    "@material/web": "^1.5.1"
   },
   "devDependencies": {
-    "@lit-labs/analyzer": "^0.11.0",
-    "@material/web": "1.0.1",
-    "@types/node": "^20.10.0",
-    "@typescript-eslint/eslint-plugin": "^6.13.1",
-    "@typescript-eslint/parser": "^6.13.1",
+    "@lit-labs/analyzer": "^0.12.1",
+    "@material/web": "^1.5.1",
+    "@types/node": "^20.14.9",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
     "@web-types/lit": "2.0.0-3",
     "@webcomponents/webcomponentsjs": "^2.8.0",
-    "eslint": "^8.54.0",
+    "eslint": "^9.6.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-n": "^16.3.1",
-    "eslint-plugin-wc": "^2.0.4",
-    "sass": "~1.69.5",
-    "typescript": "^5.3.2",
-    "wireit": "^0.14.1"
+    "eslint-plugin-n": "^17.9.0",
+    "eslint-plugin-wc": "^2.1.0",
+    "sass": "~1.77.6",
+    "typescript": "^5.5.3",
+    "wireit": "^0.14.4"
   },
   "pnpm": {
     "peerDependencyRules": {

@@ -5,6 +5,7 @@
  */
 
 import * as Island from '@11ty/is-land';
+import '@11ty/is-land/is-land-autoinit.js'
 
 customElements.define('lit-island', // @ts-ignore
   class extends Island.component {
