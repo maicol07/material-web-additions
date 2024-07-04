@@ -13,14 +13,12 @@ jobs:
         node-version: [ '20' ]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: latest
+      - uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: ${{ !env.ACT && 'pnpm' || '' }}
@@ -31,7 +29,7 @@ jobs:
       - name: Run npm build
         run: pnpm build:catalog
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v2.0.0
+        uses: actions/upload-pages-artifact@v3
         with:
          path: catalog/_prod
 
