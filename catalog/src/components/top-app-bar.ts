@@ -67,7 +67,7 @@ import {SignalElement} from '../signals/signal-element.js';
               <md-icon-button
                 title="GitHub repository"
                 aria-label="GitHub repository"
-                href="https://github.com/material-components/material-web"
+                href="https://github.com/maicol07/material-web-additions"
                 target="_blank">
                 <md-icon>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96">
