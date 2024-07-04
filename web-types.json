@@ -1,0 +1,453 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
+  "name": "@maicol07/material-web-additions",
+  "version": "1.4.4",
+  "description-markup": "markdown",
+  "contributions": {
+    "html": {
+      "elements": [
+        {
+          "name": "md-elevated-card",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "clickable",
+                "description": "Allows the card to be clickable with a ripple effect.",
+                "type": "boolean"
+              }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "md-filled-card",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "clickable",
+                "description": "Allows the card to be clickable with a ripple effect.",
+                "type": "boolean"
+              }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "md-outlined-card",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "clickable",
+                "description": "Allows the card to be clickable with a ripple effect.",
+                "type": "boolean"
+              }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "md-data-table-cell",
+          "description": "\n---\n\n\n### **Events:**\n - **checked** - Event emitted when the cell checkbox has been checked or unchecked. Detail contains the `checked` property.",
+          "doc-url": "",
+          "attributes": [],
+          "events": [
+            {
+              "name": "checked",
+              "type": "Event",
+              "description": "Event emitted when the cell checkbox has been checked or unchecked. Detail contains the `checked` property."
+            }
+          ],
+          "js": {
+            "properties": [
+              {
+                "name": "type",
+                "description": "Cell type. If `checkbox`, the checkbox inside the cell will also be created if not supplied via default slot.\nIf `numeric`, the cell text will be aligned to the right.",
+                "type": "string"
+              },
+              { "name": "checkbox", "type": "MdCheckbox" }
+            ],
+            "events": [
+              {
+                "name": "checked",
+                "type": "Event",
+                "description": "Event emitted when the cell checkbox has been checked or unchecked. Detail contains the `checked` property."
+              }
+            ]
+          }
+        },
+        {
+          "name": "md-data-table-column",
+          "description": "\n---\n\n\n### **Events:**\n - **checked** - Event emitted when the column checkbox has been checked or unchecked. Detail contains the `checked` property.\n- **filter** - Event emitted when the user has typed in column filter textfield. Detail contains the `field`, `text`, `column`, `caseSensitive` and `customFiltering` properties.\n- **keydown** - Event emitted when the user has typed in column filter textfield. Detail contains the `field`, `key` and `column` properties.\n- **sort** - Event emitted when the user has typed in column filter textfield. Detail contains the `column`, `isDescending` and `customSorting` properties.",
+          "doc-url": "",
+          "attributes": [],
+          "events": [
+            {
+              "name": "checked",
+              "type": "Event",
+              "description": "Event emitted when the column checkbox has been checked or unchecked. Detail contains the `checked` property."
+            },
+            {
+              "name": "filter",
+              "type": "Event",
+              "description": "Event emitted when the user has typed in column filter textfield. Detail contains the `field`, `text`, `column`, `caseSensitive` and `customFiltering` properties."
+            },
+            {
+              "name": "keydown",
+              "type": "Event",
+              "description": "Event emitted when the user has typed in column filter textfield. Detail contains the `field`, `key` and `column` properties."
+            },
+            {
+              "name": "sort",
+              "type": "Event",
+              "description": "Event emitted when the user has typed in column filter textfield. Detail contains the `column`, `isDescending` and `customSorting` properties."
+            }
+          ],
+          "js": {
+            "properties": [
+              {
+                "name": "type",
+                "description": "Column type. If `checkbox`, the checkbox inside the column will be also created if not supplied via the default slot.\nIf `numeric`, the column label will be aligned to the right.",
+                "type": "string"
+              },
+              {
+                "name": "sortable",
+                "description": "Whether the column can be sorted.",
+                "type": "boolean"
+              },
+              {
+                "name": "sorted",
+                "description": "Whether the column is sorted.",
+                "type": "boolean"
+              },
+              {
+                "name": "sortedDescending",
+                "description": "Whether the column is sorted descending.",
+                "type": "boolean"
+              },
+              {
+                "name": "withSortButton",
+                "description": "Whether the column is displaying a sort button.",
+                "type": "boolean"
+              },
+              {
+                "name": "customSorting",
+                "description": "Whether the column is using a custom sorting function. If true, the column will not sort automatically and\nyou will need to handle the sorting yourself (see `sort` event).",
+                "type": "boolean"
+              },
+              {
+                "name": "filterable",
+                "description": "Whether the column can be filtered.",
+                "type": "boolean"
+              },
+              {
+                "name": "filterTextFieldLabel",
+                "description": "Label to show on the filter textfield.",
+                "type": "string"
+              },
+              {
+                "name": "filterCaseSensitive",
+                "description": "Sets the filtering to be case-sensitive.",
+                "type": "boolean"
+              },
+              {
+                "name": "customFiltering",
+                "description": "Whether the column is using a custom filtering function. If true, the column will not filter automatically and\nyou will need to handle the filtering yourself (see `filter` event).",
+                "type": "boolean"
+              },
+              { "name": "checkbox", "type": "Checkbox" }
+            ],
+            "events": [
+              {
+                "name": "checked",
+                "type": "Event",
+                "description": "Event emitted when the column checkbox has been checked or unchecked. Detail contains the `checked` property."
+              },
+              {
+                "name": "filter",
+                "type": "Event",
+                "description": "Event emitted when the user has typed in column filter textfield. Detail contains the `field`, `text`, `column`, `caseSensitive` and `customFiltering` properties."
+              },
+              {
+                "name": "keydown",
+                "type": "Event",
+                "description": "Event emitted when the user has typed in column filter textfield. Detail contains the `field`, `key` and `column` properties."
+              },
+              {
+                "name": "sort",
+                "type": "Event",
+                "description": "Event emitted when the user has typed in column filter textfield. Detail contains the `column`, `isDescending` and `customSorting` properties."
+              }
+            ]
+          }
+        },
+        {
+          "name": "md-data-table-footer",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [],
+          "events": [],
+          "js": { "properties": [], "events": [] }
+        },
+        {
+          "name": "md-data-table-row",
+          "description": "\n---\n\n\n### **Events:**\n - **selected** - Event emitted when a row has been selected or unselected. Detail contains the `selected` property.",
+          "doc-url": "",
+          "attributes": [],
+          "events": [
+            {
+              "name": "selected",
+              "type": "Event",
+              "description": "Event emitted when a row has been selected or unselected. Detail contains the `selected` property."
+            }
+          ],
+          "js": {
+            "properties": [
+              {
+                "name": "selected",
+                "description": "Whether the row is selected.",
+                "type": "boolean"
+              },
+              {
+                "name": "density",
+                "description": "Overall height of the table. Available in three different measures.",
+                "type": "string"
+              },
+              {
+                "name": "cells",
+                "description": "Cells of the row.",
+                "type": "DataTableCell[]"
+              },
+              { "name": "checkboxCell", "type": "DataTableCell" }
+            ],
+            "events": [
+              {
+                "name": "selected",
+                "type": "Event",
+                "description": "Event emitted when a row has been selected or unselected. Detail contains the `selected` property."
+              }
+            ]
+          }
+        },
+        {
+          "name": "md-data-table",
+          "description": "\n---\n\n\n### **Events:**\n - **row-selection-changed** - Event emitted when row checkbox is checked or unchecked. Detail contains the `row` element, `rowIndex` and `selected`.\n- **selected-all** - Event emitted when header row checkbox is checked.\n- **unselected-all** - Event emitted when header row checkbox is unchecked.\n- **row-click** - Event emitted when a row has been checked or unchecked. Detail contains the `row` element, `rowIndex` and `selected`.\n- **filtered** - Event emitted when the data table has been filtered. Detail contains the `column` element, `text`, `caseSensitive` and `columnIndex`.\n- **sorted** - Event emitted when the data table has been sorted. Detail contains the `column` element and `isDescending`.\n- **page-size-change** - Event emitted when the page size has been changed. Detail contains the `pageSize`.\n- **page-changed** - Event emitted when the page has been changed. Detail contains the `action`.\n- **paginate** - Event emitted when the data table has been paginated. Detail contains the `firstRow`, `lastRow`, `pageSize` and `action`.",
+          "doc-url": "",
+          "attributes": [],
+          "events": [
+            {
+              "name": "row-selection-changed",
+              "type": "Event",
+              "description": "Event emitted when row checkbox is checked or unchecked. Detail contains the `row` element, `rowIndex` and `selected`."
+            },
+            {
+              "name": "selected-all",
+              "type": "Event",
+              "description": "Event emitted when header row checkbox is checked."
+            },
+            {
+              "name": "unselected-all",
+              "type": "Event",
+              "description": "Event emitted when header row checkbox is unchecked."
+            },
+            {
+              "name": "row-click",
+              "type": "Event",
+              "description": "Event emitted when a row has been checked or unchecked. Detail contains the `row` element, `rowIndex` and `selected`."
+            },
+            {
+              "name": "filtered",
+              "type": "Event",
+              "description": "Event emitted when the data table has been filtered. Detail contains the `column` element, `text`, `caseSensitive` and `columnIndex`."
+            },
+            {
+              "name": "sorted",
+              "type": "Event",
+              "description": "Event emitted when the data table has been sorted. Detail contains the `column` element and `isDescending`."
+            },
+            {
+              "name": "page-size-change",
+              "type": "Event",
+              "description": "Event emitted when the page size has been changed. Detail contains the `pageSize`."
+            },
+            {
+              "name": "page-changed",
+              "type": "Event",
+              "description": "Event emitted when the page has been changed. Detail contains the `action`."
+            },
+            {
+              "name": "paginate",
+              "type": "Event",
+              "description": "Event emitted when the data table has been paginated. Detail contains the `firstRow`, `lastRow`, `pageSize` and `action`."
+            }
+          ],
+          "js": {
+            "properties": [
+              {
+                "name": "paginated",
+                "description": "Enable/disable pagination.",
+                "type": "boolean"
+              },
+              {
+                "name": "pageSizes",
+                "description": "JSON array with the page sizes to be used in the pagination and shown as page size select options.",
+                "type": "string"
+              },
+              {
+                "name": "pageSizesLabel",
+                "description": "Label to show before the page size select.",
+                "type": "string"
+              },
+              {
+                "name": "currentFirstRow",
+                "description": "Index of the first row to be shown on the current page.",
+                "type": "number"
+              },
+              {
+                "name": "currentPageSize",
+                "description": "Size of the current page.",
+                "type": "number"
+              },
+              {
+                "name": "currentLastRow",
+                "description": "Index of the last row to be shown on the current page.",
+                "type": "number"
+              },
+              {
+                "name": "totalRows",
+                "description": "Total number of rows in the data table to show in the pagination label and",
+                "type": "number"
+              },
+              {
+                "name": "paginationTotalLabel",
+                "description": "Label pattern to show after the page size select that indicates the current rows shown in the page.\nIt should contain the following parameters: `:firstRow`, `:lastRow`, `:totalRows`",
+                "type": "string"
+              },
+              {
+                "name": "customPagination",
+                "description": "Whether the data table is using a custom pagination function. If true, the automatic pagination is disabled and\nthe `current-first-row`, `current-last-row` and `current-page-size` attributes are not updated automatically.\nYou'll have to handle the pagination yourself by listening to the `paginate` event and updating the\n`current-first-row`, `current-last-row` and `current-page-size` attributes accordingly.",
+                "type": "boolean"
+              },
+              {
+                "name": "inProgress",
+                "description": "Whether the loading indicator is active.",
+                "type": "boolean"
+              },
+              {
+                "name": "density",
+                "description": "Overall height of the table. Available in three different measures.",
+                "type": "string"
+              }
+            ],
+            "events": [
+              {
+                "name": "row-selection-changed",
+                "type": "Event",
+                "description": "Event emitted when row checkbox is checked or unchecked. Detail contains the `row` element, `rowIndex` and `selected`."
+              },
+              {
+                "name": "selected-all",
+                "type": "Event",
+                "description": "Event emitted when header row checkbox is checked."
+              },
+              {
+                "name": "unselected-all",
+                "type": "Event",
+                "description": "Event emitted when header row checkbox is unchecked."
+              },
+              {
+                "name": "row-click",
+                "type": "Event",
+                "description": "Event emitted when a row has been checked or unchecked. Detail contains the `row` element, `rowIndex` and `selected`."
+              },
+              {
+                "name": "filtered",
+                "type": "Event",
+                "description": "Event emitted when the data table has been filtered. Detail contains the `column` element, `text`, `caseSensitive` and `columnIndex`."
+              },
+              {
+                "name": "sorted",
+                "type": "Event",
+                "description": "Event emitted when the data table has been sorted. Detail contains the `column` element and `isDescending`."
+              },
+              {
+                "name": "page-size-change",
+                "type": "Event",
+                "description": "Event emitted when the page size has been changed. Detail contains the `pageSize`."
+              },
+              {
+                "name": "page-changed",
+                "type": "Event",
+                "description": "Event emitted when the page has been changed. Detail contains the `action`."
+              },
+              {
+                "name": "paginate",
+                "type": "Event",
+                "description": "Event emitted when the data table has been paginated. Detail contains the `firstRow`, `lastRow`, `pageSize` and `action`."
+              }
+            ]
+          }
+        },
+        {
+          "name": "md-layout-grid-inner",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "fixedColumnWidth",
+                "description": "You can designate each column to have a certain width. The column width can be specified through the CSS custom property `--mdc-layout-grid-column-width-{screen_size}`. The column width is set to 72px on all devices by default.",
+                "type": "boolean"
+              },
+              {
+                "name": "align",
+                "description": "The grid is by default center aligned. You can set this attribute to `left` or `right` to change this behavior. Note, these modifiers will have no effect when the grid already fills its container.",
+                "type": "string"
+              }
+            ],
+            "events": []
+          }
+        },
+        {
+          "name": "md-layout-grid",
+          "description": "\n---\n",
+          "doc-url": "",
+          "attributes": [],
+          "events": [],
+          "js": {
+            "properties": [
+              {
+                "name": "fixedColumnWidth",
+                "description": "You can designate each column to have a certain width. The column width can be specified through the CSS custom property `--mdc-layout-grid-column-width-{screen_size}`. The column width is set to 72px on all devices by default.",
+                "type": "boolean"
+              },
+              {
+                "name": "align",
+                "description": "The grid is by default center aligned. You can set this attribute to `left` or `right` to change this behavior. Note, these modifiers will have no effect when the grid already fills its container.",
+                "type": "string"
+              }
+            ],
+            "events": []
+          }
+        }
+      ]
+    },
+    "css": {
+      "properties": [],
+      "pseudo-elements": []
+    }
+  }
+}
