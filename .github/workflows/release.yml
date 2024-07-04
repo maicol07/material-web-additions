@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   release_publish:
-    uses: maicol07/actions/.github/workflows/release_publish.yml@main
+    uses: maicol07/actions/.github/workflows/release_publish_npm.yml@main
     with:
       release_channel: ${{ github.event.inputs.release_channel }}
     secrets: inherit
