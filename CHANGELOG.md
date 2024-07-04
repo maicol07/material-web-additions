@@ -20,6 +20,19 @@
 
 
 <a name="1.4.1"></a>
+## [1.5.0](https://github.com/maicol07/material-web-additions/compare/v1.4.4...v1.5.0) (2024-07-04)
+
+
+### Features
+
+* ✨ Added web types generation ([ead876f](https://github.com/maicol07/material-web-additions/commit/ead876fe1de6df9a8b72c210e4fb7f9178a02fc1))
+
+
+### Bug Fixes
+
+* **catalog:** align one liners to center ([92f9ac5](https://github.com/maicol07/material-web-additions/commit/92f9ac505a9cd070a9a84aadfdd83dedecd246b6))
+* **catalog:** center items in blockquotes ([04f6057](https://github.com/maicol07/material-web-additions/commit/04f60571258e4b554a088d12f379979c81b59439))
+
 ## [1.4.4](https://github.com/maicol07/material-web-additions/compare/v1.4.3...v1.4.4) (2023-11-28)
 
 
