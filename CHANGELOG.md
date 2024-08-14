@@ -20,6 +20,13 @@
 
 
 <a name="1.4.1"></a>
+## [1.5.1](https://github.com/maicol07/material-web-additions/compare/v1.5.0...v1.5.1) (2024-08-14)
+
+
+### Bug Fixes
+
+* Disable SSR due to issues in production ([604774c](https://github.com/maicol07/material-web-additions/commit/604774c3ca47725cd8c219953cc05fe562a8e306))
+
 ## [1.5.0](https://github.com/maicol07/material-web-additions/compare/v1.4.4...v1.5.0) (2024-07-04)
 
 
