@@ -1,10 +1,10 @@
 {
   "name": "@maicol07/material-web-additions",
-  "version": "1.5.1",
+  "version": "1.5.1-2",
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@9.4.0",
+  "packageManager": "pnpm@9.7.0",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -41,7 +41,8 @@
     "!**/testing/**",
     "!**/*_test.*",
     "!.wireit/**",
-    "!catalog",
+    "!catalog/**",
+    "!catalog/node_modules/**",
     "!scripts/"
   ],
   "dependencies": {
