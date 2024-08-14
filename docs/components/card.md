@@ -45,6 +45,9 @@ src="https://lh3.googleusercontent.com/UMKqsz_J7I1Z9gQJSKzTJld-LDVdS_KS_uRyrwlDV
 * [Source code](https://github.com/maicol07/material-web-additions/tree/main/card)
   <!-- {.external} -->
 
+> [!WARNING]
+> The Card component is deprecated and will be removed in the next major version since it's added in @material/web as experimental component.
+
 <!-- catalog-only-start -->
 
 <!--
