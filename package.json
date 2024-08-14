@@ -48,31 +48,30 @@
     "@material/card": "^14.0.0",
     "@material/data-table": "^14.0.0",
     "@material/layout-grid": "^14.0.0",
-    "@material/mwc-base": "^0.27.0",
-    "lit": "^2.8.0",
+    "lit": "^3.2.0",
     "tslib": "^2.6.3"
   },
   "peerDependencies": {
-    "@material/web": "^1.5.1"
+    "@material/web": "^2.0.0"
   },
   "devDependencies": {
-    "@lit-labs/gen-manifest": "^0.3.3",
-    "@lit-labs/analyzer": "^0.12.1",
-    "@material/web": "^1.5.1",
-    "@types/node": "^20.14.9",
-    "@typescript-eslint/eslint-plugin": "^7.15.0",
-    "@typescript-eslint/parser": "^7.15.0",
+    "@lit-labs/analyzer": "^0.13.0",
+    "@lit-labs/gen-manifest": "npm:@maicol07/lit-labs-gen-manifest",
+    "@material/web": "^2.0.0",
+    "@types/node": "^22.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.1.0",
+    "@typescript-eslint/parser": "^8.1.0",
     "@web-types/lit": "2.0.0-3",
     "@webcomponents/webcomponentsjs": "^2.8.0",
-    "custom-element-jet-brains-integration": "^1.5.0",
+    "custom-element-jet-brains-integration": "^1.6.2",
     "custom-elements-manifest-inheritance": "^1.1.1",
-    "eslint": "^9.6.0",
+    "eslint": "^9.9.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-n": "^17.9.0",
+    "eslint-plugin-n": "^17.10.2",
     "eslint-plugin-wc": "^2.1.0",
-    "sass": "~1.77.6",
-    "typescript": "^5.5.3",
-    "wireit": "^0.14.4"
+    "sass": "~1.77.8",
+    "typescript": "^5.5.4",
+    "wireit": "^0.14.7"
   },
   "pnpm": {
     "peerDependencyRules": {

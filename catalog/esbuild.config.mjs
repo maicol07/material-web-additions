@@ -41,6 +41,7 @@ let config = {
   write: true,
   sourcemap: true,
   splitting: true,
+  external: ['node:*']
 };
 
 let componentsBuild = Promise.resolve();

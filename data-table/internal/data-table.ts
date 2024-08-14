@@ -4,7 +4,7 @@ import '@material/web/select/outlined-select.js';
 import '@material/web/select/select-option.js';
 import '../data-table-footer.js';
 
-import {html, PropertyValueMap} from 'lit';
+import {html, LitElement, PropertyValueMap} from 'lit';
 import {property, query, queryAssignedElements} from 'lit/decorators.js';
 import {DataTableColumn, FilterTextFieldInputEventDetail, SortButtonClickedEventDetail} from './data-table-column.js';
 import {
@@ -21,7 +21,6 @@ import {cssClasses, messages, SortValue} from '@material/data-table/constants.js
 import {IconButton} from '@material/web/iconbutton/internal/icon-button.js';
 import {LinearProgress} from '@material/web/progress/internal/linear-progress.js';
 import {DataTableRow} from './data-table-row.js';
-import {BaseElement} from '@material/mwc-base';
 import {Select} from '@material/web/select/internal/select.js';
 
 export interface RowSelectionChangedDetail {
@@ -70,7 +69,7 @@ export interface PaginateDetail {
  * @fires page-changed - Event emitted when the page has been changed. Detail contains the `action`.
  * @fires paginate - Event emitted when the data table has been paginated. Detail contains the `firstRow`, `lastRow`, `pageSize` and `action`.
  */
-export class DataTable extends BaseElement {
+export class DataTable extends LitElement {
   /**
    * Enable/disable pagination.
    */
@@ -139,10 +138,8 @@ export class DataTable extends BaseElement {
   /** @internal */
   protected mdcRoot: HTMLDivElement = this.tableElement;
   /** @internal */
-    // @ts-expect-error (TypeScript bug)
   protected readonly mdcFoundationClass = MDCDataTableFoundation;
   /** @internal */
-    // @ts-expect-error (TypeScript bug)
   protected mdcFoundation!: MDCDataTableFoundation;
   protected columnFilters: Map<DataTableColumn, string> = new Map();
 
@@ -449,8 +446,8 @@ export class DataTable extends BaseElement {
     }
   }
 
-  protected override firstUpdated() {
-    super.firstUpdated();
+  protected override firstUpdated(_changedProperties: PropertyValueMap<any>) {
+    super.firstUpdated(_changedProperties);
     this.paginate('first');
   }
 
