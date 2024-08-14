@@ -1,6 +1,6 @@
 {
   "name": "@maicol07/material-web-additions",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "publishConfig": {
     "access": "public"
   },
@@ -75,12 +75,19 @@
   },
   "pnpm": {
     "peerDependencyRules": {
-      "ignoreMissing": ["css-loader", "sass-loader", "style-loader"]
+      "ignoreMissing": [
+        "css-loader",
+        "sass-loader",
+        "style-loader"
+      ]
     }
   },
   "wireit": {
     "build": {
-      "dependencies": ["build:ts", "update-docs"]
+      "dependencies": [
+        "build:ts",
+        "update-docs"
+      ]
     },
     "build:ts": {
       "command": "tsc --pretty",
@@ -105,21 +112,45 @@
         "!scripts/"
       ],
       "clean": "if-file-deleted",
-      "dependencies": ["build:css-to-ts"]
+      "dependencies": [
+        "build:css-to-ts"
+      ]
     },
     "build:css-to-ts": {
       "command": "find . \\( -path ./.wireit -o -path ./node_modules -o -path ./catalog \\) -prune -o -name '*.css' -print | xargs node css-to-ts.js",
-      "files": ["css-to-ts.js", "!scripts/", "!node_modules"],
-      "output": ["**/*.css.ts", "!catalog", "!scripts/"],
-      "dependencies": ["build:sass"]
+      "files": [
+        "css-to-ts.js",
+        "!scripts/",
+        "!node_modules"
+      ],
+      "output": [
+        "**/*.css.ts",
+        "!catalog",
+        "!scripts/"
+      ],
+      "dependencies": [
+        "build:sass"
+      ]
     },
     "build:sass": {
       "command": "sass --style=compressed --load-path=node_modules --load-path=node_modules/sass-true/sass $(ls -d */ | grep -vE 'node_modules|catalog')",
-      "files": ["**/*.scss", "!catalog", "!scripts/", "!node_modules"],
-      "output": ["**/*.css", "**/*.css.map", "!catalog", "!scripts/"]
+      "files": [
+        "**/*.scss",
+        "!catalog",
+        "!scripts/",
+        "!node_modules"
+      ],
+      "output": [
+        "**/*.css",
+        "**/*.css.map",
+        "!catalog",
+        "!scripts/"
+      ]
     },
     "build:catalog": {
-      "dependencies": ["./catalog:build:prod"]
+      "dependencies": [
+        "./catalog:build:prod"
+      ]
     },
     "build:analyzer": {
       "command": "tsc -b scripts/tsconfig.json --pretty",
@@ -150,7 +181,9 @@
         "!node_modules"
       ],
       "output": [],
-      "dependencies": ["build:analyzer"]
+      "dependencies": [
+        "build:analyzer"
+      ]
     }
   },
   "web-types": "./web-types.json"
