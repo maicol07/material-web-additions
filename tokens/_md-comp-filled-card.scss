@@ -11,6 +11,34 @@
 @use './v0_172/md-comp-filled-card';
 // go/keep-sorted end
 
+$supported-tokens: (
+  // go/keep-sorted start
+  'card-margin'
+  'card-padding'
+  'filled-card-container-color'
+  'filled-card-container-elevation'
+  'filled-card-container-shadow-color'
+  'filled-card-container-shape'
+  'filled-card-disabled-container-color'
+  'filled-card-disabled-container-elevation'
+  'filled-card-disabled-container-opacity'
+  'filled-card-dragged-container-elevation'
+  'filled-card-dragged-state-layer-color'
+  'filled-card-dragged-state-layer-opacity'
+  'filled-card-focus-container-elevation'
+  'filled-card-focus-state-layer-color'
+  'filled-card-focus-state-layer-opacity'
+  'filled-card-hover-container-elevation'
+  'filled-card-hover-state-layer-color'
+  'filled-card-hover-state-layer-opacity'
+  'filled-card-icon-color'
+  'filled-card-icon-size'
+  'filled-card-pressed-container-elevation'
+  'filled-card-pressed-state-layer-color'
+  'filled-card-pressed-state-layer-opacity'
+  // go/keep-sorted end
+);
+
 $_default: (
   'md-sys-color': md-sys-color.values-light(),
   'md-sys-elevation': md-sys-elevation.values(),
