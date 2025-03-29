@@ -13,7 +13,7 @@ import {docsToElementMapping} from './element-docs-map.js';
 import {MarkdownTable} from './markdown-tree-builder.js';
 import {generateJetBrainsWebTypes} from 'custom-element-jet-brains-integration';
 import {generateManifest} from '@lit-labs/gen-manifest';
-import {updateCemInheritance} from 'custom-elements-manifest-inheritance';
+import {updateCemInheritance} from '@wc-toolkit/cem-inheritance';
 
 interface MarkdownTableSection {
   name: string;
