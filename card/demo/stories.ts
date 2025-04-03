@@ -12,7 +12,7 @@ import '@maicol07/material-web-additions/card/outlined-card.js';
 import {MaterialStoryInit} from '~catalog/stories/material-collection.js';
 import {css, html} from 'lit';
 
-/** Knob types for button stories. */
+/** Knob types for card stories. */
 export interface StoryKnobs {
   clickable: boolean;
 }
@@ -216,5 +216,5 @@ const media: MaterialStoryInit<StoryKnobs> = {
   }
 };
 
-/** Button stories. */
+/** Cards stories. */
 export const stories = [cards, actions, media];
