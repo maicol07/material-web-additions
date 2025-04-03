@@ -22,7 +22,7 @@ tag: 'docType:reference'
 
 <!-- external-only-start -->
 **This documentation is fully rendered on the
-[Material Web Additions catalog](https://material-web.dev/components/button/).**
+[Material Web Additions catalog](https://material-web-additions.maicol07.it/components/data-table/).**
 <!-- external-only-end -->
 
 <!-- no-catalog-end -->

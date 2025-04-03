@@ -22,12 +22,12 @@ tag: 'docType:reference'
 
 <!-- external-only-start -->
 **This documentation is fully rendered on the
-[Material Web Additions catalog](https://material-web.dev/components/button/).**
+[Material Web Additions catalog](https://material-web-additions.maicol07.it/components/card/).**
 <!-- external-only-end -->
 
 <!-- no-catalog-end -->
 
-[Cards](https://m3material.io/components/cards) display content and actions about a single subject.
+[Cards](https://m3.material.io/components/cards) display content and actions about a single subject.
 MD Card encapsulates [MDC Card](https://material.io/components/cards/web#using-cards).
 
 </catalog-component-header-title>
