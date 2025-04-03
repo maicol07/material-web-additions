@@ -10,11 +10,10 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ '20' ]
+        node-version: [ '22' ]
 
     steps:
       - uses: actions/checkout@v4
-
 
       - uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
@@ -26,7 +25,7 @@ jobs:
       - name: Install packages
         run: pnpm install
 
-      - name: Run npm build
+      - name: Run pnpm build
         run: pnpm build:catalog
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
