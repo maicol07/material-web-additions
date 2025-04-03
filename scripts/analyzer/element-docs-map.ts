@@ -17,6 +17,9 @@ export const docsToElementMapping: {[key: string]: string[]} = {
   'layout-grid.md': [
     'layout-grid/layout-grid.ts'
   ],
+  'snackbar.md': [
+    'snackbar/snackbar.ts'
+  ],
   'data-table.md': [
     'data-table/data-table.ts',
     'data-table/data-table-cell.ts',

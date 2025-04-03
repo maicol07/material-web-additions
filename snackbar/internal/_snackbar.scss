@@ -1,0 +1,144 @@
+@use 'sass:map';
+
+@use '@material/web/elevation/elevation';
+@use "../../tokens";
+
+@mixin styles() {
+  :host {
+    $tokens: tokens.md-comp-snackbar-values();
+    @each $token, $value in $tokens {
+      --_#{$token}: var(--md-snackbar-#{$token}, #{$value});
+    }
+
+    display: none;
+    opacity: 0;
+    align-items: center;
+    transition: opacity 150ms ease-in-out;
+
+    background-color: var(--_container-color);
+    border-radius: var(--_container-shape);
+    height: var(--_with-single-line-container-height);
+
+    max-width: 672px;
+    min-width: 344px;
+    overflow: hidden;
+    padding: 0;
+
+    md-elevation {
+      @include elevation.theme(
+                      (
+                              level: var(--_container-elevation),
+                              shadow-color: var(--_container-shadow-color)
+                      )
+      );
+    }
+
+    // Style the snackbar icon (slotted)
+    slot[name="icon"] {
+      --md-icon-button-icon-color: var(--_icon-color);
+      --md-icon-button-icon-size: var(--_icon-size);
+      --md-icon-button-focus-icon-color: var(--_icon-focus-icon-color);
+      --md-icon-button-hover-icon-color: var(--_icon-hover-icon-color);
+      --md-icon-button-hover-state-layer-color: var(--_icon-hover-state-layer-color);
+      --md-icon-button-hover-state-layer-opacity: var(--_icon-hover-state-layer-opacity);
+      --md-icon-button-pressed-icon-color: var(--_icon-pressed-icon-color);
+      --md-icon-button-pressed-state-layer-color: var(--_icon-pressed-state-layer-color);
+      --md-icon-button-pressed-state-layer-opacity: var(--_icon-pressed-state-layer-opacity);
+
+      &::slotted(:is(md-icon, md-icon-button)) {
+        margin: 0 12px;
+      }
+    }
+
+    .md-snackbar__supporting_text {
+      color: var(--_supporting-text-color);
+      font-size: var(--_supporting-text-size);
+      margin-inline: 16px;
+      margin-right: 16px;
+      flex-grow: 1;
+    }
+
+    md-text-button.md-snackbar__action {
+      --md-text-button-label-text-color: var(--_action-label-text-color);
+      --md-text-button-label-text-size: var(--_action-label-text-size);
+      --md-text-button-label-text-line-height: var(--_action-label-text-line-height);
+      --md-text-button-label-text-font: var(--_action-label-text-font);
+      --md-text-button-label-text-weight: var(--_action-label-text-font-weight);
+      //--md-text-button-label-text-font-type: var(--_action-label-text-font-type);
+      //--md-text-button-label-text-font-tracking: var(--_action-label-text-font-tracking);
+      --md-text-button-focus-label-text-color: var(--_action-label-text-color);
+      --md-text-button-hover-label-text-color: var(--_action-label-text-color);
+      --md-text-button-pressed-label-text-color: var(--_action-label-text-color);
+
+      // TODO: Add these to unsupported tokens
+      //--md-text-button-focus-state-layer-color: var(--_action-focus-state-layer-color);
+      //--md-text-button-focus-state-layer-opacity: var(--_action-focus-state-layer-opacity);
+      --md-text-button-hover-state-layer-color: var(--_action-hover-state-layer-color);
+      --md-text-button-hover-state-layer-opacity: var(--_action-hover-state-layer-opacity);
+      --md-text-button-pressed-state-layer-color: var(--_action-pressed-state-layer-color);
+      --md-text-button-pressed-state-layer-opacity: var(--_action-pressed-state-layer-opacity);
+
+      margin-right: 8px;
+    }
+  }
+
+  :host([open].opened) {
+    opacity: 1;
+  }
+
+  :host([open]) {
+    display: flex;
+  }
+
+  :host(:focus-within) md-elevation {
+    @include elevation.theme(
+                    (
+                            'level': var(--_focus-container-elevation),
+                    )
+    );
+  }
+
+  :host(:hover) md-elevation {
+    @include elevation.theme(
+                    (
+                            'level': var(--_hover-container-elevation),
+                    )
+    );
+  }
+
+  :host(:active) md-elevation {
+    @include elevation.theme(
+                    (
+                            'level': var(--_pressed-container-elevation),
+                    )
+    );
+  }
+
+  :host([two-lines]) {
+    height: var(--_with-two-lines-container-height);
+  }
+
+  :host([two-lines][longer-action]) {
+    flex-wrap: wrap;
+    padding: 12px 0 6px 0;
+    height: auto;
+
+    .md-snackbar__supporting_text {
+      width: 100%;
+    }
+
+    .md-snackbar__action {
+      margin-left: auto;
+    }
+  }
+
+  :host([fixed]) {
+    position: fixed;
+    z-index: 100;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: content-box;
+    line-height: var(--_supporting-text-line-height);
+  }
+}
