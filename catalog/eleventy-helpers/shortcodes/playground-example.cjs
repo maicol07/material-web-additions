@@ -45,7 +45,7 @@ function playgroundExample(eleventyConfig) {
       : 'height: 500px;';
 
     return `
-      <!--<details>
+      <details>
         <summary>
           <md-outlined-icon-button toggle tabindex="-1" aria-hidden="true">
             <md-icon aria-hidden="true">expand_more</md-icon>
@@ -68,7 +68,7 @@ function playgroundExample(eleventyConfig) {
           ><md-circular-progress indeterminate></md-circular-progress></playground-file-editor>
         </lit-island>
       </details>
-      <p><a href="./stories/" target="_blank">Open interactive demo in new tab.</a></p>-->
+      <p><a href="./stories/" target="_blank">Open interactive demo in new tab.</a></p>
     `;
   });
 }

@@ -112,8 +112,8 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1
       playground-elements:
-        specifier: ^0.20.0
-        version: 0.20.0
+        specifier: 0.19.1
+        version: 0.19.1
       postdoc-lib:
         specifier: ^1.0.3
         version: 1.0.3
@@ -2449,8 +2449,8 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
 
-  playground-elements@0.20.0:
-    resolution: {integrity: sha512-H4Qs09V9r5THLgASfpeg0PzFySPPFBW4F0kS59LIlQxNyQCtrJd8eDu8jMTXIF3NFoV265cicdzYqRcILsjitw==}
+  playground-elements@0.19.1:
+    resolution: {integrity: sha512-rkTgtyXvMUh1lPcAvMQ5tKJXKhqtiaZUMQW0jy4cS3E+E8eJq3suDJFhTEkqreqz0A6yRwd3udSdjwaR6Fob5A==}
 
   please-upgrade-node@3.2.0:
     resolution: {integrity: sha512-gQR3WpIgNIKwBMVLkpMUeR3e1/E1y42bqDQZfql+kDeXd8COYfM8PQA4X6y7a8u9Ua9FHmsrrmirW2vHs45hWg==}
@@ -5600,7 +5600,7 @@ snapshots:
 
   pify@2.3.0: {}
 
-  playground-elements@0.20.0:
+  playground-elements@0.19.1:
     dependencies:
       '@material/mwc-button': 0.27.0
       '@material/mwc-icon-button': 0.27.0
