@@ -8,6 +8,10 @@
       <excludeFolder url="file://$MODULE_DIR$/catalog/_prod" />
       <excludeFolder url="file://$MODULE_DIR$/catalog/build" />
       <excludeFolder url="file://$MODULE_DIR$/catalog/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/stories/card" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/stories/data-table" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/stories/layout-grid" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/stories/snackbar" />
       <excludePattern pattern="*.css,*.css.ts,.wireit/*" />
     </content>
     <orderEntry type="inheritedJdk" />
