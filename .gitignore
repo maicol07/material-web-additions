@@ -10,6 +10,7 @@ package-lock.json
 *.d.ts
 !types/*.d.ts
 .wireit/
+scripts/tsconfig.tsbuildinfo
 
 !catalog/**/*.css
 catalog/_dev
