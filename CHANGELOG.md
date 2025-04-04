@@ -20,6 +20,26 @@
 
 
 <a name="1.4.1"></a>
+## [1.6.0](https://github.com/maicol07/material-web-additions/compare/v1.5.1...v1.6.0) (2025-04-04)
+
+
+### Features
+
+* **snackbar:** ✨ Add snackbar component ([fe899b6](https://github.com/maicol07/material-web-additions/commit/fe899b6f528ceef026f4bfeeca6a17dab96ab73e))
+
+
+### Bug Fixes
+
+* **analyzer:** 🐛 Handle undefined return types ([0b59e72](https://github.com/maicol07/material-web-additions/commit/0b59e72eb49f7b226fbc9db001cc33752a8799cf))
+* **analyzer:** 🐛 Use @wc-toolkit/cem-inheritance ([98797e5](https://github.com/maicol07/material-web-additions/commit/98797e5e50d7f49787955e3a7bfb53ed38cdba95))
+* **card:** ✏️ Correct typo in stories.ts ([f2cb995](https://github.com/maicol07/material-web-additions/commit/f2cb995be4544b310f6311170151e2614149488f))
+* **catalog:** 🐛 Downgrade playground-elements to 0.19.1 ([44b0ab6](https://github.com/maicol07/material-web-additions/commit/44b0ab69b9689d51fa4b7e5ee81a360010407353))
+* **catalog:** 📦️ Fix esbuild target for node modules ([cfb75c8](https://github.com/maicol07/material-web-additions/commit/cfb75c82fbc549020258f618c4ce994a1861dbd5))
+* **catalog:** Add missing imports for card and data table ([42cfc6c](https://github.com/maicol07/material-web-additions/commit/42cfc6cbb9949d9c8f5cb530d012977b73095554))
+* changed checkmark to check in md-icon selected slot ([69c76e9](https://github.com/maicol07/material-web-additions/commit/69c76e933fe643e2c2d580298c11e2e3eb40915c))
+* **ssr:** 🐛 Enable SSR for key components ([7e79cf6](https://github.com/maicol07/material-web-additions/commit/7e79cf66dc2129775b05e0526799fa32bf153304))
+* upgrade playground-elements from 0.18.1 to 0.19.1 ([40b6178](https://github.com/maicol07/material-web-additions/commit/40b6178375ad4f2cbfd61c13018e3f3f2f70949f))
+
 ## [1.5.1](https://github.com/maicol07/material-web-additions/compare/v1.5.0...v1.5.1) (2024-08-14)
 
 
