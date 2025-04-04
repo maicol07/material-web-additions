@@ -66,7 +66,7 @@ if (DEV) {
     bundle: true,
     outdir: jsFolder,
     minify: true,
-    platform: 'node',
+    external: ['node:*'],
     format: 'esm',
     treeShaking: true,
     legalComments: 'external',
