@@ -9,6 +9,7 @@
  */
 
 // go/keep-sorted start
+@forward './md-comp-avatar' as md-comp-avatar-*;
 @forward './md-comp-data-table' as md-comp-data-table-*;
 @forward './md-comp-elevated-card' as md-comp-elevated-card-*;
 @forward './md-comp-filled-card' as md-comp-filled-card-*;

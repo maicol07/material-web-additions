@@ -9,6 +9,9 @@
  * with that documentation.
  */
 export const docsToElementMapping: {[key: string]: string[]} = {
+  'avatar.md': [
+    'avatar/avatar.ts',
+  ],
   'card.md': [
     'card/elevated-card.ts',
     'card/filled-card.ts',

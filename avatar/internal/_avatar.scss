@@ -1,0 +1,30 @@
+@use 'sass:map';
+
+@use '@material/web/elevation/elevation';
+@use "../../tokens";
+
+@mixin styles() {
+  :host {
+    $tokens: tokens.md-comp-avatar-values();
+    @each $token, $value in $tokens {
+      --_#{$token}: var(--md-avatar-#{$token}, #{$value});
+    }
+
+    width: var(--_size);
+    height: var(--_size);
+    border-radius: var(--_shape);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--_container-color);
+    color: var(--_text-color);
+    font-size: var(--_font-size);
+    font-weight: var(--_font-weight);
+
+    slot::slotted(img) {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--_shape);
+    }
+  }
+}

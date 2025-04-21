@@ -1,0 +1,16 @@
+@use '@material/web/tokens/md-sys-color';
+@use '@material/web/tokens/md-sys-elevation';
+@use '@material/web/tokens/md-sys-shape';
+@use '@material/web/tokens/md-sys-state';
+@use './custom/md-comp-avatar';
+
+$_default: (
+  'md-sys-color': md-sys-color.values-light(),
+  'md-sys-elevation': md-sys-elevation.values(),
+  'md-sys-shape': md-sys-shape.values(),
+  'md-sys-state': md-sys-state.values(),
+);
+
+@function values($deps: $_default, $exclude-hardcoded-values: false) {
+  @return md-comp-avatar.values($deps, $exclude-hardcoded-values);
+}
