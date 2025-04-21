@@ -20,6 +20,13 @@
 
 
 <a name="1.4.1"></a>
+## [1.7.0](https://github.com/maicol07/material-web-additions/compare/v1.6.0...v1.7.0) (2025-04-21)
+
+
+### Features
+
+* **avatar:** ✨ Implement avatar component ([80e0254](https://github.com/maicol07/material-web-additions/commit/80e0254bcbbe441bc492d6bc4187ac3e39c728a5))
+
 ## [1.6.0](https://github.com/maicol07/material-web-additions/compare/v1.5.1...v1.6.0) (2025-04-04)
 
 
