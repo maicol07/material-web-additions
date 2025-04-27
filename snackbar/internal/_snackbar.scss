@@ -23,15 +23,14 @@
     min-width: 344px;
     overflow: hidden;
     padding: 0;
+    position: relative; // For elevation
 
-    md-elevation {
-      @include elevation.theme(
-                      (
-                              level: var(--_container-elevation),
-                              shadow-color: var(--_container-shadow-color)
-                      )
-      );
-    }
+    @include elevation.theme(
+                    (
+                            level: var(--_container-elevation),
+                            shadow-color: var(--_container-shadow-color)
+                    )
+    );
 
     // Style the snackbar icon (slotted)
     slot[name="icon"] {
