@@ -20,6 +20,14 @@
 
 
 <a name="1.4.1"></a>
+## [1.8.0](https://github.com/maicol07/material-web-additions/compare/v1.7.0...v1.8.0) (2025-04-28)
+
+
+### Features
+
+* **tokens:** ✨ Add typescale tokens to snackbar ([234ef4d](https://github.com/maicol07/material-web-additions/commit/234ef4d5aa25aae8865903b8ab0f023c1da4a1ae))
+* **top-app-bar:** ✨ Add top app bar component ([d23b7ec](https://github.com/maicol07/material-web-additions/commit/d23b7ec59ea2ea59730e5689e40b813863f24b73))
+
 ## [1.7.0](https://github.com/maicol07/material-web-additions/compare/v1.6.0...v1.7.0) (2025-04-21)
 
 
