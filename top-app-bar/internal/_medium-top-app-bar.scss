@@ -1,0 +1,22 @@
+@use "../../tokens";
+
+@mixin styles() {
+  :host {
+    $tokens: tokens.md-comp-top-app-bar-medium-values();
+    @each $token, $value in $tokens {
+      --_#{$token}: var(--md-medium-top-app-bar-#{$token}, #{$value});
+    }
+
+    flex-wrap: wrap;
+
+    slot[name="start"] {
+      flex-basis: 15%;
+    }
+
+    slot[name="end"] {
+      flex-basis: 75%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

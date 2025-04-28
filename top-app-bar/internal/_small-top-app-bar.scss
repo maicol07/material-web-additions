@@ -1,0 +1,10 @@
+@use "../../tokens";
+
+@mixin styles() {
+  :host {
+    $tokens: tokens.md-comp-top-app-bar-small-values();
+    @each $token, $value in $tokens {
+      --_#{$token}: var(--md-small-top-app-bar-#{$token}, #{$value});
+    }
+  }
+}

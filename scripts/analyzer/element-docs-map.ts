@@ -29,5 +29,11 @@ export const docsToElementMapping: {[key: string]: string[]} = {
     'data-table/data-table-column.ts',
     'data-table/data-table-footer.ts',
     'data-table/data-table-row.ts',
-  ]
+  ],
+  'top-app-bar.md': [
+    'top-app-bar/center-aligned-top-app-bar.ts',
+    'top-app-bar/large-top-app-bar.ts',
+    'top-app-bar/medium-top-app-bar.ts',
+    'top-app-bar/small-top-app-bar.ts',
+  ],
 };

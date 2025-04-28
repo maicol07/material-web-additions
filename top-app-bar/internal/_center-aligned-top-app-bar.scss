@@ -1,0 +1,15 @@
+@use "../../tokens";
+
+@mixin styles() {
+  :host {
+    $tokens: tokens.md-comp-top-app-bar-small-centered-values();
+    @each $token, $value in $tokens {
+      --_#{$token}: var(--md-center-aligned-top-app-bar-#{$token}, #{$value});
+    }
+
+    slot:not([name])::slotted(*) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

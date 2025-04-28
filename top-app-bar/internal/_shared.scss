@@ -1,0 +1,74 @@
+@use 'sass:map';
+@use "@material/web/elevation/elevation";
+
+@mixin styles() {
+  :host {
+    background-color: var(--_container-color);
+    border-radius: var(--_container-shape);
+    height: var(--_container-height);
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative; // For elevation
+    padding-inline: 16px;
+    gap: 24px;
+
+    @include elevation.theme(
+                    (
+                            level: var(--_container-elevation),
+                            shadow-color: var(--_container-shadow-color)
+                    )
+    );
+
+    slot[name="start"] {
+      &::slotted(md-icon-button) {
+        --md-icon-button-icon-color: var(--_leading-icon-color);
+        --md-icon-button-icon-size: var(--_leading-icon-size);
+      }
+      &::slotted(md-icon) {
+        --md-icon-size: var(--_leading-icon-size);
+        color: var(--_leading-icon-color);
+      }
+    }
+
+    slot[name="end"] {
+        &::slotted(md-icon-button) {
+            --md-icon-button-icon-color: var(--_trailing-icon-color);
+            --md-icon-button-icon-size: var(--_trailing-icon-size);
+        }
+        &::slotted(md-icon) {
+            --md-icon-size: var(--_trailing-icon-size);
+            color: var(--_trailing-icon-color);
+        }
+    }
+
+    // Headline
+    slot:not([name]) {
+      color: var(--_headline-color);
+      font: var(--_headline-font);
+      line-height: var(--_headline-line-height);
+      font-size: var(--_headline-size);
+      font-weight: var(--_headline-weight);
+
+      &::slotted(*) {
+        flex: 1;
+      }
+    }
+  }
+
+  :host([sticky]) {
+    position: sticky;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  :host([sticky].is-scrolling) {
+    background-color: var(--_on-scroll-container-color);
+    @include elevation.theme(
+                    (
+                            level: var(--_on-scroll-container-elevation)
+                    )
+    )
+  }
+}
