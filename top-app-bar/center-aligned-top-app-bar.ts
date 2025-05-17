@@ -10,6 +10,9 @@ declare global {
     }
 }
 
+/**
+ * @deprecated Due to new M3 expressive design update
+ */
 @customElement('md-center-aligned-top-app-bar')
 export class MdCenterAlignedTopAppBar extends TopAppBar {
     static override styles = [sharedStyles, styles];
