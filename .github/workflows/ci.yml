@@ -31,6 +31,13 @@ jobs:
     with:
       run: pnpm build
 
+  # Not in release.needs: eslint.config.mjs crashes on load (eslint-plugin-wc has no default
+  # export). Add it there once the config is fixed. Type checking runs in `build` (tsc).
+  lint:
+    uses: maicol07/actions/.github/workflows/js.yml@v1
+    with:
+      run: pnpm exec eslint .
+
   release:
     needs: [security, build]
     if: github.event_name == 'push'
