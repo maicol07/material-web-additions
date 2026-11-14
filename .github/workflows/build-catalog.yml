@@ -6,15 +6,9 @@ jobs:
   build-catalog:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: ${{ !env.ACT && 'pnpm' || '' }}
+      - uses: actions/checkout@v7
+      - uses: maicol07/actions/setup-js@v1
       - uses: google/wireit@setup-github-actions-caching/v1
-      - run: pnpm install
       - run: pnpm build:catalog
         env:
           WIREIT_FAILURES: continue

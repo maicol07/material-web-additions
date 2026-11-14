@@ -8,27 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [ '22' ]
-
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: ${{ !env.ACT && 'pnpm' || '' }}
-
-      - name: Install packages
-        run: pnpm install
+      - uses: actions/checkout@v7
+      - uses: maicol07/actions/setup-js@v1
 
       - name: Run pnpm build
         run: pnpm build:catalog
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
          path: catalog/_prod
 
@@ -51,4 +38,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

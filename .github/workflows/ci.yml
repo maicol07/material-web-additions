@@ -1,0 +1,52 @@
+name: CI
+# Shared pipeline of maicol07/actions: checks on PRs and main, then on main the release PR, and
+# once it is merged the GitHub Release and the npm package. A job is overridden by replacing its
+# `uses:` with steps of its own (same job name, so `needs` keeps working).
+# ponytail: still pnpm, not Bun: bun cannot migrate the catalog's workspace link to the root
+# package (oven-sh/bun#23026), and a fresh Bun resolution breaks the catalog's Lit SSR build.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  # Never cancel a release half done on main.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+permissions:
+  contents: read
+
+jobs:
+  security:
+    uses: maicol07/actions/.github/workflows/security.yml@v1
+
+  commit_lint:
+    uses: maicol07/actions/.github/workflows/commit-lint.yml@v1
+
+  build:
+    uses: maicol07/actions/.github/workflows/js.yml@v1
+    with:
+      run: pnpm build
+
+  release:
+    needs: [security, build]
+    if: github.event_name == 'push'
+    uses: maicol07/actions/.github/workflows/release.yml@v1
+    permissions:
+      contents: write
+      pull-requests: write
+    with:
+      # npm wants the version without the tag's `v`. npm ships with the runner's Node.js.
+      bump: npm version "${VERSION#v}" --no-git-tag-version
+
+  publish:
+    needs: release
+    if: needs.release.outputs.tag
+    uses: maicol07/actions/.github/workflows/npm-publish.yml@v1
+    with:
+      tag: ${{ needs.release.outputs.tag }}
+    secrets:
+      npm_token: ${{ secrets.NPM_TOKEN }}
