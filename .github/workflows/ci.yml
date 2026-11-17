@@ -51,7 +51,8 @@ jobs:
 
   publish:
     needs: release
-    if: needs.release.outputs.tag
+    # !cancelled(): otherwise the checks skipped on the release merge skip this job too.
+    if: ${{ !cancelled() && needs.release.result == 'success' && needs.release.outputs.tag }}
     uses: maicol07/actions/.github/workflows/npm-publish.yml@v2
     with:
       tag: ${{ needs.release.outputs.tag }}
