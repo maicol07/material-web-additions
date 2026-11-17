@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-      - uses: maicol07/actions/setup-js@v1
+      - uses: maicol07/actions/setup-js@v2
 
       - name: Run pnpm build
         run: pnpm build:catalog

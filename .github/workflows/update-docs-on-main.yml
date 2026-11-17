@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-      - uses: maicol07/actions/setup-js@v1
+      - uses: maicol07/actions/setup-js@v2
       - uses: google/wireit@setup-github-actions-caching/v1
 
       - name: Update Docs
