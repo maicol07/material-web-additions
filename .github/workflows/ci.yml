@@ -21,27 +21,27 @@ permissions:
 
 jobs:
   security:
-    uses: maicol07/actions/.github/workflows/security.yml@v1
+    uses: maicol07/actions/.github/workflows/security.yml@v2
 
   commit_lint:
-    uses: maicol07/actions/.github/workflows/commit-lint.yml@v1
+    uses: maicol07/actions/.github/workflows/commit-lint.yml@v2
 
   build:
-    uses: maicol07/actions/.github/workflows/js.yml@v1
+    uses: maicol07/actions/.github/workflows/js.yml@v2
     with:
       run: pnpm build
 
   # Not in release.needs: eslint.config.mjs crashes on load (eslint-plugin-wc has no default
   # export). Add it there once the config is fixed. Type checking runs in `build` (tsc).
   lint:
-    uses: maicol07/actions/.github/workflows/js.yml@v1
+    uses: maicol07/actions/.github/workflows/js.yml@v2
     with:
       run: pnpm exec eslint .
 
   release:
     needs: [security, build]
-    if: github.event_name == 'push'
-    uses: maicol07/actions/.github/workflows/release.yml@v1
+    if: github.event_name == 'push' && !failure() && !cancelled()
+    uses: maicol07/actions/.github/workflows/release.yml@v2
     permissions:
       contents: write
       pull-requests: write
@@ -52,7 +52,7 @@ jobs:
   publish:
     needs: release
     if: needs.release.outputs.tag
-    uses: maicol07/actions/.github/workflows/npm-publish.yml@v1
+    uses: maicol07/actions/.github/workflows/npm-publish.yml@v2
     with:
       tag: ${{ needs.release.outputs.tag }}
     secrets:
