@@ -1,13 +1,16 @@
 name: Build Catalog
 
-on: [ push ]
+# main and catalog build it in publish-docs.yml.
+on:
+  push:
+    branches-ignore: [main, catalog]
 
 jobs:
   build-catalog:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: maicol07/actions/setup-js@v1
+      - uses: maicol07/actions/setup-js@v2
       - uses: google/wireit@setup-github-actions-caching/v1
       - run: pnpm build:catalog
         env:
