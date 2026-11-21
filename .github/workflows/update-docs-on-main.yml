@@ -23,7 +23,7 @@ jobs:
 
       - name: Create PR
         if: steps.ifChange.outputs.changed == 'yes'
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: 'docs: update API docs'
           author: lit-robot <lit-robot@google.com>
